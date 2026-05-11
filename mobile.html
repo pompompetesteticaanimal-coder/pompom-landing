@@ -54,26 +54,26 @@
     /* ===== NAV BRAND PILL ===== */
     .nav-brand-pill {
       display: inline-block;
-      background: rgba(255,255,255,0.16);
-      border: 1.5px solid rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.22);
+      border: 2px solid rgba(255,255,255,0.55);
       border-radius: 999px;
-      padding: 4px 18px 5px;
+      padding: 4px 20px 6px;
       font-family: 'Dancing Script', cursive;
       font-weight: 700;
-      font-size: 2.1rem;
+      font-size: 2.6rem;
       color: white;
       line-height: 1.15;
-      backdrop-filter: blur(6px);
-      text-shadow: 0 2px 12px rgba(0,0,0,0.18);
-      letter-spacing: 0.01em;
+      backdrop-filter: blur(8px);
+      text-shadow: 0 2px 16px rgba(0,0,0,0.35), 0 0 40px rgba(255,255,255,0.2);
+      letter-spacing: 0.02em;
     }
     .scrolled .nav-brand-pill,
     #sticky-hdr .nav-brand-pill,
     #side-menu .nav-brand-pill {
-      background: rgba(225,29,72,0.10);
-      border-color: rgba(225,29,72,0.30);
+      background: rgba(225,29,72,0.12);
+      border-color: rgba(225,29,72,0.40);
       color: #9f1239;
-      text-shadow: none;
+      text-shadow: 0 1px 8px rgba(159,18,57,0.2);
     }
     .nav-brand-sub { color: rgba(255,255,255,0.75); font-size:0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; }
     .scrolled .nav-brand-sub,
@@ -82,7 +82,7 @@
 
     /* ===== HERO ===== */
     .hero-mobile {
-      min-height: 100svh;
+      min-height: 82svh;
       background: linear-gradient(160deg, #9f1239 0%, #e11d48 55%, #fb7185 100%);
       position: relative;
       overflow: hidden;
@@ -92,8 +92,8 @@
     .hero-mobile::before {
       content: '';
       position: absolute; inset: 0;
-      background: url('fotos/hero.jpg') center/cover no-repeat;
-      opacity: 0.18;
+      background: url('fotos/hero-dog.jpg') center 15%/cover no-repeat;
+      opacity: 0.38;
       mix-blend-mode: overlay;
     }
     /* Ondas decorativas no fundo do hero */
@@ -315,6 +315,54 @@
     .menu-link:last-of-type { border-bottom: none; }
     .menu-link:active { color: #e11d48; }
     .menu-icon { font-size: 22px; width: 32px; }
+
+    /* ===== LOJINHA MODAL ===== */
+    #lojinha-overlay {
+      display: none; position: fixed; inset: 0;
+      background: rgba(0,0,0,0.55); z-index: 9998;
+      backdrop-filter: blur(4px);
+    }
+    #lojinha-sheet {
+      display: none;
+      position: fixed;
+      bottom: 0; left: 0; right: 0; z-index: 9999;
+      background: #fffbf9; border-radius: 24px 24px 0 0;
+      height: 88vh;
+      transform: translateY(100%);
+      transition: transform 0.35s cubic-bezier(0.32,0.72,0,1);
+      box-shadow: 0 -8px 40px rgba(0,0,0,0.18);
+      overflow: hidden;
+    }
+    #lojinha-sheet.aberto { transform: translateY(0); }
+    .lojinha-drag { width: 40px; height: 4px; background: #e7e5e4; border-radius: 99px; margin: 12px auto 8px; }
+    #lojinha-header { padding: 0 20px 12px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #fce7f3; }
+    #lojinha-grid {
+      height: calc(88vh - 160px);
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      padding: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+      align-content: flex-start;
+    }
+    #lojinha-footer { padding: 14px 16px; border-top: 1px solid #fce7f3; background: #fffbf9; }
+    .prod-bolinha {
+      display: flex; flex-direction: column; align-items: center; gap: 6px;
+      text-decoration: none; width: 80px;
+    }
+    .prod-bolinha-img {
+      width: 80px; height: 80px; border-radius: 50%; overflow: hidden;
+      border: 3px solid #fce7f3;
+      box-shadow: 0 4px 14px rgba(225,29,72,0.18);
+      flex-shrink: 0;
+    }
+    .prod-bolinha-img img { width: 100%; height: 100%; object-fit: cover; }
+    .prod-bolinha-label {
+      font-size: 0.6rem; color: #be123c; font-weight: 700;
+      text-align: center; line-height: 1.2;
+    }
   </style>
 </head>
 <body>
@@ -330,7 +378,7 @@
       </div>
       <div>
         <div class="nav-brand-pill">PomPom Pet</div>
-        <div class="nav-brand-sub">Estética Animal</div>
+        <div class="nav-brand-sub">✨ Estética Animal com amor</div>
       </div>
     </div>
     <a href="#inicio"   class="menu-link" onclick="closeMenu()"><span class="menu-icon">🏠</span> Início</a>
@@ -355,11 +403,9 @@
       <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-white/40 bg-white flex-shrink-0">
         <img src="fotos/logo-icon.png" alt="PomPom Pet Logo" class="w-full h-full object-cover" style="object-position:center 30%;" />
       </div>
-      <div>
+      <div class="flex flex-col items-start gap-0.5">
         <div class="nav-brand-pill" style="border-color: rgba(255,255,255,0.5);">PomPom Pet</div>
-        <div class="inline-flex items-center gap-1 bg-white/15 backdrop-blur-sm text-white/90 text-[10px] font-semibold px-2.5 py-0.5 rounded-full border border-white/25 mt-1">
-          ✨ Estética Animal com amor
-        </div>
+        <div class="nav-brand-sub">✨ Estética Animal com amor</div>
       </div>
     </a>
     <!-- Hamburguer -->
@@ -371,54 +417,10 @@
     </button>
   </div>
 
-  <!-- Mosaico de bolinhas -->
-  <div class="relative z-10 pt-5 pb-2 overflow-hidden" style="mask-image:linear-gradient(to bottom,transparent 0%,black 18%,black 75%,transparent 100%);-webkit-mask-image:linear-gradient(to bottom,transparent 0%,black 18%,black 75%,transparent 100%)">
-    <!-- Trilho 1 — salão + Páscoa -->
-    <div class="flex gap-3 mb-3 marquee-left">
-      <div class="marquee-track flex gap-3">
-        <img src="fotos/cachorros/F2149C04-602C-4972-B21C-3143C94DEB7A.jpg" class="dog-bubble">
-        <img src="fotos/cachorros/FE9FB7FF-BC03-46A7-8748-C16A41B9025F.png"  class="dog-bubble">
-        <img src="fotos/cachorros/6598A84E-1C45-4490-B6A1-CCFEDBF9DA59.jpg" class="dog-bubble">
-        <img src="fotos/cachorros/809C6B43-407C-452D-9E9F-3C23FA351005.png"  class="dog-bubble">
-        <img src="fotos/cachorros/E3D05CAC-5399-4FFB-9FC8-488F1A1D17FE.jpg" class="dog-bubble">
-        <img src="fotos/cachorros/0699F9E0-CE8E-4607-95A8-DEC7804BC574.png"  class="dog-bubble">
-        <img src="fotos/cachorros/B8E76CDC-17E8-4EB7-958B-7F7156B2CD4B.jpg" class="dog-bubble">
-        <img src="fotos/cachorros/7E86BC8C-B4D2-4DA1-B7B2-53DB74296FB7.png"  class="dog-bubble">
-        <img src="fotos/cachorros/45785CD7-DE60-4A7E-9EC4-07035ACD21F1.jpg" class="dog-bubble">
-        <img src="fotos/cachorros/A9119A23-9A7A-4C13-A0F7-3B254033030C.png"  class="dog-bubble">
-        <!-- loop -->
-        <img src="fotos/cachorros/F2149C04-602C-4972-B21C-3143C94DEB7A.jpg" class="dog-bubble">
-        <img src="fotos/cachorros/FE9FB7FF-BC03-46A7-8748-C16A41B9025F.png"  class="dog-bubble">
-        <img src="fotos/cachorros/6598A84E-1C45-4490-B6A1-CCFEDBF9DA59.jpg" class="dog-bubble">
-        <img src="fotos/cachorros/809C6B43-407C-452D-9E9F-3C23FA351005.png"  class="dog-bubble">
-        <img src="fotos/cachorros/E3D05CAC-5399-4FFB-9FC8-488F1A1D17FE.jpg" class="dog-bubble">
-      </div>
-    </div>
-    <!-- Trilho 2 — salão + Páscoa -->
-    <div class="flex gap-3 marquee-right">
-      <div class="marquee-track flex gap-3">
-        <img src="fotos/cachorros/DCB2001F-0467-4F0C-9CB1-DE313D3B9056.jpg" class="dog-bubble">
-        <img src="fotos/cachorros/61C84BB1-A7F4-441B-B110-6E61AA782F82.png"  class="dog-bubble">
-        <img src="fotos/cachorros/10CDCBD1-874B-4FE9-A4E2-B493D24F1D92.jpg" class="dog-bubble">
-        <img src="fotos/cachorros/EB28EADE-8AA0-4EEC-901C-D04696E102D7.jpg" class="dog-bubble">
-        <img src="fotos/cachorros/4E7C3FF3-0438-4132-A591-92E6B8EB234E.jpg" class="dog-bubble">
-        <img src="fotos/cachorros/400685A8-CA1B-48E4-9254-BB0E1752F2DC.jpg" class="dog-bubble">
-        <img src="fotos/cachorros/D0E2A0A9-A99F-4AFF-97B2-5CD058DDDC0E.jpg" class="dog-bubble">
-        <img src="fotos/cachorros/91A10164-1061-4E39-AACB-C70BCCA3D8E7.jpg" class="dog-bubble">
-        <img src="fotos/cachorros/335942CA-EED3-4086-BE99-A3CA4C4FB1CD.jpg" class="dog-bubble">
-        <img src="fotos/cachorros/FEF37F88-6513-4B39-9EAF-82B53D7E8AA7.jpg" class="dog-bubble">
-        <!-- loop -->
-        <img src="fotos/cachorros/DCB2001F-0467-4F0C-9CB1-DE313D3B9056.jpg" class="dog-bubble">
-        <img src="fotos/cachorros/61C84BB1-A7F4-441B-B110-6E61AA782F82.png"  class="dog-bubble">
-        <img src="fotos/cachorros/10CDCBD1-874B-4FE9-A4E2-B493D24F1D92.jpg" class="dog-bubble">
-        <img src="fotos/cachorros/EB28EADE-8AA0-4EEC-901C-D04696E102D7.jpg" class="dog-bubble">
-        <img src="fotos/cachorros/4E7C3FF3-0438-4132-A591-92E6B8EB234E.jpg" class="dog-bubble">
-      </div>
-    </div>
-  </div>
-
   <!-- Conteúdo hero -->
   <div class="relative z-10 flex-1 flex flex-col justify-end px-6 pb-14">
+
+    <div>
     <h1 class="text-[32px] font-bold text-white leading-tight mb-3" style="letter-spacing:-0.5px">
       Seu pet<br/>merece o<br/><span class="text-rose-200 italic">melhor</span>
     </h1>
@@ -444,6 +446,7 @@
       <svg viewBox="0 0 24 24" class="w-5 h-5 fill-green-500"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       Agendar pelo WhatsApp
     </a>
+    </div>
   </div>
 
   <!-- Onda separadora -->
@@ -460,7 +463,7 @@
     </div>
     <div>
       <div class="nav-brand-pill" style="font-size: 1.25rem; padding: 2px 12px 3px;">PomPom Pet</div>
-      <div class="nav-brand-sub">Estética Animal</div>
+      <div class="nav-brand-sub">✨ Estética Animal com amor</div>
     </div>
   </a>
   <a href="https://wa.me/5511947266216?text=Olá! Quero agendar" target="_blank" rel="noopener noreferrer"
@@ -508,7 +511,7 @@
         <div class="font-semibold text-stone-800 text-sm">Lojinha Pet</div>
         <div class="text-xs text-stone-500 mt-0.5 truncate">Acessórios · Petiscos · Roupinhas</div>
       </div>
-      <div class="text-rose-600 font-bold text-sm whitespace-nowrap ml-2">Ver →</div>
+      <button onclick="abrirLojinha()" class="text-rose-600 font-bold text-sm whitespace-nowrap ml-2 bg-transparent border-none cursor-pointer p-0">Ver →</button>
     </div>
   </div>
 </section>
@@ -628,6 +631,64 @@
       <span class="ba-label depois">Depois</span>
     </div>
     <p class="text-center text-stone-400 text-xs mt-2">Arraste para comparar</p>
+  </div>
+</section>
+
+<!-- ===== MOSAICO DE PETS ===== -->
+<section style="background: linear-gradient(135deg, #fff1f2 0%, #ffe4e6 50%, #fdf2f8 100%); padding: 2rem 0; overflow:hidden;">
+  <div class="section-header fade-up" style="margin-bottom:1rem;">
+    <div class="section-tag">🐾 Nossos Pets</div>
+    <div class="section-title">Cheios de amor</div>
+  </div>
+  <div style="display:flex; flex-direction:column; gap:12px; overflow:hidden;">
+    <div class="marquee-left" style="overflow:hidden;">
+      <div class="marquee-track">
+        <img class="dog-bubble" src="fotos/cachorros/0397B328-5718-4F5C-A4CA-BC2EDA8CA699.png" alt="pet"/>
+        <img class="dog-bubble" src="fotos/cachorros/0699F9E0-CE8E-4607-95A8-DEC7804BC574.png" alt="pet"/>
+        <img class="dog-bubble" src="fotos/cachorros/10CDCBD1-874B-4FE9-A4E2-B493D24F1D92.jpg" alt="pet"/>
+        <img class="dog-bubble" src="fotos/cachorros/16BFB6C5-48D9-4AEC-994C-1DFFA02377B1.png" alt="pet"/>
+        <img class="dog-bubble" src="fotos/cachorros/1F32B19F-2487-48AF-8219-DE48172F1C1B.png" alt="pet"/>
+        <img class="dog-bubble" src="fotos/cachorros/328B0668-1F96-4342-9D67-5438DD02DCAF.jpg" alt="pet"/>
+        <img class="dog-bubble" src="fotos/cachorros/335942CA-EED3-4086-BE99-A3CA4C4FB1CD.jpg" alt="pet"/>
+        <img class="dog-bubble" src="fotos/cachorros/33A1AF27-52F3-4A62-A83A-E8657569B004.jpg" alt="pet"/>
+        <img class="dog-bubble" src="fotos/cachorros/3DCD91FD-7042-43F0-AD44-A30EAC573304.png" alt="pet"/>
+        <img class="dog-bubble" src="fotos/cachorros/3F769711-AA10-4F6C-8362-7D48233676F6.jpg" alt="pet"/>
+        <img class="dog-bubble" src="fotos/cachorros/0397B328-5718-4F5C-A4CA-BC2EDA8CA699.png" alt="pet"/>
+        <img class="dog-bubble" src="fotos/cachorros/0699F9E0-CE8E-4607-95A8-DEC7804BC574.png" alt="pet"/>
+        <img class="dog-bubble" src="fotos/cachorros/10CDCBD1-874B-4FE9-A4E2-B493D24F1D92.jpg" alt="pet"/>
+        <img class="dog-bubble" src="fotos/cachorros/16BFB6C5-48D9-4AEC-994C-1DFFA02377B1.png" alt="pet"/>
+        <img class="dog-bubble" src="fotos/cachorros/1F32B19F-2487-48AF-8219-DE48172F1C1B.png" alt="pet"/>
+        <img class="dog-bubble" src="fotos/cachorros/328B0668-1F96-4342-9D67-5438DD02DCAF.jpg" alt="pet"/>
+        <img class="dog-bubble" src="fotos/cachorros/335942CA-EED3-4086-BE99-A3CA4C4FB1CD.jpg" alt="pet"/>
+        <img class="dog-bubble" src="fotos/cachorros/33A1AF27-52F3-4A62-A83A-E8657569B004.jpg" alt="pet"/>
+        <img class="dog-bubble" src="fotos/cachorros/3DCD91FD-7042-43F0-AD44-A30EAC573304.png" alt="pet"/>
+        <img class="dog-bubble" src="fotos/cachorros/3F769711-AA10-4F6C-8362-7D48233676F6.jpg" alt="pet"/>
+      </div>
+    </div>
+    <div class="marquee-right" style="overflow:hidden;">
+      <div class="marquee-track">
+        <img class="dog-bubble" src="fotos/cachorros/400685A8-CA1B-48E4-9254-BB0E1752F2DC.jpg" alt="pet"/>
+        <img class="dog-bubble" src="fotos/cachorros/45785CD7-DE60-4A7E-9EC4-07035ACD21F1.jpg" alt="pet"/>
+        <img class="dog-bubble" src="fotos/cachorros/4E7C3FF3-0438-4132-A591-92E6B8EB234E.jpg" alt="pet"/>
+        <img class="dog-bubble" src="fotos/cachorros/5020BB9A-3486-4F8D-8C55-4AFCF517C96B.jpg" alt="pet"/>
+        <img class="dog-bubble" src="fotos/cachorros/572DFF09-8173-4F6B-9651-04D343744FF9.png" alt="pet"/>
+        <img class="dog-bubble" src="fotos/cachorros/61C84BB1-A7F4-441B-B110-6E61AA782F82.png" alt="pet"/>
+        <img class="dog-bubble" src="fotos/cachorros/6598A84E-1C45-4490-B6A1-CCFEDBF9DA59.jpg" alt="pet"/>
+        <img class="dog-bubble" src="fotos/cachorros/77F23C0B-BE66-41EC-AF4D-23A8047522D5.png" alt="pet"/>
+        <img class="dog-bubble" src="fotos/cachorros/7E86BC8C-B4D2-4DA1-B7B2-53DB74296FB7.png" alt="pet"/>
+        <img class="dog-bubble" src="fotos/cachorros/7F5BB3BA-C4EA-4243-B019-127917C64EBC.png" alt="pet"/>
+        <img class="dog-bubble" src="fotos/cachorros/400685A8-CA1B-48E4-9254-BB0E1752F2DC.jpg" alt="pet"/>
+        <img class="dog-bubble" src="fotos/cachorros/45785CD7-DE60-4A7E-9EC4-07035ACD21F1.jpg" alt="pet"/>
+        <img class="dog-bubble" src="fotos/cachorros/4E7C3FF3-0438-4132-A591-92E6B8EB234E.jpg" alt="pet"/>
+        <img class="dog-bubble" src="fotos/cachorros/5020BB9A-3486-4F8D-8C55-4AFCF517C96B.jpg" alt="pet"/>
+        <img class="dog-bubble" src="fotos/cachorros/572DFF09-8173-4F6B-9651-04D343744FF9.png" alt="pet"/>
+        <img class="dog-bubble" src="fotos/cachorros/61C84BB1-A7F4-441B-B110-6E61AA782F82.png" alt="pet"/>
+        <img class="dog-bubble" src="fotos/cachorros/6598A84E-1C45-4490-B6A1-CCFEDBF9DA59.jpg" alt="pet"/>
+        <img class="dog-bubble" src="fotos/cachorros/77F23C0B-BE66-41EC-AF4D-23A8047522D5.png" alt="pet"/>
+        <img class="dog-bubble" src="fotos/cachorros/7E86BC8C-B4D2-4DA1-B7B2-53DB74296FB7.png" alt="pet"/>
+        <img class="dog-bubble" src="fotos/cachorros/7F5BB3BA-C4EA-4243-B019-127917C64EBC.png" alt="pet"/>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -847,15 +908,38 @@
 <!-- ===== FOOTER ===== -->
 <footer class="bg-stone-900 py-8 px-5">
   <div class="flex items-center gap-3 mb-4">
-    <img src="logo.svg" alt="Logo" class="w-10 h-10" />
-    <div>
-      <div class="font-serif font-bold text-white text-base">PomPom Pet</div>
-      <div class="text-stone-500 text-xs">Estética Animal</div>
+    <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-rose-800 bg-white flex-shrink-0">
+      <img src="fotos/logo-icon.png" alt="PomPom Pet" class="w-full h-full object-cover" style="object-position:center 30%;" />
+    </div>
+    <div class="flex flex-col items-start gap-0.5">
+      <div class="nav-brand-pill">PomPom Pet</div>
+      <div class="nav-brand-sub">✨ Estética Animal com amor</div>
     </div>
   </div>
   <div class="text-stone-500 text-xs">Feito com 💗 para os pets e seus tutores</div>
   <div class="text-stone-600 text-xs mt-1">© 2026 PomPom Pet. Todos os direitos reservados.</div>
 </footer>
+
+<!-- ===== MODAL LOJINHA ===== -->
+<div id="lojinha-overlay" onclick="fecharLojinha()"></div>
+<div id="lojinha-sheet">
+  <div class="lojinha-drag"></div>
+  <div id="lojinha-header">
+    <div>
+      <div style="font-family:'Playfair Display',serif; font-size:1.15rem; font-weight:700; color:#1c1917;">🛍️ Lojinha PomPom Pet</div>
+      <div style="font-size:0.7rem; color:#a8a29e; margin-top:2px;">Toque em qualquer item para encomendar</div>
+    </div>
+    <button onclick="fecharLojinha()" style="width:34px;height:34px;border-radius:50%;background:#f5f5f4;border:none;font-size:1rem;cursor:pointer;color:#78716c;">✕</button>
+  </div>
+  <div id="lojinha-grid"></div>
+  <div id="lojinha-footer">
+    <a href="https://wa.me/5511947266216?text=Olá! Vi os produtos da Lojinha PomPom Pet e quero saber mais!" target="_blank" rel="noopener noreferrer"
+       style="display:flex;align-items:center;justify-content:center;gap:10px;background:#e11d48;color:white;font-weight:700;font-size:0.9rem;padding:13px;border-radius:16px;text-decoration:none;">
+      <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:white;flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Consultar pelo WhatsApp
+    </a>
+  </div>
+</div>
 
 <!-- ===== WA FLOAT ===== -->
 <a href="https://wa.me/5511947266216?text=Olá! Quero agendar" target="_blank" rel="noopener noreferrer" class="wa-float">
@@ -901,6 +985,62 @@
       baOverlay.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
       baDivider.style.left = pct + '%';
     });
+  }
+
+  // ── LOJINHA MODAL ──
+  const PRODUTOS = [
+    "A0020.jpeg","A0033.jpeg","A0035.jpeg","A0040.jpeg","A0113.jpeg",
+    "BD-10-M.jpeg","BD-12-13-14 P.png","BL-511.jpeg","BL-8001.jpeg","bolinha.jpg",
+    "C-20.jpeg","C-62.jpeg","C-81 G.jpeg","C-83 G.jpeg","C-85 G.jpeg","C-86 G.jpeg",
+    "C-88-M.jpeg","CD-37 tubarão.JPEG","chapeu.jpeg","CJ-20.jpeg","copa.jpeg",
+    "CWW-PT.jpeg","DYZ00109.jpeg","FJ-003.jpeg","FP63178-5.jpeg",
+    "FZ-02.jpeg","FZ-11.jpeg","FZ-12.JPEG","FZ-23.jpeg","FZ-28.jpeg","FZ-38.jpeg",
+    "HR2.jpeg","HR49.jpeg","JJ-006.jpeg","JK111.jpeg","JS-033.jpeg",
+    "PJCQ420.jpeg","PJCQ693.jpeg","PJCQ839.jpeg","PJCQ846.jpeg","PJDC078.jpeg",
+    "W-59.jpeg","W26.JPEG","W28.jpeg","Wj-25.jpeg","WJ-28-P.jpeg","WJ-42.jpeg",
+    "WJ-45.jpeg","Wj-48.jpeg","WJ-49.jpeg","WJ-50.jpeg","WJ-51.jpeg",
+    "X-205.jpeg","X-206.jpeg","X-244 M.jpeg",
+    "Y-04.jpeg","y-17.jpeg","Y-57.jpeg","Y-62.jpeg","Y-66.jpeg","y-9.jpeg",
+    "YJ-10.jpeg","Z0001.jpeg","Z0005.jpeg"
+  ];
+
+  function shuffleArray(arr) {
+    const a = [...arr];
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  function abrirLojinha() {
+    const overlay = document.getElementById('lojinha-overlay');
+    const sheet   = document.getElementById('lojinha-sheet');
+    const grid    = document.getElementById('lojinha-grid');
+    grid.innerHTML = shuffleArray(PRODUTOS).map(f => {
+      const nome = f.replace(/\.[^.]+$/, '');
+      const msg  = encodeURIComponent('Olá! Vi o produto ' + nome + ' na Lojinha PomPom Pet e quero saber mais!');
+      return `<a href="https://wa.me/5511947266216?text=${msg}" target="_blank" rel="noopener noreferrer" class="prod-bolinha">
+        <div class="prod-bolinha-img">
+          <img src="fotos/produtos/${f}" alt="${nome}" style="width:80px;height:80px;object-fit:cover;border-radius:50%;display:block;"/>
+        </div>
+        <div class="prod-bolinha-label">🛍️ Quero</div>
+      </a>`;
+    }).join('');
+    overlay.style.display = 'block';
+    sheet.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    requestAnimationFrame(() => sheet.classList.add('aberto'));
+  }
+
+  function fecharLojinha() {
+    const sheet = document.getElementById('lojinha-sheet');
+    sheet.classList.remove('aberto');
+    setTimeout(() => {
+      document.getElementById('lojinha-overlay').style.display = 'none';
+      sheet.style.display = 'none';
+      document.body.style.overflow = '';
+    }, 350);
   }
 </script>
 </body>

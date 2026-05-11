@@ -94,21 +94,24 @@
     /* ── nav brand pill ── */
     .nav-brand-pill {
       display: inline-block;
-      background: rgba(255,255,255,0.16);
-      border: 1.5px solid rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.22);
+      border: 2px solid rgba(255,255,255,0.55);
       border-radius: 999px;
-      padding: 4px 18px 5px;
+      padding: 4px 20px 6px;
       font-family: 'Dancing Script', cursive;
       font-weight: 700;
-      font-size: 1.65rem;
+      font-size: 2.2rem;
       color: white;
       line-height: 1.15;
-      backdrop-filter: blur(6px);
+      backdrop-filter: blur(8px);
+      text-shadow: 0 2px 16px rgba(0,0,0,0.35), 0 0 40px rgba(255,255,255,0.2);
+      letter-spacing: 0.02em;
     }
     #navbar.scrolled .nav-brand-pill {
-      background: rgba(225,29,72,0.10);
-      border-color: rgba(225,29,72,0.30);
+      background: rgba(225,29,72,0.12);
+      border-color: rgba(225,29,72,0.40);
       color: #9f1239;
+      text-shadow: 0 1px 8px rgba(159,18,57,0.2);
     }
     .nav-brand-sub {
       color: rgba(255,255,255,0.65);
@@ -422,6 +425,60 @@
     .product-img { height: 180px; overflow: hidden; background: #fce7f3; display: flex; align-items: center; justify-content: center; }
     .product-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
     .product-item:hover .product-img img { transform: scale(1.08); }
+
+    /* ===== LOJINHA MODAL ===== */
+    #lojinha-overlay {
+      display: none; position: fixed; inset: 0;
+      background: rgba(0,0,0,0.6); z-index: 9998;
+      backdrop-filter: blur(6px);
+    }
+    #lojinha-modal {
+      display: none; position: fixed;
+      top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.92);
+      z-index: 9999; background: #fffbf9;
+      border-radius: 28px; width: 90vw; max-width: 860px;
+      max-height: 88vh; flex-direction: column;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.28);
+      transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), opacity 0.3s;
+      opacity: 0;
+    }
+    #lojinha-modal.aberto { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+    #lojinha-grid-d {
+      overflow-y: auto;
+      padding: 20px 24px 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      align-content: flex-start;
+      max-height: calc(88vh - 160px);
+    }
+    .prod-card-d {
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      text-decoration: none; width: 100px; cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .prod-card-d:hover { transform: scale(1.08); }
+    .prod-bolinha-d {
+      width: 100px; height: 100px; border-radius: 50%; overflow: hidden;
+      border: 3px solid #fce7f3;
+      box-shadow: 0 4px 16px rgba(225,29,72,0.18);
+      flex-shrink: 0;
+    }
+    .prod-bolinha-d img { width: 100px; height: 100px; object-fit: cover; display: block; }
+    .prod-card-d-btn {
+      font-size: 0.68rem; color: #be123c; font-weight: 700;
+      text-align: center;
+    }
+    .service-card-loja { cursor: pointer; }
+    .service-card-loja:hover .loja-ver { opacity: 1; transform: translateY(0); }
+    .loja-ver {
+      margin-top: 16px; display: inline-block;
+      background: #e11d48; color: white; font-weight: 700;
+      font-size: 0.8rem; padding: 8px 18px; border-radius: 99px;
+      opacity: 0; transform: translateY(6px);
+      transition: opacity 0.2s, transform 0.2s;
+    }
   </style>
 </head>
 <body>
@@ -492,8 +549,8 @@
       <div class="hero-card overflow-hidden" style="padding:0">
         <div class="relative">
           <img src="fotos/hero-dog.jpg" alt="Cachorrinho atendido na PomPom Pet"
-               class="w-full object-cover"
-               style="height:220px; object-position: center 15%;" />
+               class="w-full"
+               style="display:block; height:auto;" />
           <div class="absolute inset-0" style="background:linear-gradient(to top, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.08) 55%, transparent 100%)"></div>
           <div class="absolute top-3 left-3 flex items-center gap-1.5 text-white text-[11px] font-semibold px-3 py-1.5 rounded-full border border-white/30" style="background:rgba(255,255,255,0.18);backdrop-filter:blur(8px)">
             💗 Atendido com amor
@@ -507,23 +564,6 @@
             </p>
           </div>
         </div>
-      </div>
-
-      <div class="hero-card">
-        <div class="flex items-center gap-4 mb-6">
-          <div class="w-14 h-14 rounded-2xl overflow-hidden bg-white/20 flex items-center justify-center">
-            <img src="fotos/dona.jpg" alt="Dona" class="w-full h-full object-cover"
-                 onerror="this.parentElement.innerHTML='<span class=\'text-3xl\'>👩</span>'" />
-          </div>
-          <div>
-            <div class="text-white font-bold text-base">Deisiane França</div>
-            <div class="text-white/60 text-sm">Groomer Profissional</div>
-          </div>
-          <div class="ml-auto text-yellow-300 text-base font-bold">★★★★★</div>
-        </div>
-        <p class="text-white/80 text-sm leading-relaxed italic">
-          "Cada pet que passa pelas nossas mãos sai mais lindo e mais feliz. É nossa missão!"
-        </p>
       </div>
 
       <div class="grid grid-cols-2 gap-3">
@@ -593,10 +633,11 @@
       <h3 class="text-xl font-bold text-stone-800 mb-3">Hidratação</h3>
       <p class="text-stone-500 text-sm leading-relaxed">Tratamento profundo para pelo ressecado. Deixa a pelagem macia, brilhosa e perfumada.</p>
     </div>
-    <div class="service-card reveal" style="transition-delay:0.3s">
+    <div class="service-card service-card-loja reveal" style="transition-delay:0.3s" onclick="abrirLojinha()">
       <div class="service-icon">🛍️</div>
       <h3 class="text-xl font-bold text-stone-800 mb-3">Loja Pet</h3>
       <p class="text-stone-500 text-sm leading-relaxed">Acessórios, petiscos, roupinhas, coleiras e tudo que seu pet precisa com curadoria especial.</p>
+      <span class="loja-ver">Ver produtos →</span>
     </div>
   </div>
 </section>
@@ -1026,18 +1067,38 @@
 <footer class="py-16 px-20">
   <div class="max-w-screen-xl mx-auto flex items-center justify-between">
     <div class="flex items-center gap-4">
-      <div class="w-12 h-12 bg-rose-600 rounded-full flex items-center justify-center">
-        <span class="text-white text-xl">🐶</span>
+      <div class="w-14 h-14 rounded-full overflow-hidden border-2 border-rose-800 bg-white flex-shrink-0">
+        <img src="fotos/logo-icon.png" alt="PomPom Pet" class="w-full h-full object-cover" style="object-position:center 30%;" />
       </div>
-      <div>
-        <div class="font-serif font-bold text-stone-200 text-xl">PomPom Pet</div>
-        <div class="text-stone-500 text-sm">Estética Animal</div>
+      <div class="flex flex-col items-start gap-0.5">
+        <div class="nav-brand-pill">PomPom Pet</div>
+        <div class="nav-brand-sub">✨ Estética Animal com amor</div>
       </div>
     </div>
     <div class="text-stone-500 text-sm">Feito com 💗 para os pets e seus tutores</div>
     <div class="text-stone-600 text-sm">© 2026 PomPom Pet. Todos os direitos reservados.</div>
   </div>
 </footer>
+
+<!-- ===== MODAL LOJINHA ===== -->
+<div id="lojinha-overlay" onclick="fecharLojinha()"></div>
+<div id="lojinha-modal">
+  <div style="padding:20px 28px 16px; display:flex; align-items:center; justify-content:space-between; flex-shrink:0; border-bottom:1px solid #fce7f3;">
+    <div>
+      <div style="font-family:'Playfair Display',serif; font-size:1.5rem; font-weight:700; color:#1c1917;">🛍️ Lojinha PomPom Pet</div>
+      <div style="font-size:0.8rem; color:#a8a29e; margin-top:3px;">Clique em qualquer produto para encomendar pelo WhatsApp</div>
+    </div>
+    <button onclick="fecharLojinha()" style="width:38px;height:38px;border-radius:50%;background:#f5f5f4;border:none;font-size:1.1rem;cursor:pointer;color:#78716c;flex-shrink:0;">✕</button>
+  </div>
+  <div id="lojinha-grid-d"></div>
+  <div style="padding:16px 28px; border-top:1px solid #fce7f3; flex-shrink:0; background:#fffbf9; border-radius:0 0 28px 28px;">
+    <a href="https://wa.me/5511947266216?text=Olá! Vi os produtos da Lojinha PomPom Pet e quero saber mais!" target="_blank" rel="noopener noreferrer"
+       style="display:flex;align-items:center;justify-content:center;gap:10px;background:#e11d48;color:white;font-weight:700;font-size:1rem;padding:14px;border-radius:14px;text-decoration:none;max-width:400px;margin:0 auto;">
+      <svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:white;flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Consultar pelo WhatsApp
+    </a>
+  </div>
+</div>
 
 <!-- WA FLOAT -->
 <a href="https://wa.me/5511947266216?text=Olá! Quero agendar" target="_blank" rel="noopener noreferrer" class="wa-float" title="WhatsApp">
@@ -1114,7 +1175,65 @@
     document.getElementById('lightbox').classList.remove('open');
     document.body.style.overflow = '';
   }
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') { closeLightbox(); fecharLojinha(); }
+  });
+
+  // ── LOJINHA MODAL ──
+  const PRODUTOS = [
+    "A0020.jpeg","A0033.jpeg","A0035.jpeg","A0040.jpeg","A0113.jpeg",
+    "BD-10-M.jpeg","BD-12-13-14 P.png","BL-511.jpeg","BL-8001.jpeg","bolinha.jpg",
+    "C-20.jpeg","C-62.jpeg","C-81 G.jpeg","C-83 G.jpeg","C-85 G.jpeg","C-86 G.jpeg",
+    "C-88-M.jpeg","CD-37 tubarão.JPEG","chapeu.jpeg","CJ-20.jpeg","copa.jpeg",
+    "CWW-PT.jpeg","DYZ00109.jpeg","FJ-003.jpeg","FP63178-5.jpeg",
+    "FZ-02.jpeg","FZ-11.jpeg","FZ-12.JPEG","FZ-23.jpeg","FZ-28.jpeg","FZ-38.jpeg",
+    "HR2.jpeg","HR49.jpeg","JJ-006.jpeg","JK111.jpeg","JS-033.jpeg",
+    "PJCQ420.jpeg","PJCQ693.jpeg","PJCQ839.jpeg","PJCQ846.jpeg","PJDC078.jpeg",
+    "W-59.jpeg","W26.JPEG","W28.jpeg","Wj-25.jpeg","WJ-28-P.jpeg","WJ-42.jpeg",
+    "WJ-45.jpeg","Wj-48.jpeg","WJ-49.jpeg","WJ-50.jpeg","WJ-51.jpeg",
+    "X-205.jpeg","X-206.jpeg","X-244 M.jpeg",
+    "Y-04.jpeg","y-17.jpeg","Y-57.jpeg","Y-62.jpeg","Y-66.jpeg","y-9.jpeg",
+    "YJ-10.jpeg","Z0001.jpeg","Z0005.jpeg"
+  ];
+
+  function shuffleArray(arr) {
+    const a = [...arr];
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  function abrirLojinha() {
+    const overlay = document.getElementById('lojinha-overlay');
+    const modal   = document.getElementById('lojinha-modal');
+    const grid    = document.getElementById('lojinha-grid-d');
+    grid.innerHTML = shuffleArray(PRODUTOS).map(f => {
+      const nome = f.replace(/\.[^.]+$/, '');
+      const msg  = encodeURIComponent('Olá! Vi o produto ' + nome + ' na Lojinha PomPom Pet e quero saber mais!');
+      return `<a href="https://wa.me/5511947266216?text=${msg}" target="_blank" rel="noopener noreferrer" class="prod-card-d">
+        <div class="prod-bolinha-d">
+          <img src="fotos/produtos/${f}" alt="${nome}" style="width:100px;height:100px;object-fit:cover;border-radius:50%;display:block;"/>
+        </div>
+        <div class="prod-card-d-btn">🛍️ Quero este</div>
+      </a>`;
+    }).join('');
+    overlay.style.display = 'block';
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    requestAnimationFrame(() => modal.classList.add('aberto'));
+  }
+
+  function fecharLojinha() {
+    const modal = document.getElementById('lojinha-modal');
+    modal.classList.remove('aberto');
+    setTimeout(() => {
+      document.getElementById('lojinha-overlay').style.display = 'none';
+      modal.style.display = 'none';
+      document.body.style.overflow = '';
+    }, 300);
+  }
 </script>
 </body>
 </html>
