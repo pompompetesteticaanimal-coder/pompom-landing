@@ -1,0 +1,911 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <script>if ('scrollRestoration' in history) history.scrollRestoration = 'manual';</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#e11d48" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.tailwindcss.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://maps.google.com; frame-src https://maps.google.com; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com;" />
+  <title>PomPom Pet 🐾¾</title>
+  <link rel="icon" type="image/png" href="fotos/logo.png" />
+  <meta name="description" content="Banho, tosa e carinho para o seu melhor amigo." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet" />
+
+  <style>
+    * { -webkit-tap-highlight-color: transparent; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    *, *::before, *::after {
+      cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cellipse cx='7' cy='12' rx='3.5' ry='4.2' fill='%23be123c'/%3E%3Cellipse cx='13' cy='7' rx='3.2' ry='3.8' fill='%23be123c'/%3E%3Cellipse cx='20' cy='7' rx='3.2' ry='3.8' fill='%23be123c'/%3E%3Cellipse cx='26' cy='12' rx='3.5' ry='4.2' fill='%23be123c'/%3E%3Cellipse cx='16' cy='23' rx='9.5' ry='7.5' fill='%23be123c'/%3E%3C/svg%3E") 16 16, auto !important;
+    }
+
+    /* ── Bolinhas de cachorros ── */
+    .dog-bubble {
+      width: 76px; height: 76px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      border: 2.5px solid rgba(255,255,255,0.45);
+      flex-shrink: 0;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.22);
+    }
+    @keyframes marquee-l { from { transform: translateX(0) } to { transform: translateX(-50%) } }
+    @keyframes marquee-r { from { transform: translateX(-50%) } to { transform: translateX(0) } }
+    .marquee-left  .marquee-track { display:flex; gap:.75rem; animation: marquee-l 22s linear infinite; }
+    .marquee-right .marquee-track { display:flex; gap:.75rem; animation: marquee-r 26s linear infinite; }
+    .bg-rose-600, .bg-rose-600 *, .bg-rose-600 *::before, .bg-rose-600 *::after,
+    .bg-rose-700, .bg-rose-700 *, .bg-rose-700 *::before, .bg-rose-700 *::after {
+      cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cellipse cx='7' cy='12' rx='3.5' ry='4.2' fill='%23ffffff'/%3E%3Cellipse cx='13' cy='7' rx='3.2' ry='3.8' fill='%23ffffff'/%3E%3Cellipse cx='20' cy='7' rx='3.2' ry='3.8' fill='%23ffffff'/%3E%3Cellipse cx='26' cy='12' rx='3.5' ry='4.2' fill='%23ffffff'/%3E%3Cellipse cx='16' cy='23' rx='9.5' ry='7.5' fill='%23ffffff'/%3E%3C/svg%3E") 16 16, auto !important;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #fdf6f0;
+      color: #1c1917;
+      overflow-x: hidden;
+    }
+    h1,h2,h3 { font-family: 'Playfair Display', serif; }
+
+    
+    /* ===== NAV BRAND PILL ===== */
+    .nav-brand-pill {
+      display: inline-block;
+      background: rgba(255,255,255,0.16);
+      border: 1.5px solid rgba(255,255,255,0.35);
+      border-radius: 999px;
+      padding: 4px 18px 5px;
+      font-family: 'Dancing Script', cursive;
+      font-weight: 700;
+      font-size: 1.65rem;
+      color: white;
+      line-height: 1.15;
+      backdrop-filter: blur(6px);
+    }
+    .scrolled .nav-brand-pill,
+    #sticky-hdr .nav-brand-pill,
+    #side-menu .nav-brand-pill {
+      background: rgba(225,29,72,0.10);
+      border-color: rgba(225,29,72,0.30);
+      color: #9f1239;
+    }
+    .nav-brand-sub { color: rgba(255,255,255,0.65); font-size:0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+    .scrolled .nav-brand-sub,
+    #sticky-hdr .nav-brand-sub,
+    #side-menu .nav-brand-sub { color: #a8a29e; }
+
+    /* ===== HERO ===== */
+    .hero-mobile {
+      min-height: 100svh;
+      background: linear-gradient(160deg, #9f1239 0%, #e11d48 55%, #fb7185 100%);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .hero-mobile::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url('fotos/hero.jpg') center/cover no-repeat;
+      opacity: 0.18;
+      mix-blend-mode: overlay;
+    }
+    /* Ondas decorativas no fundo do hero */
+    .hero-wave {
+      position: absolute;
+      bottom: -2px; left: 0; right: 0;
+    }
+
+    /* ===== STICKY HEADER ===== */
+    .sticky-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(253,246,240,0.97);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid #fce7f3;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 20px;
+    }
+
+    /* ===== STORY CARDS ===== */
+    .story-scroll {
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding: 4px 20px 16px;
+    }
+    .story-scroll::-webkit-scrollbar { display: none; }
+    .story-card {
+      flex: 0 0 155px;
+      height: 215px;
+      border-radius: 20px;
+      scroll-snap-align: start;
+      overflow: hidden;
+      position: relative;
+      background: #fce7f3;
+      box-shadow: 0 4px 18px rgba(225,29,72,0.13);
+    }
+    .story-card img { width: 100%; height: 100%; object-fit: cover; }
+    .story-card .label {
+      position: absolute;
+      bottom: 10px; left: 10px; right: 10px;
+      background: rgba(0,0,0,0.52);
+      backdrop-filter: blur(4px);
+      color: white;
+      font-size: 11px; font-weight: 600;
+      padding: 5px 9px;
+      border-radius: 8px;
+    }
+    .story-card .placeholder {
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 8px; opacity: 0.4;
+    }
+    .story-card .placeholder span { font-size: 44px; }
+    .story-card .placeholder p { font-size: 10px; color: #9f1239; font-weight: 600; margin: 0; }
+
+    /* ===== SERVICE PILL ===== */
+    .service-pill {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: white;
+      border-radius: 18px;
+      padding: 16px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+      border: 1px solid #fce7f3;
+    }
+
+    /* ===== BEFORE/AFTER ===== */
+    .ba-container {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4/3;
+      border-radius: 20px;
+      overflow: hidden;
+      user-select: none;
+    }
+    .ba-img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .ba-overlay { clip-path: inset(0 50% 0 0); }
+    .ba-range {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%; margin: 0;
+      opacity: 0; cursor: ew-resize; z-index: 10;
+    }
+    .ba-divider {
+      position: absolute; top: 0; bottom: 0; left: 50%;
+      width: 3px; background: white;
+      transform: translateX(-50%);
+      box-shadow: 0 0 12px rgba(0,0,0,0.3);
+      pointer-events: none;
+    }
+    .ba-handle {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 44px; height: 44px;
+      background: white; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+      font-size: 16px;
+    }
+    .ba-label {
+      position: absolute; top: 12px;
+      font-size: 11px; font-weight: 700;
+      background: rgba(0,0,0,0.55); color: white;
+      padding: 3px 10px; border-radius: 20px;
+      pointer-events: none;
+    }
+    .ba-label.antes { left: 12px; }
+    .ba-label.depois { right: 12px; }
+
+    /* ===== FADE UP ===== */
+    .fade-up {
+      opacity: 0; transform: translateY(22px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* ===== PRODUCT SCROLL ===== */
+    .product-scroll {
+      display: flex; gap: 12px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding: 4px 20px 16px;
+    }
+    .product-scroll::-webkit-scrollbar { display: none; }
+    .product-card {
+      flex: 0 0 138px;
+      background: white; border-radius: 16px;
+      overflow: hidden; scroll-snap-align: start;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      border: 1px solid #fce7f3;
+    }
+
+    /* ===== WA FLOAT ===== */
+    .wa-float {
+      position: fixed; bottom: 24px; right: 20px; z-index: 99;
+      width: 56px; height: 56px;
+      background: #25D366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 6px 20px rgba(37,211,102,0.5);
+      text-decoration: none;
+    }
+    .wa-float svg { width: 28px; height: 28px; fill: white; }
+
+    /* ===== SECTION HEADER ===== */
+    .section-header { padding: 32px 20px 16px; }
+    .section-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: #fce7f3; color: #e11d48;
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 0.5px;
+      padding: 4px 12px; border-radius: 20px; margin-bottom: 8px;
+    }
+    .section-title { font-size: 26px; font-weight: 700; color: #1c1917; line-height: 1.2; }
+    .section-sub { font-size: 14px; color: #78716c; margin-top: 6px; line-height: 1.5; }
+
+    /* ===== REVIEW CARD ===== */
+    .review-box {
+      max-height: 380px;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      scrollbar-width: thin;
+      scrollbar-color: #fecdd3 transparent;
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .review-box::-webkit-scrollbar { width: 4px; }
+    .review-box::-webkit-scrollbar-thumb { background: #fecdd3; border-radius: 99px; }
+    .review-box::-webkit-scrollbar-track { background: transparent; }
+    .review-card {
+      background: white; border-radius: 20px; padding: 16px;
+      box-shadow: 0 2px 14px rgba(0,0,0,0.06);
+      border: 1px solid #fce7f3;
+      flex-shrink: 0;
+    }
+
+    /* ===== MENU HAMBURGUER ===== */
+    #side-menu {
+      position: fixed; inset: 0; z-index: 200;
+      display: none;
+    }
+    #side-menu.open { display: flex; }
+    .menu-overlay {
+      position: absolute; inset: 0;
+      background: rgba(0,0,0,0.45);
+      backdrop-filter: blur(4px);
+    }
+    .menu-panel {
+      position: absolute; top: 0; right: 0; bottom: 0;
+      width: 80%; max-width: 300px;
+      background: white;
+      border-radius: 24px 0 0 24px;
+      padding: 48px 32px 32px;
+      display: flex; flex-direction: column;
+      box-shadow: -20px 0 60px rgba(0,0,0,0.15);
+      transform: translateX(100%);
+      transition: transform 0.35s cubic-bezier(.25,.46,.45,.94);
+    }
+    #side-menu.open .menu-panel { transform: translateX(0); }
+    .menu-link {
+      display: flex; align-items: center; gap: 14px;
+      font-size: 18px; font-weight: 600;
+      color: #1c1917; text-decoration: none;
+      padding: 14px 0;
+      border-bottom: 1px solid #fce7f3;
+      transition: color 0.2s;
+    }
+    .menu-link:last-of-type { border-bottom: none; }
+    .menu-link:active { color: #e11d48; }
+    .menu-icon { font-size: 22px; width: 32px; }
+  </style>
+</head>
+<body>
+
+<!-- ===== SIDE MENU ===== -->
+<div id="side-menu">
+  <div class="menu-overlay" onclick="closeMenu()"></div>
+  <div class="menu-panel">
+    <!-- Logo no menu -->
+    <div class="flex items-center gap-3 mb-8">
+      <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-rose-100 bg-white flex-shrink-0">
+        <img src="fotos/logo-icon.png" alt="PomPom Pet" class="w-full h-full object-cover" style="object-position:center 30%;" />
+      </div>
+      <div>
+        <div class="nav-brand-pill">PomPom Pet</div>
+        <div class="nav-brand-sub">Estética Animal</div>
+      </div>
+    </div>
+    <a href="#inicio"   class="menu-link" onclick="closeMenu()"><span class="menu-icon">🐾 </span> Início</a>
+    <a href="#servicos" class="menu-link" onclick="closeMenu()"><span class="menu-icon">✂️</span> Serviços</a>
+    <a href="#galeria"  class="menu-link" onclick="closeMenu()"><span class="menu-icon">📸</span> Galeria</a>
+    <a href="#sobre"    class="menu-link" onclick="closeMenu()"><span class="menu-icon">💗</span> Sobre nós</a>
+    <a href="#contato"  class="menu-link" onclick="closeMenu()"><span class="menu-icon">🐾“</span> Contato</a>
+    <a href="https://wa.me/5511947266216?text=Olá! Quero agendar 🐾¾"
+       target="_blank" rel="noopener noreferrer"
+       class="mt-6 bg-green-500 text-white font-bold py-4 rounded-2xl text-center flex items-center justify-center gap-2 active:scale-95 transition-transform">
+      💬 Agendar pelo WhatsApp
+    </a>
+  </div>
+</div>
+
+<!-- ===== HERO ===== -->
+<section id="inicio" class="hero-mobile">
+
+  <!-- Top bar dentro do hero -->
+  <div class="relative z-10 flex items-center justify-between px-5 pt-14 pb-4">
+    <!-- LOGO SVG MELHORADO -->
+    <a href="#inicio" class="flex items-center gap-2.5">
+      <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-white/40 bg-white flex-shrink-0">
+        <img src="fotos/logo-icon.png" alt="PomPom Pet Logo" class="w-full h-full object-cover" style="object-position:center 30%;" />
+      </div>
+      <div>
+        <div class="nav-brand-pill" style="border-color: rgba(255,255,255,0.5);">PomPom Pet</div>
+        <div class="nav-brand-sub text-white">Estética Animal</div>
+      </div>
+    </a>
+    <!-- Hamburguer -->
+    <button onclick="openMenu()"
+            class="w-10 h-10 bg-white/20 backdrop-blur-sm border border-white/30 rounded-full flex flex-col items-center justify-center gap-1.5">
+      <span class="w-5 h-0.5 bg-white rounded-full block"></span>
+      <span class="w-5 h-0.5 bg-white rounded-full block"></span>
+      <span class="w-3 h-0.5 bg-white rounded-full block self-start ml-1"></span>
+    </button>
+  </div>
+
+  <!-- Mosaico de bolinhas -->
+  <div class="relative z-10 pt-5 pb-2 overflow-hidden" style="mask-image:linear-gradient(to bottom,transparent 0%,black 18%,black 75%,transparent 100%);-webkit-mask-image:linear-gradient(to bottom,transparent 0%,black 18%,black 75%,transparent 100%)">
+    <!-- Trilho 1 — salão + Páscoa -->
+    <div class="flex gap-3 mb-3 marquee-left">
+      <div class="marquee-track flex gap-3">
+        <img src="fotos/cachorros/F2149C04-602C-4972-B21C-3143C94DEB7A.jpg" class="dog-bubble">
+        <img src="fotos/cachorros/FE9FB7FF-BC03-46A7-8748-C16A41B9025F.png"  class="dog-bubble">
+        <img src="fotos/cachorros/6598A84E-1C45-4490-B6A1-CCFEDBF9DA59.jpg" class="dog-bubble">
+        <img src="fotos/cachorros/809C6B43-407C-452D-9E9F-3C23FA351005.png"  class="dog-bubble">
+        <img src="fotos/cachorros/E3D05CAC-5399-4FFB-9FC8-488F1A1D17FE.jpg" class="dog-bubble">
+        <img src="fotos/cachorros/0699F9E0-CE8E-4607-95A8-DEC7804BC574.png"  class="dog-bubble">
+        <img src="fotos/cachorros/B8E76CDC-17E8-4EB7-958B-7F7156B2CD4B.jpg" class="dog-bubble">
+        <img src="fotos/cachorros/7E86BC8C-B4D2-4DA1-B7B2-53DB74296FB7.png"  class="dog-bubble">
+        <img src="fotos/cachorros/45785CD7-DE60-4A7E-9EC4-07035ACD21F1.jpg" class="dog-bubble">
+        <img src="fotos/cachorros/A9119A23-9A7A-4C13-A0F7-3B254033030C.png"  class="dog-bubble">
+        <!-- loop -->
+        <img src="fotos/cachorros/F2149C04-602C-4972-B21C-3143C94DEB7A.jpg" class="dog-bubble">
+        <img src="fotos/cachorros/FE9FB7FF-BC03-46A7-8748-C16A41B9025F.png"  class="dog-bubble">
+        <img src="fotos/cachorros/6598A84E-1C45-4490-B6A1-CCFEDBF9DA59.jpg" class="dog-bubble">
+        <img src="fotos/cachorros/809C6B43-407C-452D-9E9F-3C23FA351005.png"  class="dog-bubble">
+        <img src="fotos/cachorros/E3D05CAC-5399-4FFB-9FC8-488F1A1D17FE.jpg" class="dog-bubble">
+      </div>
+    </div>
+    <!-- Trilho 2 — salão + Páscoa -->
+    <div class="flex gap-3 marquee-right">
+      <div class="marquee-track flex gap-3">
+        <img src="fotos/cachorros/DCB2001F-0467-4F0C-9CB1-DE313D3B9056.jpg" class="dog-bubble">
+        <img src="fotos/cachorros/61C84BB1-A7F4-441B-B110-6E61AA782F82.png"  class="dog-bubble">
+        <img src="fotos/cachorros/10CDCBD1-874B-4FE9-A4E2-B493D24F1D92.jpg" class="dog-bubble">
+        <img src="fotos/cachorros/EB28EADE-8AA0-4EEC-901C-D04696E102D7.jpg" class="dog-bubble">
+        <img src="fotos/cachorros/4E7C3FF3-0438-4132-A591-92E6B8EB234E.jpg" class="dog-bubble">
+        <img src="fotos/cachorros/400685A8-CA1B-48E4-9254-BB0E1752F2DC.jpg" class="dog-bubble">
+        <img src="fotos/cachorros/D0E2A0A9-A99F-4AFF-97B2-5CD058DDDC0E.jpg" class="dog-bubble">
+        <img src="fotos/cachorros/91A10164-1061-4E39-AACB-C70BCCA3D8E7.jpg" class="dog-bubble">
+        <img src="fotos/cachorros/335942CA-EED3-4086-BE99-A3CA4C4FB1CD.jpg" class="dog-bubble">
+        <img src="fotos/cachorros/FEF37F88-6513-4B39-9EAF-82B53D7E8AA7.jpg" class="dog-bubble">
+        <!-- loop -->
+        <img src="fotos/cachorros/DCB2001F-0467-4F0C-9CB1-DE313D3B9056.jpg" class="dog-bubble">
+        <img src="fotos/cachorros/61C84BB1-A7F4-441B-B110-6E61AA782F82.png"  class="dog-bubble">
+        <img src="fotos/cachorros/10CDCBD1-874B-4FE9-A4E2-B493D24F1D92.jpg" class="dog-bubble">
+        <img src="fotos/cachorros/EB28EADE-8AA0-4EEC-901C-D04696E102D7.jpg" class="dog-bubble">
+        <img src="fotos/cachorros/4E7C3FF3-0438-4132-A591-92E6B8EB234E.jpg" class="dog-bubble">
+      </div>
+    </div>
+  </div>
+
+  <!-- Conteúdo hero -->
+  <div class="relative z-10 flex-1 flex flex-col justify-end px-6 pb-14">
+    <div class="inline-flex items-center gap-2 bg-white/18 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1.5 rounded-full border border-white/25 mb-3 w-fit">
+      ✨ Estética Animal com amor
+    </div>
+    <div class="text-white leading-none mb-2 drop-shadow-xl" style="font-family:'Dancing Script',cursive;font-weight:700;font-size:3.4rem;text-shadow:0 2px 18px rgba(0,0,0,0.22);">PomPom Pet</div>
+    <h1 class="text-[32px] font-bold text-white leading-tight mb-3" style="letter-spacing:-0.5px">
+      Seu pet<br/>merece o<br/><span class="text-rose-200 italic">melhor</span>
+    </h1>
+    <p class="text-white/75 text-sm mb-8 leading-relaxed max-w-xs">
+      Banho, tosa e hidratação com carinho. Agende agora e deixe seu pet radiante!
+    </p>
+
+    <!-- Stats row -->
+    <div class="flex gap-3 mb-8">
+      <div class="bg-white/15 backdrop-blur-sm rounded-2xl px-4 py-3 border border-white/20 text-center flex-1">
+        <div class="text-white font-bold text-xl font-serif">3000+</div>
+        <div class="text-white/60 text-[10px] mt-0.5">🐾¾ Pets atendidos</div>
+      </div>
+      <div class="bg-white/15 backdrop-blur-sm rounded-2xl px-4 py-3 border border-white/20 text-center flex-1">
+        <div class="text-yellow-300 font-bold text-xl">★★★★★</div>
+        <div class="text-white/60 text-[10px] mt-0.5">Avaliação</div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <a href="https://wa.me/5511947266216?text=Olá! Quero agendar para meu pet 🐾¾"
+       target="_blank" rel="noopener noreferrer"
+       class="flex items-center justify-center gap-3 bg-white text-rose-700 font-bold text-base py-4 rounded-2xl shadow-2xl active:scale-95 transition-transform">
+      <svg viewBox="0 0 24 24" class="w-5 h-5 fill-green-500"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Agendar pelo WhatsApp
+    </a>
+  </div>
+
+  <!-- Onda separadora -->
+  <svg class="hero-wave" viewBox="0 0 375 48" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 48 C80 20 200 0 375 30 L375 48 Z" fill="#fdf6f0"/>
+  </svg>
+</section>
+
+<!-- ===== STICKY HEADER (aparece ao rolar) ===== -->
+<div class="sticky-header" id="sticky-hdr">
+  <a href="#inicio" class="flex items-center gap-2">
+    <div class="w-9 h-9 rounded-full overflow-hidden border border-rose-200 bg-white flex-shrink-0">
+      <img src="fotos/logo-icon.png" alt="PomPom Pet" class="w-full h-full object-cover" style="object-position:center 30%;" />
+    </div>
+    <div>
+      <div class="nav-brand-pill" style="font-size: 1.25rem; padding: 2px 12px 3px;">PomPom Pet</div>
+      <div class="nav-brand-sub">Estética Animal</div>
+    </div>
+  </a>
+  <a href="https://wa.me/5511947266216?text=Olá! Quero agendar 🐾¾"
+     target="_blank" rel="noopener noreferrer"
+     class="bg-rose-600 text-white text-xs font-bold px-4 py-2 rounded-full active:scale-95 transition-transform">
+    Agendar
+  </a>
+</div>
+
+<!-- ===== SERVIÇOS ===== -->
+<section id="servicos">
+  <div class="section-header fade-up">
+    <div class="section-tag">✂️ O que fazemos</div>
+    <div class="section-title">Nossos Serviços</div>
+    <div class="section-sub">Cuidado completo com produtos premium</div>
+  </div>
+
+  <div class="px-5 space-y-3 pb-4">
+    <div class="service-pill fade-up">
+      <div class="w-14 h-14 bg-rose-50 rounded-2xl flex items-center justify-center flex-shrink-0 text-2xl">🐾›</div>
+      <div class="flex-1 min-w-0">
+        <div class="font-semibold text-stone-800 text-sm">Banho Completo</div>
+        <div class="text-xs text-stone-500 mt-0.5 truncate">Shampoo premium · Secagem · Perfume</div>
+      </div>
+    </div>
+
+    <div class="service-pill fade-up" style="transition-delay:.08s">
+      <div class="w-14 h-14 bg-rose-50 rounded-2xl flex items-center justify-center flex-shrink-0 text-2xl">✂️</div>
+      <div class="flex-1 min-w-0">
+        <div class="font-semibold text-stone-800 text-sm">Tosa</div>
+        <div class="text-xs text-stone-500 mt-0.5 truncate">Higiênica ou completa · Todas as raças</div>
+      </div>
+    </div>
+
+    <div class="service-pill fade-up" style="transition-delay:.16s">
+      <div class="w-14 h-14 bg-rose-50 rounded-2xl flex items-center justify-center flex-shrink-0 text-2xl">✨</div>
+      <div class="flex-1 min-w-0">
+        <div class="font-semibold text-stone-800 text-sm">Hidratação</div>
+        <div class="text-xs text-stone-500 mt-0.5 truncate">Pelo macio · Brilhoso · Saudável</div>
+      </div>
+    </div>
+
+    <div class="service-pill fade-up" style="transition-delay:.24s">
+      <div class="w-14 h-14 bg-rose-50 rounded-2xl flex items-center justify-center flex-shrink-0 text-2xl">🐾›ï¸</div>
+      <div class="flex-1 min-w-0">
+        <div class="font-semibold text-stone-800 text-sm">Lojinha Pet</div>
+        <div class="text-xs text-stone-500 mt-0.5 truncate">Acessórios · Petiscos · Roupinhas</div>
+      </div>
+      <div class="text-rose-600 font-bold text-sm whitespace-nowrap ml-2">Ver →</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SOBRE A DONA ===== -->
+<section id="sobre">
+  <div class="section-header fade-up">
+    <div class="section-tag">💗 Nossa história</div>
+    <div class="section-title">Quem cuida<br/>do seu pet</div>
+  </div>
+
+  <div class="px-5 fade-up">
+    <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-rose-50">
+      <div class="h-72 bg-rose-50 relative overflow-hidden">
+        <img src="fotos/dona.jpg" alt="Dona do PomPom Pet"
+             class="w-full h-full object-cover" style="object-position: center 35%"
+             onerror="this.style.display='none'; document.getElementById('dona-placeholder').style.display='flex';" />
+        <div id="dona-placeholder" style="display:none"
+             class="absolute inset-0 flex items-center justify-center opacity-25 text-8xl">👩</div>
+        <div class="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-white"></div>
+      </div>
+      <div class="px-6 pt-5 pb-7">
+        <h3 class="font-serif text-2xl font-bold text-stone-800 mb-0.5">Deisiane França</h3>
+        <div class="text-rose-600 text-sm font-semibold mb-4">Fundadora & Groomer Profissional</div>
+        <p class="text-stone-600 text-sm leading-relaxed mb-3">
+          Com 6 anos de experiência em petshop e diversos cursos na área, Deisiane transformou sua paixão por animais em seu próprio espaço de conquista — a PomPom Pet.
+        </p>
+        <p class="text-stone-600 text-sm leading-relaxed">
+          Cada pet que chega aqui é tratado com o carinho de quem realmente ama o que faz. 🐾¾
+        </p>
+        <div class="mt-5 grid grid-cols-2 gap-3">
+          <div class="bg-rose-50 rounded-2xl p-3 text-center">
+            <div class="text-rose-600 text-xl font-bold font-serif">6+</div>
+            <div class="text-stone-500 text-xs">Anos de experiência</div>
+          </div>
+          <div class="bg-rose-50 rounded-2xl p-3 text-center">
+            <div class="text-rose-600 text-xl font-bold font-serif">3000+</div>
+            <div class="text-stone-500 text-xs">Pets atendidos</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GALERIA ===== -->
+<section id="galeria">
+  <div class="section-header fade-up">
+    <div class="section-tag">📸 Transformações</div>
+    <div class="section-title">Nosso Trabalho</div>
+    <div class="section-sub">Deslize para ver mais</div>
+  </div>
+
+  <div class="story-scroll">
+    <div class="story-card">
+      <img src="fotos/trabalho1.jpg" alt="Spitz Alemão"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+      <div class="placeholder" style="display:none"><span>🦊</span><p>Spitz Alemão</p></div>
+      <div class="label">🦊 Spitz Alemão</div>
+    </div>
+    <div class="story-card">
+      <img src="fotos/cachorros/D0E2A0A9-A99F-4AFF-97B2-5CD058DDDC0E.jpg" alt="Husky Siberiano"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+      <div class="placeholder" style="display:none"><span>🐾º</span><p>Husky Siberiano</p></div>
+      <div class="label">🐾º Husky Siberiano</div>
+    </div>
+    <div class="story-card">
+      <img src="fotos/cachorros/809C6B43-407C-452D-9E9F-3C23FA351005.png" alt="Lhasa Apso"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+      <div class="placeholder" style="display:none"><span>🐾°</span><p>Lhasa Apso</p></div>
+      <div class="label">🐾° Lhasa Apso</div>
+    </div>
+    <div class="story-card">
+      <img src="fotos/trabalho4.jpg" alt="Shih Tzu"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+      <div class="placeholder" style="display:none"><span>👑</span><p>Shih Tzu</p></div>
+      <div class="label">👑 Shih Tzu</div>
+    </div>
+    <div class="story-card">
+      <img src="fotos/trabalho5.jpg" alt="Golden Retriever"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+      <div class="placeholder" style="display:none"><span>🌟</span><p>Golden Retriever</p></div>
+      <div class="label">🌟 Golden Retriever</div>
+    </div>
+    <div class="story-card">
+      <img src="fotos/cachorros/7E86BC8C-B4D2-4DA1-B7B2-53DB74296FB7.png" alt="Pug"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+      <div class="placeholder" style="display:none"><span>🐾¾</span><p>Pug</p></div>
+      <div class="label">🐾¾ Pug</div>
+    </div>
+    <div class="story-card">
+      <img src="fotos/trabalho7.jpg" alt="Poodle"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+      <div class="placeholder" style="display:none"><span>🐾©</span><p>Poodle</p></div>
+      <div class="label">🐾© Poodle</div>
+    </div>
+    <div class="story-card">
+      <img src="fotos/trabalho8.jpg" alt="Maltês"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+      <div class="placeholder" style="display:none"><span>😊</span><p>Maltês</p></div>
+      <div class="label">😊 Maltês</div>
+    </div>
+  </div>
+
+  <!-- Antes / Depois -->
+  <div class="px-5 mt-2 fade-up">
+    <div class="section-tag mb-3">🔄 Antes e Depois</div>
+    <div class="ba-container">
+      <img class="ba-img" src="fotos/depois1.jpg" alt="Depois"
+           onerror="this.style.background='linear-gradient(135deg,#fb7185,#e11d48)'; this.src='';" />
+      <img class="ba-img ba-overlay" id="ba-overlay" src="fotos/antes1.jpg" alt="Antes"
+           onerror="this.style.background='#d1d5db'; this.src='';" />
+      <input type="range" min="0" max="100" value="50" id="ba-range" class="ba-range" />
+      <div class="ba-divider" id="ba-divider">
+        <div class="ba-handle">✨</div>
+      </div>
+      <span class="ba-label antes">Antes</span>
+      <span class="ba-label depois">Depois</span>
+    </div>
+    <p class="text-center text-stone-400 text-xs mt-2">Arraste para comparar</p>
+  </div>
+</section>
+
+<!-- ===== DEPOIMENTOS ===== -->
+<section>
+  <div class="section-header fade-up">
+    <div class="section-tag">✨ Avaliações</div>
+    <div class="section-title">O que dizem<br/>nossos clientes</div>
+  </div>
+
+  <div class="px-5 pb-4">
+  <div class="review-box">
+
+    <div class="review-card">
+      <div class="text-amber-400 text-sm mb-2">★★★★★</div>
+      <p class="text-stone-600 text-sm leading-relaxed">"Amei desde a recepção até o atendimento, levei minha Luluzinha e super recomendo — ela veio muito cheirosa, limpinha, pelos macios e leves. Super indico, esse é o melhor pet da região! 🐾˜🐾¾💓"</p>
+      <div class="flex items-center gap-2 mt-3">
+        <div class="w-8 h-8 bg-rose-100 rounded-full flex items-center justify-center text-rose-700 font-bold text-xs flex-shrink-0">DM</div>
+        <div>
+          <div class="text-xs font-semibold text-stone-800">Débora Mancini</div>
+          <div class="text-xs text-stone-400">Google Maps · 7 semanas</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div class="text-amber-400 text-sm mb-2">★★★★★</div>
+      <p class="text-stone-600 text-sm leading-relaxed">"O atendimento foi impecável com meu pet. Ele adorou tomar banho lá. Voltou limpinho e cheiroso. Me enviaram foto dele depois do banho. Foram super atenciosas. Recomendo muito!"</p>
+      <div class="flex items-center gap-2 mt-3">
+        <div class="w-8 h-8 bg-rose-100 rounded-full flex items-center justify-center text-rose-700 font-bold text-xs flex-shrink-0">RA</div>
+        <div>
+          <div class="text-xs font-semibold text-stone-800">Rebeca Agnes</div>
+          <div class="text-xs text-stone-400">Google Maps · 8 semanas</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div class="text-amber-400 text-sm mb-2">★★★★★</div>
+      <p class="text-stone-600 text-sm leading-relaxed">"Experiência muito boa. São super cuidadosos com os pets e amei o corte que fizeram. Levo a Melzinha sempre lá. Muito obrigada pelo cuidado e atenção com a minha senhorinha ✨</p>
+      <div class="flex items-center gap-2 mt-3">
+        <div class="w-8 h-8 bg-rose-100 rounded-full flex items-center justify-center text-rose-700 font-bold text-xs flex-shrink-0">CS</div>
+        <div>
+          <div class="text-xs font-semibold text-stone-800">Cool Santos</div>
+          <div class="text-xs text-stone-400">Google Maps · 9 semanas</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div class="text-amber-400 text-sm mb-2">★★★★★</div>
+      <p class="text-stone-600 text-sm leading-relaxed">"Amei o atendimento. Meu cachorro voltou lindo e cheiroso. A tosa não causou reação alérgica, o que sempre foi um problema em outros lugares. Ele voltou contente — sinal que foi muito bem tratado. 🐾™🐾½✨</p>
+      <div class="flex items-center gap-2 mt-3">
+        <div class="w-8 h-8 bg-rose-100 rounded-full flex items-center justify-center text-rose-700 font-bold text-xs flex-shrink-0">CC</div>
+        <div>
+          <div class="text-xs font-semibold text-stone-800">Claudiceia Camargo</div>
+          <div class="text-xs text-stone-400">Google Maps · 34 semanas</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div class="text-amber-400 text-sm mb-2">★★★★★</div>
+      <p class="text-stone-600 text-sm leading-relaxed">"Experiência maravilhosa… lugar que tem amor. Cuida da minha Pérola com todo carinho — ela vem toda linda, cheirosa e enfeitada. Parabéns pelo belo trabalho!"</p>
+      <div class="flex items-center gap-2 mt-3">
+        <div class="w-8 h-8 bg-rose-100 rounded-full flex items-center justify-center text-rose-700 font-bold text-xs flex-shrink-0">AN</div>
+        <div>
+          <div class="text-xs font-semibold text-stone-800">Andréa Patti</div>
+          <div class="text-xs text-stone-400">Google Maps · 25 semanas</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div class="text-amber-400 text-sm mb-2">★★★★★</div>
+      <p class="text-stone-600 text-sm leading-relaxed">"Um lugar incrível, aconchegante, produtos de alta qualidade, muito carinho e amor pelos nossos pets 🥰"</p>
+      <div class="flex items-center gap-2 mt-3">
+        <div class="w-8 h-8 bg-rose-100 rounded-full flex items-center justify-center text-rose-700 font-bold text-xs flex-shrink-0">DF</div>
+        <div>
+          <div class="text-xs font-semibold text-stone-800">Dayane Ferreira</div>
+          <div class="text-xs text-stone-400">Google Maps · 35 semanas</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  </div>
+</section>
+
+<!-- ===== PRODUTOS ===== -->
+<section>
+  <div class="section-header fade-up">
+    <div class="section-tag">🐾›ï¸ Lojinha</div>
+    <div class="section-title">Produtos para<br/>seu pet</div>
+  </div>
+
+  <div class="product-scroll">
+    <div class="product-card">
+      <div class="h-28 bg-rose-50 flex items-center justify-center overflow-hidden">
+        <img src="fotos/produto1.jpg" class="w-full h-full object-cover"
+             onerror="this.parentElement.innerHTML='<span class=\'text-4xl\'>🎒</span>'" />
+      </div>
+      <div class="p-3">
+        <div class="text-xs font-semibold text-stone-800">Mochila Monstro</div>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="h-28 bg-rose-50 flex items-center justify-center overflow-hidden">
+        <img src="fotos/produto2.jpg" class="w-full h-full object-cover"
+             onerror="this.parentElement.innerHTML='<span class=\'text-4xl\'>🎀</span>'" />
+      </div>
+      <div class="p-3">
+        <div class="text-xs font-semibold text-stone-800">Peitoral + Guia</div>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="h-28 bg-rose-50 flex items-center justify-center overflow-hidden">
+        <img src="fotos/produto3.jpg" class="w-full h-full object-cover"
+             onerror="this.parentElement.innerHTML='<span class=\'text-4xl\'>🦈</span>'" />
+      </div>
+      <div class="p-3">
+        <div class="text-xs font-semibold text-stone-800">Fantasia Tubarão</div>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="h-28 bg-rose-50 flex items-center justify-center overflow-hidden">
+        <img src="fotos/produto4.jpg" class="w-full h-full object-cover"
+             onerror="this.parentElement.innerHTML='<span class=\'text-4xl\'>👗</span>'" />
+      </div>
+      <div class="p-3">
+        <div class="text-xs font-semibold text-stone-800">Camisas Florais</div>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="h-28 bg-rose-50 flex items-center justify-center overflow-hidden">
+        <img src="fotos/produto5.jpg" class="w-full h-full object-cover"
+             onerror="this.parentElement.innerHTML='<span class=\'text-4xl\'>🧸</span>'" />
+      </div>
+      <div class="p-3">
+        <div class="text-xs font-semibold text-stone-800">Brinquedos Pelúcia</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTATO ===== -->
+<section id="contato">
+  <div class="section-header fade-up">
+    <div class="section-tag">🐾“ Localização</div>
+    <div class="section-title">Onde estamos</div>
+  </div>
+
+  <div class="px-5 space-y-3 pb-10">
+    <div class="bg-white rounded-2xl p-4 flex items-center gap-4 shadow-sm border border-rose-50 fade-up">
+      <div class="w-11 h-11 bg-rose-50 rounded-xl flex items-center justify-center text-xl flex-shrink-0">🐾“</div>
+      <div>
+        <div class="text-[10px] font-bold text-stone-400 uppercase tracking-wider mb-1">Endereço</div>
+        <div class="text-sm text-stone-700 leading-snug">R. dos Flox, 954 – Sala 1<br/>Portal dos Ipês · Cajamar · SP<br/>CEP 07791-060</div>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl p-4 flex items-center gap-4 shadow-sm border border-rose-50 fade-up">
+      <div class="w-11 h-11 bg-rose-50 rounded-xl flex items-center justify-center text-xl flex-shrink-0">🐾•</div>
+      <div>
+        <div class="text-[10px] font-bold text-stone-400 uppercase tracking-wider mb-1">Horário</div>
+        <div class="text-sm text-stone-700 leading-snug">
+          Ter–Sex: 9h–17h · Sáb: 9h–17h<br/>
+          <span class="text-stone-400">Dom e Seg: Fechado</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Google Maps -->
+    <div class="rounded-2xl overflow-hidden shadow-sm fade-up" style="height:220px">
+      <iframe
+        src="https://maps.google.com/maps?q=PomPom+Pet+Estetica+animal&ll=-23.4032216,-46.8606506&output=embed&z=18&hl=pt"
+        width="100%" height="220" style="border:0;display:block"
+        allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+    <!-- Botões -->
+    <div class="grid grid-cols-2 gap-3 fade-up">
+      <a href="https://wa.me/5511947266216" target="_blank" rel="noopener noreferrer"
+         class="bg-green-500 text-white rounded-2xl py-4 text-center text-sm font-bold flex flex-col items-center gap-1 active:scale-95 transition-transform">
+        <span class="text-xl">💬</span> WhatsApp
+      </a>
+      <a href="tel:+5511947266216"
+         class="bg-rose-600 text-white rounded-2xl py-4 text-center text-sm font-bold flex flex-col items-center gap-1 active:scale-95 transition-transform">
+        <span class="text-xl">📞</span> Ligar
+      </a>
+    </div>
+
+    <a href="mailto:pompompetesteticaanimal@gmail.com"
+       class="w-full bg-stone-100 text-stone-700 rounded-2xl py-3.5 text-center text-xs font-semibold flex items-center justify-center gap-2 active:scale-95 transition-transform fade-up">
+      📧 pompompetesteticaanimal@gmail.com
+    </a>
+
+    <a href="https://www.instagram.com/pompompet_esteticaanimal/" target="_blank" rel="noopener noreferrer"
+       class="w-full bg-gradient-to-r from-purple-600 via-rose-500 to-orange-400 text-white rounded-2xl py-4 text-center text-sm font-bold flex items-center justify-center gap-2 active:scale-95 transition-transform fade-up">
+      📸 Siga no Instagram
+    </a>
+
+    <!-- Agendamento CTA final -->
+    <div class="bg-rose-700 rounded-3xl p-6 text-center mt-2 fade-up">
+      <div class="text-4xl mb-3">🐾¾</div>
+      <h3 class="font-serif text-xl font-bold text-white mb-2">Pronto para agendar?</h3>
+      <p class="text-rose-200 text-sm mb-5">Fale com a gente agora mesmo!</p>
+      <a href="https://wa.me/5511947266216?text=Olá! Gostaria de agendar para meu pet 🐾¾"
+         target="_blank" rel="noopener noreferrer"
+         class="bg-white text-rose-700 font-bold px-8 py-3.5 rounded-full text-sm inline-flex items-center gap-2 active:scale-95 transition-transform shadow-lg">
+        💬 Agendar agora
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="bg-stone-900 py-8 px-5">
+  <div class="flex items-center gap-3 mb-4">
+    <img src="logo.svg" alt="Logo" class="w-10 h-10" />
+    <div>
+      <div class="font-serif font-bold text-white text-base">PomPom Pet</div>
+      <div class="text-stone-500 text-xs">Estética Animal</div>
+    </div>
+  </div>
+  <div class="text-stone-500 text-xs">Feito com 💗 para os pets e seus tutores</div>
+  <div class="text-stone-600 text-xs mt-1">© 2026 PomPom Pet. Todos os direitos reservados.</div>
+</footer>
+
+<!-- ===== WA FLOAT ===== -->
+<a href="https://wa.me/5511947266216?text=Olá! Quero agendar 🐾¾"
+   target="_blank" rel="noopener noreferrer" class="wa-float">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+  // Força o topo ao recarregar
+  window.scrollTo(0, 0);
+
+  // ── MENU ──
+  function openMenu() {
+    document.getElementById('side-menu').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMenu() {
+    document.getElementById('side-menu').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // ── STICKY HEADER: esconde no hero, aparece ao rolar ──
+  const stickyHdr = document.getElementById('sticky-hdr');
+  const heroSection = document.getElementById('inicio');
+  const observer = new IntersectionObserver(([e]) => {
+    stickyHdr.style.display = e.isIntersecting ? 'none' : 'flex';
+  }, { threshold: 0.1 });
+  observer.observe(heroSection);
+  stickyHdr.style.display = 'none'; // escondido no início
+
+  // ── FADE-UP ──
+  const fadeObs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => fadeObs.observe(el));
+
+  // ── BEFORE/AFTER SLIDER ──
+  const baRange   = document.getElementById('ba-range');
+  const baOverlay = document.getElementById('ba-overlay');
+  const baDivider = document.getElementById('ba-divider');
+  if (baRange && baOverlay && baDivider) {
+    baRange.addEventListener('input', e => {
+      const pct = e.target.value;
+      baOverlay.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
+      baDivider.style.left = pct + '%';
+    });
+  }
+</script>
+</body>
+</html>

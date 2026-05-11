@@ -1,0 +1,7 @@
+*.py
+.claude/
+*.md
+.git/
+.gitignore
+server.py
+fix*.py
