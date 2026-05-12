@@ -9,7 +9,6 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.tailwindcss.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; frame-src https://maps.google.com https://www.google.com; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; permissions-policy='geolocation=(), microphone=(), camera=()'" />
   <title>PomPom Pet 🐶</title>
   <link rel="icon" type="image/png" href="fotos/logo.png" />
   <meta name="description" content="Banho, tosa e carinho para o seu melhor amigo." />
@@ -322,6 +321,11 @@
       background: rgba(0,0,0,0.55); z-index: 9998;
       backdrop-filter: blur(4px);
     }
+    /* category tabs */
+    #lojinha-cats { display:flex; gap:8px; overflow-x:auto; padding:0 16px 12px; scrollbar-width:none; -webkit-overflow-scrolling:touch; border-bottom:1px solid #fce7f3; flex-shrink:0; }
+    #lojinha-cats::-webkit-scrollbar { display:none; }
+    .cat-tab { flex-shrink:0; padding:6px 14px; border-radius:99px; border:1.5px solid #fce7f3; background:#fff; font-size:0.72rem; font-weight:600; color:#a8a29e; cursor:pointer; white-space:nowrap; transition:all .18s; }
+    .cat-tab.ativa { background:#e11d48; border-color:#e11d48; color:#fff; }
     #lojinha-sheet {
       display: none;
       position: fixed;
@@ -337,7 +341,7 @@
     .lojinha-drag { width: 40px; height: 4px; background: #e7e5e4; border-radius: 99px; margin: 12px auto 8px; }
     #lojinha-header { padding: 0 20px 12px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #fce7f3; }
     #lojinha-grid {
-      height: calc(88vh - 160px);
+      height: calc(88vh - 218px);
       overflow-y: auto;
       -webkit-overflow-scrolling: touch;
       padding: 16px;
@@ -931,6 +935,7 @@
     </div>
     <button onclick="fecharLojinha()" style="width:34px;height:34px;border-radius:50%;background:#f5f5f4;border:none;font-size:1rem;cursor:pointer;color:#78716c;">✕</button>
   </div>
+  <div id="lojinha-cats"></div>
   <div id="lojinha-grid"></div>
   <div id="lojinha-footer">
     <a href="https://wa.me/5511947266216?text=Olá! Vi os produtos da Lojinha PomPom Pet e quero saber mais!" target="_blank" rel="noopener noreferrer"
@@ -988,45 +993,43 @@
   }
 
   // ── LOJINHA MODAL ──
-  const PRODUTOS = [
-    "A0020.jpeg","A0033.jpeg","A0035.jpeg","A0040.jpeg","A0113.jpeg",
-    "BD-10-M.jpeg","BD-12-13-14 P.png","BL-511.jpeg","BL-8001.jpeg","bolinha.jpg",
-    "C-20.jpeg","C-62.jpeg","C-81 G.jpeg","C-83 G.jpeg","C-85 G.jpeg","C-86 G.jpeg",
-    "C-88-M.jpeg","CD-37 tubarão.JPEG","chapeu.jpeg","CJ-20.jpeg","copa.jpeg",
-    "CWW-PT.jpeg","DYZ00109.jpeg","FJ-003.jpeg","FP63178-5.jpeg",
-    "FZ-02.jpeg","FZ-11.jpeg","FZ-12.JPEG","FZ-23.jpeg","FZ-28.jpeg","FZ-38.jpeg",
-    "HR2.jpeg","HR49.jpeg","JJ-006.jpeg","JK111.jpeg","JS-033.jpeg",
-    "PJCQ420.jpeg","PJCQ693.jpeg","PJCQ839.jpeg","PJCQ846.jpeg","PJDC078.jpeg",
-    "W-59.jpeg","W26.JPEG","W28.jpeg","Wj-25.jpeg","WJ-28-P.jpeg","WJ-42.jpeg",
-    "WJ-45.jpeg","Wj-48.jpeg","WJ-49.jpeg","WJ-50.jpeg","WJ-51.jpeg",
-    "X-205.jpeg","X-206.jpeg","X-244 M.jpeg",
-    "Y-04.jpeg","y-17.jpeg","Y-57.jpeg","Y-62.jpeg","Y-66.jpeg","y-9.jpeg",
-    "YJ-10.jpeg","Z0001.jpeg","Z0005.jpeg"
-  ];
+  const CATEGORIAS = {
+    roupas:     { nome:"Roupas",           emoji:"👗", files:["copa.jpeg","C-20.jpeg","C-62.jpeg","C-81 G.jpeg","C-83 G.jpeg","C-85 G.jpeg","C-86 G.jpeg","C-88-M.jpeg","CD-37 tubarão.JPEG","FZ-02.jpeg","FZ-11.jpeg","FZ-12.JPEG","FZ-23.jpeg","FZ-28.jpeg","FZ-38.jpeg","PJCQ420.jpeg","PJCQ693.jpeg","PJCQ839.jpeg","PJCQ846.jpeg","PJDC078.jpeg","JK111.jpeg","X-205.jpeg","X-206.jpeg","X-244 M.jpeg"] },
+    guias:      { nome:"Guias & Peitorais",emoji:"🦮", files:["A0020.jpeg","A0033.jpeg","A0035.jpeg","A0040.jpeg","A0113.jpeg","BL-511.jpeg","BL-8001.jpeg","FP63178-5.jpeg","JS-033.jpeg","Z0001.jpeg","Z0005.jpeg"] },
+    brinquedos: { nome:"Brinquedos",       emoji:"🎾", files:["bolinha.jpg","CJ-20.jpeg","Wj-25.jpeg","WJ-28-P.jpeg","WJ-42.jpeg","WJ-45.jpeg","Wj-48.jpeg","WJ-49.jpeg","WJ-50.jpeg","WJ-51.jpeg","W26.JPEG","W28.jpeg"] },
+    caminhas:   { nome:"Caminhas",         emoji:"🏠", files:["BD-10-M.jpeg","BD-12-13-14 P.png"] },
+    comedouros: { nome:"Comedouros",       emoji:"🍽️", files:["W-59.jpeg","CWW-PT.jpeg"] },
+    acessorios: { nome:"Acessórios",       emoji:"🎀", files:["HR2.jpeg","HR49.jpeg","chapeu.jpeg","FJ-003.jpeg","DYZ00109.jpeg","YJ-10.jpeg","JJ-006.jpeg"] },
+    mochilas:   { nome:"Mochilas",         emoji:"🎒", files:["Y-04.jpeg","y-17.jpeg","Y-57.jpeg","Y-62.jpeg","Y-66.jpeg","y-9.jpeg"] }
+  };
+  let _catAtiva = 'roupas';
 
-  function shuffleArray(arr) {
-    const a = [...arr];
-    for (let i = a.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [a[i], a[j]] = [a[j], a[i]];
-    }
-    return a;
+  function _bolinha(f) {
+    const nome = f.replace(/\.[^.]+$/, '');
+    const msg  = encodeURIComponent('Olá! Vi o produto ' + nome + ' na Lojinha PomPom Pet e quero saber mais!');
+    return `<a href="https://wa.me/5511947266216?text=${msg}" target="_blank" rel="noopener noreferrer" class="prod-bolinha">
+      <div class="prod-bolinha-img"><img src="https://storage.googleapis.com/pompom-produtos/${encodeURIComponent(f)}" alt="${nome}" style="width:80px;height:80px;object-fit:cover;border-radius:50%;display:block;"/></div>
+      <div class="prod-bolinha-label">🛍️ Quero</div>
+    </a>`;
+  }
+
+  function mostrarCategoria(key) {
+    _catAtiva = key;
+    document.querySelectorAll('.cat-tab').forEach(t => t.classList.toggle('ativa', t.dataset.cat === key));
+    const grid = document.getElementById('lojinha-grid');
+    grid.scrollTop = 0;
+    const files = [...CATEGORIAS[key].files].sort(() => Math.random() - 0.5);
+    grid.innerHTML = files.map(_bolinha).join('');
   }
 
   function abrirLojinha() {
     const overlay = document.getElementById('lojinha-overlay');
     const sheet   = document.getElementById('lojinha-sheet');
-    const grid    = document.getElementById('lojinha-grid');
-    grid.innerHTML = shuffleArray(PRODUTOS).map(f => {
-      const nome = f.replace(/\.[^.]+$/, '');
-      const msg  = encodeURIComponent('Olá! Vi o produto ' + nome + ' na Lojinha PomPom Pet e quero saber mais!');
-      return `<a href="https://wa.me/5511947266216?text=${msg}" target="_blank" rel="noopener noreferrer" class="prod-bolinha">
-        <div class="prod-bolinha-img">
-          <img src="https://storage.googleapis.com/pompom-produtos/${f}" alt="${nome}" style="width:80px;height:80px;object-fit:cover;border-radius:50%;display:block;"/>
-        </div>
-        <div class="prod-bolinha-label">🛍️ Quero</div>
-      </a>`;
-    }).join('');
+    const cats    = document.getElementById('lojinha-cats');
+    cats.innerHTML = Object.entries(CATEGORIAS).map(([k, c]) =>
+      `<button class="cat-tab${k===_catAtiva?' ativa':''}" data-cat="${k}" onclick="mostrarCategoria('${k}')">${c.emoji} ${c.nome}</button>`
+    ).join('');
+    mostrarCategoria(_catAtiva);
     overlay.style.display = 'block';
     sheet.style.display = 'block';
     document.body.style.overflow = 'hidden';
