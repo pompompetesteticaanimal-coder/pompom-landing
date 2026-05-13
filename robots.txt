@@ -1,0 +1,14 @@
+# PomPom Pet — robots.txt
+# https://pompompetshop.com.br/
+
+User-agent: *
+Allow: /
+Allow: /fotos/
+Disallow: /desktop.html
+Disallow: /mobile.html
+
+# Googlebot-Image — explicit allow para indexação de fotos
+User-agent: Googlebot-Image
+Allow: /fotos/
+
+Sitemap: https://pompompetshop.com.br/sitemap.xml

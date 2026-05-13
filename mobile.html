@@ -2,19 +2,269 @@
 <html lang="pt-BR">
 <head>
   <script>if ('scrollRestoration' in history) history.scrollRestoration = 'manual';</script>
-  <script>if(window.innerWidth>=768&&!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){window.location.replace('desktop.html');}</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta name="theme-color" content="#e11d48" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="referrer" content="strict-origin-when-cross-origin" />
-  <title>PomPom Pet 🐶</title>
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <title>PomPom Pet — Estética Animal em Cajamar | Banho e Tosa</title>
   <link rel="icon" type="image/png" href="fotos/logo.png" />
-  <meta name="description" content="Banho, tosa e carinho para o seu melhor amigo." />
+  <meta name="description" content="PomPom Pet — Estética animal em Cajamar/SP. Banho, tosa, hidratação e cuidado especializado para cães e gatos. Mais de 3.000 pets atendidos. Agende pelo WhatsApp." />
+  <link rel="canonical" href="https://pompompetshop.com.br/" />
 
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Open Graph / Facebook / WhatsApp -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://pompompetshop.com.br/" />
+  <meta property="og:title" content="PomPom Pet — Estética Animal em Cajamar" />
+  <meta property="og:description" content="Banho, tosa e hidratação com carinho e técnica especializada. Mais de 3.000 pets atendidos. Agende pelo WhatsApp." />
+  <meta property="og:image" content="https://pompompetshop.com.br/fotos/ambiente/frente.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="PomPom Pet" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="PomPom Pet — Estética Animal em Cajamar" />
+  <meta name="twitter:description" content="Banho, tosa e hidratação com carinho. Agende pelo WhatsApp." />
+  <meta name="twitter:image" content="https://pompompetshop.com.br/fotos/ambiente/frente.png" />
+
+  <!-- Structured Data — LocalBusiness + Services + FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["PetStore", "LocalBusiness"],
+        "@id": "https://pompompetshop.com.br/#business",
+        "name": "PomPom Pet",
+        "alternateName": ["PomPom Pet Estética Animal", "PomPom Petshop", "Pom Pom Pet"],
+        "description": "Estética animal especializada em banho, tosa higiênica, tosa na tesoura, tosa na máquina e hidratação para cães e gatos em Cajamar/SP. Atende também Polvilho, Jordanésia e Pirituba. Mais de 3.000 pets atendidos.",
+        "slogan": "Banho e tosa com carinho em Cajamar",
+        "url": "https://pompompetshop.com.br/",
+        "image": [
+          "https://pompompetshop.com.br/fotos/ambiente/frente.png",
+          "https://pompompetshop.com.br/fotos/hero-dog.jpg",
+          "https://pompompetshop.com.br/fotos/trabalho1.jpg"
+        ],
+        "logo": "https://pompompetshop.com.br/fotos/logo.png",
+        "telephone": "+5511947266216",
+        "email": "pompompetesteticaanimal@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "R. dos Flox, 954 – Sala 1",
+          "addressLocality": "Cajamar",
+          "addressRegion": "SP",
+          "postalCode": "07791-060",
+          "addressCountry": "BR"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -23.4032216,
+          "longitude": -46.8606506
+        },
+        "areaServed": [
+          {"@type": "City", "name": "Cajamar"},
+          {"@type": "AdministrativeArea", "name": "Polvilho"},
+          {"@type": "AdministrativeArea", "name": "Jordanésia"},
+          {"@type": "AdministrativeArea", "name": "Pirituba"},
+          {"@type": "AdministrativeArea", "name": "Perus"}
+        ],
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+            "opens": "09:00",
+            "closes": "17:00"
+          }
+        ],
+        "sameAs": [
+          "https://www.instagram.com/pompompet_esteticaanimal/"
+        ],
+        "priceRange": "$$",
+        "paymentAccepted": ["Pix", "Cartão de Crédito", "Cartão de Débito", "Dinheiro"],
+        "currenciesAccepted": "BRL",
+        "knowsAbout": [
+          "Banho de cachorro",
+          "Banho de gato",
+          "Tosa higiênica",
+          "Tosa na tesoura",
+          "Tosa na máquina",
+          "Hidratação canina",
+          "Cuidados com pets",
+          "Estética animal"
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Serviços PomPom Pet",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Banho para cães e gatos",
+                "description": "Banho completo com produtos profissionais, hidratação e finalização perfumada em Cajamar.",
+                "serviceType": "Banho Pet"
+              },
+              "priceSpecification": {
+                "@type": "PriceSpecification",
+                "minPrice": "50.00",
+                "priceCurrency": "BRL"
+              },
+              "availability": "https://schema.org/InStock"
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Tosa Higiênica",
+                "description": "Tosa higiênica em patas, parte íntima e barriga — ideal entre banhos completos.",
+                "serviceType": "Tosa Pet"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Tosa na Tesoura",
+                "description": "Tosa estilizada na tesoura para raças específicas como Shih Tzu, Poodle, Maltês e Lhasa Apso.",
+                "serviceType": "Tosa Pet"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Tosa na Máquina",
+                "description": "Tosa completa na máquina, ideal para verão e raças de pelos médios e longos.",
+                "serviceType": "Tosa Pet"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Hidratação Canina",
+                "description": "Hidratação profunda dos fios, restaurando brilho e maciez do pelo.",
+                "serviceType": "Estética Pet"
+              }
+            }
+          ]
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5.0",
+          "reviewCount": "35",
+          "bestRating": "5",
+          "worstRating": "1"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://pompompetshop.com.br/#website",
+        "url": "https://pompompetshop.com.br/",
+        "name": "PomPom Pet",
+        "publisher": { "@id": "https://pompompetshop.com.br/#business" },
+        "inLanguage": "pt-BR"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://pompompetshop.com.br/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Onde fica a PomPom Pet em Cajamar?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A PomPom Pet fica na Rua dos Flox, 954 – Sala 1, em Cajamar/SP, CEP 07791-060. Atendemos clientes de Cajamar, Polvilho, Jordanésia, Pirituba e região."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Qual o horário de atendimento?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Atendemos de terça a sábado, das 09h às 17h. Não atendemos aos domingos e segundas-feiras."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quanto custa um banho na PomPom Pet?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Banho a partir de R$ 50, dependendo do porte e raça do pet. Para um orçamento exato, entre em contato pelo WhatsApp (11) 94726-6216."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Precisa marcar com antecedência?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sim, recomendamos agendar pelo WhatsApp (11) 94726-6216 para garantir o melhor horário e atendimento personalizado para o seu pet."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "A PomPom Pet atende cachorros de raças grandes?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sim, atendemos todos os portes — de Yorkshire a Golden Retriever. Temos estrutura para banho e tosa de raças pequenas, médias e grandes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Vocês atendem gatos também?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sim, atendemos cães e gatos com banho, tosa e hidratação. O atendimento de gatos é feito com técnica específica para reduzir o estresse do animal."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quais formas de pagamento são aceitas?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Aceitamos Pix, cartões de crédito e débito (todas as bandeiras) e dinheiro."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "A PomPom Pet faz busca e entrega?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Entre em contato pelo WhatsApp (11) 94726-6216 para verificar disponibilidade de busca e entrega na sua região de Cajamar e arredores."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://pompompetshop.com.br/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Início",
+            "item": "https://pompompetshop.com.br/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/tailwind.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet" />
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-39SJ335X7K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-39SJ335X7K');
+  </script>
 
   <style>
     * { -webkit-tap-highlight-color: transparent; box-sizing: border-box; }
@@ -37,6 +287,35 @@
     @keyframes marquee-r { from { transform: translateX(-50%) } to { transform: translateX(0) } }
     .marquee-left  .marquee-track { display:flex; gap:.75rem; animation: marquee-l 22s linear infinite; }
     .marquee-right .marquee-track { display:flex; gap:.75rem; animation: marquee-r 26s linear infinite; }
+
+    /* ── SPACE CARDS MARQUEE (mobile) ── */
+    .space-wrap-m {
+      overflow: hidden;
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+      mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+    }
+    .space-track-m { display:flex; gap:.75rem; animation: marquee-l 32s linear infinite; width: max-content; }
+    .space-card-m {
+      position: relative;
+      width: 260px; height: 175px;
+      border-radius: 1.25rem;
+      overflow: hidden;
+      flex-shrink: 0;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.10);
+    }
+    .space-card-m img { width:100%; height:100%; object-fit:cover; display:block; }
+    .space-card-m::after {
+      content:''; position:absolute; inset:0;
+      background: linear-gradient(to top, rgba(0,0,0,0.55), transparent 55%);
+      pointer-events:none;
+    }
+    .space-card-m .label {
+      position: absolute;
+      bottom: .75rem; left: .9rem;
+      color:#fff; font-weight:600; font-size:.8rem;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+      z-index: 2;
+    }
     .bg-rose-600, .bg-rose-600 *, .bg-rose-600 *::before, .bg-rose-600 *::after,
     .bg-rose-700, .bg-rose-700 *, .bg-rose-700 *::before, .bg-rose-700 *::after {
       cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cellipse cx='7' cy='12' rx='3.5' ry='4.2' fill='%23ffffff'/%3E%3Cellipse cx='13' cy='7' rx='3.2' ry='3.8' fill='%23ffffff'/%3E%3Cellipse cx='20' cy='7' rx='3.2' ry='3.8' fill='%23ffffff'/%3E%3Cellipse cx='26' cy='12' rx='3.5' ry='4.2' fill='%23ffffff'/%3E%3Cellipse cx='16' cy='23' rx='9.5' ry='7.5' fill='%23ffffff'/%3E%3C/svg%3E") 16 16, auto !important;
@@ -74,7 +353,14 @@
       color: #9f1239;
       text-shadow: 0 1px 8px rgba(159,18,57,0.2);
     }
-    .nav-brand-sub { color: rgba(255,255,255,0.75); font-size:0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; }
+    .nav-brand-sub { color: rgba(255,255,255,0.92); font-size:0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; }
+
+    /* ── Reforço de legibilidade: textos brancos sobre o gradiente rosa do hero ── */
+    .hero-mobile .nav-brand-sub,
+    .hero-mobile p,
+    .hero-mobile [class*="text-white\/"] {
+      text-shadow: 0 1px 10px rgba(0, 0, 0, 0.22), 0 0 1px rgba(0, 0, 0, 0.1);
+    }
     .scrolled .nav-brand-sub,
     #sticky-hdr .nav-brand-sub,
     #side-menu .nav-brand-sub { color: #a8a29e; }
@@ -92,9 +378,36 @@
       content: '';
       position: absolute; inset: 0;
       background: url('fotos/hero-dog.jpg') center 15%/cover no-repeat;
-      opacity: 0.38;
+      opacity: 0.18;
       mix-blend-mode: overlay;
     }
+
+    /* ── HERO PHOTO STACK (3 polaroids flutuantes) ── */
+    .hero-photos {
+      position: absolute;
+      top: 130px;
+      right: 8px;
+      width: 200px;
+      height: 240px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .hero-photo {
+      position: absolute;
+      width: 130px; height: 95px;
+      border-radius: 18px;
+      overflow: hidden;
+      background: white;
+      box-shadow: 0 16px 32px rgba(0,0,0,0.30), 0 0 0 4px rgba(255,255,255,0.92);
+    }
+    .hero-photo img { width:100%; height:100%; object-fit:cover; display:block; }
+    /* Cluster alinhado verticalmente, encostado à direita (Fachada à frente) */
+    .hp-1 { top: 0;    right: 20px;  transform: rotate(-9deg); z-index: 1; animation: hp-bob1 5.5s ease-in-out infinite; }
+    .hp-2 { top: 60px; right: 105px; transform: rotate(7deg);  z-index: 3; animation: hp-bob2 6.5s ease-in-out infinite; }
+    .hp-3 { top: 104px; right: 20px; transform: rotate(-4deg); z-index: 2; animation: hp-bob3 5s ease-in-out infinite; }
+    @keyframes hp-bob1 { 0%,100% { transform: rotate(-9deg) translateY(0);} 50% { transform: rotate(-9deg) translateY(-6px);} }
+    @keyframes hp-bob2 { 0%,100% { transform: rotate(7deg) translateY(0);}  50% { transform: rotate(7deg) translateY(-7px);} }
+    @keyframes hp-bob3 { 0%,100% { transform: rotate(-4deg) translateY(0);} 50% { transform: rotate(-4deg) translateY(-5px);} }
     /* Ondas decorativas no fundo do hero */
     .hero-wave {
       position: absolute;
@@ -378,7 +691,7 @@
     <!-- Logo no menu -->
     <div class="flex items-center gap-3 mb-8">
       <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-rose-100 bg-white flex-shrink-0">
-        <img src="fotos/logo-icon.png" alt="PomPom Pet" class="w-full h-full object-cover" style="object-position:center 30%;" />
+        <img src="fotos/logo-icon.png" alt="Logo PomPom Pet — Banho e Tosa em Cajamar" class="w-full h-full object-cover" style="object-position:center 30%;" />
       </div>
       <div>
         <div class="nav-brand-pill">PomPom Pet</div>
@@ -401,7 +714,7 @@
 <section id="inicio" class="hero-mobile">
 
   <!-- Top bar dentro do hero -->
-  <div class="relative z-10 flex items-center justify-between px-5 pt-14 pb-4">
+  <div class="relative z-10 flex items-center justify-between px-5 pt-10 pb-4">
     <!-- LOGO SVG MELHORADO -->
     <a href="#inicio" class="flex items-center gap-2.5">
       <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-white/40 bg-white flex-shrink-0">
@@ -421,14 +734,21 @@
     </button>
   </div>
 
+  <!-- 3 fotos flutuantes do espaço -->
+  <div class="hero-photos">
+    <div class="hero-photo hp-1"><img src="fotos/ambiente/recepcao.png" alt="Recepção da PomPom Pet em Cajamar" /></div>
+    <div class="hero-photo hp-2"><img src="fotos/ambiente/frente.png"   alt="Fachada da PomPom Pet — petshop em Cajamar/SP" /></div>
+    <div class="hero-photo hp-3"><img src="fotos/ambiente/interior.png" alt="Atendimento de banho e tosa na PomPom Pet" /></div>
+  </div>
+
   <!-- Conteúdo hero -->
-  <div class="relative z-10 flex-1 flex flex-col justify-end px-6 pb-14">
+  <div class="relative z-10 flex-1 flex flex-col justify-end px-6 pb-10">
 
     <div>
     <h1 class="text-[32px] font-bold text-white leading-tight mb-3" style="letter-spacing:-0.5px">
       Seu pet<br/>merece o<br/><span class="text-rose-200 italic">melhor</span>
     </h1>
-    <p class="text-white/75 text-sm mb-8 leading-relaxed max-w-xs">
+    <p class="text-sm mb-8 leading-relaxed max-w-xs" style="color: rgba(255,255,255,0.92)">
       Banho, tosa e hidratação com carinho. Agende agora e deixe seu pet radiante!
     </p>
 
@@ -436,11 +756,11 @@
     <div class="flex gap-3 mb-8">
       <div class="bg-white/15 backdrop-blur-sm rounded-2xl px-4 py-3 border border-white/20 text-center flex-1">
         <div class="text-white font-bold text-xl font-serif">3000+</div>
-        <div class="text-white/60 text-[10px] mt-0.5">🐶 Pets atendidos</div>
+        <div class="text-white/85 text-[10px] mt-0.5">🐶 Pets atendidos</div>
       </div>
       <div class="bg-white/15 backdrop-blur-sm rounded-2xl px-4 py-3 border border-white/20 text-center flex-1">
         <div class="text-yellow-300 font-bold text-xl">★★★★★</div>
-        <div class="text-white/60 text-[10px] mt-0.5">Avaliação</div>
+        <div class="text-white/85 text-[10px] mt-0.5">Avaliação</div>
       </div>
     </div>
 
@@ -556,6 +876,36 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== NOSSO ESPAÇO ===== -->
+<section id="espaco" class="py-12">
+  <div class="section-header fade-up">
+    <div class="section-tag">🏡 Nossa estrutura</div>
+    <div class="section-title">Nosso espaço</div>
+  </div>
+  <p class="text-center text-stone-500 text-sm px-8 mb-6 -mt-4 fade-up">
+    Ambiente pensado para o conforto do seu pet.
+  </p>
+
+  <div class="space-wrap-m fade-up">
+    <div class="space-track-m">
+      <!-- Set 1 -->
+      <div class="space-card-m"><img src="fotos/ambiente/frente.png"   alt="Fachada da PomPom Pet petshop em Cajamar"/><div class="label">📍 Fachada</div></div>
+      <div class="space-card-m"><img src="fotos/ambiente/recepcao.png" alt="Recepção do banho e tosa PomPom Pet"/><div class="label">🛎️ Recepção</div></div>
+      <div class="space-card-m"><img src="fotos/ambiente/espera.png"   alt="Área de espera climatizada PomPom Pet Cajamar"/><div class="label">🪑 Área de espera</div></div>
+      <div class="space-card-m"><img src="fotos/ambiente/interior.png" alt="Sala de banho e tosa PomPom Pet"/><div class="label">✂️ Atendimento</div></div>
+      <div class="space-card-m"><img src="fotos/ambiente/secadora.png" alt="Secadora profissional para cães PomPom Pet"/><div class="label">💨 Secadora</div></div>
+      <div class="space-card-m"><img src="fotos/ambiente/lojinha.png"  alt="Lojinha de produtos pet PomPom Cajamar"/><div class="label">🛍️ Lojinha</div></div>
+      <!-- Set 2 (duplicado para loop seamless) -->
+      <div class="space-card-m"><img src="fotos/ambiente/frente.png"   alt=""/><div class="label">📍 Fachada</div></div>
+      <div class="space-card-m"><img src="fotos/ambiente/recepcao.png" alt=""/><div class="label">🛎️ Recepção</div></div>
+      <div class="space-card-m"><img src="fotos/ambiente/espera.png"   alt=""/><div class="label">🪑 Área de espera</div></div>
+      <div class="space-card-m"><img src="fotos/ambiente/interior.png" alt=""/><div class="label">✂️ Atendimento</div></div>
+      <div class="space-card-m"><img src="fotos/ambiente/secadora.png" alt=""/><div class="label">💨 Secadora</div></div>
+      <div class="space-card-m"><img src="fotos/ambiente/lojinha.png"  alt=""/><div class="label">🛍️ Lojinha</div></div>
     </div>
   </div>
 </section>
@@ -886,6 +1236,12 @@
       </a>
     </div>
 
+    <a href="https://www.google.com/maps/dir/?api=1&destination=-23.4032216,-46.8606506"
+       target="_blank" rel="noopener noreferrer" id="btn-direcoes"
+       class="w-full bg-blue-500 text-white rounded-2xl py-4 text-center text-sm font-bold flex items-center justify-center gap-2 active:scale-95 transition-transform fade-up">
+      🗺️ Me leve até lá
+    </a>
+
     <a href="mailto:pompompetesteticaanimal@gmail.com"
        class="w-full bg-stone-100 text-stone-700 rounded-2xl py-3.5 text-center text-xs font-semibold flex items-center justify-center gap-2 active:scale-95 transition-transform fade-up">
       📧 pompompetesteticaanimal@gmail.com
@@ -1045,6 +1401,25 @@
       document.body.style.overflow = '';
     }, 350);
   }
+</script>
+
+<script>
+  document.addEventListener('click', function(e) {
+    if (e.target.closest('#btn-direcoes')) {
+      gtag('event', 'directions_click', { destination: 'google_maps' });
+      return;
+    }
+    var link = e.target.closest('a[href*="wa.me"]');
+    if (!link) return;
+    var loc = 'outro';
+    if (link.classList.contains('wa-float'))          loc = 'flutuante';
+    else if (link.closest('#lojinha-sheet'))           loc = 'lojinha';
+    else if (link.closest('nav'))                      loc = 'navbar';
+    else if (link.closest('#hero'))                    loc = 'hero';
+    else if (link.closest('#contato'))                 loc = 'contato';
+    else if (link.closest('footer'))                   loc = 'footer';
+    gtag('event', 'whatsapp_click', { button_location: loc });
+  });
 </script>
 </body>
 </html>

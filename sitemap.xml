@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://pompompetshop.com.br/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://pompompetshop.com.br/fotos/ambiente/frente.png</image:loc>
+      <image:title>PomPom Pet — Estética Animal em Cajamar</image:title>
+      <image:caption>Fachada da PomPom Pet, banho e tosa em Cajamar/SP</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://pompompetshop.com.br/fotos/hero-dog.jpg</image:loc>
+      <image:title>Cachorro atendido na PomPom Pet</image:title>
+      <image:caption>Pet recebendo banho e tosa profissional em Cajamar</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://pompompetshop.com.br/fotos/dona.jpg</image:loc>
+      <image:title>Equipe PomPom Pet Cajamar</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pompompetshop.com.br/fotos/trabalho1.jpg</image:loc>
+      <image:title>Tosa profissional — Spitz Alemão | PomPom Pet Cajamar</image:title>
+    </image:image>
+  </url>
+</urlset>
