@@ -1,0 +1,26 @@
+{
+  "name": "PomPom Pet — Banho e Tosa em Cajamar",
+  "short_name": "PomPom Pet",
+  "description": "Estética animal especializada em banho, tosa e hidratação para cães e gatos em Cajamar/SP.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fdf6f0",
+  "theme_color": "#e11d48",
+  "lang": "pt-BR",
+  "scope": "/",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/fotos/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/fotos/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

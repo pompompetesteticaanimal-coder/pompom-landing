@@ -10,8 +10,21 @@
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <title>PomPom Pet — Estética Animal em Cajamar | Banho e Tosa</title>
   <link rel="icon" type="image/png" href="fotos/logo.png" />
+  <link rel="apple-touch-icon" href="fotos/logo.png" />
+  <link rel="manifest" href="/manifest.json" />
   <meta name="description" content="PomPom Pet — Estética animal em Cajamar/SP. Banho, tosa, hidratação e cuidado especializado para cães e gatos. Mais de 3.000 pets atendidos. Agende pelo WhatsApp." />
   <link rel="canonical" href="https://pompompetshop.com.br/" />
+  <link rel="alternate" hreflang="pt-BR" href="https://pompompetshop.com.br/" />
+  <link rel="alternate" hreflang="x-default" href="https://pompompetshop.com.br/" />
+
+  <!-- Performance: pré-conexão e preload de recursos críticos -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+
+  <!-- Verificações webmaster (preencher com seu code do Bing Webmaster Tools depois) -->
+  <!-- <meta name="msvalidate.01" content="SEU_CODIGO_BING_AQUI" /> -->
+  <!-- <meta name="facebook-domain-verification" content="SEU_CODIGO_META_AQUI" /> -->
 
   <!-- Open Graph / Facebook / WhatsApp -->
   <meta property="og:type" content="website" />
@@ -19,8 +32,11 @@
   <meta property="og:title" content="PomPom Pet — Estética Animal em Cajamar" />
   <meta property="og:description" content="Banho, tosa e hidratação com carinho e técnica especializada. Mais de 3.000 pets atendidos. Agende pelo WhatsApp." />
   <meta property="og:image" content="https://pompompetshop.com.br/fotos/ambiente/frente.png" />
+  <meta property="og:image:secure_url" content="https://pompompetshop.com.br/fotos/ambiente/frente.png" />
+  <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Fachada da PomPom Pet — Banho e Tosa em Cajamar/SP" />
   <meta property="og:locale" content="pt_BR" />
   <meta property="og:site_name" content="PomPom Pet" />
 
@@ -29,6 +45,7 @@
   <meta name="twitter:title" content="PomPom Pet — Estética Animal em Cajamar" />
   <meta name="twitter:description" content="Banho, tosa e hidratação com carinho. Agende pelo WhatsApp." />
   <meta name="twitter:image" content="https://pompompetshop.com.br/fotos/ambiente/frente.png" />
+  <meta name="twitter:image:alt" content="Fachada da PomPom Pet — Banho e Tosa em Cajamar/SP" />
 
   <!-- Structured Data — LocalBusiness + Services + FAQ -->
   <script type="application/ld+json">
@@ -736,9 +753,9 @@
 
   <!-- 3 fotos flutuantes do espaço -->
   <div class="hero-photos">
-    <div class="hero-photo hp-1"><img src="fotos/ambiente/recepcao.png" alt="Recepção da PomPom Pet em Cajamar" /></div>
-    <div class="hero-photo hp-2"><img src="fotos/ambiente/frente.png"   alt="Fachada da PomPom Pet — petshop em Cajamar/SP" /></div>
-    <div class="hero-photo hp-3"><img src="fotos/ambiente/interior.png" alt="Atendimento de banho e tosa na PomPom Pet" /></div>
+    <div class="hero-photo hp-1"><img src="fotos/ambiente/recepcao.png" alt="Recepção da PomPom Pet em Cajamar"  loading="lazy" decoding="async" /></div>
+    <div class="hero-photo hp-2"><img src="fotos/ambiente/frente.png"   alt="Fachada da PomPom Pet — petshop em Cajamar/SP"  loading="lazy" decoding="async" /></div>
+    <div class="hero-photo hp-3"><img src="fotos/ambiente/interior.png" alt="Atendimento de banho e tosa na PomPom Pet"  loading="lazy" decoding="async" /></div>
   </div>
 
   <!-- Conteúdo hero -->
@@ -850,9 +867,9 @@
   <div class="px-5 fade-up">
     <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-rose-50">
       <div class="h-72 bg-rose-50 relative overflow-hidden">
-        <img src="fotos/dona.jpg" alt="Dona do PomPom Pet"
+        <img src="fotos/dona.jpg" alt="Dona da PomPom Pet — banho e tosa em Cajamar"
              class="w-full h-full object-cover" style="object-position: center 35%"
-             onerror="this.style.display='none'; document.getElementById('dona-placeholder').style.display='flex';" />
+             onerror="this.style.display='none'; document.getElementById('dona-placeholder').style.display='flex';"  loading="lazy" decoding="async" />
         <div id="dona-placeholder" style="display:none"
              class="absolute inset-0 flex items-center justify-center opacity-25 text-8xl">👩</div>
         <div class="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-white"></div>
@@ -893,19 +910,19 @@
   <div class="space-wrap-m fade-up">
     <div class="space-track-m">
       <!-- Set 1 -->
-      <div class="space-card-m"><img src="fotos/ambiente/frente.png"   alt="Fachada da PomPom Pet petshop em Cajamar"/><div class="label">📍 Fachada</div></div>
-      <div class="space-card-m"><img src="fotos/ambiente/recepcao.png" alt="Recepção do banho e tosa PomPom Pet"/><div class="label">🛎️ Recepção</div></div>
-      <div class="space-card-m"><img src="fotos/ambiente/espera.png"   alt="Área de espera climatizada PomPom Pet Cajamar"/><div class="label">🪑 Área de espera</div></div>
-      <div class="space-card-m"><img src="fotos/ambiente/interior.png" alt="Sala de banho e tosa PomPom Pet"/><div class="label">✂️ Atendimento</div></div>
-      <div class="space-card-m"><img src="fotos/ambiente/secadora.png" alt="Secadora profissional para cães PomPom Pet"/><div class="label">💨 Secadora</div></div>
-      <div class="space-card-m"><img src="fotos/ambiente/lojinha.png"  alt="Lojinha de produtos pet PomPom Cajamar"/><div class="label">🛍️ Lojinha</div></div>
+      <div class="space-card-m"><img src="fotos/ambiente/frente.png"   alt="Fachada da PomPom Pet petshop em Cajamar" loading="lazy" decoding="async" /><div class="label">📍 Fachada</div></div>
+      <div class="space-card-m"><img src="fotos/ambiente/recepcao.png" alt="Recepção do banho e tosa PomPom Pet" loading="lazy" decoding="async" /><div class="label">🛎️ Recepção</div></div>
+      <div class="space-card-m"><img src="fotos/ambiente/espera.png"   alt="Área de espera climatizada PomPom Pet Cajamar" loading="lazy" decoding="async" /><div class="label">🪑 Área de espera</div></div>
+      <div class="space-card-m"><img src="fotos/ambiente/interior.png" alt="Sala de banho e tosa PomPom Pet" loading="lazy" decoding="async" /><div class="label">✂️ Atendimento</div></div>
+      <div class="space-card-m"><img src="fotos/ambiente/secadora.png" alt="Secadora profissional para cães PomPom Pet" loading="lazy" decoding="async" /><div class="label">💨 Secadora</div></div>
+      <div class="space-card-m"><img src="fotos/ambiente/lojinha.png"  alt="Lojinha de produtos pet PomPom Cajamar" loading="lazy" decoding="async" /><div class="label">🛍️ Lojinha</div></div>
       <!-- Set 2 (duplicado para loop seamless) -->
-      <div class="space-card-m"><img src="fotos/ambiente/frente.png"   alt=""/><div class="label">📍 Fachada</div></div>
-      <div class="space-card-m"><img src="fotos/ambiente/recepcao.png" alt=""/><div class="label">🛎️ Recepção</div></div>
-      <div class="space-card-m"><img src="fotos/ambiente/espera.png"   alt=""/><div class="label">🪑 Área de espera</div></div>
-      <div class="space-card-m"><img src="fotos/ambiente/interior.png" alt=""/><div class="label">✂️ Atendimento</div></div>
-      <div class="space-card-m"><img src="fotos/ambiente/secadora.png" alt=""/><div class="label">💨 Secadora</div></div>
-      <div class="space-card-m"><img src="fotos/ambiente/lojinha.png"  alt=""/><div class="label">🛍️ Lojinha</div></div>
+      <div class="space-card-m"><img src="fotos/ambiente/frente.png"   alt="" loading="lazy" decoding="async" /><div class="label">📍 Fachada</div></div>
+      <div class="space-card-m"><img src="fotos/ambiente/recepcao.png" alt="" loading="lazy" decoding="async" /><div class="label">🛎️ Recepção</div></div>
+      <div class="space-card-m"><img src="fotos/ambiente/espera.png"   alt="" loading="lazy" decoding="async" /><div class="label">🪑 Área de espera</div></div>
+      <div class="space-card-m"><img src="fotos/ambiente/interior.png" alt="" loading="lazy" decoding="async" /><div class="label">✂️ Atendimento</div></div>
+      <div class="space-card-m"><img src="fotos/ambiente/secadora.png" alt="" loading="lazy" decoding="async" /><div class="label">💨 Secadora</div></div>
+      <div class="space-card-m"><img src="fotos/ambiente/lojinha.png"  alt="" loading="lazy" decoding="async" /><div class="label">🛍️ Lojinha</div></div>
     </div>
   </div>
 </section>
@@ -921,49 +938,49 @@
   <div class="story-scroll">
     <div class="story-card">
       <img src="fotos/trabalho1.jpg" alt="Spitz Alemão"
-           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"  loading="lazy" decoding="async" />
       <div class="placeholder" style="display:none"><span>🦊</span><p>Spitz Alemão</p></div>
       <div class="label">🦊 Spitz Alemão</div>
     </div>
     <div class="story-card">
       <img src="fotos/cachorros/D0E2A0A9-A99F-4AFF-97B2-5CD058DDDC0E.jpg" alt="Husky Siberiano"
-           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"  loading="lazy" decoding="async" />
       <div class="placeholder" style="display:none"><span>🐕</span><p>Husky Siberiano</p></div>
       <div class="label">🐕 Husky Siberiano</div>
     </div>
     <div class="story-card">
       <img src="fotos/cachorros/809C6B43-407C-452D-9E9F-3C23FA351005.png" alt="Lhasa Apso"
-           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"  loading="lazy" decoding="async" />
       <div class="placeholder" style="display:none"><span>🐕</span><p>Lhasa Apso</p></div>
       <div class="label">🐕 Lhasa Apso</div>
     </div>
     <div class="story-card">
       <img src="fotos/trabalho4.jpg" alt="Shih Tzu"
-           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"  loading="lazy" decoding="async" />
       <div class="placeholder" style="display:none"><span>👑</span><p>Shih Tzu</p></div>
       <div class="label">👑 Shih Tzu</div>
     </div>
     <div class="story-card">
       <img src="fotos/trabalho5.jpg" alt="Golden Retriever"
-           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"  loading="lazy" decoding="async" />
       <div class="placeholder" style="display:none"><span>🌟</span><p>Golden Retriever</p></div>
       <div class="label">🌟 Golden Retriever</div>
     </div>
     <div class="story-card">
       <img src="fotos/cachorros/7E86BC8C-B4D2-4DA1-B7B2-53DB74296FB7.png" alt="Pug"
-           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"  loading="lazy" decoding="async" />
       <div class="placeholder" style="display:none"><span>🐕</span><p>Pug</p></div>
       <div class="label">🐕 Pug</div>
     </div>
     <div class="story-card">
       <img src="fotos/trabalho7.jpg" alt="Poodle"
-           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"  loading="lazy" decoding="async" />
       <div class="placeholder" style="display:none"><span>🐩</span><p>Poodle</p></div>
       <div class="label">🐩 Poodle</div>
     </div>
     <div class="story-card">
       <img src="fotos/trabalho8.jpg" alt="Maltês"
-           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"  loading="lazy" decoding="async" />
       <div class="placeholder" style="display:none"><span>😊</span><p>Maltês</p></div>
       <div class="label">😊 Maltês</div>
     </div>
@@ -974,9 +991,9 @@
     <div class="section-tag mb-3">🔄 Antes e Depois</div>
     <div class="ba-container">
       <img class="ba-img" src="fotos/depois1.jpg" alt="Depois"
-           onerror="this.style.background='linear-gradient(135deg,#fb7185,#e11d48)'; this.src='';" />
+           onerror="this.style.background='linear-gradient(135deg,#fb7185,#e11d48)'; this.src='';"  loading="lazy" decoding="async" />
       <img class="ba-img ba-overlay" id="ba-overlay" src="fotos/antes1.jpg" alt="Antes"
-           onerror="this.style.background='#d1d5db'; this.src='';" />
+           onerror="this.style.background='#d1d5db'; this.src='';"  loading="lazy" decoding="async" />
       <input type="range" min="0" max="100" value="50" id="ba-range" class="ba-range" />
       <div class="ba-divider" id="ba-divider">
         <div class="ba-handle">✨</div>
@@ -1364,7 +1381,7 @@
     const nome = f.replace(/\.[^.]+$/, '');
     const msg  = encodeURIComponent('Olá! Vi o produto ' + nome + ' na Lojinha PomPom Pet e quero saber mais!');
     return `<a href="https://wa.me/5511947266216?text=${msg}" target="_blank" rel="noopener noreferrer" class="prod-bolinha">
-      <div class="prod-bolinha-img"><img src="https://storage.googleapis.com/pompom-produtos/${encodeURIComponent(f)}" alt="${nome}" style="width:80px;height:80px;object-fit:cover;border-radius:50%;display:block;"/></div>
+      <div class="prod-bolinha-img"><img src="https://storage.googleapis.com/pompom-produtos/${encodeURIComponent(f)}" alt="${nome}" style="width:80px;height:80px;object-fit:cover;border-radius:50%;display:block;" loading="lazy" decoding="async" /></div>
       <div class="prod-bolinha-label">🛍️ Quero</div>
     </a>`;
   }

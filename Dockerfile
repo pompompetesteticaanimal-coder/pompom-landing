@@ -23,6 +23,7 @@ COPY mobile.html  /usr/share/nginx/html/
 COPY index.html   /usr/share/nginx/html/
 COPY robots.txt   /usr/share/nginx/html/
 COPY sitemap.xml  /usr/share/nginx/html/
+COPY manifest.json /usr/share/nginx/html/
 COPY fotos        /usr/share/nginx/html/fotos/
 COPY logo.svg     /usr/share/nginx/html/
 COPY --from=css-builder /build/tailwind.css /usr/share/nginx/html/
