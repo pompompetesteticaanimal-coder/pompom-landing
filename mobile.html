@@ -768,6 +768,40 @@
       color: rgba(0,0,0,0.35); text-decoration: none;
     }
     .dog-bubble { transition: border-color .2s; }
+    .galeria-m-grid-wrap {
+      max-height: 480px;
+      overflow-y: auto;
+      padding: 0 20px;
+      scrollbar-width: none;
+    }
+    .galeria-m-grid-wrap::-webkit-scrollbar { display: none; }
+    .galeria-m-story-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    .galeria-m-story-item {
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      aspect-ratio: 2/3;
+      background: #fce7f3;
+      box-shadow: 0 4px 18px rgba(225,29,72,0.13);
+      cursor: zoom-in;
+      opacity: 0;
+      animation: datasItemIn .4s cubic-bezier(.25,.46,.45,.94) forwards;
+    }
+    .galeria-m-story-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .galeria-m-story-item .label {
+      position: absolute;
+      bottom: 10px; left: 10px; right: 10px;
+      background: rgba(0,0,0,0.52);
+      backdrop-filter: blur(4px);
+      color: white;
+      font-size: 11px; font-weight: 600;
+      padding: 5px 9px;
+      border-radius: 8px;
+    }
   </style>
 </head>
 <body>
@@ -1006,54 +1040,13 @@
     <div class="section-sub">Deslize para ver mais</div>
   </div>
 
-  <div class="story-scroll">
-    <div class="story-card">
-      <img src="fotos/trabalho1.jpg" alt="Spitz Alemão"
-           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"  loading="lazy" decoding="async" />
-      <div class="placeholder" style="display:none"><span>🦊</span><p>Spitz Alemão</p></div>
-      <div class="label">🦊 Spitz Alemão</div>
-    </div>
-    <div class="story-card">
-      <img src="fotos/cachorros/D0E2A0A9-A99F-4AFF-97B2-5CD058DDDC0E.jpg" alt="Husky Siberiano"
-           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"  loading="lazy" decoding="async" />
-      <div class="placeholder" style="display:none"><span>🐕</span><p>Husky Siberiano</p></div>
-      <div class="label">🐕 Husky Siberiano</div>
-    </div>
-    <div class="story-card">
-      <img src="fotos/cachorros/809C6B43-407C-452D-9E9F-3C23FA351005.png" alt="Lhasa Apso"
-           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"  loading="lazy" decoding="async" />
-      <div class="placeholder" style="display:none"><span>🐕</span><p>Lhasa Apso</p></div>
-      <div class="label">🐕 Lhasa Apso</div>
-    </div>
-    <div class="story-card">
-      <img src="fotos/trabalho4.jpg" alt="Shih Tzu"
-           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"  loading="lazy" decoding="async" />
-      <div class="placeholder" style="display:none"><span>👑</span><p>Shih Tzu</p></div>
-      <div class="label">👑 Shih Tzu</div>
-    </div>
-    <div class="story-card">
-      <img src="fotos/trabalho5.jpg" alt="Golden Retriever"
-           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"  loading="lazy" decoding="async" />
-      <div class="placeholder" style="display:none"><span>🌟</span><p>Golden Retriever</p></div>
-      <div class="label">🌟 Golden Retriever</div>
-    </div>
-    <div class="story-card">
-      <img src="fotos/cachorros/7E86BC8C-B4D2-4DA1-B7B2-53DB74296FB7.png" alt="Pug"
-           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"  loading="lazy" decoding="async" />
-      <div class="placeholder" style="display:none"><span>🐕</span><p>Pug</p></div>
-      <div class="label">🐕 Pug</div>
-    </div>
-    <div class="story-card">
-      <img src="fotos/trabalho7.jpg" alt="Poodle"
-           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"  loading="lazy" decoding="async" />
-      <div class="placeholder" style="display:none"><span>🐩</span><p>Poodle</p></div>
-      <div class="label">🐩 Poodle</div>
-    </div>
-    <div class="story-card">
-      <img src="fotos/trabalho8.jpg" alt="Maltês"
-           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"  loading="lazy" decoding="async" />
-      <div class="placeholder" style="display:none"><span>😊</span><p>Maltês</p></div>
-      <div class="label">😊 Maltês</div>
+  <div id="galeria-m-tabs-nav" class="datas-tabs-m mb-3">
+    <!-- gerado por JS -->
+  </div>
+
+  <div class="galeria-m-grid-wrap">
+    <div id="galeria-m-grid">
+      <!-- gerado por JS -->
     </div>
   </div>
 
@@ -1074,20 +1067,6 @@
     </div>
     <p class="text-center text-stone-400 text-xs mt-2">Arraste para comparar</p>
   </div>
-</section>
-
-<!-- ===== DATAS COMEMORATIVAS ===== -->
-<section id="datas-m" style="background:#fdf6f0; padding: 2rem 0 1.5rem;">
-  <div class="section-header fade-up" style="margin-bottom:1rem;">
-    <div class="section-tag">🎉 Momentos Especiais</div>
-    <div class="section-title">Datas<br/>Comemorativas</div>
-  </div>
-
-  <div id="datas-tabs-m-nav" class="datas-tabs-m mb-3"></div>
-
-  <div id="datas-banner-m" class="datas-banner-m"></div>
-
-  <div id="datas-panel-m"></div>
 </section>
 
 <!-- ===== MOSAICO DE PETS ===== -->
@@ -1621,14 +1600,11 @@
     document.body.style.overflow = '';
   }
 
-  // ── DATAS COMEMORATIVAS (mobile) ──
-  const DATAS_M = {
+  // ── GALERIA COM ABAS (mobile) ──
+  const GALERIA_M_DADOS = {
     halloween: {
-      label:'🎃 Halloween', emoji:'🎃', cor:'#f97316',
-      corBg:'linear-gradient(135deg,#f97316 0%,#c2410c 100%)',
-      titulo:'Halloween — Terrorificamente fofos!',
-      descricao:'Fantasias assustadoras e muita diversão. Nossos pets arrasam no Halloween!',
-      fotos:[
+      label: '🎃 Halloween', cor: '#f97316',
+      fotos: [
         'fotos/datas-comemorativas/halloween/princiapal.jpg',
         'fotos/datas-comemorativas/halloween/principal_2.JPG',
         'fotos/datas-comemorativas/halloween/principal_3.JPG',
@@ -1647,13 +1623,12 @@
       ]
     },
     natal: {
-      label:'🎄 Natal', emoji:'🎄', cor:'#16a34a',
-      corBg:'linear-gradient(135deg,#16a34a 0%,#166534 100%)',
-      titulo:'Natal — Presentes de quatro patas!',
-      descricao:'O Natal fica ainda mais especial com nossos pets enfeitados para a data.',
-      fotos:[
+      label: '🎄 Natal', cor: '#16a34a',
+      fotos: [
         'fotos/datas-comemorativas/natal/principal.jpg',
         'fotos/datas-comemorativas/natal/principal1.jpg',
+        'fotos/datas-comemorativas/natal/principal2.jpg',
+        'fotos/datas-comemorativas/natal/principal3.jpg',
         'fotos/datas-comemorativas/natal/principal5.PNG',
         'fotos/datas-comemorativas/natal/principal6.PNG',
         'fotos/datas-comemorativas/natal/principal8.PNG',
@@ -1670,11 +1645,8 @@
       ]
     },
     pascoa: {
-      label:'🐣 Páscoa', emoji:'🐣', cor:'#a855f7',
-      corBg:'linear-gradient(135deg,#c084fc 0%,#7e22ce 100%)',
-      titulo:'Páscoa — Coelhinhos de verdade!',
-      descricao:'Ovinhos de chocolate podem esperar — nossos pets são o presente de Páscoa mais fofo!',
-      fotos:[
+      label: '🐣 Páscoa', cor: '#a855f7',
+      fotos: [
         'fotos/datas-comemorativas/pascoa/principal.png',
         'fotos/datas-comemorativas/pascoa/principal_1.PNG',
         'fotos/datas-comemorativas/pascoa/principal_2.PNG',
@@ -1693,11 +1665,8 @@
       ]
     },
     carnaval: {
-      label:'🎭 Carnaval', emoji:'🎭', cor:'#7c3aed',
-      corBg:'linear-gradient(135deg,#f59e0b 0%,#7c3aed 100%)',
-      titulo:'Carnaval — Folia e muito estilo!',
-      descricao:'Fantasias coloridas e muito samba no pé. Nossos pets são os reis do carnaval!',
-      fotos:[
+      label: '🎭 Carnaval', cor: '#7c3aed',
+      fotos: [
         'fotos/datas-comemorativas/carnaval/principal.png',
         'fotos/datas-comemorativas/carnaval/principal_1.png',
         'fotos/datas-comemorativas/carnaval/principal_2.png',
@@ -1713,61 +1682,81 @@
         'fotos/datas-comemorativas/carnaval/IMG_8438.PNG',
         'fotos/datas-comemorativas/carnaval/IMG_8456.PNG',
       ]
-    },
-    saojuao:{ label:'🌽 São João',  emoji:'🌽', cor:'#d97706', corBg:'linear-gradient(135deg,#fbbf24 0%,#d97706 100%)', titulo:'São João — Arraiá dos pets!', descricao:'Xadrezados, chapéus de palha e muito forró!', fotos:['fotos/cachorros/E3D05CAC-5399-4FFB-9FC8-488F1A1D17FE.jpg','fotos/cachorros/5020BB9A-3486-4F8D-8C55-4AFCF517C96B.jpg','fotos/cachorros/7E86BC8C-B4D2-4DA1-B7B2-53DB74296FB7.png','fotos/cachorros/400685A8-CA1B-48E4-9254-BB0E1752F2DC.jpg','fotos/cachorros/B8E76CDC-17E8-4EB7-958B-7F7156B2CD4B.jpg','fotos/cachorros/91A10164-1061-4E39-AACB-C70BCCA3D8E7.jpg'] },
-    maes:   { label:'💐 Dia das Mães', emoji:'💐', cor:'#e11d48', corBg:'linear-gradient(135deg,#fb7185 0%,#9f1239 100%)', titulo:'Dia das Mães — Filhos de 4 patas!', descricao:'Todo dia é dia das mães, mas nesse dia especial os pets chegam ainda mais caprichados!', fotos:['fotos/cachorros/FE9FB7FF-BC03-46A7-8748-C16A41B9025F.png','fotos/cachorros/335942CA-EED3-4086-BE99-A3CA4C4FB1CD.jpg','fotos/cachorros/6598A84E-1C45-4490-B6A1-CCFEDBF9DA59.jpg','fotos/cachorros/F2149C04-602C-4972-B21C-3143C94DEB7A.jpg','fotos/cachorros/45785CD7-DE60-4A7E-9EC4-07035ACD21F1.jpg','fotos/cachorros/DCB2001F-0467-4F0C-9CB1-DE313D3B9056.jpg'] },
-    pais:   { label:'👔 Dia dos Pais', emoji:'👔', cor:'#1d4ed8', corBg:'linear-gradient(135deg,#60a5fa 0%,#1d4ed8 100%)', titulo:'Dia dos Pais — Companheiros fiéis!', descricao:'Para os pais que amam seus pets tanto quanto eles amam de volta!', fotos:['fotos/cachorros/809C6B43-407C-452D-9E9F-3C23FA351005.png','fotos/cachorros/0699F9E0-CE8E-4607-95A8-DEC7804BC574.png','fotos/cachorros/328B0668-1F96-4342-9D67-5438DD02DCAF.jpg','fotos/cachorros/A9119A23-9A7A-4C13-A0F7-3B254033030C.png','fotos/cachorros/61C84BB1-A7F4-441B-B110-6E61AA782F82.png','fotos/cachorros/10CDCBD1-874B-4FE9-A4E2-B493D24F1D92.jpg'] }
+    }
   };
 
-  let _datasAtivaM = 'halloween';
+  const PORTFOLIO_M_FOTOS = [
+    'fotos/trabalho1.jpg',
+    'fotos/cachorros/D0E2A0A9-A99F-4AFF-97B2-5CD058DDDC0E.jpg',
+    'fotos/cachorros/809C6B43-407C-452D-9E9F-3C23FA351005.png',
+    'fotos/trabalho4.jpg',
+    'fotos/trabalho5.jpg',
+    'fotos/cachorros/7E86BC8C-B4D2-4DA1-B7B2-53DB74296FB7.png',
+    'fotos/trabalho7.jpg',
+    'fotos/trabalho8.jpg',
+  ];
 
-  function mudarDataTabM(key) {
-    _datasAtivaM = key;
-    const d = DATAS_M[key];
-    document.querySelectorAll('.datas-tab-btn-m').forEach(btn => {
-      const bd = DATAS_M[btn.dataset.tab];
+  function mudarGaleriaMTab(key) {
+    let fotos;
+    if (key === 'todas') {
+      const principais = Object.values(GALERIA_M_DADOS).flatMap(d =>
+        d.fotos.filter(f => /principal/i.test(f.split('/').pop()))
+      );
+      const resto = Object.values(GALERIA_M_DADOS).flatMap(d =>
+        d.fotos.filter(f => !/principal/i.test(f.split('/').pop()))
+      );
+      fotos = [...principais, ...PORTFOLIO_M_FOTOS, ...resto];
+    } else {
+      fotos = GALERIA_M_DADOS[key].fotos;
+    }
+
+    document.querySelectorAll('.galeria-m-tab-btn').forEach(btn => {
+      const cor = btn.dataset.tab === 'todas' ? '#be123c' : (GALERIA_M_DADOS[btn.dataset.tab] || {}).cor || '#be123c';
       if (btn.dataset.tab === key) {
         btn.classList.add('ativa');
-        btn.style.background = d.cor; btn.style.borderColor = d.cor;
-        btn.style.color = 'white'; btn.style.boxShadow = `0 4px 14px ${d.cor}55`;
+        btn.style.background = cor; btn.style.borderColor = cor;
+        btn.style.color = 'white'; btn.style.boxShadow = `0 4px 14px ${cor}55`;
       } else {
         btn.classList.remove('ativa');
-        btn.style.background = 'white'; btn.style.borderColor = bd.cor;
-        btn.style.color = bd.cor; btn.style.boxShadow = '0 2px 6px rgba(0,0,0,0.08)';
+        btn.style.background = 'white'; btn.style.borderColor = cor;
+        btn.style.color = cor; btn.style.boxShadow = '0 2px 6px rgba(0,0,0,0.08)';
       }
     });
-    const banner = document.getElementById('datas-banner-m');
-    banner.style.background = d.corBg;
-    banner.innerHTML = `<div class="datas-banner-m-icon">${d.emoji}</div><div class="datas-banner-m-text"><h3>${d.titulo}</h3><p>${d.descricao}</p></div>`;
-    const panel = document.getElementById('datas-panel-m');
-    panel.innerHTML = '';
+
+    const container = document.getElementById('galeria-m-grid');
+    container.innerHTML = '';
     const grid = document.createElement('div');
-    grid.className = 'datas-grid-m';
-    d.fotos.forEach((src, i) => {
+    grid.className = 'galeria-m-story-grid';
+    fotos.forEach((src, i) => {
       const item = document.createElement('div');
-      item.className = 'datas-grid-item-m';
-      item.style.animationDelay = `${i * 55}ms`;
-      item.innerHTML = `<img src="${src}" alt="${d.emoji}" loading="lazy" decoding="async"/><div class="ov"><span>${d.label}</span></div>`;
+      item.className = 'galeria-m-story-item';
+      item.style.animationDelay = `${i * 45}ms`;
+      item.innerHTML = `<img src="${src}" alt="" loading="lazy" decoding="async"/>`;
       item.addEventListener('click', () => openLightbox(src));
       grid.appendChild(item);
     });
-    panel.appendChild(grid);
+    container.appendChild(grid);
+
+    const wrap = container.closest('.galeria-m-grid-wrap');
+    if (wrap) wrap.scrollTop = 0;
   }
 
   function abrirAlbumDataM(key) {
-    mudarDataTabM(key);
-    const sec = document.getElementById('datas-m');
+    mudarGaleriaMTab(key);
+    const sec = document.getElementById('galeria');
     window.scrollTo({ top: sec.getBoundingClientRect().top + window.scrollY - 60, behavior: 'smooth' });
   }
 
-  function _initDatasM() {
-    const nav = document.getElementById('datas-tabs-m-nav');
-    nav.innerHTML = Object.entries(DATAS_M).map(([k, d]) =>
-      `<button class="datas-tab-btn-m" data-tab="${k}" onclick="mudarDataTabM('${k}')" style="color:${d.cor};border-color:${d.cor};">${d.label}</button>`
+  function _initGaleriaM() {
+    const nav = document.getElementById('galeria-m-tabs-nav');
+    const todasBtn = `<button class="datas-tab-btn-m galeria-m-tab-btn" data-tab="todas" onclick="mudarGaleriaMTab('todas')" style="color:#be123c;border-color:#be123c;">✨ Todas</button>`;
+    const dataBtns = Object.entries(GALERIA_M_DADOS).map(([k, d]) =>
+      `<button class="datas-tab-btn-m galeria-m-tab-btn" data-tab="${k}" onclick="mudarGaleriaMTab('${k}')" style="color:${d.cor};border-color:${d.cor};">${d.label}</button>`
     ).join('');
-    mudarDataTabM('halloween');
+    nav.innerHTML = todasBtn + dataBtns;
+    mudarGaleriaMTab('todas');
   }
-  document.addEventListener('DOMContentLoaded', _initDatasM);
+  document.addEventListener('DOMContentLoaded', _initGaleriaM);
 </script>
 
 <script>
