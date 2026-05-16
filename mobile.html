@@ -1044,10 +1044,8 @@
     <!-- gerado por JS -->
   </div>
 
-  <div class="galeria-m-grid-wrap">
-    <div id="galeria-m-grid">
-      <!-- gerado por JS -->
-    </div>
+  <div id="galeria-m-grid" class="story-scroll">
+    <!-- gerado por JS -->
   </div>
 
   <!-- Antes / Depois -->
@@ -1800,20 +1798,15 @@
 
     const container = document.getElementById('galeria-m-grid');
     container.innerHTML = '';
-    const grid = document.createElement('div');
-    grid.className = 'galeria-m-story-grid';
     fotos.forEach((src, i) => {
       const item = document.createElement('div');
-      item.className = 'galeria-m-story-item';
-      item.style.animationDelay = `${i * 45}ms`;
+      item.className = 'story-card';
+      item.style.cssText = `opacity:0;animation:datasItemIn .4s cubic-bezier(.25,.46,.45,.94) ${i*45}ms forwards;`;
       item.innerHTML = `<img src="${src}" alt="" loading="lazy" decoding="async"/>`;
       item.addEventListener('click', () => openLightbox(src));
-      grid.appendChild(item);
+      container.appendChild(item);
     });
-    container.appendChild(grid);
-
-    const wrap = container.closest('.galeria-m-grid-wrap');
-    if (wrap) wrap.scrollTop = 0;
+    container.scrollLeft = 0;
   }
 
   function abrirAlbumDataM(key) {
