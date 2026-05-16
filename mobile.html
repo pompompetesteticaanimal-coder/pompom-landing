@@ -740,6 +740,39 @@
       animation: datasItemIn .4s cubic-bezier(.25,.46,.45,.94) forwards;
     }
     @keyframes datasItemIn { to { opacity:1; transform:translateY(0) scale(1); } }
+    .scroll-hint-wrap { position: relative; }
+    .scroll-hint-wrap::after {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 60px; height: 100%;
+      background: linear-gradient(to right, transparent, rgba(255,255,255,0.85));
+      pointer-events: none;
+      border-radius: 0 20px 20px 0;
+      transition: opacity .4s;
+    }
+    .scroll-hint-wrap.scrolled::after { opacity: 0; }
+    .scroll-hint-arrow {
+      position: absolute;
+      right: 6px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+      width: 32px; height: 32px;
+      background: #e11d48;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: white; font-size: 14px;
+      box-shadow: 0 2px 10px rgba(225,29,72,.35);
+      pointer-events: none;
+      animation: arrowBounce 1.2s ease-in-out infinite;
+      transition: opacity .4s;
+    }
+    .scroll-hint-wrap.scrolled .scroll-hint-arrow { opacity: 0; }
+    @keyframes arrowBounce {
+      0%, 100% { transform: translateY(-50%) translateX(0); }
+      50%       { transform: translateY(-50%) translateX(5px); }
+    }
     .datas-grid-item-m img { width:100%; height:100%; object-fit:cover; display:block; }
     .datas-grid-item-m .ov {
       position:absolute; inset:0;
@@ -1044,8 +1077,11 @@
     <!-- gerado por JS -->
   </div>
 
-  <div id="galeria-m-grid" class="story-scroll">
-    <!-- gerado por JS -->
+  <div class="scroll-hint-wrap">
+    <div id="galeria-m-grid" class="story-scroll">
+      <!-- gerado por JS -->
+    </div>
+    <div class="scroll-hint-arrow">›</div>
   </div>
 
   <!-- Antes / Depois -->
@@ -1811,6 +1847,7 @@
       container.appendChild(item);
     });
     container.scrollLeft = 0;
+    container.closest('.scroll-hint-wrap').classList.remove('scrolled');
   }
 
   function abrirAlbumDataM(key) {
@@ -1818,6 +1855,13 @@
     const sec = document.getElementById('galeria');
     window.scrollTo({ top: sec.getBoundingClientRect().top + window.scrollY - 60, behavior: 'smooth' });
   }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const grid = document.getElementById('galeria-m-grid');
+    if (grid) grid.addEventListener('scroll', () => {
+      if (grid.scrollLeft > 20) grid.closest('.scroll-hint-wrap').classList.add('scrolled');
+    }, { passive: true });
+  });
 
   function _initGaleriaM() {
     const nav = document.getElementById('galeria-m-tabs-nav');
