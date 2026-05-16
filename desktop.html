@@ -1940,10 +1940,16 @@
     _galeriaAtivaKey = key;
     let fotos;
     if (key === 'todas') {
-      const principais = Object.values(GALERIA_POR_DATA).flatMap(d =>
-        d.fotos.filter(f => /principal/i.test(f.src.split('/').pop()))
-      );
-      fotos = [...PORTFOLIO_FOTOS, ...principais];
+      const grupos = [
+        PORTFOLIO_FOTOS,
+        ...Object.values(GALERIA_POR_DATA).map(d =>
+          d.fotos.filter(f => /principal/i.test(f.src.split('/').pop()))
+        )
+      ];
+      fotos = [];
+      const max = Math.max(...grupos.map(g => g.length));
+      for (let i = 0; i < max; i++)
+        for (const g of grupos) if (i < g.length) fotos.push(g[i]);
     } else {
       fotos = GALERIA_POR_DATA[key].fotos;
     }
