@@ -697,6 +697,77 @@
       font-size: 0.6rem; color: #be123c; font-weight: 700;
       text-align: center; line-height: 1.2;
     }
+
+    /* ── LIGHTBOX (mobile) ── */
+    #lightbox-m {
+      display: none; position: fixed; inset: 0;
+      background: rgba(0,0,0,0.95); z-index: 9000;
+      align-items: center; justify-content: center; padding: 16px;
+    }
+    #lightbox-m.open { display: flex; }
+    #lightbox-m img { max-width: 100%; max-height: 88vh; object-fit: contain; border-radius: 12px; }
+
+    /* ── DATAS COMEMORATIVAS (mobile) ── */
+    .datas-tabs-m {
+      display: flex; gap: 8px; overflow-x: auto;
+      padding: 0 20px 4px; scrollbar-width: none;
+    }
+    .datas-tabs-m::-webkit-scrollbar { display: none; }
+    .datas-tab-btn-m {
+      padding: 8px 16px; border-radius: 100px; border: 2px solid transparent;
+      font-size: 12px; font-weight: 700; background: white;
+      cursor: pointer; white-space: nowrap; flex-shrink: 0;
+      transition: background .25s, color .25s, box-shadow .25s;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      -webkit-tap-highlight-color: transparent;
+    }
+    .datas-tab-btn-m.ativa { color: white !important; }
+    .datas-banner-m {
+      border-radius: 16px; padding: 14px 18px;
+      margin: 10px 20px 14px; display: flex; align-items: center; gap: 14px;
+    }
+    .datas-banner-m-icon { font-size: 2rem; flex-shrink: 0; animation: dataBannerPop .3s cubic-bezier(.34,1.56,.64,1); }
+    @keyframes dataBannerPop { from{transform:scale(.6) rotate(-12deg);opacity:0} to{transform:scale(1) rotate(0deg);opacity:1} }
+    .datas-banner-m-text h3 { font-size:.95rem; font-weight:700; color:white; margin:0 0 3px; }
+    .datas-banner-m-text p  { font-size:12px; color:rgba(255,255,255,.85); margin:0; line-height:1.4; }
+    .datas-grid-m {
+      display: grid; grid-template-columns: repeat(2,1fr); gap: 10px; padding: 0 20px;
+    }
+    .datas-grid-item-m {
+      border-radius: 14px; overflow: hidden; position: relative;
+      aspect-ratio: 1; cursor: pointer;
+      opacity: 0; transform: translateY(14px) scale(.97);
+      animation: datasItemIn .4s cubic-bezier(.25,.46,.45,.94) forwards;
+    }
+    @keyframes datasItemIn { to { opacity:1; transform:translateY(0) scale(1); } }
+    .datas-grid-item-m img { width:100%; height:100%; object-fit:cover; display:block; }
+    .datas-grid-item-m .ov {
+      position:absolute; inset:0;
+      background:linear-gradient(to top,rgba(0,0,0,.55) 0%,transparent 50%);
+      opacity:0; display:flex; align-items:flex-end; padding:10px;
+      transition: opacity .25s;
+    }
+    .datas-grid-item-m:active .ov { opacity:1; }
+    .datas-grid-item-m .ov span { color:white; font-size:11px; font-weight:600; }
+
+    /* ── DATE MOSAIC ROWS (mobile) ── */
+    .date-mosaic-block-m { padding-bottom: 12px; }
+    .date-mosaic-block-m:last-child { padding-bottom: 0; }
+    .date-mosaic-label-m {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 20px 6px;
+    }
+    .date-mosaic-label-m-left {
+      display: flex; align-items: center; gap: 7px;
+      font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; color: rgba(0,0,0,0.5);
+    }
+    .date-mosaic-dot-m { width:6px; height:6px; border-radius:50%; flex-shrink:0; }
+    .date-mosaic-link-m {
+      font-size: 10px; font-weight: 700; letter-spacing: .5px;
+      color: rgba(0,0,0,0.35); text-decoration: none;
+    }
+    .dog-bubble { transition: border-color .2s; }
   </style>
 </head>
 <body>
@@ -1005,61 +1076,176 @@
   </div>
 </section>
 
+<!-- ===== DATAS COMEMORATIVAS ===== -->
+<section id="datas-m" style="background:#fdf6f0; padding: 2rem 0 1.5rem;">
+  <div class="section-header fade-up" style="margin-bottom:1rem;">
+    <div class="section-tag">🎉 Momentos Especiais</div>
+    <div class="section-title">Datas<br/>Comemorativas</div>
+  </div>
+
+  <div id="datas-tabs-m-nav" class="datas-tabs-m mb-3"></div>
+
+  <div id="datas-banner-m" class="datas-banner-m"></div>
+
+  <div id="datas-panel-m"></div>
+</section>
+
 <!-- ===== MOSAICO DE PETS ===== -->
 <section style="background: linear-gradient(135deg, #fff1f2 0%, #ffe4e6 50%, #fdf2f8 100%); padding: 2rem 0; overflow:hidden;">
   <div class="section-header fade-up" style="margin-bottom:1rem;">
     <div class="section-tag">🐾 Nossos Pets</div>
     <div class="section-title">Cheios de amor</div>
   </div>
-  <div style="display:flex; flex-direction:column; gap:12px; overflow:hidden;">
-    <div class="marquee-left" style="overflow:hidden;">
-      <div class="marquee-track">
-        <img class="dog-bubble" src="fotos/cachorros/0397B328-5718-4F5C-A4CA-BC2EDA8CA699.png" alt="pet"/>
-        <img class="dog-bubble" src="fotos/cachorros/0699F9E0-CE8E-4607-95A8-DEC7804BC574.png" alt="pet"/>
-        <img class="dog-bubble" src="fotos/cachorros/10CDCBD1-874B-4FE9-A4E2-B493D24F1D92.jpg" alt="pet"/>
-        <img class="dog-bubble" src="fotos/cachorros/16BFB6C5-48D9-4AEC-994C-1DFFA02377B1.png" alt="pet"/>
-        <img class="dog-bubble" src="fotos/cachorros/1F32B19F-2487-48AF-8219-DE48172F1C1B.png" alt="pet"/>
-        <img class="dog-bubble" src="fotos/cachorros/328B0668-1F96-4342-9D67-5438DD02DCAF.jpg" alt="pet"/>
-        <img class="dog-bubble" src="fotos/cachorros/335942CA-EED3-4086-BE99-A3CA4C4FB1CD.jpg" alt="pet"/>
-        <img class="dog-bubble" src="fotos/cachorros/33A1AF27-52F3-4A62-A83A-E8657569B004.jpg" alt="pet"/>
-        <img class="dog-bubble" src="fotos/cachorros/3DCD91FD-7042-43F0-AD44-A30EAC573304.png" alt="pet"/>
-        <img class="dog-bubble" src="fotos/cachorros/3F769711-AA10-4F6C-8362-7D48233676F6.jpg" alt="pet"/>
-        <img class="dog-bubble" src="fotos/cachorros/0397B328-5718-4F5C-A4CA-BC2EDA8CA699.png" alt="pet"/>
-        <img class="dog-bubble" src="fotos/cachorros/0699F9E0-CE8E-4607-95A8-DEC7804BC574.png" alt="pet"/>
-        <img class="dog-bubble" src="fotos/cachorros/10CDCBD1-874B-4FE9-A4E2-B493D24F1D92.jpg" alt="pet"/>
-        <img class="dog-bubble" src="fotos/cachorros/16BFB6C5-48D9-4AEC-994C-1DFFA02377B1.png" alt="pet"/>
-        <img class="dog-bubble" src="fotos/cachorros/1F32B19F-2487-48AF-8219-DE48172F1C1B.png" alt="pet"/>
-        <img class="dog-bubble" src="fotos/cachorros/328B0668-1F96-4342-9D67-5438DD02DCAF.jpg" alt="pet"/>
-        <img class="dog-bubble" src="fotos/cachorros/335942CA-EED3-4086-BE99-A3CA4C4FB1CD.jpg" alt="pet"/>
-        <img class="dog-bubble" src="fotos/cachorros/33A1AF27-52F3-4A62-A83A-E8657569B004.jpg" alt="pet"/>
-        <img class="dog-bubble" src="fotos/cachorros/3DCD91FD-7042-43F0-AD44-A30EAC573304.png" alt="pet"/>
-        <img class="dog-bubble" src="fotos/cachorros/3F769711-AA10-4F6C-8362-7D48233676F6.jpg" alt="pet"/>
+  <div style="display:flex; flex-direction:column; gap:0; overflow:hidden;">
+
+    <!-- 🎃 Halloween -->
+    <div class="date-mosaic-block-m" onclick="abrirAlbumDataM('halloween')">
+      <div class="date-mosaic-label-m">
+        <div class="date-mosaic-label-m-left">
+          <span class="date-mosaic-dot-m" style="background:#f97316"></span>
+          🎃 Halloween
+        </div>
+        <span class="date-mosaic-link-m">Ver álbum →</span>
+      </div>
+      <div style="overflow:hidden; -webkit-mask-image:linear-gradient(to right,transparent 0%,black 6%,black 94%,transparent 100%); mask-image:linear-gradient(to right,transparent 0%,black 6%,black 94%,transparent 100%);">
+        <div class="marquee-left" style="overflow:hidden;">
+          <div class="marquee-track" style="animation-duration:32s">
+            <img class="dog-bubble" src="fotos/datas-comemorativas/halloween/princiapal.jpg" alt="Halloween"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/halloween/principal_2.JPG" alt="Halloween"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/halloween/1b9ea046-b68c-4c54-bbcd-0beeeccd3ec3.jpg" alt="Halloween"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/halloween/6e675108-81c1-4856-bf18-653f1948833e.jpg" alt="Halloween"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/halloween/98172b84-3337-4978-b0c3-e76d58025b69.jpg" alt="Halloween"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/halloween/a6906787-43a0-4f2d-be25-b2ac19800553.jpg" alt="Halloween"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/halloween/e29b8fd6-f43a-4288-aaaf-b106330726b7.jpg" alt="Halloween"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/halloween/fb29afc2-8ef2-4187-a9ac-a3692df2ec28.jpg" alt="Halloween"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/halloween/IMG_4013.JPG" alt="Halloween"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/halloween/IMG_4076.JPG" alt="Halloween"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/halloween/princiapal.jpg" alt="Halloween"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/halloween/principal_2.JPG" alt="Halloween"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/halloween/1b9ea046-b68c-4c54-bbcd-0beeeccd3ec3.jpg" alt="Halloween"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/halloween/6e675108-81c1-4856-bf18-653f1948833e.jpg" alt="Halloween"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/halloween/98172b84-3337-4978-b0c3-e76d58025b69.jpg" alt="Halloween"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/halloween/a6906787-43a0-4f2d-be25-b2ac19800553.jpg" alt="Halloween"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/halloween/e29b8fd6-f43a-4288-aaaf-b106330726b7.jpg" alt="Halloween"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/halloween/fb29afc2-8ef2-4187-a9ac-a3692df2ec28.jpg" alt="Halloween"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/halloween/IMG_4013.JPG" alt="Halloween"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/halloween/IMG_4076.JPG" alt="Halloween"/>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="marquee-right" style="overflow:hidden;">
-      <div class="marquee-track">
-        <img class="dog-bubble" src="fotos/cachorros/400685A8-CA1B-48E4-9254-BB0E1752F2DC.jpg" alt="pet"/>
-        <img class="dog-bubble" src="fotos/cachorros/45785CD7-DE60-4A7E-9EC4-07035ACD21F1.jpg" alt="pet"/>
-        <img class="dog-bubble" src="fotos/cachorros/4E7C3FF3-0438-4132-A591-92E6B8EB234E.jpg" alt="pet"/>
-        <img class="dog-bubble" src="fotos/cachorros/5020BB9A-3486-4F8D-8C55-4AFCF517C96B.jpg" alt="pet"/>
-        <img class="dog-bubble" src="fotos/cachorros/572DFF09-8173-4F6B-9651-04D343744FF9.png" alt="pet"/>
-        <img class="dog-bubble" src="fotos/cachorros/61C84BB1-A7F4-441B-B110-6E61AA782F82.png" alt="pet"/>
-        <img class="dog-bubble" src="fotos/cachorros/6598A84E-1C45-4490-B6A1-CCFEDBF9DA59.jpg" alt="pet"/>
-        <img class="dog-bubble" src="fotos/cachorros/77F23C0B-BE66-41EC-AF4D-23A8047522D5.png" alt="pet"/>
-        <img class="dog-bubble" src="fotos/cachorros/7E86BC8C-B4D2-4DA1-B7B2-53DB74296FB7.png" alt="pet"/>
-        <img class="dog-bubble" src="fotos/cachorros/7F5BB3BA-C4EA-4243-B019-127917C64EBC.png" alt="pet"/>
-        <img class="dog-bubble" src="fotos/cachorros/400685A8-CA1B-48E4-9254-BB0E1752F2DC.jpg" alt="pet"/>
-        <img class="dog-bubble" src="fotos/cachorros/45785CD7-DE60-4A7E-9EC4-07035ACD21F1.jpg" alt="pet"/>
-        <img class="dog-bubble" src="fotos/cachorros/4E7C3FF3-0438-4132-A591-92E6B8EB234E.jpg" alt="pet"/>
-        <img class="dog-bubble" src="fotos/cachorros/5020BB9A-3486-4F8D-8C55-4AFCF517C96B.jpg" alt="pet"/>
-        <img class="dog-bubble" src="fotos/cachorros/572DFF09-8173-4F6B-9651-04D343744FF9.png" alt="pet"/>
-        <img class="dog-bubble" src="fotos/cachorros/61C84BB1-A7F4-441B-B110-6E61AA782F82.png" alt="pet"/>
-        <img class="dog-bubble" src="fotos/cachorros/6598A84E-1C45-4490-B6A1-CCFEDBF9DA59.jpg" alt="pet"/>
-        <img class="dog-bubble" src="fotos/cachorros/77F23C0B-BE66-41EC-AF4D-23A8047522D5.png" alt="pet"/>
-        <img class="dog-bubble" src="fotos/cachorros/7E86BC8C-B4D2-4DA1-B7B2-53DB74296FB7.png" alt="pet"/>
-        <img class="dog-bubble" src="fotos/cachorros/7F5BB3BA-C4EA-4243-B019-127917C64EBC.png" alt="pet"/>
+
+    <!-- 🎄 Natal -->
+    <div class="date-mosaic-block-m" onclick="abrirAlbumDataM('natal')">
+      <div class="date-mosaic-label-m">
+        <div class="date-mosaic-label-m-left">
+          <span class="date-mosaic-dot-m" style="background:#16a34a"></span>
+          🎄 Natal
+        </div>
+        <span class="date-mosaic-link-m">Ver álbum →</span>
+      </div>
+      <div style="overflow:hidden; -webkit-mask-image:linear-gradient(to right,transparent 0%,black 6%,black 94%,transparent 100%); mask-image:linear-gradient(to right,transparent 0%,black 6%,black 94%,transparent 100%);">
+        <div class="marquee-right" style="overflow:hidden;">
+          <div class="marquee-track" style="animation-duration:28s">
+            <img class="dog-bubble" src="fotos/datas-comemorativas/natal/principal.jpg" alt="Natal"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/natal/principal1.jpg" alt="Natal"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/natal/principal5.PNG" alt="Natal"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/natal/principal6.PNG" alt="Natal"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/natal/principal8.PNG" alt="Natal"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/natal/principal9.PNG" alt="Natal"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/natal/155e0700-0908-4f34-bb2a-6fd3286b7a0a.jpg" alt="Natal"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/natal/18bf052b-53e7-4fe8-a07c-a15f02c6dec9.jpg" alt="Natal"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/natal/87aac4ca-87cd-4aab-a735-b385b6ffd7b4.jpg" alt="Natal"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/natal/DSC_9119.jpeg" alt="Natal"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/natal/principal.jpg" alt="Natal"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/natal/principal1.jpg" alt="Natal"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/natal/principal5.PNG" alt="Natal"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/natal/principal6.PNG" alt="Natal"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/natal/principal8.PNG" alt="Natal"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/natal/principal9.PNG" alt="Natal"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/natal/155e0700-0908-4f34-bb2a-6fd3286b7a0a.jpg" alt="Natal"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/natal/18bf052b-53e7-4fe8-a07c-a15f02c6dec9.jpg" alt="Natal"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/natal/87aac4ca-87cd-4aab-a735-b385b6ffd7b4.jpg" alt="Natal"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/natal/DSC_9119.jpeg" alt="Natal"/>
+          </div>
+        </div>
       </div>
     </div>
+
+    <!-- 🐣 Páscoa -->
+    <div class="date-mosaic-block-m" onclick="abrirAlbumDataM('pascoa')">
+      <div class="date-mosaic-label-m">
+        <div class="date-mosaic-label-m-left">
+          <span class="date-mosaic-dot-m" style="background:#a855f7"></span>
+          🐣 Páscoa
+        </div>
+        <span class="date-mosaic-link-m">Ver álbum →</span>
+      </div>
+      <div style="overflow:hidden; -webkit-mask-image:linear-gradient(to right,transparent 0%,black 6%,black 94%,transparent 100%); mask-image:linear-gradient(to right,transparent 0%,black 6%,black 94%,transparent 100%);">
+        <div class="marquee-left" style="overflow:hidden;">
+          <div class="marquee-track" style="animation-duration:30s">
+            <img class="dog-bubble" src="fotos/datas-comemorativas/pascoa/principal.png" alt="Páscoa"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/pascoa/principal_1.PNG" alt="Páscoa"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/pascoa/principal_2.PNG" alt="Páscoa"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/pascoa/1F32B19F-2487-48AF-8219-DE48172F1C1B.png" alt="Páscoa"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/pascoa/77F23C0B-BE66-41EC-AF4D-23A8047522D5.png" alt="Páscoa"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/pascoa/84C330E9-76F7-441C-9676-AB0E6EB3BDBD.png" alt="Páscoa"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/pascoa/A1961E08-FBD5-4FB5-A8D8-AF9747AF9B4A.png" alt="Páscoa"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/pascoa/FE9FB7FF-BC03-46A7-8748-C16A41B9025F.png" alt="Páscoa"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/pascoa/IMG_1567.PNG" alt="Páscoa"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/pascoa/IMG_1662.PNG" alt="Páscoa"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/pascoa/principal.png" alt="Páscoa"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/pascoa/principal_1.PNG" alt="Páscoa"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/pascoa/principal_2.PNG" alt="Páscoa"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/pascoa/1F32B19F-2487-48AF-8219-DE48172F1C1B.png" alt="Páscoa"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/pascoa/77F23C0B-BE66-41EC-AF4D-23A8047522D5.png" alt="Páscoa"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/pascoa/84C330E9-76F7-441C-9676-AB0E6EB3BDBD.png" alt="Páscoa"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/pascoa/A1961E08-FBD5-4FB5-A8D8-AF9747AF9B4A.png" alt="Páscoa"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/pascoa/FE9FB7FF-BC03-46A7-8748-C16A41B9025F.png" alt="Páscoa"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/pascoa/IMG_1567.PNG" alt="Páscoa"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/pascoa/IMG_1662.PNG" alt="Páscoa"/>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🎭 Carnaval -->
+    <div class="date-mosaic-block-m" onclick="abrirAlbumDataM('carnaval')">
+      <div class="date-mosaic-label-m">
+        <div class="date-mosaic-label-m-left">
+          <span class="date-mosaic-dot-m" style="background:#7c3aed"></span>
+          🎭 Carnaval
+        </div>
+        <span class="date-mosaic-link-m">Ver álbum →</span>
+      </div>
+      <div style="overflow:hidden; -webkit-mask-image:linear-gradient(to right,transparent 0%,black 6%,black 94%,transparent 100%); mask-image:linear-gradient(to right,transparent 0%,black 6%,black 94%,transparent 100%);">
+        <div class="marquee-right" style="overflow:hidden;">
+          <div class="marquee-track" style="animation-duration:26s">
+            <img class="dog-bubble" src="fotos/datas-comemorativas/carnaval/principal.png" alt="Carnaval"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/carnaval/principal_1.png" alt="Carnaval"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/carnaval/175C155A-C257-4C4D-9E57-673F32EB5F62.png" alt="Carnaval"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/carnaval/2DCD7B81-3764-4AD6-B087-C7A37F3E2E04.png" alt="Carnaval"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/carnaval/44813EB9-9160-4D6E-BE27-1BD338097D1E.png" alt="Carnaval"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/carnaval/6C26F3CC-AD97-45FF-8D70-E87B47ECE307.png" alt="Carnaval"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/carnaval/95F6A441-D0FD-477B-9336-D093DD026AEF.png" alt="Carnaval"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/carnaval/9A18D8C8-5D8F-431F-8687-8CD778639879.png" alt="Carnaval"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/carnaval/A3CBB488-88A6-4B81-91E5-72FA2C4080DF.png" alt="Carnaval"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/carnaval/IMG_8438.PNG" alt="Carnaval"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/carnaval/principal.png" alt="Carnaval"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/carnaval/principal_1.png" alt="Carnaval"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/carnaval/175C155A-C257-4C4D-9E57-673F32EB5F62.png" alt="Carnaval"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/carnaval/2DCD7B81-3764-4AD6-B087-C7A37F3E2E04.png" alt="Carnaval"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/carnaval/44813EB9-9160-4D6E-BE27-1BD338097D1E.png" alt="Carnaval"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/carnaval/6C26F3CC-AD97-45FF-8D70-E87B47ECE307.png" alt="Carnaval"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/carnaval/95F6A441-D0FD-477B-9336-D093DD026AEF.png" alt="Carnaval"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/carnaval/9A18D8C8-5D8F-431F-8687-8CD778639879.png" alt="Carnaval"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/carnaval/A3CBB488-88A6-4B81-91E5-72FA2C4080DF.png" alt="Carnaval"/>
+            <img class="dog-bubble" src="fotos/datas-comemorativas/carnaval/IMG_8438.PNG" alt="Carnaval"/>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -1320,6 +1506,11 @@
 </div>
 
 <!-- ===== WA FLOAT ===== -->
+<!-- LIGHTBOX MOBILE -->
+<div id="lightbox-m" onclick="closeLightboxM()">
+  <img id="lightbox-m-img" src="" alt="" />
+</div>
+
 <a href="https://wa.me/5511947266216?text=Olá! Quero agendar" target="_blank" rel="noopener noreferrer" class="wa-float">
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
@@ -1418,6 +1609,165 @@
       document.body.style.overflow = '';
     }, 350);
   }
+
+  // ── LIGHTBOX (mobile) ──
+  function openLightbox(src) {
+    document.getElementById('lightbox-m-img').src = src;
+    document.getElementById('lightbox-m').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightboxM() {
+    document.getElementById('lightbox-m').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // ── DATAS COMEMORATIVAS (mobile) ──
+  const DATAS_M = {
+    halloween: {
+      label:'🎃 Halloween', emoji:'🎃', cor:'#f97316',
+      corBg:'linear-gradient(135deg,#f97316 0%,#c2410c 100%)',
+      titulo:'Halloween — Terrorificamente fofos!',
+      descricao:'Fantasias assustadoras e muita diversão. Nossos pets arrasam no Halloween!',
+      fotos:[
+        'fotos/datas-comemorativas/halloween/princiapal.jpg',
+        'fotos/datas-comemorativas/halloween/principal_2.JPG',
+        'fotos/datas-comemorativas/halloween/principal_3.JPG',
+        'fotos/datas-comemorativas/halloween/1b9ea046-b68c-4c54-bbcd-0beeeccd3ec3.jpg',
+        'fotos/datas-comemorativas/halloween/6e675108-81c1-4856-bf18-653f1948833e.jpg',
+        'fotos/datas-comemorativas/halloween/98172b84-3337-4978-b0c3-e76d58025b69.jpg',
+        'fotos/datas-comemorativas/halloween/a6906787-43a0-4f2d-be25-b2ac19800553.jpg',
+        'fotos/datas-comemorativas/halloween/e29b8fd6-f43a-4288-aaaf-b106330726b7.jpg',
+        'fotos/datas-comemorativas/halloween/fb29afc2-8ef2-4187-a9ac-a3692df2ec28.jpg',
+        'fotos/datas-comemorativas/halloween/fcacc484-8166-434e-997a-239a124c74b0.jpg',
+        'fotos/datas-comemorativas/halloween/IMG_4013.JPG',
+        'fotos/datas-comemorativas/halloween/IMG_4076.JPG',
+        'fotos/datas-comemorativas/halloween/IMG_4122.JPG',
+        'fotos/datas-comemorativas/halloween/IMG_4202.JPG',
+        'fotos/datas-comemorativas/halloween/IMG_4359.JPG',
+      ]
+    },
+    natal: {
+      label:'🎄 Natal', emoji:'🎄', cor:'#16a34a',
+      corBg:'linear-gradient(135deg,#16a34a 0%,#166534 100%)',
+      titulo:'Natal — Presentes de quatro patas!',
+      descricao:'O Natal fica ainda mais especial com nossos pets enfeitados para a data.',
+      fotos:[
+        'fotos/datas-comemorativas/natal/principal.jpg',
+        'fotos/datas-comemorativas/natal/principal1.jpg',
+        'fotos/datas-comemorativas/natal/principal5.PNG',
+        'fotos/datas-comemorativas/natal/principal6.PNG',
+        'fotos/datas-comemorativas/natal/principal8.PNG',
+        'fotos/datas-comemorativas/natal/principal9.PNG',
+        'fotos/datas-comemorativas/natal/principal10.JPG',
+        'fotos/datas-comemorativas/natal/155e0700-0908-4f34-bb2a-6fd3286b7a0a.jpg',
+        'fotos/datas-comemorativas/natal/18bf052b-53e7-4fe8-a07c-a15f02c6dec9.jpg',
+        'fotos/datas-comemorativas/natal/292a23ca-634f-47c6-89a7-d5cf76dac580.jpg',
+        'fotos/datas-comemorativas/natal/87aac4ca-87cd-4aab-a735-b385b6ffd7b4.jpg',
+        'fotos/datas-comemorativas/natal/DSC_9119.jpeg',
+        'fotos/datas-comemorativas/natal/efb994a8-7c5a-45dc-ae0f-68098073a75e.jpg',
+        'fotos/datas-comemorativas/natal/IMG_6443.PNG',
+        'fotos/datas-comemorativas/natal/IMG_6444.PNG',
+      ]
+    },
+    pascoa: {
+      label:'🐣 Páscoa', emoji:'🐣', cor:'#a855f7',
+      corBg:'linear-gradient(135deg,#c084fc 0%,#7e22ce 100%)',
+      titulo:'Páscoa — Coelhinhos de verdade!',
+      descricao:'Ovinhos de chocolate podem esperar — nossos pets são o presente de Páscoa mais fofo!',
+      fotos:[
+        'fotos/datas-comemorativas/pascoa/principal.png',
+        'fotos/datas-comemorativas/pascoa/principal_1.PNG',
+        'fotos/datas-comemorativas/pascoa/principal_2.PNG',
+        'fotos/datas-comemorativas/pascoa/princiapl_3.PNG',
+        'fotos/datas-comemorativas/pascoa/principal_4.png',
+        'fotos/datas-comemorativas/pascoa/1F32B19F-2487-48AF-8219-DE48172F1C1B.png',
+        'fotos/datas-comemorativas/pascoa/77F23C0B-BE66-41EC-AF4D-23A8047522D5.png',
+        'fotos/datas-comemorativas/pascoa/84C330E9-76F7-441C-9676-AB0E6EB3BDBD.png',
+        'fotos/datas-comemorativas/pascoa/97788919-5714-4208-8106-5320C83EECF7.png',
+        'fotos/datas-comemorativas/pascoa/A1961E08-FBD5-4FB5-A8D8-AF9747AF9B4A.png',
+        'fotos/datas-comemorativas/pascoa/FE9FB7FF-BC03-46A7-8748-C16A41B9025F.png',
+        'fotos/datas-comemorativas/pascoa/IMG_1567.PNG',
+        'fotos/datas-comemorativas/pascoa/IMG_1637.PNG',
+        'fotos/datas-comemorativas/pascoa/IMG_1662.PNG',
+        'fotos/datas-comemorativas/pascoa/IMG_1668.PNG',
+      ]
+    },
+    carnaval: {
+      label:'🎭 Carnaval', emoji:'🎭', cor:'#7c3aed',
+      corBg:'linear-gradient(135deg,#f59e0b 0%,#7c3aed 100%)',
+      titulo:'Carnaval — Folia e muito estilo!',
+      descricao:'Fantasias coloridas e muito samba no pé. Nossos pets são os reis do carnaval!',
+      fotos:[
+        'fotos/datas-comemorativas/carnaval/principal.png',
+        'fotos/datas-comemorativas/carnaval/principal_1.png',
+        'fotos/datas-comemorativas/carnaval/principal_2.png',
+        'fotos/datas-comemorativas/carnaval/principal_3.png',
+        'fotos/datas-comemorativas/carnaval/175C155A-C257-4C4D-9E57-673F32EB5F62.png',
+        'fotos/datas-comemorativas/carnaval/2DCD7B81-3764-4AD6-B087-C7A37F3E2E04.png',
+        'fotos/datas-comemorativas/carnaval/44813EB9-9160-4D6E-BE27-1BD338097D1E.png',
+        'fotos/datas-comemorativas/carnaval/6C26F3CC-AD97-45FF-8D70-E87B47ECE307.png',
+        'fotos/datas-comemorativas/carnaval/95F6A441-D0FD-477B-9336-D093DD026AEF.png',
+        'fotos/datas-comemorativas/carnaval/9A18D8C8-5D8F-431F-8687-8CD778639879.png',
+        'fotos/datas-comemorativas/carnaval/A3CBB488-88A6-4B81-91E5-72FA2C4080DF.png',
+        'fotos/datas-comemorativas/carnaval/F5B8E6E9-7C2A-4900-9842-E74E779E1BFD.png',
+        'fotos/datas-comemorativas/carnaval/IMG_8438.PNG',
+        'fotos/datas-comemorativas/carnaval/IMG_8456.PNG',
+      ]
+    },
+    saojuao:{ label:'🌽 São João',  emoji:'🌽', cor:'#d97706', corBg:'linear-gradient(135deg,#fbbf24 0%,#d97706 100%)', titulo:'São João — Arraiá dos pets!', descricao:'Xadrezados, chapéus de palha e muito forró!', fotos:['fotos/cachorros/E3D05CAC-5399-4FFB-9FC8-488F1A1D17FE.jpg','fotos/cachorros/5020BB9A-3486-4F8D-8C55-4AFCF517C96B.jpg','fotos/cachorros/7E86BC8C-B4D2-4DA1-B7B2-53DB74296FB7.png','fotos/cachorros/400685A8-CA1B-48E4-9254-BB0E1752F2DC.jpg','fotos/cachorros/B8E76CDC-17E8-4EB7-958B-7F7156B2CD4B.jpg','fotos/cachorros/91A10164-1061-4E39-AACB-C70BCCA3D8E7.jpg'] },
+    maes:   { label:'💐 Dia das Mães', emoji:'💐', cor:'#e11d48', corBg:'linear-gradient(135deg,#fb7185 0%,#9f1239 100%)', titulo:'Dia das Mães — Filhos de 4 patas!', descricao:'Todo dia é dia das mães, mas nesse dia especial os pets chegam ainda mais caprichados!', fotos:['fotos/cachorros/FE9FB7FF-BC03-46A7-8748-C16A41B9025F.png','fotos/cachorros/335942CA-EED3-4086-BE99-A3CA4C4FB1CD.jpg','fotos/cachorros/6598A84E-1C45-4490-B6A1-CCFEDBF9DA59.jpg','fotos/cachorros/F2149C04-602C-4972-B21C-3143C94DEB7A.jpg','fotos/cachorros/45785CD7-DE60-4A7E-9EC4-07035ACD21F1.jpg','fotos/cachorros/DCB2001F-0467-4F0C-9CB1-DE313D3B9056.jpg'] },
+    pais:   { label:'👔 Dia dos Pais', emoji:'👔', cor:'#1d4ed8', corBg:'linear-gradient(135deg,#60a5fa 0%,#1d4ed8 100%)', titulo:'Dia dos Pais — Companheiros fiéis!', descricao:'Para os pais que amam seus pets tanto quanto eles amam de volta!', fotos:['fotos/cachorros/809C6B43-407C-452D-9E9F-3C23FA351005.png','fotos/cachorros/0699F9E0-CE8E-4607-95A8-DEC7804BC574.png','fotos/cachorros/328B0668-1F96-4342-9D67-5438DD02DCAF.jpg','fotos/cachorros/A9119A23-9A7A-4C13-A0F7-3B254033030C.png','fotos/cachorros/61C84BB1-A7F4-441B-B110-6E61AA782F82.png','fotos/cachorros/10CDCBD1-874B-4FE9-A4E2-B493D24F1D92.jpg'] }
+  };
+
+  let _datasAtivaM = 'halloween';
+
+  function mudarDataTabM(key) {
+    _datasAtivaM = key;
+    const d = DATAS_M[key];
+    document.querySelectorAll('.datas-tab-btn-m').forEach(btn => {
+      const bd = DATAS_M[btn.dataset.tab];
+      if (btn.dataset.tab === key) {
+        btn.classList.add('ativa');
+        btn.style.background = d.cor; btn.style.borderColor = d.cor;
+        btn.style.color = 'white'; btn.style.boxShadow = `0 4px 14px ${d.cor}55`;
+      } else {
+        btn.classList.remove('ativa');
+        btn.style.background = 'white'; btn.style.borderColor = bd.cor;
+        btn.style.color = bd.cor; btn.style.boxShadow = '0 2px 6px rgba(0,0,0,0.08)';
+      }
+    });
+    const banner = document.getElementById('datas-banner-m');
+    banner.style.background = d.corBg;
+    banner.innerHTML = `<div class="datas-banner-m-icon">${d.emoji}</div><div class="datas-banner-m-text"><h3>${d.titulo}</h3><p>${d.descricao}</p></div>`;
+    const panel = document.getElementById('datas-panel-m');
+    panel.innerHTML = '';
+    const grid = document.createElement('div');
+    grid.className = 'datas-grid-m';
+    d.fotos.forEach((src, i) => {
+      const item = document.createElement('div');
+      item.className = 'datas-grid-item-m';
+      item.style.animationDelay = `${i * 55}ms`;
+      item.innerHTML = `<img src="${src}" alt="${d.emoji}" loading="lazy" decoding="async"/><div class="ov"><span>${d.label}</span></div>`;
+      item.addEventListener('click', () => openLightbox(src));
+      grid.appendChild(item);
+    });
+    panel.appendChild(grid);
+  }
+
+  function abrirAlbumDataM(key) {
+    mudarDataTabM(key);
+    const sec = document.getElementById('datas-m');
+    window.scrollTo({ top: sec.getBoundingClientRect().top + window.scrollY - 60, behavior: 'smooth' });
+  }
+
+  function _initDatasM() {
+    const nav = document.getElementById('datas-tabs-m-nav');
+    nav.innerHTML = Object.entries(DATAS_M).map(([k, d]) =>
+      `<button class="datas-tab-btn-m" data-tab="${k}" onclick="mudarDataTabM('${k}')" style="color:${d.cor};border-color:${d.cor};">${d.label}</button>`
+    ).join('');
+    mudarDataTabM('halloween');
+  }
+  document.addEventListener('DOMContentLoaded', _initDatasM);
 </script>
 
 <script>
