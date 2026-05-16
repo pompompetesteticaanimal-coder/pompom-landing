@@ -951,6 +951,16 @@
     }
     .datas-grid-item:hover .overlay { opacity: 1; }
     .datas-grid-item .overlay span { color: white; font-size: 12px; font-weight: 600; }
+    .galeria-grid-wrap {
+      max-height: 560px;
+      overflow-y: auto;
+      border-radius: 16px;
+      scrollbar-width: thin;
+      scrollbar-color: #e7e5e4 transparent;
+      padding-right: 4px;
+    }
+    .galeria-grid-wrap::-webkit-scrollbar { width: 6px; }
+    .galeria-grid-wrap::-webkit-scrollbar-thumb { background: #d6d3d1; border-radius: 4px; }
   </style>
 </head>
 <body>
@@ -1216,7 +1226,7 @@
 </section>
 
 <section id="galeria" class="py-20 px-20 max-w-screen-xl mx-auto">
-  <div class="flex items-end justify-between mb-16 reveal">
+  <div class="flex items-end justify-between mb-10 reveal">
     <div>
       <div class="section-tag">📸 Portfólio</div>
       <h2 class="text-5xl font-bold text-stone-900 leading-tight">Nosso<br/>trabalho</h2>
@@ -1226,64 +1236,14 @@
     </p>
   </div>
 
-  <div class="masonry reveal">
-    <div class="masonry-item" onclick="openLightbox('fotos/trabalho1.jpg')">
-      <img src="fotos/trabalho1.jpg" alt="Spitz Alemão"  loading="lazy" decoding="async" />
-      <div class="overlay"><span>🦊 Spitz Alemão</span></div>
-    </div>
-    <div class="masonry-item" onclick="openLightbox('fotos/cachorros/D0E2A0A9-A99F-4AFF-97B2-5CD058DDDC0E.jpg')">
-      <img src="fotos/cachorros/D0E2A0A9-A99F-4AFF-97B2-5CD058DDDC0E.jpg" alt="Husky Siberiano"  loading="lazy" decoding="async" />
-      <div class="overlay"><span>🐕 Husky Siberiano</span></div>
-    </div>
-    <div class="masonry-item" onclick="openLightbox('fotos/cachorros/809C6B43-407C-452D-9E9F-3C23FA351005.png')">
-      <img src="fotos/cachorros/809C6B43-407C-452D-9E9F-3C23FA351005.png" alt="Lhasa Apso"  loading="lazy" decoding="async" />
-      <div class="overlay"><span>🐕 Lhasa Apso</span></div>
-    </div>
-    <div class="masonry-item" onclick="openLightbox('fotos/trabalho4.jpg')">
-      <img src="fotos/trabalho4.jpg" alt="Shih Tzu"  loading="lazy" decoding="async" />
-      <div class="overlay"><span>👑 Shih Tzu</span></div>
-    </div>
-    <div class="masonry-item" onclick="openLightbox('fotos/trabalho5.jpg')">
-      <img src="fotos/trabalho5.jpg" alt="Golden Retriever"  loading="lazy" decoding="async" />
-      <div class="overlay"><span>🌟 Golden Retriever</span></div>
-    </div>
-    <div class="masonry-item" onclick="openLightbox('fotos/cachorros/7E86BC8C-B4D2-4DA1-B7B2-53DB74296FB7.png')">
-      <img src="fotos/cachorros/7E86BC8C-B4D2-4DA1-B7B2-53DB74296FB7.png" alt="Pug"  loading="lazy" decoding="async" />
-      <div class="overlay"><span>🐕 Pug</span></div>
-    </div>
-    <div class="masonry-item" onclick="openLightbox('fotos/trabalho7.jpg')">
-      <img src="fotos/trabalho7.jpg" alt="Poodle"  loading="lazy" decoding="async" />
-      <div class="overlay"><span>🐩 Poodle</span></div>
-    </div>
-    <div class="masonry-item" onclick="openLightbox('fotos/trabalho8.jpg')">
-      <img src="fotos/trabalho8.jpg" alt="Maltês"  loading="lazy" decoding="async" />
-      <div class="overlay"><span>😊 Maltês</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- ✨ DATAS COMEMORATIVAS ✨ -->
-<section id="datas" class="py-20 px-20 max-w-screen-xl mx-auto">
-  <div class="flex items-end justify-between mb-12 reveal">
-    <div>
-      <div class="section-tag">🎉 Momentos Especiais</div>
-      <h2 class="text-5xl font-bold text-stone-900 leading-tight">Datas<br/>Comemorativas</h2>
-    </div>
-    <p class="text-stone-500 max-w-xs text-right leading-relaxed">
-      Fantasias, acessórios e muito carinho — cada data do ano merece uma comemoração especial com seu pet.
-    </p>
-  </div>
-
-  <div id="datas-tabs-nav" class="datas-tabs-nav mb-6 reveal">
+  <div id="galeria-tabs-nav" class="datas-tabs-nav mb-6 reveal">
     <!-- gerado por JS -->
   </div>
 
-  <div id="datas-banner" class="datas-banner mb-8 reveal">
-    <!-- gerado por JS -->
-  </div>
-
-  <div id="datas-panel-container" class="reveal">
-    <!-- gerado por JS -->
+  <div class="galeria-grid-wrap reveal">
+    <div id="galeria-masonry">
+      <!-- gerado por JS -->
+    </div>
   </div>
 </section>
 
@@ -1829,15 +1789,11 @@
     }, 300);
   }
 
-  // ── DATAS COMEMORATIVAS ──
-  const DATAS_COMEMORATIVAS = {
+  // ── GALERIA COM ABAS ──
+  const GALERIA_POR_DATA = {
     halloween: {
       label: '🎃 Halloween',
-      emoji: '🎃',
       cor: '#f97316',
-      corBg: 'linear-gradient(135deg, #f97316 0%, #c2410c 100%)',
-      titulo: 'Halloween — Terrorificamente fofos!',
-      descricao: 'Fantasias assustadoras e muita diversão. Nossos pets arrasam no Halloween!',
       fotos: [
         { src: 'fotos/datas-comemorativas/halloween/princiapal.jpg', alt: '🎃 Halloween' },
         { src: 'fotos/datas-comemorativas/halloween/principal_2.JPG', alt: '🎃 Halloween' },
@@ -1860,19 +1816,17 @@
     },
     natal: {
       label: '🎄 Natal',
-      emoji: '🎄',
       cor: '#16a34a',
-      corBg: 'linear-gradient(135deg, #16a34a 0%, #166534 100%)',
-      titulo: 'Natal — Presentes de quatro patas!',
-      descricao: 'O Natal fica ainda mais especial com nossos pets enfeitados para a data.',
       fotos: [
         { src: 'fotos/datas-comemorativas/natal/principal.jpg', alt: '🎄 Natal' },
         { src: 'fotos/datas-comemorativas/natal/principal1.jpg', alt: '🎄 Natal' },
-        { src: 'fotos/datas-comemorativas/natal/principal10.JPG', alt: '🎄 Natal' },
+        { src: 'fotos/datas-comemorativas/natal/principal2.jpg', alt: '🎄 Natal' },
+        { src: 'fotos/datas-comemorativas/natal/principal3.jpg', alt: '🎄 Natal' },
         { src: 'fotos/datas-comemorativas/natal/principal5.PNG', alt: '🎄 Natal' },
         { src: 'fotos/datas-comemorativas/natal/principal6.PNG', alt: '🎄 Natal' },
         { src: 'fotos/datas-comemorativas/natal/principal8.PNG', alt: '🎄 Natal' },
         { src: 'fotos/datas-comemorativas/natal/principal9.PNG', alt: '🎄 Natal' },
+        { src: 'fotos/datas-comemorativas/natal/principal10.JPG', alt: '🎄 Natal' },
         { src: 'fotos/datas-comemorativas/natal/155e0700-0908-4f34-bb2a-6fd3286b7a0a.jpg', alt: '🎄 Natal' },
         { src: 'fotos/datas-comemorativas/natal/18bf052b-53e7-4fe8-a07c-a15f02c6dec9.jpg', alt: '🎄 Natal' },
         { src: 'fotos/datas-comemorativas/natal/292a23ca-634f-47c6-89a7-d5cf76dac580.jpg', alt: '🎄 Natal' },
@@ -1881,27 +1835,21 @@
         { src: 'fotos/datas-comemorativas/natal/7623a695-f944-41a7-b820-31d8bc5bd756.jpg', alt: '🎄 Natal' },
         { src: 'fotos/datas-comemorativas/natal/87aac4ca-87cd-4aab-a735-b385b6ffd7b4.jpg', alt: '🎄 Natal' },
         { src: 'fotos/datas-comemorativas/natal/92b2ac2a-0ed0-4cd9-a87c-d55bdcd85d13.jpg', alt: '🎄 Natal' },
+        { src: 'fotos/datas-comemorativas/natal/A2872DFB-64E7-4A76-B467-91A17C092932.jpg', alt: '🎄 Natal' },
         { src: 'fotos/datas-comemorativas/natal/c94ae3d8-de41-45cd-aeb7-e24564ad12fd.jpg', alt: '🎄 Natal' },
         { src: 'fotos/datas-comemorativas/natal/DSC_9119.jpeg', alt: '🎄 Natal' },
+        { src: 'fotos/datas-comemorativas/natal/EE7F70E8-7463-4DE2-A326-5FF312B293FE.jpg', alt: '🎄 Natal' },
         { src: 'fotos/datas-comemorativas/natal/efb994a8-7c5a-45dc-ae0f-68098073a75e.jpg', alt: '🎄 Natal' },
         { src: 'fotos/datas-comemorativas/natal/IMG_6443.PNG', alt: '🎄 Natal' },
         { src: 'fotos/datas-comemorativas/natal/IMG_6444.PNG', alt: '🎄 Natal' },
         { src: 'fotos/datas-comemorativas/natal/IMG_6584.PNG', alt: '🎄 Natal' },
         { src: 'fotos/datas-comemorativas/natal/IMG_6719.PNG', alt: '🎄 Natal' },
         { src: 'fotos/datas-comemorativas/natal/IMG_6772.PNG', alt: '🎄 Natal' },
-        { src: 'fotos/datas-comemorativas/natal/principal2.jpg', alt: '🎄 Natal' },
-        { src: 'fotos/datas-comemorativas/natal/principal3.jpg', alt: '🎄 Natal' },
-        { src: 'fotos/datas-comemorativas/natal/A2872DFB-64E7-4A76-B467-91A17C092932.jpg', alt: '🎄 Natal' },
-        { src: 'fotos/datas-comemorativas/natal/EE7F70E8-7463-4DE2-A326-5FF312B293FE.jpg', alt: '🎄 Natal' },
       ]
     },
     pascoa: {
       label: '🐣 Páscoa',
-      emoji: '🐣',
       cor: '#a855f7',
-      corBg: 'linear-gradient(135deg, #c084fc 0%, #7e22ce 100%)',
-      titulo: 'Páscoa — Coelhinhos de verdade!',
-      descricao: 'Ovinhos de chocolate podem esperar — nossos pets são o presente de Páscoa mais fofo!',
       fotos: [
         { src: 'fotos/datas-comemorativas/pascoa/principal.png', alt: '🐣 Páscoa' },
         { src: 'fotos/datas-comemorativas/pascoa/principal_1.PNG', alt: '🐣 Páscoa' },
@@ -1925,11 +1873,7 @@
     },
     carnaval: {
       label: '🎭 Carnaval',
-      emoji: '🎭',
       cor: '#7c3aed',
-      corBg: 'linear-gradient(135deg, #f59e0b 0%, #7c3aed 100%)',
-      titulo: 'Carnaval — Folia e muito estilo!',
-      descricao: 'Fantasias coloridas e muito samba no pé. Nossos pets são os reis do carnaval!',
       fotos: [
         { src: 'fotos/datas-comemorativas/carnaval/principal.png', alt: '🎭 Carnaval' },
         { src: 'fotos/datas-comemorativas/carnaval/principal_1.png', alt: '🎭 Carnaval' },
@@ -1947,119 +1891,89 @@
         { src: 'fotos/datas-comemorativas/carnaval/IMG_8438.PNG', alt: '🎭 Carnaval' },
         { src: 'fotos/datas-comemorativas/carnaval/IMG_8456.PNG', alt: '🎭 Carnaval' },
       ]
-    },
-    saojuao: {
-      label: '🌽 São João',
-      emoji: '🌽',
-      cor: '#d97706',
-      corBg: 'linear-gradient(135deg, #fbbf24 0%, #d97706 100%)',
-      titulo: 'São João — Arraiá dos pets!',
-      descricao: 'Xadrezados, chapéus de palha e muito forró. O arraiá da PomPom tem os pets mais estilosos!',
-      fotos: [
-        { src: 'fotos/cachorros/E3D05CAC-5399-4FFB-9FC8-488F1A1D17FE.jpg', alt: '🌽 São João' },
-        { src: 'fotos/cachorros/5020BB9A-3486-4F8D-8C55-4AFCF517C96B.jpg', alt: '🌽 São João' },
-        { src: 'fotos/cachorros/7E86BC8C-B4D2-4DA1-B7B2-53DB74296FB7.png', alt: '🌽 São João' },
-        { src: 'fotos/cachorros/400685A8-CA1B-48E4-9254-BB0E1752F2DC.jpg', alt: '🌽 São João' },
-        { src: 'fotos/cachorros/B8E76CDC-17E8-4EB7-958B-7F7156B2CD4B.jpg', alt: '🌽 São João' },
-        { src: 'fotos/cachorros/91A10164-1061-4E39-AACB-C70BCCA3D8E7.jpg', alt: '🌽 São João' },
-      ]
-    },
-    maes: {
-      label: '💐 Dia das Mães',
-      emoji: '💐',
-      cor: '#e11d48',
-      corBg: 'linear-gradient(135deg, #fb7185 0%, #9f1239 100%)',
-      titulo: 'Dia das Mães — Filhos de 4 patas!',
-      descricao: 'Todo dia é dia das mães, mas nesse dia especial os pets chegam ainda mais caprichados!',
-      fotos: [
-        { src: 'fotos/cachorros/FE9FB7FF-BC03-46A7-8748-C16A41B9025F.png', alt: '💐 Dia das Mães' },
-        { src: 'fotos/cachorros/335942CA-EED3-4086-BE99-A3CA4C4FB1CD.jpg', alt: '💐 Dia das Mães' },
-        { src: 'fotos/cachorros/6598A84E-1C45-4490-B6A1-CCFEDBF9DA59.jpg', alt: '💐 Dia das Mães' },
-        { src: 'fotos/cachorros/F2149C04-602C-4972-B21C-3143C94DEB7A.jpg', alt: '💐 Dia das Mães' },
-        { src: 'fotos/cachorros/45785CD7-DE60-4A7E-9EC4-07035ACD21F1.jpg', alt: '💐 Dia das Mães' },
-        { src: 'fotos/cachorros/DCB2001F-0467-4F0C-9CB1-DE313D3B9056.jpg', alt: '💐 Dia das Mães' },
-      ]
-    },
-    pais: {
-      label: '👔 Dia dos Pais',
-      emoji: '👔',
-      cor: '#1d4ed8',
-      corBg: 'linear-gradient(135deg, #60a5fa 0%, #1d4ed8 100%)',
-      titulo: 'Dia dos Pais — Companheiros fiéis!',
-      descricao: 'Para os pais que amam seus pets tanto quanto eles amam de volta!',
-      fotos: [
-        { src: 'fotos/cachorros/809C6B43-407C-452D-9E9F-3C23FA351005.png', alt: '👔 Dia dos Pais' },
-        { src: 'fotos/cachorros/0699F9E0-CE8E-4607-95A8-DEC7804BC574.png', alt: '👔 Dia dos Pais' },
-        { src: 'fotos/cachorros/328B0668-1F96-4342-9D67-5438DD02DCAF.jpg', alt: '👔 Dia dos Pais' },
-        { src: 'fotos/cachorros/A9119A23-9A7A-4C13-A0F7-3B254033030C.png', alt: '👔 Dia dos Pais' },
-        { src: 'fotos/cachorros/61C84BB1-A7F4-441B-B110-6E61AA782F82.png', alt: '👔 Dia dos Pais' },
-        { src: 'fotos/cachorros/10CDCBD1-874B-4FE9-A4E2-B493D24F1D92.jpg', alt: '👔 Dia dos Pais' },
-      ]
     }
   };
 
-  let _datasAtivaKey = 'halloween';
+  const PORTFOLIO_FOTOS = [
+    { src: 'fotos/trabalho1.jpg', alt: '🦊 Spitz Alemão' },
+    { src: 'fotos/cachorros/D0E2A0A9-A99F-4AFF-97B2-5CD058DDDC0E.jpg', alt: '🐕 Husky Siberiano' },
+    { src: 'fotos/cachorros/809C6B43-407C-452D-9E9F-3C23FA351005.png', alt: '🐕 Lhasa Apso' },
+    { src: 'fotos/trabalho4.jpg', alt: '👑 Shih Tzu' },
+    { src: 'fotos/trabalho5.jpg', alt: '🌟 Golden Retriever' },
+    { src: 'fotos/cachorros/7E86BC8C-B4D2-4DA1-B7B2-53DB74296FB7.png', alt: '🐕 Pug' },
+    { src: 'fotos/trabalho7.jpg', alt: '🐩 Poodle' },
+    { src: 'fotos/trabalho8.jpg', alt: '😊 Maltês' },
+  ];
 
-  function mudarDataTab(key) {
-    _datasAtivaKey = key;
-    const dados = DATAS_COMEMORATIVAS[key];
+  let _galeriaAtivaKey = 'todas';
 
-    document.querySelectorAll('.datas-tab-btn').forEach(btn => {
-      const d = DATAS_COMEMORATIVAS[btn.dataset.tab];
+  function mudarGaleriaTab(key) {
+    _galeriaAtivaKey = key;
+    let fotos;
+    if (key === 'todas') {
+      const principais = Object.values(GALERIA_POR_DATA).flatMap(d =>
+        d.fotos.filter(f => /principal/i.test(f.src.split('/').pop()))
+      );
+      const resto = Object.values(GALERIA_POR_DATA).flatMap(d =>
+        d.fotos.filter(f => !/principal/i.test(f.src.split('/').pop()))
+      );
+      fotos = [...principais, ...PORTFOLIO_FOTOS, ...resto];
+    } else {
+      fotos = GALERIA_POR_DATA[key].fotos;
+    }
+
+    document.querySelectorAll('.galeria-tab-btn').forEach(btn => {
+      const cor = btn.dataset.tab === 'todas' ? '#be123c' : (GALERIA_POR_DATA[btn.dataset.tab] || {}).cor || '#be123c';
       if (btn.dataset.tab === key) {
         btn.classList.add('ativa');
-        btn.style.background = dados.cor;
-        btn.style.borderColor = dados.cor;
+        btn.style.background = cor;
+        btn.style.borderColor = cor;
         btn.style.color = 'white';
-        btn.style.boxShadow = `0 6px 22px ${dados.cor}55`;
+        btn.style.boxShadow = `0 6px 22px ${cor}55`;
       } else {
         btn.classList.remove('ativa');
         btn.style.background = 'white';
-        btn.style.borderColor = d.cor;
-        btn.style.color = d.cor;
+        btn.style.borderColor = cor;
+        btn.style.color = cor;
         btn.style.boxShadow = '0 2px 8px rgba(0,0,0,0.07)';
       }
     });
 
-    const banner = document.getElementById('datas-banner');
-    banner.style.background = dados.corBg;
-    banner.innerHTML = `
-      <div class="datas-banner-icon">${dados.emoji}</div>
-      <div class="datas-banner-text">
-        <h3>${dados.titulo}</h3>
-        <p>${dados.descricao}</p>
-      </div>`;
-
-    const container = document.getElementById('datas-panel-container');
+    const container = document.getElementById('galeria-masonry');
     container.innerHTML = '';
     const grid = document.createElement('div');
     grid.className = 'datas-grid';
-    dados.fotos.forEach((foto, i) => {
+    fotos.forEach((foto, i) => {
       const item = document.createElement('div');
       item.className = 'datas-grid-item';
-      item.style.animationDelay = `${i * 65}ms`;
+      item.style.animationDelay = `${i * 50}ms`;
       item.innerHTML = `<img src="${foto.src}" alt="${foto.alt}" loading="lazy" decoding="async" /><div class="overlay"><span>${foto.alt}</span></div>`;
       item.addEventListener('click', () => openLightbox(foto.src));
       grid.appendChild(item);
     });
     container.appendChild(grid);
+
+    const wrap = container.closest('.galeria-grid-wrap');
+    if (wrap) wrap.scrollTop = 0;
   }
 
   function abrirAlbumData(key) {
-    mudarDataTab(key);
-    const sec = document.getElementById('datas');
+    mudarGaleriaTab(key);
+    const sec = document.getElementById('galeria');
     const y = sec.getBoundingClientRect().top + window.scrollY - 80;
     window.scrollTo({ top: y, behavior: 'smooth' });
   }
 
-  function _initDatas() {
-    const nav = document.getElementById('datas-tabs-nav');
-    nav.innerHTML = Object.entries(DATAS_COMEMORATIVAS).map(([key, d]) =>
-      `<button class="datas-tab-btn" data-tab="${key}" onclick="mudarDataTab('${key}')" style="color:${d.cor};border-color:${d.cor};">${d.label}</button>`
+  function _initGaleria() {
+    const nav = document.getElementById('galeria-tabs-nav');
+    const todasBtn = `<button class="datas-tab-btn galeria-tab-btn" data-tab="todas" onclick="mudarGaleriaTab('todas')" style="color:#be123c;border-color:#be123c;">✨ Todas</button>`;
+    const dataBtns = Object.entries(GALERIA_POR_DATA).map(([key, d]) =>
+      `<button class="datas-tab-btn galeria-tab-btn" data-tab="${key}" onclick="mudarGaleriaTab('${key}')" style="color:${d.cor};border-color:${d.cor};">${d.label}</button>`
     ).join('');
-    mudarDataTab('halloween');
+    nav.innerHTML = todasBtn + dataBtns;
+    mudarGaleriaTab('todas');
   }
-  document.addEventListener('DOMContentLoaded', _initDatas);
+  document.addEventListener('DOMContentLoaded', _initGaleria);
 </script>
 
 <script>
