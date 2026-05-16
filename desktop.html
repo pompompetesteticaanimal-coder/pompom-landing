@@ -1942,11 +1942,11 @@
     const container = document.getElementById('galeria-masonry');
     container.innerHTML = '';
     const grid = document.createElement('div');
-    grid.className = 'datas-grid';
+    grid.className = 'masonry';
     fotos.forEach((foto, i) => {
       const item = document.createElement('div');
-      item.className = 'datas-grid-item';
-      item.style.animationDelay = `${i * 50}ms`;
+      item.className = 'masonry-item';
+      item.style.cssText = `opacity:0;animation:datasItemIn 0.45s cubic-bezier(.25,.46,.45,.94) ${i * 50}ms forwards;`;
       item.innerHTML = `<img src="${foto.src}" alt="${foto.alt}" loading="lazy" decoding="async" /><div class="overlay"><span>${foto.alt}</span></div>`;
       item.addEventListener('click', () => openLightbox(foto.src));
       grid.appendChild(item);
