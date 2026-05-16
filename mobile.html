@@ -1775,10 +1775,7 @@
       const principais = Object.values(GALERIA_M_DADOS).flatMap(d =>
         d.fotos.filter(f => /principal/i.test(f.split('/').pop()))
       );
-      const resto = Object.values(GALERIA_M_DADOS).flatMap(d =>
-        d.fotos.filter(f => !/principal/i.test(f.split('/').pop()))
-      );
-      fotos = [...principais, ...PORTFOLIO_M_FOTOS, ...resto];
+      fotos = [...PORTFOLIO_M_FOTOS, ...principais];
     } else {
       fotos = GALERIA_M_DADOS[key].fotos;
     }
