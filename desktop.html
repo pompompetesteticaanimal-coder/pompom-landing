@@ -730,6 +730,7 @@
       border: 3px solid rgba(255,255,255,0.45);
       flex-shrink: 0;
       box-shadow: 0 6px 18px rgba(0,0,0,0.22);
+      transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
     }
     @keyframes marquee-ld { from{transform:translateX(0)} to{transform:translateX(-50%)} }
     @keyframes marquee-rd { from{transform:translateX(-50%)} to{transform:translateX(0)} }
@@ -740,6 +741,52 @@
       overflow: hidden;
       -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
       mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+    }
+
+    /* ── DATE MOSAIC BLOCKS ── */
+    .date-mosaic-block {
+      cursor: pointer;
+      padding-bottom: 14px;
+    }
+    .date-mosaic-block:last-child { padding-bottom: 0; }
+    .date-mosaic-block:hover .marquee-track-d { animation-play-state: paused; }
+    .date-mosaic-block:hover .dog-bubble-d {
+      border-color: rgba(255,255,255,0.8);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.35);
+    }
+    .date-mosaic-label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 32px 8px;
+    }
+    .date-mosaic-label-left {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      transition: color 0.2s;
+    }
+    .date-mosaic-block:hover .date-mosaic-label-left { color: white; }
+    .date-mosaic-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+    .ver-album-hint {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: transparent;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transform: translateX(-10px);
+      transition: color 0.22s, transform 0.22s;
+    }
+    .date-mosaic-block:hover .ver-album-hint {
+      color: rgba(255,255,255,0.9);
+      transform: translateX(0);
     }
 
     /* ── PRODUCTS HOVER GRID ── */
@@ -1240,126 +1287,197 @@
   </div>
 </section>
 
-<!-- ✨ DOG MOSAIC ✨ -->
-<div class="bg-rose-600 py-5">
-  <div class="mosaic-wrap-d">
-    <!-- Row 1: scroll left -->
-    <div class="mosaic-row-d marquee-left-d mb-3">
-      <div class="marquee-track-d">
-        <img src="fotos/cachorros/F2149C04-602C-4972-B21C-3143C94DEB7A.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/FE9FB7FF-BC03-46A7-8748-C16A41B9025F.png" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/6598A84E-1C45-4490-B6A1-CCFEDBF9DA59.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/809C6B43-407C-452D-9E9F-3C23FA351005.png" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/E3D05CAC-5399-4FFB-9FC8-488F1A1D17FE.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/0699F9E0-CE8E-4607-95A8-DEC7804BC574.png" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/B8E76CDC-17E8-4EB7-958B-7F7156B2CD4B.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/7E86BC8C-B4D2-4DA1-B7B2-53DB74296FB7.png" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/45785CD7-DE60-4A7E-9EC4-07035ACD21F1.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/A9119A23-9A7A-4C13-A0F7-3B254033030C.png" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/328B0668-1F96-4342-9D67-5438DD02DCAF.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/5020BB9A-3486-4F8D-8C55-4AFCF517C96B.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/F2149C04-602C-4972-B21C-3143C94DEB7A.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/FE9FB7FF-BC03-46A7-8748-C16A41B9025F.png" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/6598A84E-1C45-4490-B6A1-CCFEDBF9DA59.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/809C6B43-407C-452D-9E9F-3C23FA351005.png" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/E3D05CAC-5399-4FFB-9FC8-488F1A1D17FE.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/0699F9E0-CE8E-4607-95A8-DEC7804BC574.png" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/B8E76CDC-17E8-4EB7-958B-7F7156B2CD4B.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/7E86BC8C-B4D2-4DA1-B7B2-53DB74296FB7.png" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/45785CD7-DE60-4A7E-9EC4-07035ACD21F1.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/A9119A23-9A7A-4C13-A0F7-3B254033030C.png" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/328B0668-1F96-4342-9D67-5438DD02DCAF.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/5020BB9A-3486-4F8D-8C55-4AFCF517C96B.jpg" class="dog-bubble-d" alt="">
+<!-- ✨ DATE MOSAIC ✨ -->
+<div class="bg-rose-600 py-6">
+
+  <!-- 🎃 Halloween -->
+  <div class="date-mosaic-block" onclick="abrirAlbumData('halloween')">
+    <div class="date-mosaic-label">
+      <div class="date-mosaic-label-left">
+        <span class="date-mosaic-dot" style="background:#f97316"></span>
+        🎃 Halloween
       </div>
+      <span class="ver-album-hint">Ver álbum →</span>
     </div>
-    <!-- Row 2: scroll right -->
-    <div class="mosaic-row-d marquee-right-d mb-3">
-      <div class="marquee-track-d">
-        <img src="fotos/cachorros/DCB2001F-0467-4F0C-9CB1-DE313D3B9056.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/61C84BB1-A7F4-441B-B110-6E61AA782F82.png" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/10CDCBD1-874B-4FE9-A4E2-B493D24F1D92.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/EB28EADE-8AA0-4EEC-901C-D04696E102D7.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/4E7C3FF3-0438-4132-A591-92E6B8EB234E.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/400685A8-CA1B-48E4-9254-BB0E1752F2DC.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/D0E2A0A9-A99F-4AFF-97B2-5CD058DDDC0E.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/91A10164-1061-4E39-AACB-C70BCCA3D8E7.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/335942CA-EED3-4086-BE99-A3CA4C4FB1CD.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/FEF37F88-6513-4B39-9EAF-82B53D7E8AA7.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/33A1AF27-52F3-4A62-A83A-E8657569B004.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/3F769711-AA10-4F6C-8362-7D48233676F6.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/DCB2001F-0467-4F0C-9CB1-DE313D3B9056.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/61C84BB1-A7F4-441B-B110-6E61AA782F82.png" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/10CDCBD1-874B-4FE9-A4E2-B493D24F1D92.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/EB28EADE-8AA0-4EEC-901C-D04696E102D7.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/4E7C3FF3-0438-4132-A591-92E6B8EB234E.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/400685A8-CA1B-48E4-9254-BB0E1752F2DC.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/D0E2A0A9-A99F-4AFF-97B2-5CD058DDDC0E.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/91A10164-1061-4E39-AACB-C70BCCA3D8E7.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/335942CA-EED3-4086-BE99-A3CA4C4FB1CD.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/FEF37F88-6513-4B39-9EAF-82B53D7E8AA7.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/33A1AF27-52F3-4A62-A83A-E8657569B004.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/3F769711-AA10-4F6C-8362-7D48233676F6.jpg" class="dog-bubble-d" alt="">
-      </div>
-    </div>
-    <!-- Row 3: scroll left -->
-    <div class="mosaic-row-d marquee-left-d mb-3">
-      <div class="marquee-track-d">
-        <img src="fotos/cachorros/E3D05CAC-5399-4FFB-9FC8-488F1A1D17FE.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/5020BB9A-3486-4F8D-8C55-4AFCF517C96B.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/7E86BC8C-B4D2-4DA1-B7B2-53DB74296FB7.png" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/400685A8-CA1B-48E4-9254-BB0E1752F2DC.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/B8E76CDC-17E8-4EB7-958B-7F7156B2CD4B.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/91A10164-1061-4E39-AACB-C70BCCA3D8E7.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/0699F9E0-CE8E-4607-95A8-DEC7804BC574.png" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/EB28EADE-8AA0-4EEC-901C-D04696E102D7.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/A9119A23-9A7A-4C13-A0F7-3B254033030C.png" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/328B0668-1F96-4342-9D67-5438DD02DCAF.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/809C6B43-407C-452D-9E9F-3C23FA351005.png" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/D0E2A0A9-A99F-4AFF-97B2-5CD058DDDC0E.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/E3D05CAC-5399-4FFB-9FC8-488F1A1D17FE.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/5020BB9A-3486-4F8D-8C55-4AFCF517C96B.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/7E86BC8C-B4D2-4DA1-B7B2-53DB74296FB7.png" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/400685A8-CA1B-48E4-9254-BB0E1752F2DC.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/B8E76CDC-17E8-4EB7-958B-7F7156B2CD4B.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/91A10164-1061-4E39-AACB-C70BCCA3D8E7.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/0699F9E0-CE8E-4607-95A8-DEC7804BC574.png" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/EB28EADE-8AA0-4EEC-901C-D04696E102D7.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/A9119A23-9A7A-4C13-A0F7-3B254033030C.png" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/328B0668-1F96-4342-9D67-5438DD02DCAF.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/809C6B43-407C-452D-9E9F-3C23FA351005.png" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/D0E2A0A9-A99F-4AFF-97B2-5CD058DDDC0E.jpg" class="dog-bubble-d" alt="">
-      </div>
-    </div>
-    <!-- Row 4: scroll right -->
-    <div class="mosaic-row-d marquee-right-d">
-      <div class="marquee-track-d">
-        <img src="fotos/cachorros/FE9FB7FF-BC03-46A7-8748-C16A41B9025F.png" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/335942CA-EED3-4086-BE99-A3CA4C4FB1CD.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/6598A84E-1C45-4490-B6A1-CCFEDBF9DA59.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/F2149C04-602C-4972-B21C-3143C94DEB7A.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/45785CD7-DE60-4A7E-9EC4-07035ACD21F1.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/33A1AF27-52F3-4A62-A83A-E8657569B004.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/4E7C3FF3-0438-4132-A591-92E6B8EB234E.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/3F769711-AA10-4F6C-8362-7D48233676F6.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/DCB2001F-0467-4F0C-9CB1-DE313D3B9056.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/FEF37F88-6513-4B39-9EAF-82B53D7E8AA7.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/61C84BB1-A7F4-441B-B110-6E61AA782F82.png" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/10CDCBD1-874B-4FE9-A4E2-B493D24F1D92.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/FE9FB7FF-BC03-46A7-8748-C16A41B9025F.png" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/335942CA-EED3-4086-BE99-A3CA4C4FB1CD.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/6598A84E-1C45-4490-B6A1-CCFEDBF9DA59.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/F2149C04-602C-4972-B21C-3143C94DEB7A.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/45785CD7-DE60-4A7E-9EC4-07035ACD21F1.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/33A1AF27-52F3-4A62-A83A-E8657569B004.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/4E7C3FF3-0438-4132-A591-92E6B8EB234E.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/3F769711-AA10-4F6C-8362-7D48233676F6.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/DCB2001F-0467-4F0C-9CB1-DE313D3B9056.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/FEF37F88-6513-4B39-9EAF-82B53D7E8AA7.jpg" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/61C84BB1-A7F4-441B-B110-6E61AA782F82.png" class="dog-bubble-d" alt="">
-        <img src="fotos/cachorros/10CDCBD1-874B-4FE9-A4E2-B493D24F1D92.jpg" class="dog-bubble-d" alt="">
+    <div class="mosaic-wrap-d">
+      <div class="mosaic-row-d marquee-left-d">
+        <div class="marquee-track-d" style="animation-duration:36s">
+          <img src="fotos/datas-comemorativas/halloween/princiapal.jpg" class="dog-bubble-d" alt="Halloween">
+          <img src="fotos/datas-comemorativas/halloween/principal_2.JPG" class="dog-bubble-d" alt="Halloween">
+          <img src="fotos/datas-comemorativas/halloween/principal_3.JPG" class="dog-bubble-d" alt="Halloween">
+          <img src="fotos/datas-comemorativas/halloween/1b9ea046-b68c-4c54-bbcd-0beeeccd3ec3.jpg" class="dog-bubble-d" alt="Halloween">
+          <img src="fotos/datas-comemorativas/halloween/6e675108-81c1-4856-bf18-653f1948833e.jpg" class="dog-bubble-d" alt="Halloween">
+          <img src="fotos/datas-comemorativas/halloween/98172b84-3337-4978-b0c3-e76d58025b69.jpg" class="dog-bubble-d" alt="Halloween">
+          <img src="fotos/datas-comemorativas/halloween/a6906787-43a0-4f2d-be25-b2ac19800553.jpg" class="dog-bubble-d" alt="Halloween">
+          <img src="fotos/datas-comemorativas/halloween/e29b8fd6-f43a-4288-aaaf-b106330726b7.jpg" class="dog-bubble-d" alt="Halloween">
+          <img src="fotos/datas-comemorativas/halloween/fb29afc2-8ef2-4187-a9ac-a3692df2ec28.jpg" class="dog-bubble-d" alt="Halloween">
+          <img src="fotos/datas-comemorativas/halloween/fcacc484-8166-434e-997a-239a124c74b0.jpg" class="dog-bubble-d" alt="Halloween">
+          <img src="fotos/datas-comemorativas/halloween/IMG_4013.JPG" class="dog-bubble-d" alt="Halloween">
+          <img src="fotos/datas-comemorativas/halloween/IMG_4014.JPG" class="dog-bubble-d" alt="Halloween">
+          <img src="fotos/datas-comemorativas/halloween/IMG_4076.JPG" class="dog-bubble-d" alt="Halloween">
+          <img src="fotos/datas-comemorativas/halloween/IMG_4122.JPG" class="dog-bubble-d" alt="Halloween">
+          <img src="fotos/datas-comemorativas/halloween/IMG_4202.JPG" class="dog-bubble-d" alt="Halloween">
+          <img src="fotos/datas-comemorativas/halloween/IMG_4226.JPG" class="dog-bubble-d" alt="Halloween">
+          <img src="fotos/datas-comemorativas/halloween/IMG_4359.JPG" class="dog-bubble-d" alt="Halloween">
+          <img src="fotos/datas-comemorativas/halloween/princiapal.jpg" class="dog-bubble-d" alt="Halloween">
+          <img src="fotos/datas-comemorativas/halloween/principal_2.JPG" class="dog-bubble-d" alt="Halloween">
+          <img src="fotos/datas-comemorativas/halloween/principal_3.JPG" class="dog-bubble-d" alt="Halloween">
+          <img src="fotos/datas-comemorativas/halloween/1b9ea046-b68c-4c54-bbcd-0beeeccd3ec3.jpg" class="dog-bubble-d" alt="Halloween">
+          <img src="fotos/datas-comemorativas/halloween/6e675108-81c1-4856-bf18-653f1948833e.jpg" class="dog-bubble-d" alt="Halloween">
+          <img src="fotos/datas-comemorativas/halloween/98172b84-3337-4978-b0c3-e76d58025b69.jpg" class="dog-bubble-d" alt="Halloween">
+          <img src="fotos/datas-comemorativas/halloween/a6906787-43a0-4f2d-be25-b2ac19800553.jpg" class="dog-bubble-d" alt="Halloween">
+          <img src="fotos/datas-comemorativas/halloween/e29b8fd6-f43a-4288-aaaf-b106330726b7.jpg" class="dog-bubble-d" alt="Halloween">
+          <img src="fotos/datas-comemorativas/halloween/fb29afc2-8ef2-4187-a9ac-a3692df2ec28.jpg" class="dog-bubble-d" alt="Halloween">
+          <img src="fotos/datas-comemorativas/halloween/fcacc484-8166-434e-997a-239a124c74b0.jpg" class="dog-bubble-d" alt="Halloween">
+          <img src="fotos/datas-comemorativas/halloween/IMG_4013.JPG" class="dog-bubble-d" alt="Halloween">
+          <img src="fotos/datas-comemorativas/halloween/IMG_4014.JPG" class="dog-bubble-d" alt="Halloween">
+          <img src="fotos/datas-comemorativas/halloween/IMG_4076.JPG" class="dog-bubble-d" alt="Halloween">
+          <img src="fotos/datas-comemorativas/halloween/IMG_4122.JPG" class="dog-bubble-d" alt="Halloween">
+          <img src="fotos/datas-comemorativas/halloween/IMG_4202.JPG" class="dog-bubble-d" alt="Halloween">
+          <img src="fotos/datas-comemorativas/halloween/IMG_4226.JPG" class="dog-bubble-d" alt="Halloween">
+          <img src="fotos/datas-comemorativas/halloween/IMG_4359.JPG" class="dog-bubble-d" alt="Halloween">
+        </div>
       </div>
     </div>
   </div>
+
+  <!-- 🎄 Natal -->
+  <div class="date-mosaic-block" onclick="abrirAlbumData('natal')">
+    <div class="date-mosaic-label">
+      <div class="date-mosaic-label-left">
+        <span class="date-mosaic-dot" style="background:#4ade80"></span>
+        🎄 Natal
+      </div>
+      <span class="ver-album-hint">Ver álbum →</span>
+    </div>
+    <div class="mosaic-wrap-d">
+      <div class="mosaic-row-d marquee-right-d">
+        <div class="marquee-track-d" style="animation-duration:30s">
+          <img src="fotos/datas-comemorativas/natal/principal.jpg" class="dog-bubble-d" alt="Natal">
+          <img src="fotos/datas-comemorativas/natal/principal1.jpg" class="dog-bubble-d" alt="Natal">
+          <img src="fotos/datas-comemorativas/natal/principal5.PNG" class="dog-bubble-d" alt="Natal">
+          <img src="fotos/datas-comemorativas/natal/principal6.PNG" class="dog-bubble-d" alt="Natal">
+          <img src="fotos/datas-comemorativas/natal/principal8.PNG" class="dog-bubble-d" alt="Natal">
+          <img src="fotos/datas-comemorativas/natal/principal9.PNG" class="dog-bubble-d" alt="Natal">
+          <img src="fotos/datas-comemorativas/natal/principal10.JPG" class="dog-bubble-d" alt="Natal">
+          <img src="fotos/datas-comemorativas/natal/155e0700-0908-4f34-bb2a-6fd3286b7a0a.jpg" class="dog-bubble-d" alt="Natal">
+          <img src="fotos/datas-comemorativas/natal/18bf052b-53e7-4fe8-a07c-a15f02c6dec9.jpg" class="dog-bubble-d" alt="Natal">
+          <img src="fotos/datas-comemorativas/natal/292a23ca-634f-47c6-89a7-d5cf76dac580.jpg" class="dog-bubble-d" alt="Natal">
+          <img src="fotos/datas-comemorativas/natal/87aac4ca-87cd-4aab-a735-b385b6ffd7b4.jpg" class="dog-bubble-d" alt="Natal">
+          <img src="fotos/datas-comemorativas/natal/DSC_9119.jpeg" class="dog-bubble-d" alt="Natal">
+          <img src="fotos/datas-comemorativas/natal/efb994a8-7c5a-45dc-ae0f-68098073a75e.jpg" class="dog-bubble-d" alt="Natal">
+          <img src="fotos/datas-comemorativas/natal/IMG_6443.PNG" class="dog-bubble-d" alt="Natal">
+          <img src="fotos/datas-comemorativas/natal/principal.jpg" class="dog-bubble-d" alt="Natal">
+          <img src="fotos/datas-comemorativas/natal/principal1.jpg" class="dog-bubble-d" alt="Natal">
+          <img src="fotos/datas-comemorativas/natal/principal5.PNG" class="dog-bubble-d" alt="Natal">
+          <img src="fotos/datas-comemorativas/natal/principal6.PNG" class="dog-bubble-d" alt="Natal">
+          <img src="fotos/datas-comemorativas/natal/principal8.PNG" class="dog-bubble-d" alt="Natal">
+          <img src="fotos/datas-comemorativas/natal/principal9.PNG" class="dog-bubble-d" alt="Natal">
+          <img src="fotos/datas-comemorativas/natal/principal10.JPG" class="dog-bubble-d" alt="Natal">
+          <img src="fotos/datas-comemorativas/natal/155e0700-0908-4f34-bb2a-6fd3286b7a0a.jpg" class="dog-bubble-d" alt="Natal">
+          <img src="fotos/datas-comemorativas/natal/18bf052b-53e7-4fe8-a07c-a15f02c6dec9.jpg" class="dog-bubble-d" alt="Natal">
+          <img src="fotos/datas-comemorativas/natal/292a23ca-634f-47c6-89a7-d5cf76dac580.jpg" class="dog-bubble-d" alt="Natal">
+          <img src="fotos/datas-comemorativas/natal/87aac4ca-87cd-4aab-a735-b385b6ffd7b4.jpg" class="dog-bubble-d" alt="Natal">
+          <img src="fotos/datas-comemorativas/natal/DSC_9119.jpeg" class="dog-bubble-d" alt="Natal">
+          <img src="fotos/datas-comemorativas/natal/efb994a8-7c5a-45dc-ae0f-68098073a75e.jpg" class="dog-bubble-d" alt="Natal">
+          <img src="fotos/datas-comemorativas/natal/IMG_6443.PNG" class="dog-bubble-d" alt="Natal">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🐣 Páscoa -->
+  <div class="date-mosaic-block" onclick="abrirAlbumData('pascoa')">
+    <div class="date-mosaic-label">
+      <div class="date-mosaic-label-left">
+        <span class="date-mosaic-dot" style="background:#d8b4fe"></span>
+        🐣 Páscoa
+      </div>
+      <span class="ver-album-hint">Ver álbum →</span>
+    </div>
+    <div class="mosaic-wrap-d">
+      <div class="mosaic-row-d marquee-left-d">
+        <div class="marquee-track-d" style="animation-duration:34s">
+          <img src="fotos/datas-comemorativas/pascoa/principal.png" class="dog-bubble-d" alt="Páscoa">
+          <img src="fotos/datas-comemorativas/pascoa/principal_1.PNG" class="dog-bubble-d" alt="Páscoa">
+          <img src="fotos/datas-comemorativas/pascoa/principal_2.PNG" class="dog-bubble-d" alt="Páscoa">
+          <img src="fotos/datas-comemorativas/pascoa/princiapl_3.PNG" class="dog-bubble-d" alt="Páscoa">
+          <img src="fotos/datas-comemorativas/pascoa/principal_4.png" class="dog-bubble-d" alt="Páscoa">
+          <img src="fotos/datas-comemorativas/pascoa/1F32B19F-2487-48AF-8219-DE48172F1C1B.png" class="dog-bubble-d" alt="Páscoa">
+          <img src="fotos/datas-comemorativas/pascoa/77F23C0B-BE66-41EC-AF4D-23A8047522D5.png" class="dog-bubble-d" alt="Páscoa">
+          <img src="fotos/datas-comemorativas/pascoa/7E86BC8C-B4D2-4DA1-B7B2-53DB74296FB7.png" class="dog-bubble-d" alt="Páscoa">
+          <img src="fotos/datas-comemorativas/pascoa/84C330E9-76F7-441C-9676-AB0E6EB3BDBD.png" class="dog-bubble-d" alt="Páscoa">
+          <img src="fotos/datas-comemorativas/pascoa/97788919-5714-4208-8106-5320C83EECF7.png" class="dog-bubble-d" alt="Páscoa">
+          <img src="fotos/datas-comemorativas/pascoa/A1961E08-FBD5-4FB5-A8D8-AF9747AF9B4A.png" class="dog-bubble-d" alt="Páscoa">
+          <img src="fotos/datas-comemorativas/pascoa/FE9FB7FF-BC03-46A7-8748-C16A41B9025F.png" class="dog-bubble-d" alt="Páscoa">
+          <img src="fotos/datas-comemorativas/pascoa/IMG_1567.PNG" class="dog-bubble-d" alt="Páscoa">
+          <img src="fotos/datas-comemorativas/pascoa/IMG_1662.PNG" class="dog-bubble-d" alt="Páscoa">
+          <img src="fotos/datas-comemorativas/pascoa/principal.png" class="dog-bubble-d" alt="Páscoa">
+          <img src="fotos/datas-comemorativas/pascoa/principal_1.PNG" class="dog-bubble-d" alt="Páscoa">
+          <img src="fotos/datas-comemorativas/pascoa/principal_2.PNG" class="dog-bubble-d" alt="Páscoa">
+          <img src="fotos/datas-comemorativas/pascoa/princiapl_3.PNG" class="dog-bubble-d" alt="Páscoa">
+          <img src="fotos/datas-comemorativas/pascoa/principal_4.png" class="dog-bubble-d" alt="Páscoa">
+          <img src="fotos/datas-comemorativas/pascoa/1F32B19F-2487-48AF-8219-DE48172F1C1B.png" class="dog-bubble-d" alt="Páscoa">
+          <img src="fotos/datas-comemorativas/pascoa/77F23C0B-BE66-41EC-AF4D-23A8047522D5.png" class="dog-bubble-d" alt="Páscoa">
+          <img src="fotos/datas-comemorativas/pascoa/7E86BC8C-B4D2-4DA1-B7B2-53DB74296FB7.png" class="dog-bubble-d" alt="Páscoa">
+          <img src="fotos/datas-comemorativas/pascoa/84C330E9-76F7-441C-9676-AB0E6EB3BDBD.png" class="dog-bubble-d" alt="Páscoa">
+          <img src="fotos/datas-comemorativas/pascoa/97788919-5714-4208-8106-5320C83EECF7.png" class="dog-bubble-d" alt="Páscoa">
+          <img src="fotos/datas-comemorativas/pascoa/A1961E08-FBD5-4FB5-A8D8-AF9747AF9B4A.png" class="dog-bubble-d" alt="Páscoa">
+          <img src="fotos/datas-comemorativas/pascoa/FE9FB7FF-BC03-46A7-8748-C16A41B9025F.png" class="dog-bubble-d" alt="Páscoa">
+          <img src="fotos/datas-comemorativas/pascoa/IMG_1567.PNG" class="dog-bubble-d" alt="Páscoa">
+          <img src="fotos/datas-comemorativas/pascoa/IMG_1662.PNG" class="dog-bubble-d" alt="Páscoa">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🎭 Carnaval -->
+  <div class="date-mosaic-block" onclick="abrirAlbumData('carnaval')">
+    <div class="date-mosaic-label">
+      <div class="date-mosaic-label-left">
+        <span class="date-mosaic-dot" style="background:#fbbf24"></span>
+        🎭 Carnaval
+      </div>
+      <span class="ver-album-hint">Ver álbum →</span>
+    </div>
+    <div class="mosaic-wrap-d">
+      <div class="mosaic-row-d marquee-right-d">
+        <div class="marquee-track-d" style="animation-duration:32s">
+          <img src="fotos/datas-comemorativas/carnaval/principal.png" class="dog-bubble-d" alt="Carnaval">
+          <img src="fotos/datas-comemorativas/carnaval/principal_1.png" class="dog-bubble-d" alt="Carnaval">
+          <img src="fotos/datas-comemorativas/carnaval/principal_2.png" class="dog-bubble-d" alt="Carnaval">
+          <img src="fotos/datas-comemorativas/carnaval/principal_3.png" class="dog-bubble-d" alt="Carnaval">
+          <img src="fotos/datas-comemorativas/carnaval/175C155A-C257-4C4D-9E57-673F32EB5F62.png" class="dog-bubble-d" alt="Carnaval">
+          <img src="fotos/datas-comemorativas/carnaval/2DCD7B81-3764-4AD6-B087-C7A37F3E2E04.png" class="dog-bubble-d" alt="Carnaval">
+          <img src="fotos/datas-comemorativas/carnaval/44813EB9-9160-4D6E-BE27-1BD338097D1E.png" class="dog-bubble-d" alt="Carnaval">
+          <img src="fotos/datas-comemorativas/carnaval/6C26F3CC-AD97-45FF-8D70-E87B47ECE307.png" class="dog-bubble-d" alt="Carnaval">
+          <img src="fotos/datas-comemorativas/carnaval/6FF73396-1F0C-4659-9D84-D630D4A67FEE.png" class="dog-bubble-d" alt="Carnaval">
+          <img src="fotos/datas-comemorativas/carnaval/95F6A441-D0FD-477B-9336-D093DD026AEF.png" class="dog-bubble-d" alt="Carnaval">
+          <img src="fotos/datas-comemorativas/carnaval/9A18D8C8-5D8F-431F-8687-8CD778639879.png" class="dog-bubble-d" alt="Carnaval">
+          <img src="fotos/datas-comemorativas/carnaval/A3CBB488-88A6-4B81-91E5-72FA2C4080DF.png" class="dog-bubble-d" alt="Carnaval">
+          <img src="fotos/datas-comemorativas/carnaval/F5B8E6E9-7C2A-4900-9842-E74E779E1BFD.png" class="dog-bubble-d" alt="Carnaval">
+          <img src="fotos/datas-comemorativas/carnaval/IMG_8438.PNG" class="dog-bubble-d" alt="Carnaval">
+          <img src="fotos/datas-comemorativas/carnaval/IMG_8456.PNG" class="dog-bubble-d" alt="Carnaval">
+          <img src="fotos/datas-comemorativas/carnaval/principal.png" class="dog-bubble-d" alt="Carnaval">
+          <img src="fotos/datas-comemorativas/carnaval/principal_1.png" class="dog-bubble-d" alt="Carnaval">
+          <img src="fotos/datas-comemorativas/carnaval/principal_2.png" class="dog-bubble-d" alt="Carnaval">
+          <img src="fotos/datas-comemorativas/carnaval/principal_3.png" class="dog-bubble-d" alt="Carnaval">
+          <img src="fotos/datas-comemorativas/carnaval/175C155A-C257-4C4D-9E57-673F32EB5F62.png" class="dog-bubble-d" alt="Carnaval">
+          <img src="fotos/datas-comemorativas/carnaval/2DCD7B81-3764-4AD6-B087-C7A37F3E2E04.png" class="dog-bubble-d" alt="Carnaval">
+          <img src="fotos/datas-comemorativas/carnaval/44813EB9-9160-4D6E-BE27-1BD338097D1E.png" class="dog-bubble-d" alt="Carnaval">
+          <img src="fotos/datas-comemorativas/carnaval/6C26F3CC-AD97-45FF-8D70-E87B47ECE307.png" class="dog-bubble-d" alt="Carnaval">
+          <img src="fotos/datas-comemorativas/carnaval/6FF73396-1F0C-4659-9D84-D630D4A67FEE.png" class="dog-bubble-d" alt="Carnaval">
+          <img src="fotos/datas-comemorativas/carnaval/95F6A441-D0FD-477B-9336-D093DD026AEF.png" class="dog-bubble-d" alt="Carnaval">
+          <img src="fotos/datas-comemorativas/carnaval/9A18D8C8-5D8F-431F-8687-8CD778639879.png" class="dog-bubble-d" alt="Carnaval">
+          <img src="fotos/datas-comemorativas/carnaval/A3CBB488-88A6-4B81-91E5-72FA2C4080DF.png" class="dog-bubble-d" alt="Carnaval">
+          <img src="fotos/datas-comemorativas/carnaval/F5B8E6E9-7C2A-4900-9842-E74E779E1BFD.png" class="dog-bubble-d" alt="Carnaval">
+          <img src="fotos/datas-comemorativas/carnaval/IMG_8438.PNG" class="dog-bubble-d" alt="Carnaval">
+          <img src="fotos/datas-comemorativas/carnaval/IMG_8456.PNG" class="dog-bubble-d" alt="Carnaval">
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 <!-- ✨ DEPOIMENTOS ✨ -->
@@ -1925,6 +2043,13 @@
       grid.appendChild(item);
     });
     container.appendChild(grid);
+  }
+
+  function abrirAlbumData(key) {
+    mudarDataTab(key);
+    const sec = document.getElementById('datas');
+    const y = sec.getBoundingClientRect().top + window.scrollY - 80;
+    window.scrollTo({ top: y, behavior: 'smooth' });
   }
 
   function _initDatas() {
