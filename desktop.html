@@ -28,8 +28,8 @@
   <meta property="og:url" content="https://pompompetshop.com.br/" />
   <meta property="og:title" content="PomPom Pet — Estética Animal em Cajamar" />
   <meta property="og:description" content="Banho, tosa e hidratação com carinho e técnica especializada. Mais de 3.000 pets atendidos. Agende pelo WhatsApp." />
-  <meta property="og:image" content="https://pompompetshop.com.br/fotos/ambiente/frente.png" />
-  <meta property="og:image:secure_url" content="https://pompompetshop.com.br/fotos/ambiente/frente.png" />
+  <meta property="og:image" content="https://pompompetshop.com.br/fotos/copa/frente-copa.jpeg" />
+  <meta property="og:image:secure_url" content="https://pompompetshop.com.br/fotos/copa/frente-copa.jpeg" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -41,7 +41,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="PomPom Pet — Estética Animal em Cajamar" />
   <meta name="twitter:description" content="Banho, tosa e hidratação com carinho. Agende pelo WhatsApp." />
-  <meta name="twitter:image" content="https://pompompetshop.com.br/fotos/ambiente/frente.png" />
+  <meta name="twitter:image" content="https://pompompetshop.com.br/fotos/copa/frente-copa.jpeg" />
   <meta name="twitter:image:alt" content="Fachada da PomPom Pet — Banho e Tosa em Cajamar/SP" />
 
   <!-- Structured Data — LocalBusiness + Services + FAQ -->
@@ -58,7 +58,7 @@
         "slogan": "Banho e tosa com carinho em Cajamar",
         "url": "https://pompompetshop.com.br/",
         "image": [
-          "https://pompompetshop.com.br/fotos/ambiente/frente.png",
+          "https://pompompetshop.com.br/fotos/copa/frente-copa.jpeg",
           "https://pompompetshop.com.br/fotos/hero-dog.jpg",
           "https://pompompetshop.com.br/fotos/trabalho1.jpg"
         ],
@@ -987,6 +987,7 @@
       <a href="#galeria" class="nav-link">Galeria</a>
       <a href="#sobre" class="nav-link">Sobre</a>
       <a href="#contato" class="nav-link">Contato</a>
+      <a href="#copa-album" class="nav-link" style="color:#FFD700;font-weight:800;text-shadow:0 0 12px rgba(255,215,0,0.5);">⚽ Copa 2026</a>
       <a href="https://wa.me/5511947266216?text=Olá! Quero agendar" target="_blank" rel="noopener noreferrer"
          id="nav-cta"
          class="bg-white text-rose-700 font-semibold text-sm px-6 py-2.5 rounded-full transition hover:bg-rose-50 hover:-translate-y-0.5 transform duration-200 shadow-lg">
@@ -995,6 +996,163 @@
     </div>
   </div>
 </nav>
+
+<!-- ⚽ COPA DO MUNDO 2026 — ÁLBUM DE FIGURINHAS ⚽ -->
+<style>
+.copa-outer{background:linear-gradient(160deg,#012e18 0%,#015c2c 45%,#012e18 100%);padding:2.5rem 1.25rem;}
+/* Desktop: Copa é a 1ª seção — precisa descer do navbar fixo (~90px) */
+@media(min-width:641px){.copa-outer{padding:110px 2rem 3.5rem;}}
+.copa-card{max-width:860px;margin:0 auto;border-radius:20px;overflow:hidden;box-shadow:0 12px 60px rgba(0,0,0,.4);}
+.copa-card-head{background:linear-gradient(135deg,#009c3b,#00b44c);padding:1.25rem 1.75rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;}
+.copa-card-title{font-size:1.5rem;font-weight:900;color:#fff;line-height:1.15;letter-spacing:-.5px;text-transform:uppercase;}
+.copa-card-title em{color:#FFD700;font-style:normal;display:block;font-size:1.8rem;}
+.copa-card-badge{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.15);border:1.5px solid rgba(255,255,255,.3);border-radius:14px;padding:10px 16px;flex-shrink:0;}
+.copa-card-badge-txt{font-size:.65rem;font-weight:800;color:#fff;text-transform:uppercase;letter-spacing:1px;line-height:1.4;}
+.copa-card-body{background:#f4faf5;padding:1.25rem;}
+/* Desktop: 6 colunas → 12 slots = 2 linhas, sem rolagem */
+.copa-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;}
+/* Mobile: 4 colunas → 12 slots = 3 linhas, sem rolagem */
+@media(max-width:640px){.copa-grid{grid-template-columns:repeat(4,1fr);gap:7px;}.copa-card-body{padding:.9rem;}.copa-card-head{padding:1rem 1.25rem;}.copa-card-title{font-size:1.1rem;}.copa-card-title em{font-size:1.3rem;}}
+.copa-slot-filled{border-radius:9px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.2);cursor:pointer;transition:transform .2s cubic-bezier(.34,1.56,.64,1);}
+.copa-slot-filled:hover{transform:scale(1.06) rotate(-1deg);}
+.copa-slot-filled img{width:100%;display:block;}
+.copa-slot-empty{border-radius:9px;background:#fff;border:2px dashed #a7f3d0;aspect-ratio:9/14;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;}
+.copa-slot-empty-code{font-size:.6rem;font-weight:700;color:#6ee7b7;letter-spacing:1px;}
+.copa-slot-empty-num{font-size:1.4rem;font-weight:900;color:#a7f3d0;line-height:1;}
+</style>
+<section id="copa-album">
+  <div class="copa-outer">
+    <div class="copa-card">
+      <div class="copa-card-head">
+        <div class="copa-card-title">Craques do<br/><em>PomPom 2026</em></div>
+        <div class="copa-card-badge">
+          <span style="font-size:1.8rem;line-height:1">🇧🇷</span>
+          <span class="copa-card-badge-txt">Equipe<br/>do Ano</span>
+        </div>
+      </div>
+      <div class="copa-card-body">
+        <div class="copa-grid">
+          <div class="copa-slot-filled"><img src="fotos/copa/BRA-01-nala.jpeg" alt="BRA 1 – Nala" loading="lazy" decoding="async"/></div>
+          <div class="copa-slot-filled"><img src="fotos/copa/BRA-02-luna.jpeg" alt="BRA 2 – Luna" loading="lazy" decoding="async"/></div>
+          <div class="copa-slot-filled"><img src="fotos/copa/BRA-03-belinhas.jpeg" alt="BRA 3 – Belinhas" loading="lazy" decoding="async"/></div>
+          <div class="copa-slot-empty"><span class="copa-slot-empty-code">BRA</span><span class="copa-slot-empty-num">4</span></div>
+          <div class="copa-slot-empty"><span class="copa-slot-empty-code">BRA</span><span class="copa-slot-empty-num">5</span></div>
+          <div class="copa-slot-empty"><span class="copa-slot-empty-code">BRA</span><span class="copa-slot-empty-num">6</span></div>
+          <div class="copa-slot-empty"><span class="copa-slot-empty-code">BRA</span><span class="copa-slot-empty-num">7</span></div>
+          <div class="copa-slot-empty"><span class="copa-slot-empty-code">BRA</span><span class="copa-slot-empty-num">8</span></div>
+          <div class="copa-slot-empty"><span class="copa-slot-empty-code">BRA</span><span class="copa-slot-empty-num">9</span></div>
+          <div class="copa-slot-empty"><span class="copa-slot-empty-code">BRA</span><span class="copa-slot-empty-num">10</span></div>
+          <div class="copa-slot-empty"><span class="copa-slot-empty-code">BRA</span><span class="copa-slot-empty-num">11</span></div>
+          <div class="copa-slot-empty"><span class="copa-slot-empty-code">BRA</span><span class="copa-slot-empty-num">12</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 🇧🇷 ROUPINHAS COPA 2026 -->
+<style>
+#roupinhas-copa{position:relative;background:linear-gradient(135deg,#014421 0%,#006633 50%,#014421 100%);overflow:hidden;padding:4rem 2rem;}
+@media(max-width:640px){#roupinhas-copa{padding:3rem 1.25rem;}}
+#confetti-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;}
+.roupinhas-inner{position:relative;z-index:1;max-width:900px;margin:0 auto;display:flex;align-items:center;gap:3.5rem;}
+@media(max-width:640px){.roupinhas-inner{flex-direction:column;gap:2rem;align-items:flex-start;}}
+.roupinhas-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(255,215,0,.15);border:1px solid rgba(255,215,0,.4);color:#FFD700;font-size:.68rem;font-weight:800;padding:5px 14px;border-radius:100px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:1rem;}
+.roupinhas-h2{font-size:3rem;font-weight:900;color:#fff;line-height:1.05;letter-spacing:-1.5px;margin-bottom:.8rem;}
+.roupinhas-h2 em{color:#FFD700;font-style:normal;}
+@media(max-width:640px){.roupinhas-h2{font-size:2.1rem;}}
+.roupinhas-p{color:rgba(255,255,255,.82);font-size:.95rem;line-height:1.65;margin-bottom:1.75rem;max-width:360px;}
+.roupinhas-cta{display:inline-flex;align-items:center;gap:10px;background:#FFD700;color:#014421;font-weight:800;font-size:1rem;padding:14px 28px;border-radius:100px;text-decoration:none;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 22px rgba(255,215,0,.35);}
+.roupinhas-cta:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(255,215,0,.5);}
+.roupinhas-cta:active{transform:scale(.97);}
+.roupinhas-foto-wrap{position:relative;flex-shrink:0;width:300px;}
+@media(max-width:640px){.roupinhas-foto-wrap{width:100%;max-width:280px;align-self:center;}}
+.roupinhas-foto{width:100%;border-radius:18px;box-shadow:0 18px 55px rgba(0,0,0,.45);display:block;}
+.roupinhas-badge{position:absolute;top:-14px;right:-10px;background:#FFD700;color:#014421;font-weight:900;font-size:.68rem;padding:9px 13px;border-radius:100px;box-shadow:0 4px 14px rgba(255,215,0,.4);text-transform:uppercase;letter-spacing:.5px;white-space:nowrap;}
+.bola-float{position:absolute;bottom:-10px;left:-18px;font-size:2.6rem;animation:bolaFloat 3.5s ease-in-out infinite;filter:drop-shadow(0 4px 6px rgba(0,0,0,.3));}
+@keyframes bolaFloat{0%,100%{transform:translateY(0) rotate(0deg);}50%{transform:translateY(-16px) rotate(200deg);}}
+</style>
+<section id="roupinhas-copa">
+  <canvas id="confetti-canvas"></canvas>
+  <div class="roupinhas-inner">
+    <div>
+      <div class="roupinhas-tag">🇧🇷 À venda na loja</div>
+      <h2 class="roupinhas-h2">Roupinhas<br/><em>Copa 2026</em></h2>
+      <p class="roupinhas-p">Vista seu pet com a camisa da Seleção! Vestidos e camisetas do Brasil disponíveis para cães e gatos. Perfeito para torcer junto!</p>
+      <a href="https://wa.me/5511947266216?text=Oi%21+Quero+saber+sobre+as+roupinhas+da+Copa+2026%21+%F0%9F%87%A7%F0%9F%87%B7%E2%9A%BD" class="roupinhas-cta" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" style="width:1.1rem;height:1.1rem;fill:#014421;flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Quero comprar!
+      </a>
+    </div>
+    <div class="roupinhas-foto-wrap">
+      <img src="fotos/copa/roupas-copa.jpeg" alt="Roupinhas Copa 2026 para pets — PomPom Pet" class="roupinhas-foto" loading="lazy" decoding="async"/>
+      <div class="roupinhas-badge">🇧🇷 Disponível agora!</div>
+      <div class="bola-float">⚽</div>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  var canvas=document.getElementById('confetti-canvas');
+  if(!canvas)return;
+  var ctx=canvas.getContext('2d');
+  var W=0,H=0;
+  var colors=['#009c3b','#FFD700','#002776','#fff','#009c3b','#FFD700','#CBDA3C'];
+  var pieces=[];
+  function resize(){
+    W=canvas.width=canvas.offsetWidth;
+    H=canvas.height=canvas.offsetHeight;
+  }
+  resize();
+  window.addEventListener('resize',resize,{passive:true});
+  for(var i=0;i<90;i++){
+    pieces.push({
+      x:Math.random()*W,
+      y:Math.random()*H*1.5-H*.5,
+      w:Math.random()*9+3,
+      h:Math.random()*5+2,
+      r:Math.random()*Math.PI*2,
+      vx:(Math.random()-.5)*.9,
+      vy:Math.random()*1.4+.4,
+      vr:(Math.random()-.5)*.07,
+      color:colors[Math.floor(Math.random()*colors.length)],
+      shape:Math.random()>.7?'circle':'rect'
+    });
+  }
+  var raf;
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    for(var i=0;i<pieces.length;i++){
+      var p=pieces[i];
+      ctx.save();
+      ctx.translate(p.x,p.y);
+      ctx.rotate(p.r);
+      ctx.fillStyle=p.color;
+      ctx.globalAlpha=.75;
+      if(p.shape==='circle'){
+        ctx.beginPath();
+        ctx.arc(0,0,p.w/2,0,Math.PI*2);
+        ctx.fill();
+      } else {
+        ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h);
+      }
+      ctx.restore();
+      p.x+=p.vx; p.y+=p.vy; p.r+=p.vr;
+      if(p.y>H+20){p.y=-20;p.x=Math.random()*W;}
+      if(p.x<-20)p.x=W+20;
+      if(p.x>W+20)p.x=-20;
+    }
+    raf=requestAnimationFrame(draw);
+  }
+  /* só anima quando visível */
+  var obs=new IntersectionObserver(function(entries){
+    if(entries[0].isIntersecting){resize();draw();}
+    else{cancelAnimationFrame(raf);}
+  },{threshold:.1});
+  obs.observe(canvas.parentElement);
+})();
+</script>
+
 
 <!-- ✨ HERO ✨ -->
 <section id="hero">
@@ -1029,9 +1187,9 @@
 
       <!-- 3 polaroids do espaço -->
       <div class="hero-photos-d">
-        <div class="hero-photo-d hpd-1"><img src="fotos/ambiente/recepcao.png" alt="Recepção da PomPom Pet em Cajamar"  loading="lazy" decoding="async" /></div>
-        <div class="hero-photo-d hpd-2"><img src="fotos/ambiente/frente.png"   alt="Fachada da PomPom Pet — petshop em Cajamar/SP"  loading="lazy" decoding="async" /></div>
-        <div class="hero-photo-d hpd-3"><img src="fotos/ambiente/interior.png" alt="Atendimento de banho e tosa na PomPom Pet"  loading="lazy" decoding="async" /></div>
+        <div class="hero-photo-d hpd-1"><img src="fotos/copa/cafe-copa.jpeg" alt="Recepção da PomPom Pet decorada para a Copa 2026"  loading="lazy" decoding="async" /></div>
+        <div class="hero-photo-d hpd-2"><img src="fotos/copa/frente-copa.jpeg"   alt="Fachada da PomPom Pet decorada para a Copa do Mundo 2026"  loading="lazy" decoding="async" /></div>
+        <div class="hero-photo-d hpd-3"><img src="fotos/copa/cafe2-copa.jpeg" alt="Interior PomPom Pet decorado Copa 2026"  loading="lazy" decoding="async" /></div>
       </div>
 
       <div class="grid grid-cols-2 gap-3">
@@ -1207,19 +1365,19 @@
     <div class="mosaic-row-d">
       <div class="space-track-d">
         <!-- Set 1 -->
-        <div class="space-card-d"><img src="fotos/ambiente/frente.png" loading="lazy" decoding="async" alt="Fachada da PomPom Pet petshop em Cajamar"/><div class="space-card-label">📍 Fachada</div></div>
-        <div class="space-card-d"><img src="fotos/ambiente/recepcao.png" alt="Recepção do banho e tosa PomPom Pet" loading="lazy" decoding="async" /><div class="space-card-label">🛎️ Recepção</div></div>
+        <div class="space-card-d"><img src="fotos/copa/frente-copa.jpeg" loading="lazy" decoding="async" alt="Fachada PomPom Pet — Copa 2026"/><div class="space-card-label">📍 Fachada</div></div>
+        <div class="space-card-d"><img src="fotos/copa/cafe-copa.jpeg" alt="Recepção PomPom Pet decorada Copa 2026" loading="lazy" decoding="async" /><div class="space-card-label">🛎️ Recepção</div></div>
         <div class="space-card-d"><img src="fotos/ambiente/espera.png"   alt="Área de espera climatizada PomPom Pet Cajamar" loading="lazy" decoding="async" /><div class="space-card-label">🪑 Área de espera</div></div>
-        <div class="space-card-d"><img src="fotos/ambiente/interior.png" alt="Sala de banho e tosa PomPom Pet" loading="lazy" decoding="async" /><div class="space-card-label">✂️ Atendimento</div></div>
+        <div class="space-card-d"><img src="fotos/copa/cafe2-copa.jpeg" alt="Interior PomPom Pet Copa 2026" loading="lazy" decoding="async" /><div class="space-card-label">✂️ Atendimento</div></div>
         <div class="space-card-d"><img src="fotos/ambiente/secadora.png" alt="Secadora profissional para cães PomPom Pet" loading="lazy" decoding="async" /><div class="space-card-label">💨 Secadora</div></div>
-        <div class="space-card-d"><img src="fotos/ambiente/lojinha.png"  alt="Lojinha de produtos pet PomPom Cajamar" loading="lazy" decoding="async" /><div class="space-card-label">🛍️ Lojinha</div></div>
+        <div class="space-card-d"><img src="fotos/copa/roupas-copa.jpeg"  alt="Roupinhas da Copa do Mundo para pets — PomPom Pet" loading="lazy" decoding="async" /><div class="space-card-label">🇧🇷 Roupas Copa</div></div>
         <!-- Set 2 (duplicado para loop seamless) -->
-        <div class="space-card-d"><img src="fotos/ambiente/frente.png"   alt="" loading="lazy" decoding="async" /><div class="space-card-label">📍 Fachada</div></div>
-        <div class="space-card-d"><img src="fotos/ambiente/recepcao.png" alt="" loading="lazy" decoding="async" /><div class="space-card-label">🛎️ Recepção</div></div>
+        <div class="space-card-d"><img src="fotos/copa/frente-copa.jpeg"   alt="" loading="lazy" decoding="async" /><div class="space-card-label">📍 Fachada</div></div>
+        <div class="space-card-d"><img src="fotos/copa/cafe-copa.jpeg" alt="" loading="lazy" decoding="async" /><div class="space-card-label">🛎️ Recepção</div></div>
         <div class="space-card-d"><img src="fotos/ambiente/espera.png"   alt="" loading="lazy" decoding="async" /><div class="space-card-label">🪑 Área de espera</div></div>
-        <div class="space-card-d"><img src="fotos/ambiente/interior.png" alt="" loading="lazy" decoding="async" /><div class="space-card-label">✂️ Atendimento</div></div>
+        <div class="space-card-d"><img src="fotos/copa/cafe2-copa.jpeg" alt="" loading="lazy" decoding="async" /><div class="space-card-label">✂️ Atendimento</div></div>
         <div class="space-card-d"><img src="fotos/ambiente/secadora.png" alt="" loading="lazy" decoding="async" /><div class="space-card-label">💨 Secadora</div></div>
-        <div class="space-card-d"><img src="fotos/ambiente/lojinha.png"  alt="" loading="lazy" decoding="async" /><div class="space-card-label">🛍️ Lojinha</div></div>
+        <div class="space-card-d"><img src="fotos/copa/roupas-copa.jpeg"  alt="" loading="lazy" decoding="async" /><div class="space-card-label">🇧🇷 Roupas Copa</div></div>
       </div>
     </div>
   </div>
@@ -1521,7 +1679,7 @@
 <section class="py-20 px-20 max-w-screen-xl mx-auto">
   <div class="flex items-end justify-between mb-16 reveal">
     <div>
-      <div class="section-tag">🛍️ Lojinha</div>
+      <div class="section-tag">🇧🇷 Roupas Copa</div>
       <h2 class="text-5xl font-bold text-stone-900 leading-tight">Produtos<br/>selecionados</h2>
     </div>
     <p class="text-stone-500 max-w-xs text-right">Para a saúde, beleza e felicidade do seu pet.</p>
@@ -2027,5 +2185,169 @@
     gtag('event', 'whatsapp_click', { button_location: loc });
   });
 </script>
+
+<!-- ===== FIGURINHA MODAL + PROTEÇÃO ===== -->
+<style>
+/* Proteção global de imagens */
+img{-webkit-user-drag:none;-webkit-touch-callout:none;user-select:none;}
+/* Modal figurinha */
+#fig-modal{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.88);align-items:center;justify-content:center;padding:1.25rem;}
+#fig-modal.open{display:flex;}
+.fig-modal-box{position:relative;max-width:340px;width:100%;animation:figModalIn .22s cubic-bezier(.34,1.56,.64,1);}
+@keyframes figModalIn{from{transform:scale(.8);opacity:0;}to{transform:scale(1);opacity:1;}}
+#fig-modal-img{width:100%;border-radius:16px;display:block;box-shadow:0 16px 60px rgba(0,0,0,.6);}
+#fig-modal-close{position:absolute;top:-14px;right:-14px;width:38px;height:38px;background:#fff;border:none;border-radius:50%;font-size:1rem;font-weight:800;cursor:pointer;box-shadow:0 3px 12px rgba(0,0,0,.3);display:flex;align-items:center;justify-content:center;color:#333;line-height:1;transition:transform .15s,background .15s;}
+#fig-modal-close:hover{background:#fee2e2;transform:scale(1.1);}
+#fig-modal-dl{display:flex;align-items:center;justify-content:center;gap:8px;background:#FFD700;color:#014421;font-weight:800;font-size:.95rem;padding:13px;border-radius:12px;margin-top:12px;cursor:pointer;border:none;width:100%;transition:transform .15s,box-shadow .15s;}
+#fig-modal-dl:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(255,215,0,.4);}
+#fig-modal-dl:active{transform:scale(.97);}
+/* Modal de código */
+#code-modal{display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,.55);align-items:center;justify-content:center;padding:1.5rem;}
+#code-modal.open{display:flex;}
+.code-modal-box{background:#fff;border-radius:20px;padding:2rem 1.75rem;max-width:320px;width:100%;text-align:center;animation:figModalIn .2s cubic-bezier(.34,1.56,.64,1);}
+.code-modal-icon{font-size:2rem;margin-bottom:.5rem;}
+.code-modal-title{font-size:1.1rem;font-weight:800;color:#014421;margin-bottom:.25rem;}
+.code-modal-sub{font-size:.82rem;color:#666;margin-bottom:1.25rem;line-height:1.4;}
+#code-input{width:100%;box-sizing:border-box;border:2px solid #a7f3d0;border-radius:10px;padding:12px 14px;font-size:1.2rem;font-weight:700;text-align:center;letter-spacing:4px;text-transform:uppercase;outline:none;transition:border-color .2s;}
+#code-input:focus{border-color:#009c3b;}
+#code-input.shake{animation:codeShake .35s ease;}
+@keyframes codeShake{0%,100%{transform:translateX(0);border-color:#dc2626;}20%,60%{transform:translateX(-7px);}40%,80%{transform:translateX(7px);}}
+#code-error{font-size:.8rem;color:#dc2626;margin-top:.5rem;min-height:1.1rem;font-weight:600;}
+.code-modal-btns{display:flex;gap:10px;margin-top:1.25rem;}
+#code-cancel{flex:1;padding:11px;border-radius:10px;border:2px solid #e5e7eb;background:#fff;color:#666;font-weight:700;font-size:.9rem;cursor:pointer;transition:background .15s;}
+#code-cancel:hover{background:#f3f4f6;}
+#code-confirm{flex:2;padding:11px;border-radius:10px;border:none;background:#009c3b;color:#fff;font-weight:800;font-size:.9rem;cursor:pointer;transition:background .15s;}
+#code-confirm:hover{background:#007d30;}
+</style>
+
+<div id="fig-modal" onclick="if(event.target===this)closeFigModal()">
+  <div class="fig-modal-box">
+    <button id="fig-modal-close" onclick="closeFigModal()" aria-label="Fechar">✕</button>
+    <img id="fig-modal-img" src="" alt="Figurinha Copa 2026"/>
+    <button id="fig-modal-dl" onclick="openCodeModal()">
+      <svg viewBox="0 0 24 24" style="width:1.1rem;height:1.1rem;fill:#014421;flex-shrink:0"><path d="M12 16l-6-6h4V4h4v6h4l-6 6zm-7 2h14v2H5v-2z"/></svg>
+      Baixar figurinha
+    </button>
+  </div>
+</div>
+
+<div id="code-modal">
+  <div class="code-modal-box">
+    <div class="code-modal-icon">🔐</div>
+    <div class="code-modal-title">Código exclusivo</div>
+    <div class="code-modal-sub">Digite o código que você recebeu para baixar sua figurinha</div>
+    <input id="code-input" type="text" placeholder="" maxlength="12" autocomplete="off" autocorrect="off" spellcheck="false"/>
+    <div id="code-error"></div>
+    <div class="code-modal-btns">
+      <button id="code-cancel" onclick="closeCodeModal()">Cancelar</button>
+      <button id="code-confirm" onclick="confirmCode()">Confirmar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  /* ── Tabela de códigos — adicione novos aqui conforme subir figurinhas ── */
+  var CODES = {
+    'BRA-01-nala.jpeg':     'NALA26',
+    'BRA-02-luna.jpeg':     'LUNA26',
+    'BRA-03-belinhas.jpeg': 'BELI26'
+  };
+
+  /* ── Proteção global ── */
+  document.addEventListener('contextmenu', function(e){
+    if(e.target.tagName==='IMG') e.preventDefault();
+  });
+  document.addEventListener('dragstart', function(e){
+    if(e.target.tagName==='IMG') e.preventDefault();
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key==='Escape'){closeFigModal();closeCodeModal();return;}
+    if(e.ctrlKey && ['s','u','p'].indexOf(e.key.toLowerCase())>-1) e.preventDefault();
+  });
+
+  /* ── Estado ── */
+  var currentSrc = '';
+
+  /* ── Modal figurinha ── */
+  function openFigModal(src){
+    currentSrc = src;
+    document.getElementById('fig-modal-img').src = src;
+    document.getElementById('fig-modal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  window.closeFigModal = function(){
+    document.getElementById('fig-modal').classList.remove('open');
+    document.body.style.overflow = '';
+  };
+
+  /* ── Modal de código ── */
+  window.openCodeModal = function(){
+    var inp = document.getElementById('code-input');
+    inp.value = '';
+    document.getElementById('code-error').textContent = '';
+    inp.classList.remove('shake');
+    document.getElementById('code-modal').classList.add('open');
+    setTimeout(function(){inp.focus();}, 100);
+  };
+  window.closeCodeModal = function(){
+    document.getElementById('code-modal').classList.remove('open');
+  };
+  window.confirmCode = function(){
+    var inp = document.getElementById('code-input');
+    var err = document.getElementById('code-error');
+    var typed = inp.value.trim().toUpperCase();
+    var fname = currentSrc.split('/').pop().replace(/\?.*/, '');
+    var expected = CODES[fname] || '';
+    if(!typed){
+      err.textContent = 'Digite o código.';
+      inp.focus();
+      return;
+    }
+    if(typed !== expected){
+      err.textContent = 'Código incorreto. Tente novamente.';
+      inp.classList.remove('shake');
+      void inp.offsetWidth;
+      inp.classList.add('shake');
+      inp.select();
+      return;
+    }
+    err.textContent = '';
+    closeCodeModal();
+    fetch(currentSrc)
+      .then(function(r){ return r.blob(); })
+      .then(function(blob){
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = url; a.download = fname;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        setTimeout(function(){ URL.revokeObjectURL(url); }, 1000);
+      });
+  };
+  document.getElementById('code-input').addEventListener('keydown', function(e){
+    if(e.key === 'Enter') confirmCode();
+  });
+
+  /* ── Attach clicks nos slots ── */
+  function attachFilledClicks(){
+    document.querySelectorAll('.copa-slot-filled').forEach(function(el){
+      if(el.dataset.modalBound) return;
+      el.dataset.modalBound = '1';
+      el.addEventListener('click', function(){
+        var img = el.querySelector('img');
+        if(img) openFigModal(img.src);
+      });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', attachFilledClicks);
+  } else {
+    attachFilledClicks();
+  }
+})();
+</script>
+
 </body>
 </html>
