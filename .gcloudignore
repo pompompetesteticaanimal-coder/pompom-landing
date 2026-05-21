@@ -1,0 +1,21 @@
+.gcloudignore
+.git
+.gitignore
+.claude/
+
+# Scripts de desenvolvimento
+*.py
+server.py
+ssh_*.py
+fix_*.py
+optimize_images.py
+
+# Arquivos temporários
+temp*.txt
+temp_*.txt
+extracted_log.md
+
+# Outros
+*.zip
+extraido/
+node_modules/
