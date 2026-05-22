@@ -15,6 +15,14 @@ O site é hospedado no **Google Cloud Run** com Docker + Nginx.
 ```bash
 cd "C:\Users\Usuario\Documents\pet\Site Pompom"
 
+# ⚠️ SEMPRE fazer deploy nas DUAS regiões — o domínio aponta para us-east1!
+gcloud run deploy pompom-site \
+  --source . \
+  --region us-east1 \
+  --allow-unauthenticated \
+  --port 8080 \
+  --project pompom-evolution
+
 gcloud run deploy pompom-site \
   --source . \
   --region us-central1 \
@@ -25,8 +33,8 @@ gcloud run deploy pompom-site \
 
 - Projeto GCP: `pompom-evolution`
 - Conta: `pompompetesteticaanimal@gmail.com`
-- Região: `us-central1`
-- Service URL interna: `https://pompom-site-120718400087.us-central1.run.app`
+- Região principal (domínio): `us-east1` ← **aqui que o site público roda**
+- Região secundária: `us-central1`
 - Domínio público: `https://pompompetshop.com.br`
 
 O `Dockerfile` usa nginx:alpine e já copia toda a pasta `fotos/copa/` — novas imagens nessa pasta entram automaticamente no deploy.
