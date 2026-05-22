@@ -1019,6 +1019,55 @@
 .copa-slot-empty{border-radius:9px;background:#fff;border:2px dashed #a7f3d0;aspect-ratio:9/14;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;}
 .copa-slot-empty-code{font-size:.6rem;font-weight:700;color:#6ee7b7;letter-spacing:1px;}
 .copa-slot-empty-num{font-size:1.4rem;font-weight:900;color:#a7f3d0;line-height:1;}
+/* ── Pacote de figurinhas ── */
+.pack-open-btn{display:flex;align-items:center;gap:8px;margin:0 auto 1rem;background:linear-gradient(135deg,#FFD700,#e8a000);color:#012e18;font-weight:900;font-size:.9rem;padding:11px 22px;border-radius:100px;border:none;cursor:pointer;box-shadow:0 4px 18px rgba(255,215,0,.35);transition:transform .2s,box-shadow .2s;}
+.pack-open-btn:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(255,215,0,.5);}
+.pack-open-btn:active{transform:scale(.97);}
+.album-counter{font-size:.72rem;font-weight:700;color:#6ee7b7;letter-spacing:.5px;margin-top:4px;}
+#pack-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:9998;align-items:center;justify-content:center;padding:1rem;}
+#pack-modal.open{display:flex;}
+.pack-modal-box{background:#fff;border-radius:20px;padding:1.75rem;max-width:360px;width:100%;text-align:center;box-shadow:0 24px 80px rgba(0,0,0,.4);}
+.pack-modal-icon{font-size:2.2rem;margin-bottom:.4rem;}
+.pack-modal-title{font-size:1.2rem;font-weight:900;color:#012e18;margin-bottom:.3rem;}
+.pack-modal-sub{font-size:.82rem;color:#555;margin-bottom:1.1rem;line-height:1.5;}
+.pack-modal-box input{width:100%;box-sizing:border-box;border:2px solid #ddd;border-radius:12px;padding:11px 14px;font-size:1rem;text-align:center;font-weight:700;letter-spacing:2px;outline:none;text-transform:uppercase;transition:border-color .2s;}
+.pack-modal-box input:focus{border-color:#009c3b;}
+.pack-modal-box input.shake{animation:shake .4s ease;}
+#pack-error{color:#e53e3e;font-size:.78rem;min-height:1.1rem;margin:.4rem 0 0;}
+.pack-modal-btns{display:flex;gap:10px;margin-top:1rem;}
+.pack-modal-btns button{flex:1;padding:11px;border-radius:100px;border:none;cursor:pointer;font-weight:800;font-size:.88rem;transition:opacity .2s;}
+.pack-modal-btns button:first-child{background:#f0f0f0;color:#555;}
+.pack-modal-btns button:last-child{background:linear-gradient(135deg,#009c3b,#00b44c);color:#fff;}
+.pack-modal-btns button:hover{opacity:.85;}
+.pack-visual-wrap{position:relative;width:140px;height:210px;margin:0 auto 1.25rem;}
+.pack-half{position:absolute;left:0;width:100%;overflow:hidden;transition:transform .7s cubic-bezier(.34,1.56,.64,1);}
+.pack-top-half{top:0;height:50%;transform-origin:top center;}
+.pack-bottom-half{bottom:0;height:50%;transform-origin:bottom center;}
+.pack-top-half.open{transform:translateY(-90px) rotate(-8deg);}
+.pack-bottom-half.open{transform:translateY(90px) rotate(5deg);}
+.pack-inner-full{position:absolute;left:0;width:140px;height:210px;background:linear-gradient(160deg,#005c23,#009c3b 55%,#00b44c);border-radius:10px;border:2px solid rgba(255,215,0,.75);}
+.pack-top-half .pack-inner-full{top:0;}
+.pack-bottom-half .pack-inner-full{bottom:0;}
+.pack-face{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:10px;}
+.pack-face-top{font-size:.48rem;font-weight:800;color:rgba(255,255,255,.75);text-transform:uppercase;letter-spacing:1.5px;}
+.pack-face-main{font-size:.65rem;font-weight:900;color:#FFD700;text-transform:uppercase;letter-spacing:.5px;text-align:center;line-height:1.3;}
+.pack-face-icon{font-size:1.6rem;}
+.pack-face-bot{font-size:.42rem;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:1px;}
+.pack-tear{position:absolute;top:calc(50% - 1px);left:0;width:100%;height:3px;background:rgba(255,215,0,.6);z-index:5;pointer-events:none;}
+.pack-stickers-row{display:flex;gap:10px;justify-content:center;min-height:120px;margin:0 0 .75rem;}
+.pack-sticker-reveal{width:74px;flex-shrink:0;border-radius:8px;overflow:hidden;box-shadow:0 5px 20px rgba(0,0,0,.28);transform:scale(0) rotate(-15deg);opacity:0;transition:transform .5s cubic-bezier(.34,1.56,.64,1),opacity .3s;}
+.pack-sticker-reveal.show{transform:scale(1) rotate(0deg);opacity:1;}
+.pack-sticker-reveal img{width:100%;display:block;}
+.pack-sticker-reveal .psrn{font-size:.55rem;font-weight:800;color:#fff;background:#009c3b;padding:2px 4px;text-align:center;text-transform:uppercase;}
+.pack-sticker-reveal.dupe .psrn{background:#888;}
+#pack-anim-msg{margin-top:.5rem;}
+.pack-congrats{font-size:1.15rem;font-weight:900;color:#012e18;margin-bottom:.3rem;}
+.pack-congrats-sub{font-size:.8rem;color:#666;margin-bottom:.9rem;}
+.pack-confirm-btn{background:linear-gradient(135deg,#009c3b,#00b44c);color:#fff;border:none;border-radius:100px;padding:11px 28px;font-weight:800;font-size:.9rem;cursor:pointer;}
+.pack-confirm-btn:hover{opacity:.85;}
+@keyframes packShake{0%,100%{transform:rotate(0)}20%{transform:rotate(-5deg) scale(1.02)}40%{transform:rotate(5deg)}60%{transform:rotate(-4deg)}80%{transform:rotate(4deg) scale(1.02)}}
+.copa-slot-new{animation:slotReveal .6s cubic-bezier(.34,1.56,.64,1);}
+@keyframes slotReveal{0%{transform:scale(0) rotate(-10deg);opacity:0}100%{transform:scale(1) rotate(0);opacity:1}}
 </style>
 <section id="copa-album">
   <div class="copa-outer">
@@ -1031,15 +1080,19 @@
         </div>
       </div>
       <div class="copa-card-body">
+        <div style="text-align:center;margin-bottom:1rem;">
+          <button class="pack-open-btn" onclick="openPackModal()">🎴 Tenho um código de pacote</button>
+          <div id="album-counter" class="album-counter"></div>
+        </div>
         <div class="copa-grid">
-          <div class="copa-slot-filled"><img src="fotos/copa/BRA-01-nala.jpeg" alt="BRA 1 – Nala" loading="lazy" decoding="async"/></div>
-          <div class="copa-slot-filled"><img src="fotos/copa/BRA-02-luna.jpeg" alt="BRA 2 – Luna" loading="lazy" decoding="async"/></div>
-          <div class="copa-slot-filled"><img src="fotos/copa/BRA-03-belinhas.jpeg" alt="BRA 3 – Belinha" loading="lazy" decoding="async"/></div>
-          <div class="copa-slot-empty"><span class="copa-slot-empty-code">BRA</span><span class="copa-slot-empty-num">4</span></div>
-          <div class="copa-slot-empty"><span class="copa-slot-empty-code">BRA</span><span class="copa-slot-empty-num">5</span></div>
-          <div class="copa-slot-empty"><span class="copa-slot-empty-code">BRA</span><span class="copa-slot-empty-num">6</span></div>
-          <div class="copa-slot-empty"><span class="copa-slot-empty-code">BRA</span><span class="copa-slot-empty-num">7</span></div>
-          <div class="copa-slot-empty"><span class="copa-slot-empty-code">BRA</span><span class="copa-slot-empty-num">8</span></div>
+          <div class="copa-slot-empty" data-slot="BRA-01"><span class="copa-slot-empty-code">BRA</span><span class="copa-slot-empty-num">1</span></div>
+          <div class="copa-slot-empty" data-slot="BRA-02"><span class="copa-slot-empty-code">BRA</span><span class="copa-slot-empty-num">2</span></div>
+          <div class="copa-slot-empty" data-slot="BRA-03"><span class="copa-slot-empty-code">BRA</span><span class="copa-slot-empty-num">3</span></div>
+          <div class="copa-slot-empty" data-slot="BRA-04"><span class="copa-slot-empty-code">BRA</span><span class="copa-slot-empty-num">4</span></div>
+          <div class="copa-slot-empty" data-slot="BRA-05"><span class="copa-slot-empty-code">BRA</span><span class="copa-slot-empty-num">5</span></div>
+          <div class="copa-slot-empty" data-slot="BRA-06"><span class="copa-slot-empty-code">BRA</span><span class="copa-slot-empty-num">6</span></div>
+          <div class="copa-slot-empty" data-slot="BRA-07"><span class="copa-slot-empty-code">BRA</span><span class="copa-slot-empty-num">7</span></div>
+          <div class="copa-slot-empty" data-slot="BRA-08"><span class="copa-slot-empty-code">BRA</span><span class="copa-slot-empty-num">8</span></div>
           <div class="copa-slot-empty"><span class="copa-slot-empty-code">BRA</span><span class="copa-slot-empty-num">9</span></div>
           <div class="copa-slot-empty"><span class="copa-slot-empty-code">BRA</span><span class="copa-slot-empty-num">10</span></div>
           <div class="copa-slot-empty"><span class="copa-slot-empty-code">BRA</span><span class="copa-slot-empty-num">11</span></div>
@@ -2245,6 +2298,50 @@ img{-webkit-user-drag:none;-webkit-touch-callout:none;user-select:none;}
   </div>
 </div>
 
+<!-- 🎴 MODAL PACOTE DE FIGURINHAS -->
+<div id="pack-modal">
+  <div class="pack-modal-box" id="pack-step-code">
+    <div class="pack-modal-icon">🎴</div>
+    <div class="pack-modal-title">Pacote de Figurinhas</div>
+    <div class="pack-modal-sub">Digite o código que você recebeu para ver seu pet no álbum! Pode usar quantas vezes quiser.</div>
+    <input id="pack-code-input" type="text" placeholder="Ex: POMPOM-P001" maxlength="20" autocomplete="off" autocorrect="off" spellcheck="false"/>
+    <div id="pack-error"></div>
+    <div class="pack-modal-btns">
+      <button onclick="closePackModal()">Cancelar</button>
+      <button onclick="submitPackCode()">Abrir Pacote 🎴</button>
+    </div>
+  </div>
+  <div class="pack-modal-box" id="pack-anim-box" style="display:none">
+    <div class="pack-visual-wrap">
+      <div class="pack-tear"></div>
+      <div class="pack-half pack-top-half">
+        <div class="pack-inner-full">
+          <div class="pack-face">
+            <div class="pack-face-top">Craques do</div>
+            <div class="pack-face-main">PomPom<br/>2026</div>
+            <div class="pack-face-icon">⚽</div>
+          </div>
+        </div>
+      </div>
+      <div class="pack-half pack-bottom-half">
+        <div class="pack-inner-full">
+          <div class="pack-face" style="justify-content:flex-end;padding-bottom:14px;">
+            <div class="pack-face-bot">🇧🇷 figurinha exclusiva</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pack-stickers-row" id="pack-stickers-row">
+      <div class="pack-sticker-reveal" id="psr-0" style="width:110px"></div>
+    </div>
+    <div id="pack-anim-msg" style="display:none">
+      <div class="pack-congrats">🎉 Figurinhas adicionadas!</div>
+      <div class="pack-congrats-sub">Suas figurinhas já estão no álbum.</div>
+      <button class="pack-confirm-btn" onclick="finishPackOpen()">Ver no Álbum ↓</button>
+    </div>
+  </div>
+</div>
+
 <script>
 (function(){
   /* ── Tabela de códigos — adicione novos aqui conforme subir figurinhas ── */
@@ -2262,7 +2359,7 @@ img{-webkit-user-drag:none;-webkit-touch-callout:none;user-select:none;}
     if(e.target.tagName==='IMG') e.preventDefault();
   });
   document.addEventListener('keydown', function(e){
-    if(e.key==='Escape'){closeFigModal();closeCodeModal();return;}
+    if(e.key==='Escape'){closeFigModal();closeCodeModal();if(window.closePackModal)closePackModal();return;}
     if(e.ctrlKey && ['s','u','p'].indexOf(e.key.toLowerCase())>-1) e.preventDefault();
   });
 
@@ -2346,6 +2443,100 @@ img{-webkit-user-drag:none;-webkit-touch-callout:none;user-select:none;}
   } else {
     attachFilledClicks();
   }
+
+  /* ── Pacote de figurinhas ── */
+  var PACK_CODES = {
+    'NALA2026':      'BRA-01',
+    'LUNA2026':      'BRA-02',
+    'BELI2026':      'BRA-03',
+    'FLOQUINHO2026': 'BRA-04',
+    'GIGI2026':      'BRA-05',
+    'KIARA2026':     'BRA-06',
+    'ROMEU2026':     'BRA-07',
+    'TODDY2026':     'BRA-08',
+    'TESTE-01':      'BRA-01',
+    'TESTE-02':      'BRA-02',
+    'TESTE-03':      'BRA-03',
+    'TESTE-04':      'BRA-04',
+    'TESTE-05':      'BRA-05',
+    'TESTE-06':      'BRA-06',
+    'TESTE-07':      'BRA-07',
+    'TESTE-08':      'BRA-08'
+  };
+  var PACK_STICKERS = {
+    'BRA-01':{src:'fotos/copa/BRA-01-nala.jpeg',name:'Nala',num:1},
+    'BRA-02':{src:'fotos/copa/BRA-02-luna.jpeg',name:'Luna',num:2},
+    'BRA-03':{src:'fotos/copa/BRA-03-belinhas.jpeg',name:'Belinha',num:3},
+    'BRA-04':{src:'fotos/copa/BRA-04-floquinho.jpeg',name:'Floquinho',num:4},
+    'BRA-05':{src:'fotos/copa/BRA-05-gigi.jpeg',name:'Gigi',num:5},
+    'BRA-06':{src:'fotos/copa/BRA-06-kiara.jpeg',name:'Kiara',num:6},
+    'BRA-07':{src:'fotos/copa/BRA-07-romeu.jpeg',name:'Romeu',num:7},
+    'BRA-08':{src:'fotos/copa/BRA-08-toddy.jpeg',name:'Toddy',num:8}
+  };
+  function getUnlocked(){try{return JSON.parse(localStorage.getItem('pompom_unlocked')||'[]');}catch(e){return[];}}
+  function saveUnlocked(id){var u=getUnlocked();if(u.indexOf(id)===-1)u.push(id);localStorage.setItem('pompom_unlocked',JSON.stringify(u));}
+  function updateCounter(){
+    var el=document.getElementById('album-counter');if(!el)return;
+    var n=getUnlocked().length;
+    el.textContent=n+'/8 figurinhas';
+  }
+  function fillSlot(id,highlight){
+    var s=PACK_STICKERS[id];if(!s)return;
+    var slot=document.querySelector('[data-slot="'+id+'"]');if(!slot)return;
+    slot.className='copa-slot-filled'+(highlight?' copa-slot-new':'');
+    slot.innerHTML='<img src="'+s.src+'" alt="BRA '+s.num+' – '+s.name+'" loading="lazy" decoding="async"/>';
+    if(highlight)setTimeout(function(){slot.classList.remove('copa-slot-new');},2000);
+    slot.addEventListener('click',function(){openFigModal(s.src);});
+  }
+  function restoreAlbum(){getUnlocked().forEach(function(id){fillSlot(id,false);});updateCounter();}
+  var _pendingSticker='';
+  window.openPackModal=function(){
+    document.getElementById('pack-code-input').value='';
+    document.getElementById('pack-error').textContent='';
+    document.getElementById('pack-step-code').style.display='';
+    document.getElementById('pack-anim-box').style.display='none';
+    document.getElementById('pack-modal').classList.add('open');
+    setTimeout(function(){document.getElementById('pack-code-input').focus();},100);
+  };
+  window.closePackModal=function(){document.getElementById('pack-modal').classList.remove('open');};
+  window.submitPackCode=function(){
+    var inp=document.getElementById('pack-code-input');
+    var err=document.getElementById('pack-error');
+    var typed=inp.value.trim().toUpperCase();
+    if(!typed){err.textContent='Digite o código.';inp.focus();return;}
+    if(!PACK_CODES[typed]){
+      err.textContent='Código inválido. Verifique e tente novamente.';
+      inp.classList.remove('shake');void inp.offsetWidth;inp.classList.add('shake');inp.select();return;
+    }
+    _pendingSticker=PACK_CODES[typed];
+    saveUnlocked(_pendingSticker);
+    startPackAnim(_pendingSticker);
+  };
+  window.finishPackOpen=function(){
+    closePackModal();
+    fillSlot(_pendingSticker,true);
+    updateCounter();
+    var sec=document.getElementById('copa-album');if(sec)sec.scrollIntoView({behavior:'smooth',block:'start'});
+  };
+  function startPackAnim(stickerId){
+    document.getElementById('pack-step-code').style.display='none';
+    var anim=document.getElementById('pack-anim-box');anim.style.display='';
+    var c=document.getElementById('psr-0');c.className='pack-sticker-reveal';c.innerHTML='';
+    document.getElementById('pack-anim-msg').style.display='none';
+    var th=document.querySelector('.pack-top-half');var bh=document.querySelector('.pack-bottom-half');
+    th.classList.remove('open');bh.classList.remove('open');
+    var pw=anim.querySelector('.pack-visual-wrap');
+    pw.style.animation='none';void pw.offsetWidth;pw.style.animation='packShake 0.6s ease 0.3s';
+    setTimeout(function(){th.classList.add('open');bh.classList.add('open');},1000);
+    setTimeout(function(){
+      var s=PACK_STICKERS[stickerId];if(!s)return;
+      c.innerHTML='<img src="'+s.src+'" alt="'+s.name+'"/><div class="psrn">'+s.name+'</div>';
+      void c.offsetWidth;c.classList.add('show');
+    },1700);
+    setTimeout(function(){document.getElementById('pack-anim-msg').style.display='';},2600);
+  }
+  document.getElementById('pack-code-input').addEventListener('keydown',function(e){if(e.key==='Enter')submitPackCode();});
+  restoreAlbum();
 })();
 </script>
 
