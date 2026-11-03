@@ -23,3 +23,9 @@ Reproduzir: `node previews/natal/abertura/alternativas/simular.cjs` na raiz. Exp
 - [Codrops — Christmas Tree Algorithm](https://tympanus.net/codrops/2021/12/27/three-js-animation-with-k-d-christmas-tree-algorithm/): referência de experimentação natalina com geometria e WebGL.
 
 Referências de direção/técnica; não foram copiados modelos, texturas ou códigos de personagens desses trabalhos. Modelos e SVG locais foram construídos em código para a prévia. A anterior imagem gerada e o `.blend` foram preservados.
+
+## Combinação solicitada — revisão 17
+
+O usuário gostou do cenário de teatro e pediu Papai Noel e renas da primeira opção. Foi acrescentado **Teatro com personagens ilustrados** (`teatro-ilustrado`), preservando o teatro vetorial e os demais estudos. Usa o cenário, as cortinas, a lua e a floresta do teatro com os mesmos PNG/WebP e peças articuladas da primeira abertura ilustrada. `rig/player.js` aceita dados físicos externos opcionais; o híbrido reproduz a simulação de tração v16 (11 segundos), enquanto a primeira abertura continua usando a própria exportação Blender de oito segundos.
+
+Entrada direta: `/previews/natal/?parte=abertura&abertura=teatro-ilustrado&v=17`. A miniatura do híbrido é captura real do navegador.
