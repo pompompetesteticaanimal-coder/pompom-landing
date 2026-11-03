@@ -18,3 +18,9 @@ html body[data-christmas-palette="pinheiro"] :is(.section-tag,.marquee-wrap){bac
 @media(prefers-reduced-motion:reduce){.christmas-ball,.reset-opening-balls{animation:none}}
 img[data-christmas-mascot="true"]{object-fit:contain!important;mask-image:none!important;-webkit-mask-image:none!important;background:none!important;border:0!important;box-shadow:none!important}
 .halloween-mobile-art:has(img[data-christmas-mascot="true"]){margin:8px auto 8px}
+
+/* As fotos históricas das bolinhas permanecem visíveis, separadas por tema. */
+.gallery-theme-label{margin:0 0 8px;text-align:center;font:700 11px/1.5 system-ui;letter-spacing:.08em;color:inherit;opacity:.88}
+[data-gallery-theme]{width:max-content;padding-right:12px;box-sizing:content-box}
+.marquee-track-d[data-gallery-theme]{padding-right:1rem}
+@media(prefers-reduced-motion:reduce){[data-gallery-theme]{animation:none!important}}
