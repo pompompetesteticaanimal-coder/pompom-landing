@@ -1,32 +1,36 @@
-# Laço mágico, caixa surpresa e marca de Natal — revisão 21
+# Laço, varinha e fumaça entre duas fotos — revisão 22
 
-Pedidos de 03/11/2026: substituir o comparador que revelava monstros por uma experiência de presente/laço/varinha natalina; aplicar no cabeçalho a logo natalina escolhida e enfeitar o nome PomPom Pet.
+Correção do usuário em 03/11/2026: ele fornecerá fotos de antes e depois, como no Halloween. O pedido é mudar somente a forma da passagem entre essas duas imagens, com varinha, fumaça mágica e brilho. Os acessórios desenhados sobre o cachorro no estudo v21 foram retirados; essa abordagem está descartada.
 
-## Experiência
+## Fluxo atual
 
-A prévia substitui visualmente o comparador mobile, preservando o código e o DOM anterior escondidos para referência. O desktop recebe o mesmo estudo acima dos álbuns. Dois modos:
+1. A foto do antes aparece com o laço. No modo Caixa surpresa, há também o embrulho vermelho/dourado.
+2. Ao puxar ou tocar, o laço vira uma varinha e nasce uma nuvem de fumaça com estrelas.
+3. A fumaça cobre completamente o quadro. Nesse momento, o componente troca para a foto do depois.
+4. A nuvem se dispersa; varinha e partículas saem, deixando a foto do depois limpa, sem gorros, enfeites ou cenário desenhados sobre ela.
 
-- Laço mágico: foto original visível com fita dourada; puxar o laço o transforma em uma varinha e revela a composição natalina.
-- Caixa surpresa: papel vermelho com detalhes dourados, tampa e laço; ao puxar, as partes do embrulho se afastam e revelam a composição.
+A troca ocorre em 54% do progresso, dentro do intervalo de cobertura opaca. A densidade da fumaça cresce de 22% a 44%, permanece alta até 63% e se dispersa até 96%. O slider permite inspecionar a passagem; o toque/arraste usa mola amortecida e subpassos para concluir a animação. Puxada curta retorna, botão repete e teclado funciona. Movimento reduzido revela diretamente sem fumaça animada. O evento de retorno histórico reinicia.
 
-Os quatro pets são Cacau, Lufi, Snoopy e Dexter, e Yoshi. O protótipo usa os arquivos antes.webp existentes e camadas SVG/CSS de gorros, luzes, enfeites, moldura e partículas. Não há foto nova gerada nem edição dos arquivos originais. A composição é uma brincadeira com acessórios ilustrados, indicada junto ao controle. Isso permite testar a interação antes de decidir as artes definitivas.
+Canvas 2D desenha a fumaça por sprites de nuvens gerados em memória, com DPR limitado a 1,5. Não usa fotos como textura, não modifica imagens e não requer biblioteca extra. Os desenhos dos acessórios da versão anterior foram removidos do módulo e do CSS.
 
-O usuário pode puxar para baixo, tocar no laço ou usar a barra nativa por mouse, toque e teclado. Puxada insuficiente volta ao estado inicial; acima do limiar, uma mola amortecida termina a revelação. A fita acompanha o gesto, vira varinha e produz um breve brilho com estrelas. Há reinício, seleção de pet e dos dois modos. Movimento reduzido termina sem animação longa; o evento de retorno pelo histórico reinicia a experiência. A interação também acompanha o dedo quando ele deixa a área visível do laço. Nenhuma biblioteca extra foi adicionada.
+## Fotos pendentes
 
-## Marca
+As fotos de Natal ainda serão fornecidas. A configuração inicial usa apenas fotos anteriores já existentes como demonstração do antes; o depois está nulo e mostra A foto do depois entra aqui. Não foi inventada, gerada ou publicada uma foto do depois como se fosse o resultado final.
 
-`setArt` aplica a mesma arte de mascotes selecionada no laboratório à capa, à abertura e às imagens da marca nos cabeçalhos e rodapé. O cabeçalho do próprio laboratório também acompanha essa escolha. O texto e a fonte de PomPom Pet foram preservados; um SVG decorativo acrescenta gorro, azevinho, bolinhas e cordão de luz. Decoração não recebe cliques e fica fora da leitura assistiva. Movimento reduzido desliga o brilho pulsante. Não foi criada uma nova arte raster de logo.
+Cada pet tem campos before/after no início de magia.js. Para testar em tempo de execução, o controlador aceita `PomPomChristmasMagic.setPair(chave, {before, after})`. Apenas arquivos de imagem na origem local e sob /fotos/ são aceitos; chave desconhecida, endereço externo, query ou fragmento são rejeitados. A API só muda a prévia em memória; não faz upload, não grava arquivo nem substitui a configuração persistida. Quando as fotos chegarem, adicionar os arquivos e atualizar os pares/nome dos pets.
+
+O teste usa um par antigo de Halloween como fixture temporária para comprovar a troca entre duas fotos, sem gravar essa configuração no site. Depois restaura o placeholder. Esses arquivos não são apresentados como novas fotos de Natal.
+
+## Marca mantida
+
+A logo natalina continua sendo a mesma arte selecionada no laboratório para capa e abertura. Ela acompanha cabeçalho, sticky e rodapé. O nome PomPom Pet mantém texto/fonte com gorro, azevinho e cordão de luz decorativos em SVG; esses enfeites são da marca, não das fotos dos pets. O brilho respeita movimento reduzido.
 
 ## Preservação e segurança
 
-A mudança está em `previews/natal/`. As fotos de álbuns, bolinhas e estoque mantêm as exceções aprovadas; os três cartões da campanha continuam embrulhados. O componente mágico também é excluído do embrulho geral. O observador da prévia agora reavalia imagens quando src muda ou quando elementos com imagens entram/saem do DOM; atualizações de texto da animação não provocam varreduras de todas as fotos a cada quadro.
-
-Fotos e nomes dos pets vêm de uma lista fixa. Modos e chaves desconhecidas são ignorados; nomes são inseridos como texto. Recursos novos são locais. Não foram acrescentados eventos inline ou eval ao site. Catálogo, CSP/cabeçalhos, Nginx, Docker e Cloud Run não foram alterados; não houve deploy.
+Escopo em previews/natal/. Fotos de álbuns, bolinhas e estoque mantêm as exceções aprovadas; três cartões de campanha seguem embrulhados. O componente mágico também é excluído do embrulho geral. Catálogo, eventos públicos, CSP/cabeçalhos, Nginx, Dockerfile e fotos existentes ficaram intactos. Sem novos domínios, bibliotecas, eval ou eventos inline na aplicação. Sem deploy no Cloud Run.
 
 ## Verificação
 
-Chrome em perfil temporário: mobile/desktop, quatro pets, duas versões, revelação e varinha, reset, controle deslizante, logo acompanhando estilos, mudança de papel sem cobrir o componente, movimento reduzido e retorno pelo histórico. Arraste real por eventos de ponteiro abre e não fecha novamente por clique sintético; puxada curta retorna fechada; tecla End da barra abre. Laboratório conferido em 320, 390 e 430 px sem rolagem horizontal.
+Teste reproduzível: com servidor estático e Chrome temporário com CDP, executar `POMPOM_CDP_URL=http://127.0.0.1:9237 POMPOM_TEST_URL=http://127.0.0.1:8011 node tests/natal-magia.mjs` (Node 22+). Cobre mobile/desktop, ausência de acessórios, placeholder, configuração de um par real em memória, imagem do depois decodificada, troca sob fumaça opaca, origem permitida, dois modos, quatro pets de demonstração, mouse/ponteiro, teclado, reset, movimento reduzido, retorno histórico, estilos da logo e larguras 320/390/430.
 
-Teste reproduzível: com o servidor estático rodando e um Chrome temporário com CDP habilitado, execute `POMPOM_CDP_URL=http://127.0.0.1:9237 POMPOM_TEST_URL=http://127.0.0.1:8011 node tests/natal-magia.mjs`. Requer Node 22 ou superior. Não usa o perfil pessoal do navegador.
-
-Entrada: `/previews/natal/?parte=magia&v=21`. Para conferir a marca na capa: `/previews/natal/?parte=capa&v=21`.
+Entrada: `/previews/natal/?parte=magia&v=22`. Marca na capa: `/previews/natal/?parte=capa&v=22`.
