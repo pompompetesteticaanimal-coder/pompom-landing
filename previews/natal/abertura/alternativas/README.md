@@ -43,3 +43,13 @@ A simulação v24 usa pré-tensão, recolhimento de folga e restrições de flex
 Verificar: `node tests/natal-trajetoria.mjs`, `node tests/natal-physics.mjs` e, com Chrome CDP e servidor locais, `node tests/natal-aceno.mjs`.
 
 Entrada atual: `/previews/natal/?parte=abertura&abertura=teatro-ilustrado&v=24`.
+
+## Arreios completos — revisão 25
+
+Nos dois teatros, `arreios.mjs` acrescenta peitoral, cinta de barriga/dorso, correia lateral, argolas, fivela e sino em vermelho e dourado. Os tirantes largos saem da ferragem na dianteira do trenó e unem os arreios das renas em sequência. As rédeas finas da mão continuam separadas visualmente.
+
+As peças do arreio pertencem ao grupo articulado de cada rena. Os pontos dos tirantes são recalculados com posição e rotação dos corpos a cada quadro, incluindo a volta espelhada atrás da lua. Trata-se de um estudo visual de arreio natalino: os tirantes acompanham os corpos da simulação v24; não foi acrescentado um novo solver de couro/tecido nem alterada a trajetória aprovada.
+
+Referência de objeto: [arreio de rena, Peabody Museum](https://collections.peabody.harvard.edu/objects/details/93090). Desenho SVG local, sem copiar imagens da referência.
+
+Entrada atual: `/previews/natal/?parte=abertura&abertura=teatro-ilustrado&v=25`.
