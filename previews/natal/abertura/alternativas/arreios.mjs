@@ -19,12 +19,12 @@ export function mountHarness(root){
   d.append(g);
  });
  const layer=document.createElementNS(ns,'g');layer.dataset.draughtTraces='';layer.setAttribute('fill','none');layer.setAttribute('stroke-linecap','round');
- layer.innerHTML=Array.from({length:2},(_,i)=>`<g data-trace="${i}"><path stroke="#48231f" stroke-width="7"/><path stroke="#9e2434" stroke-width="4.5"/><path stroke="#ecc57a" stroke-width="1"/></g>`).join('');
+ layer.innerHTML=Array.from({length:deer.length},(_,i)=>`<g data-trace="${i}"><path stroke="#48231f" stroke-width="7"/><path stroke="#9e2434" stroke-width="4.5"/><path stroke="#ecc57a" stroke-width="1"/></g>`).join('');
  const rig=root.querySelector('.articulated-rig')||root;rig.insertBefore(layer,rig.querySelector('[data-sled]'));
  const paths=[...layer.querySelectorAll('[data-trace]')].map(g=>[...g.querySelectorAll('path')]);
  const mount=document.createElementNS(ns,'g');mount.dataset.traceMount='';mount.innerHTML='<path d="M103 10H121" stroke="#6c3327" stroke-width="5"/><circle cx="116" cy="8" r="4.5" fill="#702c28" stroke="#f6d489" stroke-width="2"/>';root.querySelector('[data-sled]').append(mount);
  function update(t,f){
-  const starts=[attachment(f.s,tracePins.sled),attachment(f.d[0],tracePins.lead)];
+  const starts=f.d.map((_,i)=>i<2?attachment(f.s,tracePins.sled):attachment(f.d[i-2],tracePins.lead));
   paths.forEach((set,i)=>{const a=starts[i],b=attachment(f.d[i],tracePins.deer),sag=1.4+Math.min(2,Math.abs(Math.sin(t*8+i))*.8+Math.abs(f.d[i].a)*4);const d=`M${a.x},${a.y}Q${(a.x+b.x)/2},${(a.y+b.y)/2+sag} ${b.x},${b.y}`;set.forEach(p=>p.setAttribute('d',d))});
  }
  return {update};

@@ -53,3 +53,13 @@ As peças do arreio pertencem ao grupo articulado de cada rena. Os pontos dos ti
 Referência de objeto: [arreio de rena, Peabody Museum](https://collections.peabody.harvard.edu/objects/details/93090). Desenho SVG local, sem copiar imagens da referência.
 
 Entrada atual: `/previews/natal/?parte=abertura&abertura=teatro-ilustrado&v=25`.
+
+## Comparação de 4, 6 e 9 renas — revisão 26
+
+O laboratório tem botões para comparar 4 (dois pares), 6 (três pares) e 9 (quatro pares mais Rudolph à frente). O estado é salvo localmente; `renas=4`, `renas=6` e `renas=9` também selecionam a equipe pelo endereço. Os botões iniciam o teatro ilustrado. A opção de nove acrescenta um nariz vermelho luminoso na cabeça articulada do líder.
+
+`equipes.mjs` monta esses estudos reaproveitando os dois movimentos físicos/articulados já preparados, com amostras em fases diferentes por animal e uma nova composição dos corpos. Não são nove novas simulações independentes. As pontas das rédeas e dos tirantes seguem os corpos. O peitoral mais próximo fica aproximadamente na altura do trenó; a outra fila é deslocada para cima para sugerir profundidade, sem escadinha ascendente entre pares. Os tamanhos e o centro da passagem variam para caber a equipe no celular.
+
+Os teatros duram 16,5 s (antes 11 s), com voo e aceno a dois terços da velocidade anterior. A neve continua caindo em tempo real. `reviewTimeScale=1.5` mantém os botões de aceno/lua/marca/nevasca corretos. Movimento reduzido mantém a entrada curta de 2,5 s; os estudos originais e o 3D mantêm suas durações.
+
+Entrada atual: `/previews/natal/?parte=abertura&abertura=teatro-ilustrado&renas=9&v=26`.
