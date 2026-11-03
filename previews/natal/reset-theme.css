@@ -24,3 +24,13 @@ img[data-christmas-mascot="true"]{object-fit:contain!important;mask-image:none!i
 [data-gallery-theme]{width:max-content;padding-right:12px;box-sizing:content-box}
 .marquee-track-d[data-gallery-theme]{padding-right:1rem}
 @media(prefers-reduced-motion:reduce){[data-gallery-theme]{animation:none!important}}
+
+/* A mesma arte natalina escolhida no laboratório acompanha a marca. */
+.christmas-brand-image{object-fit:contain!important;object-position:center!important;border-radius:inherit;transform:scale(1.06)}
+.christmas-brand-mark{background:#fff4df!important;border-color:#e3bd78!important;box-shadow:0 0 0 2px #d6a05222}
+.christmas-wordmark{position:relative;isolation:isolate;overflow:visible!important}
+.christmas-letter-ornaments{position:absolute;inset:-.45em -.04em -.1em;pointer-events:none;z-index:1}
+.christmas-letter-ornaments svg{width:100%;height:100%;overflow:visible}
+.wordmark-lights{filter:drop-shadow(0 0 2px #ffd482);animation:wordmark-glow 2.8s ease-in-out infinite alternate}
+@keyframes wordmark-glow{from{opacity:.65}to{opacity:1;filter:drop-shadow(0 0 4px #ffd482)}}
+@media(prefers-reduced-motion:reduce){.wordmark-lights{animation:none}}
