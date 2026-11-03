@@ -29,3 +29,7 @@ Referências de direção/técnica; não foram copiados modelos, texturas ou có
 O usuário gostou do cenário de teatro e pediu Papai Noel e renas da primeira opção. Foi acrescentado **Teatro com personagens ilustrados** (`teatro-ilustrado`), preservando o teatro vetorial e os demais estudos. Usa o cenário, as cortinas, a lua e a floresta do teatro com os mesmos PNG/WebP e peças articuladas da primeira abertura ilustrada. `rig/player.js` aceita dados físicos externos opcionais; o híbrido reproduz a simulação de tração v16 (11 segundos), enquanto a primeira abertura continua usando a própria exportação Blender de oito segundos.
 
 Entrada direta: `/previews/natal/?parte=abertura&abertura=teatro-ilustrado&v=17`. A miniatura do híbrido é captura real do navegador.
+
+## Papai Noel dando tchau — revisão 23
+
+A opção teatro-ilustrado passou a usar uma nova arte em peças separadas, com braço e antebraço acenando, cabeça/gorro/pompom independentes e trilha de brilho. O cenário e as renas foram preservados. Blender editável, atlas original, prompt e exportação web em [../aceno/README.md](../aceno/README.md).
