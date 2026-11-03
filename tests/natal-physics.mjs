@@ -4,19 +4,23 @@ const root=new URL('../previews/natal/abertura/',import.meta.url);
 const d=JSON.parse(fs.readFileSync(new URL('alternativas/fisica.json',root)));
 assert.equal(d.frames.length,661);
 assert.equal(d.fps,60);
+let maxSag=0,maxLengthRatio=1;
 const point=(b,p)=>[b.x+p.x*Math.cos(b.a)-p.y*Math.sin(b.a),b.y+p.x*Math.sin(b.a)+p.y*Math.cos(b.a)];
 function finite(x){if(typeof x==='number')assert.ok(Number.isFinite(x));else if(Array.isArray(x))x.forEach(finite);else if(x&&typeof x==='object')Object.values(x).forEach(finite);else assert.notEqual(x,null)}
 finite(d);
 for(const f of d.frames){
  f.r.forEach((r,i)=>{
   assert.equal(r.length,15);
+  const start=r[0],end=r.at(-1),distance=Math.hypot(end[0]-start[0],end[1]-start[1]);let length=0;for(let j=1;j<r.length;j++)length+=Math.hypot(r[j][0]-r[j-1][0],r[j][1]-r[j-1][1]);maxLengthRatio=Math.max(maxLengthRatio,length/distance);for(const p of r)maxSag=Math.max(maxSag,Math.abs((end[0]-start[0])*(p[1]-start[1])-(end[1]-start[1])*(p[0]-start[0]))/distance);
   const ends=[point(f.s,d.pins.sled),point(f.d[i],d.pins.deer)];
   [r[0],r.at(-1)].forEach((p,j)=>assert.ok(Math.hypot(p[0]-ends[j][0],p[1]-ends[j][1])<.006,'rein detached from moving body'));
   for(let j=1;j<r.length;j++)assert.ok(Math.hypot(r[j][0]-r[j-1][0],r[j][1]-r[j-1][1])<34,'unstable rein segment');
  });
 }
+assert.ok(maxSag<8,'reins too slack');assert.ok(maxLengthRatio<1.003,'rein length exceeds taut span');
+console.log('Rein limits:',{maxSag,maxLengthRatio});
 const span=key=>Math.max(...d.frames.map(f=>f.s[key]))-Math.min(...d.frames.map(f=>f.s[key]));
-assert.ok(span('x')>40&&span('x')<120,'traction response lost or unstable');
+assert.ok(span('x')>10&&span('x')<80,'traction response lost or unstable');
 assert.ok(span('y')>40&&span('y')<120,'vertical inertia lost or unstable');
 assert.ok(span('a')>.035&&span('a')<.4,'off-centre rein torque lost or unstable');
 assert.notDeepEqual(d.frames[126].d[0].legs,d.frames[147].d[0].legs);

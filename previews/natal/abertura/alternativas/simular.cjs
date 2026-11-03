@@ -1,18 +1,18 @@
 /* New studies only: physically coupled traction. The original rig is untouched. */
 const M=require('../rig/vendor/matter.js'),fs=require('fs'),path=require('path');
 const {Engine,Bodies,Body,Composite,Constraint}=M;
-const engine=Engine.create({constraintIterations:28,positionIterations:12,velocityIterations:10});
+const engine=Engine.create({constraintIterations:48,positionIterations:12,velocityIterations:10});
 engine.gravity.y=0;
 function body(x,y,w,h,m){const b=Bodies.rectangle(x,y,w,h,{frictionAir:.035,collisionFilter:{group:-1}});Body.setMass(b,m);Composite.add(engine.world,b);return b}
 const sled=body(-165,38,210,100,6.8),deer=[body(90,3,96,42,1.8),body(250,-23,96,42,1.6)];
 const anchor=(b,p)=>({x:b.position.x+p.x*Math.cos(b.angle)-p.y*Math.sin(b.angle),y:b.position.y+p.x*Math.sin(b.angle)+p.y*Math.cos(b.angle)});
 const guides=deer.map((b,i)=>{const c=Constraint.create({bodyB:b,pointA:{...b.position},length:0,stiffness:.075,damping:.12});Composite.add(engine.world,c);return c});
 const lift=Constraint.create({bodyB:sled,pointA:{x:-165,y:38},length:0,stiffness:.000018,damping:.003});Composite.add(engine.world,lift);
-const pins={sled:{x:95,y:-23},deer:{x:27,y:-5}};
-const ropes=deer.map(b=>{const a=anchor(sled,pins.sled),z=anchor(b,pins.deer),N=15,segment=Math.hypot(z.x-a.x,z.y-a.y)/(N-1)*1.055,nodes=[];
- for(let i=1;i<N-1;i++){const k=i/(N-1);nodes.push(body(a.x+(z.x-a.x)*k,a.y+(z.y-a.y)*k+Math.sin(k*Math.PI)*20,2,2,.032))}
- const ends=[sled,...nodes,b];for(let i=0;i<ends.length-1;i++)Composite.add(engine.world,Constraint.create({bodyA:ends[i],bodyB:ends[i+1],pointA:i===0?{...pins.sled}:{x:0,y:0},pointB:i===ends.length-2?{...pins.deer}:{x:0,y:0},length:segment,stiffness:.82,damping:.035}));
- return {deer:b,nodes};});
+const pins={sled:{x:29,y:-46},deer:{x:27,y:-5}};
+const ropes=deer.map(b=>{const a=anchor(sled,pins.sled),z=anchor(b,pins.deer),N=15,segment=Math.hypot(z.x-a.x,z.y-a.y)/(N-1)*.996,nodes=[],links=[],bends=[];
+ for(let i=1;i<N-1;i++){const k=i/(N-1);nodes.push(body(a.x+(z.x-a.x)*k,a.y+(z.y-a.y)*k+Math.sin(k*Math.PI)*2,2,2,.012))}
+ const ends=[sled,...nodes,b];for(let i=0;i<ends.length-1;i++){const c=Constraint.create({bodyA:ends[i],bodyB:ends[i+1],pointA:i===0?{...pins.sled}:{x:0,y:0},pointB:i===ends.length-2?{...pins.deer}:{x:0,y:0},length:segment,stiffness:.995,damping:.15});links.push(c);Composite.add(engine.world,c)}
+ for(let j=0;j<ends.length-2;j++){const c=Constraint.create({bodyA:ends[j],bodyB:ends[j+2],pointA:j===0?{...pins.sled}:{x:0,y:0},pointB:j===ends.length-3?{...pins.deer}:{x:0,y:0},length:segment*2,stiffness:.28,damping:.16});bends.push(c);Composite.add(engine.world,c)}const pull=Constraint.create({bodyA:sled,bodyB:b,pointA:{...pins.sled},pointB:{...pins.deer},length:segment*(N-1),stiffness:.12,damping:.08});Composite.add(engine.world,pull);return {deer:b,nodes,links,bends,pull};});
 function state(){return {p:0,v:0}}
 const secondary=deer.map(()=>({head:state(),tail:state(),scarf:state(),bell:state()})),lantern=state();
 function spring(s,target,k,d,dt){s.v+=((target-s.p)*k-d*s.v)*dt;s.p+=s.v*dt;return s.p}
@@ -30,14 +30,14 @@ for(let n=0;n<=(11+settle)*120;n++){
  });
  for(const b of [sled,...deer])Body.applyForce(b,b.position,{x:-ax*b.mass*8,y:(ay+gust)*b.mass*8});
  // No prescribed sleigh rotation: the off-centre reins generate the torque.
- sled.torque+=(-sled.angle*.000003-sled.angularVelocity*.00009)*sled.inertia;
- ropes.forEach((r,i)=>r.nodes.forEach((b,j)=>Body.applyForce(b,b.position,{x:(-.000006+gust*.4)*b.mass,y:(.00024+Math.sin(t*6-j*.6+i)*.000012)*b.mass})));
+ sled.torque+=(-sled.angle*.00001-sled.angularVelocity*.00018)*sled.inertia;
+ ropes.forEach((r,i)=>{const a=anchor(sled,pins.sled),b=anchor(r.deer,pins.deer),span=Math.hypot(b.x-a.x,b.y-a.y);r.pull.stiffness=span>r.pull.length?.12:0;/* Santa takes up excess rein while the team compresses. */r.links.forEach(c=>c.length=span/r.links.length*.996);r.bends.forEach(c=>c.length=span/r.links.length*2*.996);r.nodes.forEach((node,j)=>Body.applyForce(node,node.position,{x:(-.000003+gust*.15)*node.mass,y:(.000015+Math.sin(t*6-j*.6+i)*.000004)*node.mass}))});
  Engine.update(engine,1000/120);
  const d=deer.map((b,i)=>{const q=secondary[i],ph=wave+i*.9;return {x:b.position.x,y:b.position.y,a:b.angle,head:spring(q.head,-b.angle*.8-Math.cos(ph)*.13,95,10,dt),tail:spring(q.tail,Math.sin(ph+1)*.45+b.velocity.y*.07,55,6,dt),scarf:spring(q.scarf,Math.sin(t*8+i)*.22-b.velocity.y*.12,75,7,dt),bell:spring(q.bell,-b.velocity.x*.2+Math.sin(ph)*.3,68,5,dt),legs:gait(t,i)}});
  const lamp=spring(lantern,-sled.velocity.x*.22-sled.angle*1.2,40,4,dt);
  if(t>=0&&n%2===0)frames.push({t,s:{x:sled.position.x,y:sled.position.y,a:sled.angle,lantern:lamp},d,r:ropes.map(r=>[Object.values(anchor(sled,pins.sled)),...r.nodes.map(b=>[b.position.x,b.position.y]),Object.values(anchor(r.deer,pins.deer))])});
 }
-const data={engine:'Matter.js 0.20.0',revision:16,fps:60,duration:11,pins,notes:'Dynamic body-to-body reins with 13 interior masses; off-centre traction torque, inertial forces, 120 Hz solve. Controlled IK legs, secondary damped springs.',frames};
+const data={engine:'Matter.js 0.20.0',revision:24,fps:60,duration:11,pins,notes:'Pre-tensioned body-to-body reins with active slack take-up, 13 interior masses, off-centre hand traction and 120 Hz solve. Controlled IK legs, secondary damped springs.',frames};
 function clean(o){if(typeof o==='number'){if(!Number.isFinite(o))throw Error('Nonfinite');return Math.round(o*1e4)/1e4}if(Array.isArray(o))return o.map(clean);if(o&&typeof o==='object')return Object.fromEntries(Object.entries(o).map(([k,v])=>[k,clean(v)]));return o}
 fs.writeFileSync(path.join(__dirname,'fisica.json'),JSON.stringify(clean(data)));
 for(const key of ['x','y','a']){const a=frames.map(f=>f.s[key]);console.log('sled',key,Math.min(...a),Math.max(...a))}

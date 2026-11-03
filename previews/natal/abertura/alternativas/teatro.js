@@ -1,3 +1,4 @@
+import {flightPose} from './trajetoria.mjs?v=24';
 // An original cut-paper theatre, drawn as articulated vector pieces.
 export function createTheatre(host,options={}){
  const leg=j=>`<g data-leg="${j}"><g data-upper><path d="M-8-4Q0-9 8-2L5 29H-5Z" fill="#d8b77e"/><g data-lower><path d="M-5-2H5L4 26H-4Z" fill="#f2dfb6"/><path d="M-5 23H5L9 31H-6Z" fill="#72253b"/></g></g></g>`;
@@ -9,9 +10,12 @@ export function createTheatre(host,options={}){
  const deg=a=>a*180/Math.PI,clamp=(x)=>Math.max(0,Math.min(1,x));
  function updateVector(f){s.setAttribute('transform',`translate(${f.s.x} ${f.s.y}) rotate(${deg(f.s.a)})`);
   ds.forEach((d,i)=>{const q=f.d[i];d.setAttribute('transform',`translate(${q.x} ${q.y}) rotate(${deg(q.a)})`);d.querySelector('[data-head]').setAttribute('transform',`translate(32 -10) rotate(${deg(q.head)})`);d.querySelector('[data-bell]').setAttribute('transform',`rotate(${deg(q.bell)})`);d.querySelectorAll('[data-leg]').forEach((l,j)=>{l.setAttribute('transform',`translate(${j>=2?-28:27} ${j%2?10:15})`);l.querySelector('[data-upper]').setAttribute('transform',`rotate(${deg(q.legs[j][0])})`);l.querySelector('[data-lower]').setAttribute('transform',`translate(0 27) rotate(${deg(q.legs[j][1])})`)})});
+
+}
+ function updateReins(f){
   ropes.forEach((p,i)=>{const pts=f.r[i];let d=`M${pts[0]}`;for(let j=1;j<pts.length-1;j++)d+=`Q${pts[j]} ${(pts[j][0]+pts[j+1][0])/2},${(pts[j][1]+pts[j+1][1])/2}`;d+=`L${pts.at(-1)}`;p.setAttribute('d',d)});
 }
- function update(t,f){const enter=clamp((t-.3)/1.2),exit=clamp((t-4.5)/1.4),x=-500*(1-enter)+480+exit*700,y=690-exit*340;root.setAttribute('transform',`translate(${x} ${y}) rotate(${-exit*16}) scale(${1.1-exit*.4})`);if(t>5.3){const q=clamp((t-5.3)/1.2);svg.querySelector('[data-paper-flight]').setAttribute('mask','url(#paper-occlusion)');root.setAttribute('transform',`translate(${1080-470*q} ${420-30*q}) scale(${.6-.35*q})`)}else{svg.querySelector('[data-paper-flight]').removeAttribute('mask')}root.style.opacity=t<6.6?1:0;if(illustration){illustration.update(t);santa?.update(t,f)}else{updateVector(f)}
+ function update(t,f){const pose=flightPose(t);root.setAttribute('transform',`translate(${pose.x} ${pose.y}) rotate(${pose.rotation}) scale(${pose.scale*pose.facing} ${pose.scale})`);const flight=svg.querySelector('[data-paper-flight]');if(pose.behindMoon)flight.setAttribute('mask','url(#paper-occlusion)');else flight.removeAttribute('mask');root.dataset.flightPhase=pose.behindMoon?'behind-moon':'front';root.dataset.facing=String(pose.facing);root.style.opacity='1';if(illustration){illustration.update(t);santa?.update(t,f)}else{updateVector(f)}updateReins(f);
   const open=clamp((t-.1)/1.1);svg.querySelector('.paper-curtain-left').setAttribute('transform',`translate(${-open*420} 0)`);svg.querySelector('.paper-curtain-right').setAttribute('transform',`translate(${open*420} 0)`);svg.querySelector('.paper-hills').setAttribute('transform',`translate(${-t*4} 0)`);
  }
  return {update,info:{renderer:options.illustrated?'SVG cut-paper + original illustrated characters':'SVG cut-paper',mode:'Theatre with articulated characters and dynamic physical reins',santa:santa?.info},dispose(){host.replaceChildren()}};

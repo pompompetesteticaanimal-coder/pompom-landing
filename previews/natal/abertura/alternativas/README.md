@@ -33,3 +33,13 @@ Entrada direta: `/previews/natal/?parte=abertura&abertura=teatro-ilustrado&v=17`
 ## Papai Noel dando tchau — revisão 23
 
 A opção teatro-ilustrado passou a usar uma nova arte em peças separadas, com braço e antebraço acenando, cabeça/gorro/pompom independentes e trilha de brilho. O cenário e as renas foram preservados. Blender editável, atlas original, prompt e exportação web em [../aceno/README.md](../aceno/README.md).
+
+## Trajetória e rédeas — revisão 24
+
+Nos dois teatros, `trajetoria.mjs` conduz a equipe inteira para fora da borda direita antes de inverter sua orientação (5,5 s). Na volta, as renas ficam à frente, apontadas para a esquerda. A máscara circular da lua oculta progressivamente os personagens; não há corte de opacidade. A equipe termina dentro da lua aos 7 s, quando começa a marca.
+
+A simulação v24 usa pré-tensão, recolhimento de folga e restrições de flexão nas rédeas, com o ponto de tração do trenó próximo à mão. Em 661 quadros, a maior flecha perpendicular medida é 6,38 unidades SVG e o comprimento máximo é 1,0012 vezes a distância entre pontas. A simulação original de oito segundos permanece preservada.
+
+Verificar: `node tests/natal-trajetoria.mjs`, `node tests/natal-physics.mjs` e, com Chrome CDP e servidor locais, `node tests/natal-aceno.mjs`.
+
+Entrada atual: `/previews/natal/?parte=abertura&abertura=teatro-ilustrado&v=24`.
