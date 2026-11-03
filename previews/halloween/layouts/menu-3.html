@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Menu Mobile — Variante 3: Bottom Navigation Bar com Sheet de Mais Aberto</title>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            aubergine: {
+              950: '#110b17',
+              900: '#17101f',
+              850: '#1d1427',
+              800: '#24192e',
+              700: '#322340',
+              600: '#47325c',
+            },
+            pumpkin: {
+              400: '#ffbf80',
+              500: '#ffad66',
+              600: '#fa9442',
+            },
+            creme: {
+              100: '#ffffff',
+              200: '#fff3df',
+              300: '#fedebb',
+            },
+            lavender: {
+              200: '#d9c7ea',
+              300: '#c5a7dc',
+              400: '#b186ce',
+            }
+          },
+          fontFamily: {
+            serif: ['Georgia', 'serif'],
+            sans: ['-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
+          },
+          boxShadow: {
+            'sheet': '0 -10px 40px rgba(0, 0, 0, 0.65)',
+            'nav': '0 -4px 20px rgba(0, 0, 0, 0.45)',
+          }
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: Custom Styles -->
+<style data-purpose="typography">
+    .font-brand-serif {
+      font-family: Georgia, 'Times New Roman', serif;
+    }
+    .brand-glow {
+      text-shadow: 0 2px 12px rgba(255, 173, 102, 0.25);
+    }
+  </style>
+<style data-purpose="layout-mobile">
+    /* Forcing mobile iOS viewport wrapper dimensions */
+    body {
+      background-color: #0c0811;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .mobile-frame {
+      width: 100%;
+      max-width: 390px;
+      height: 844px;
+      position: relative;
+      background-color: #17101f;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Custom scrollbar styling for the sheet internal scroll */
+    .sheet-scroll::-webkit-scrollbar {
+      width: 4px;
+    }
+    .sheet-scroll::-webkit-scrollbar-thumb {
+      background: rgba(255, 173, 102, 0.25);
+      border-radius: 4px;
+    }
+  </style>
+<!-- END: Custom Styles -->
+</head>
+<body>
+<!-- BEGIN: MobileContainer (iOS 390px canvas) -->
+<div class="mobile-frame" data-purpose="screen-viewport">
+<!-- BEGIN: BackgroundHeroSection (Contextual Page View) -->
+<div class="w-full flex-1 flex flex-col px-5 pt-6 pb-24 overflow-hidden relative select-none opacity-45" data-purpose="background-context">
+<!-- Top Brand Header Bar -->
+<header class="flex items-center justify-between pb-4 border-b border-white/10" data-purpose="hero-header">
+<div class="flex items-center gap-2.5">
+<div class="w-10 h-10 rounded-full border border-pumpkin-500/40 bg-aubergine-800 p-0.5 shadow-sm overflow-hidden flex items-center justify-center">
+<span class="text-lg">🐶</span>
+</div>
+<div>
+<h1 class="text-creme-200 font-brand-serif italic text-lg leading-tight font-medium">PomPom Pet</h1>
+<p class="text-[10px] tracking-widest text-lavender-300 font-semibold uppercase">Estética Animal com Amor</p>
+</div>
+</div>
+<div class="w-10 h-10 rounded-full bg-aubergine-800/80 border border-white/10 flex items-center justify-center text-creme-200">
+<svg class="w-5 h-5 text-creme-200" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+</header>
+<!-- Hero Teaser Card -->
+<section class="mt-5 text-center px-2" data-purpose="hero-content">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-aubergine-800/90 border border-pumpkin-500/30 text-pumpkin-400 text-xs font-semibold mb-3 tracking-wide">
+<span>🎃 OUTUBRO ENCANTADO</span>
+</div>
+<h2 class="text-3xl font-brand-serif text-creme-200 leading-tight">
+          Um Halloween cheio de <span class="text-pumpkin-500 italic">fofura.</span>
+</h2>
+<p class="text-lavender-200/80 text-xs mt-2 leading-relaxed">
+          Um toque de magia e o cuidado de sempre. Banho, tosa e muito carinho para seu melhor amigo.
+        </p>
+</section>
+<!-- Decorative Graphic Representation -->
+<div class="mt-6 mx-auto w-48 h-48 rounded-2xl bg-aubergine-800/60 border border-white/5 flex flex-col items-center justify-center text-center p-4">
+<span class="text-5xl mb-2">🐾🎃</span>
+<span class="text-xs text-lavender-300 font-medium">Banhos &amp; Tosas Temáticas</span>
+</div>
+</div>
+<!-- END: BackgroundHeroSection -->
+<!-- BEGIN: SheetBackdrop (Overlay Dimmer) -->
+<div aria-hidden="true" class="absolute inset-0 bg-black/60 backdrop-blur-[2px] z-10 transition-opacity" data-purpose="sheet-dim-backdrop"></div>
+<!-- END: SheetBackdrop -->
+<!-- BEGIN: BottomSheetModal -->
+<section class="absolute bottom-[64px] inset-x-0 bg-aubergine-900 border-t border-pumpkin-500/30 rounded-t-[32px] shadow-sheet z-20 flex flex-col max-h-[72%] transition-transform duration-300 ease-out" data-purpose="expanded-bottom-sheet">
+<!-- Sheet Handle Bar (Drag Indicator) -->
+<div class="pt-3 pb-2 flex justify-center items-center cursor-pointer" data-purpose="drag-handle-container">
+<div class="w-12 h-1.5 rounded-full bg-white/20 active:bg-pumpkin-500/50 transition-colors"></div>
+</div>
+<!-- Sheet Header with Title & Close Action -->
+<div class="px-5 pb-3 pt-1 flex items-center justify-between border-b border-aubergine-800" data-purpose="sheet-header">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-lg bg-pumpkin-500/15 flex items-center justify-center text-pumpkin-400">
+<!-- Paw Print Icon SVG -->
+<svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24">
+<circle cx="7" cy="8.5" r="2"></circle>
+<circle cx="17" cy="8.5" r="2"></circle>
+<circle cx="10" cy="4.5" r="1.8"></circle>
+<circle cx="14" cy="4.5" r="1.8"></circle>
+<path d="M12 10.5c-3 0-5.5 2.1-5.5 4.8 0 2 1.3 3.7 3.2 4.4.7.3 1.5.3 2.3.3.8 0 1.6 0 2.3-.3 1.9-.7 3.2-2.4 3.2-4.4 0-2.7-2.5-4.8-5.5-4.8z"></path>
+</svg>
+</div>
+<div>
+<h3 class="text-creme-200 font-brand-serif font-bold text-base tracking-wide">Mais Opções</h3>
+<p class="text-[11px] text-lavender-300">PomPom Pet Cajamar</p>
+</div>
+</div>
+<!-- Close Button (Minimizes sheet) -->
+<button aria-label="Fechar painel de opções" class="w-8 h-8 rounded-full bg-aubergine-800 hover:bg-aubergine-700 flex items-center justify-center text-creme-200/80 active:scale-95 transition-transform" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+<!-- Scrollable List of Navigation Items -->
+<div class="px-4 py-3 overflow-y-auto sheet-scroll space-y-2.5 flex-1" data-purpose="sheet-items-list">
+<!-- Item 1: Nossa História -->
+<a class="flex items-center justify-between p-3 rounded-2xl bg-aubergine-800/70 border border-white/5 hover:border-pumpkin-500/40 active:scale-[0.98] transition-all min-h-[48px]" href="#historia">
+<div class="flex items-center gap-3.5">
+<div class="w-10 h-10 rounded-xl bg-pink-500/10 text-pink-400 flex items-center justify-center text-xl shrink-0">
+              💖
+            </div>
+<div>
+<p class="text-creme-200 text-sm font-medium leading-snug">Nossa História</p>
+<p class="text-[11px] text-lavender-300">Conheça Deisiane França &amp; paixão pet</p>
+</div>
+</div>
+<svg class="w-4 h-4 text-lavender-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</a>
+<!-- Item 2: Lojinha Pet -->
+<a class="flex items-center justify-between p-3 rounded-2xl bg-aubergine-800/70 border border-white/5 hover:border-pumpkin-500/40 active:scale-[0.98] transition-all min-h-[48px]" href="#lojinha">
+<div class="flex items-center gap-3.5">
+<div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl shrink-0">
+              🛍️
+            </div>
+<div>
+<p class="text-creme-200 text-sm font-medium leading-snug">Lojinha Pet</p>
+<p class="text-[11px] text-lavender-300">Roupas, Guias e Brinquedos</p>
+</div>
+</div>
+<svg class="w-4 h-4 text-lavender-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</a>
+<!-- Item 3: Onde Estamos -->
+<a class="flex items-center justify-between p-3 rounded-2xl bg-aubergine-800/70 border border-white/5 hover:border-pumpkin-500/40 active:scale-[0.98] transition-all min-h-[48px]" href="#localizacao">
+<div class="flex items-center gap-3.5">
+<div class="w-10 h-10 rounded-xl bg-red-500/10 text-red-400 flex items-center justify-center text-xl shrink-0">
+              📍
+            </div>
+<div>
+<p class="text-creme-200 text-sm font-medium leading-snug">Onde Estamos &amp; Rotas</p>
+<p class="text-[11px] text-lavender-300">Cajamar · Portal dos Ipês (Sala 1)</p>
+</div>
+</div>
+<svg class="w-4 h-4 text-lavender-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</a>
+<!-- Item 4: Horários de Funcionamento -->
+<a class="flex items-center justify-between p-3 rounded-2xl bg-aubergine-800/70 border border-white/5 hover:border-pumpkin-500/40 active:scale-[0.98] transition-all min-h-[48px]" href="#horarios">
+<div class="flex items-center gap-3.5">
+<div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-xl shrink-0">
+              ⏰
+            </div>
+<div>
+<p class="text-creme-200 text-sm font-medium leading-snug">Horários de Atendimento</p>
+<p class="text-[11px] text-lavender-300">Ter a Sáb: 9h–17h (Dom e Seg fechado)</p>
+</div>
+</div>
+<svg class="w-4 h-4 text-lavender-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</a>
+<!-- Item 5: WhatsApp Direto -->
+<a class="flex items-center justify-between p-3 rounded-2xl bg-aubergine-800/70 border border-white/5 hover:border-emerald-500/40 active:scale-[0.98] transition-all min-h-[48px]" href="https://wa.me/5511947266216" rel="noopener noreferrer" target="_blank">
+<div class="flex items-center gap-3.5">
+<div class="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center text-xl shrink-0">
+              💬
+            </div>
+<div>
+<p class="text-creme-200 text-sm font-medium leading-snug">WhatsApp com a Groomer</p>
+<p class="text-[11px] text-emerald-400/90 font-medium">Tire dúvidas em tempo real</p>
+</div>
+</div>
+<svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</a>
+</div>
+<!-- Sheet Footer CTA: Agendar Horário -->
+<div class="p-4 pt-2 pb-4 bg-aubergine-900 border-t border-aubergine-800/60" data-purpose="sheet-cta-container">
+<a class="w-full h-12 rounded-xl bg-pumpkin-500 hover:bg-pumpkin-600 active:scale-[0.98] transition-all flex items-center justify-center gap-2 text-aubergine-950 font-bold text-sm shadow-lg shadow-pumpkin-500/20" href="#agendar">
+<svg class="w-5 h-5 text-aubergine-950" fill="none" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24">
+<path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Agendar Horário para Meu Pet</span>
+</a>
+</div>
+</section>
+<!-- END: BottomSheetModal -->
+<!-- BEGIN: BottomNavigationBar (Fixed Bar 64px) -->
+<nav class="absolute bottom-0 inset-x-0 h-16 bg-aubergine-950/95 border-t border-white/10 backdrop-blur-md px-2 z-30 shadow-nav" data-purpose="bottom-navigation-bar">
+<ul class="h-full flex items-center justify-around list-none m-0 p-0">
+<!-- Tab 1: Início -->
+<li class="flex-1">
+<a class="flex flex-col items-center justify-center w-full h-full py-1 text-lavender-300/70 hover:text-creme-200 transition-colors" data-purpose="nav-item" href="#inicio">
+<!-- Home outline icon -->
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="text-[10px] mt-1 font-medium tracking-tight">Início</span>
+</a>
+</li>
+<!-- Tab 2: Serviços -->
+<li class="flex-1">
+<a class="flex flex-col items-center justify-center w-full h-full py-1 text-lavender-300/70 hover:text-creme-200 transition-colors" data-purpose="nav-item" href="#servicos">
+<!-- Scissor / Grooming outline icon -->
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.879 2.879M12 12L9.121 9.121m0 5.758a3 3 0 10-4.242 4.243 3 3 0 004.242-4.243zm0-5.758a3 3 0 10-4.242-4.242 3 3 0 004.242 4.242z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="text-[10px] mt-1 font-medium tracking-tight">Serviços</span>
+</a>
+</li>
+<!-- Tab 3: Galeria -->
+<li class="flex-1">
+<a class="flex flex-col items-center justify-center w-full h-full py-1 text-lavender-300/70 hover:text-creme-200 transition-colors" data-purpose="nav-item" href="#galeria">
+<!-- Photo Sparkles outline icon -->
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="text-[10px] mt-1 font-medium tracking-tight">Galeria</span>
+</a>
+</li>
+<!-- Tab 4: Mais (Active with Pumpkin indicator) -->
+<li class="flex-1 relative">
+<!-- Active Tab Highlight Indicator Bar -->
+<div class="absolute -top-[1px] inset-x-3 h-[2.5px] rounded-full bg-pumpkin-500 shadow-[0_0_8px_#ffad66]"></div>
+<button aria-current="page" class="flex flex-col items-center justify-center w-full h-full py-1 text-pumpkin-500 transition-colors" data-purpose="nav-item-active" type="button">
+<!-- Grid / Menu outline icon -->
+<svg class="w-5 h-5 text-pumpkin-500" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="text-[10px] mt-1 font-semibold tracking-tight text-pumpkin-400">Mais</span>
+</button>
+</li>
+</ul>
+</nav>
+<!-- END: BottomNavigationBar -->
+</div>
+<!-- END: MobileContainer -->
+<!-- BEGIN: Interactive Behavior Script -->
+<script data-purpose="bottom-sheet-toggle">
+    // Simple presentation toggle handler for bottom sheet demo
+    document.addEventListener('DOMContentLoaded', () => {
+      const closeBtn = document.querySelector('button[aria-label="Fechar painel de opções"]');
+      const sheet = document.querySelector('[data-purpose="expanded-bottom-sheet"]');
+      const backdrop = document.querySelector('[data-purpose="sheet-dim-backdrop"]');
+      const moreTab = document.querySelector('[data-purpose="nav-item-active"]');
+
+      let isOpen = true;
+
+      const toggleSheet = (state) => {
+        isOpen = state;
+        if (isOpen) {
+          sheet.style.transform = 'translateY(0)';
+          sheet.style.opacity = '1';
+          backdrop.style.opacity = '1';
+          backdrop.style.pointerEvents = 'auto';
+        } else {
+          sheet.style.transform = 'translateY(105%)';
+          sheet.style.opacity = '0';
+          backdrop.style.opacity = '0';
+          backdrop.style.pointerEvents = 'none';
+        }
+      };
+
+      if (closeBtn) {
+        closeBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          toggleSheet(false);
+        });
+      }
+
+      if (backdrop) {
+        backdrop.addEventListener('click', () => {
+          toggleSheet(false);
+        });
+      }
+
+      if (moreTab) {
+        moreTab.addEventListener('click', (e) => {
+          e.preventDefault();
+          toggleSheet(!isOpen);
+        });
+      }
+    });
+  </script>
+<!-- END: Interactive Behavior Script -->
+</body></html>

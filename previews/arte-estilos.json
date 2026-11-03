@@ -1,0 +1,11 @@
+{
+  "project": "6568277818132960064",
+  "approved": "aquarela",
+  "options": [
+    { "slug": "cartoon-2d", "name": "1 · Cartoon 2D", "description": "Traço arredondado, próximo do logo.", "screen": "84ecf4a3878345f2b5e5a1b52223e476" },
+    { "slug": "3d-fofo", "name": "2 · 3D fofinho", "description": "Personagens com aparência de pelúcia.", "screen": "5807f0b8c9fe4beeba37ad4e6478c84f" },
+    { "slug": "aquarela", "name": "3 · Aquarela", "description": "Pintura suave com textura artesanal.", "screen": "9e8c2ec80b8f4887a04213e934b1d1b2" },
+    { "slug": "realista", "name": "4 · Realista", "description": "Pets naturais com iluminação cinematográfica.", "screen": "98fc240b4db04274bea45f770466ca88" },
+    { "slug": "vetor-editorial", "name": "5 · Vetor editorial", "description": "Formas simples, cores e contornos limpos.", "screen": "3408c1073aec4e8b8e56fd5b4f1c3400" }
+  ]
+}

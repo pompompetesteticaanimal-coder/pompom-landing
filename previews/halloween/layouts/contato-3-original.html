@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Contato &amp; Agendamento — PomPom Pet</title>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script data-purpose="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            aubergine: {
+              DEFAULT: '#17101f',
+              light: '#23182e',
+              surface: '#2a1e36',
+              border: '#3c294d'
+            },
+            pumpkin: {
+              DEFAULT: '#ffad66',
+              hover: '#ff9c47',
+              dark: '#e68a3e',
+              deep: '#4a2618'
+            },
+            lavender: {
+              muted: '#bfaec9',
+              light: '#f1eaf7'
+            }
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="base-typography">
+    body {
+      background-color: #17101f;
+      color: #f1eaf7;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .font-serif {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+  </style>
+<style data-purpose="micro-interactions">
+    .tap-scale {
+      transition: transform 0.15s ease, filter 0.15s ease;
+    }
+    .tap-scale:active {
+      transform: scale(0.97);
+    }
+    .subtle-glow {
+      box-shadow: 0 10px 30px -10px rgba(255, 173, 102, 0.25);
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-[#17101f] text-lavender-light flex justify-center selection:bg-pumpkin selection:text-[#17101f]">
+<!-- Container Mobile Restrito a 390px -->
+<main class="w-full max-w-[390px] relative px-5 pt-8 pb-12 overflow-hidden flex flex-col justify-between">
+<!-- BEGIN: AmbientWatermarkDecor -->
+<!-- Teia minimalista e elegante em traço fino monocromático no canto superior -->
+<svg class="absolute -top-4 -right-4 w-40 h-40 text-lavender-muted/15 pointer-events-none select-none" fill="none" stroke="currentColor" stroke-width="0.8" viewbox="0 0 160 160">
+<path d="M160 0 L0 160"></path>
+<path d="M160 40 L40 160"></path>
+<path d="M160 80 L80 160"></path>
+<path d="M160 120 L120 160"></path>
+<path d="M120 0 L0 120"></path>
+<path d="M80 0 L0 80"></path>
+<path d="M40 0 L0 40"></path>
+<circle cx="160" cy="0" r="40" stroke-dasharray="3 3"></circle>
+<circle cx="160" cy="0" r="90" stroke-dasharray="2 4"></circle>
+<circle cx="160" cy="0" r="140" stroke-dasharray="3 5"></circle>
+</svg>
+<!-- END: AmbientWatermarkDecor -->
+<!-- BEGIN: HeaderSection -->
+<header class="relative z-10 mb-6">
+<!-- Tag / Badge de contexto editorial -->
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#2a1e36] border border-[#3c294d] mb-4">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-pumpkin animate-pulse"></span>
+<span class="text-[11px] uppercase tracking-wider font-semibold text-pumpkin">Contato &amp; Atendimento</span>
+</div>
+<!-- Título de impacto editorial -->
+<div class="flex items-center justify-between">
+<div>
+<h1 class="text-3xl font-serif font-bold text-white tracking-tight leading-tight">
+            Onde estamos
+          </h1>
+<p class="text-xs text-lavender-muted mt-1 font-normal">
+            Estética animal com afeto e aconchego
+          </p>
+</div>
+<!-- Identidade Compacta Deisiane / PomPom Pet -->
+<div class="flex items-center gap-2.5 bg-[#23182e]/80 border border-[#3c294d] pl-1.5 pr-3 py-1.5 rounded-full">
+<div class="w-8 h-8 rounded-full overflow-hidden border border-pumpkin/40 relative flex-shrink-0">
+<img alt="PomPom Pet Logo" class="w-full h-full object-cover object-top" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSqozZzlay_95Y_Vtbq7uPgbiixF4gfxXTKT3BjBUx3y3SJ-YvH6svfgvU9DdnlrF74PIiKESi-Si1hC8Nr2S0udIjcPl1cmmejPMzaga9iB0ZAyEa1vkur5eqx8WaxScSEGaC-BMBqH6jMme3mijabHA8eSEzVX13JLuH8g5Uy_Si88rCtG9p0ZsytSxunNlYxKSK3hpA7CzxIPTAx2mPdgW_DB-4x-mv4XuoYGGVilXgGSv7lKMzAT_dKECHE7XzLhNSNsWnN0I"/>
+</div>
+<div class="text-left">
+<span class="block text-[11px] font-bold text-white leading-none font-serif italic">PomPom Pet</span>
+<span class="block text-[9px] text-pumpkin tracking-wider uppercase font-semibold">Cajamar • SP</span>
+</div>
+</div>
+</div>
+</header>
+<!-- END: HeaderSection -->
+<!-- BEGIN: InfoCompactCard -->
+<!-- Ficha Compacta Minimalista Tudo-em-Um -->
+<section class="relative z-10 bg-[#23182e] border border-[#3c294d] rounded-2xl p-4 shadow-xl mb-6 backdrop-blur-sm" data-purpose="ficha-compacta">
+<!-- Linha 1: Endereço com botão Copiar -->
+<div class="flex items-start justify-between gap-3 pb-3 border-b border-[#382647]" data-purpose="endereco-row">
+<div class="flex items-start gap-3">
+<div class="w-8 h-8 rounded-lg bg-[#2a1e36] border border-[#3c294d] flex items-center justify-center text-pumpkin mt-0.5 flex-shrink-0">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M12 21c-4.418-4.418-7-8.5-7-12A7 7 0 1119 9c0 3.5-2.582 7.582-7 12z" stroke-linecap="round" stroke-linejoin="round"></path>
+<circle cx="12" cy="9" r="2.5"></circle>
+</svg>
+</div>
+<div>
+<span class="text-[10px] tracking-wider uppercase font-semibold text-lavender-muted block">Endereço</span>
+<p class="text-xs text-white font-medium leading-snug mt-0.5">
+              R. dos Flox, 954 – Sala 1<br/>
+<span class="text-lavender-muted">Portal dos Ipês · Cajamar - SP</span>
+</p>
+</div>
+</div>
+<!-- Botão Copiar com Microinteração -->
+<button aria-label="Copiar endereço completo" class="tap-scale px-2.5 py-1.5 rounded-md bg-[#2a1e36] hover:bg-[#322340] border border-[#3c294d] text-[11px] font-medium text-pumpkin flex items-center gap-1 transition" id="copy-address-btn" onclick="copyAddress()">
+<svg class="w-3.5 h-3.5" fill="none" id="copy-icon" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<rect height="13" rx="2" ry="2" width="13" x="9" y="9"></rect>
+<path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+</svg>
+<span id="copy-text">Copiar</span>
+</button>
+</div>
+<!-- Linha 2: Horários em Pills discretas -->
+<div class="py-3 border-b border-[#382647]" data-purpose="horarios-row">
+<div class="flex items-center gap-1.5 mb-2">
+<svg class="w-3.5 h-3.5 text-pumpkin" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+<polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+<span class="text-[10px] tracking-wider uppercase font-semibold text-lavender-muted">Horário de Funcionamento</span>
+</div>
+<div class="flex flex-wrap gap-1.5">
+<div class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-[#1c1326] border border-[#3c294d] text-[11px] text-lavender-light">
+<span class="text-pumpkin font-semibold">Ter–Sex</span> 9h–17h
+          </div>
+<div class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-[#1c1326] border border-[#3c294d] text-[11px] text-lavender-light">
+<span class="text-pumpkin font-semibold">Sáb</span> 9h–17h
+          </div>
+<div class="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-[#1c1326]/60 border border-dashed border-[#3c294d] text-[11px] text-lavender-muted/80">
+            Dom &amp; Seg Fechado
+          </div>
+</div>
+</div>
+<!-- Linha 3: Contato Direto (WhatsApp & E-mail) -->
+<div class="py-3 border-b border-[#382647] flex flex-col gap-2" data-purpose="contatos-row">
+<a class="tap-scale flex items-center justify-between group" href="https://wa.me/5511947266216">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+<svg class="w-3.5 h-3.5 fill-current" viewbox="0 0 24 24">
+<path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"></path>
+</svg>
+</div>
+<div>
+<span class="text-[10px] uppercase font-semibold text-lavender-muted block">WhatsApp Oficial</span>
+<span class="text-xs font-semibold text-white group-hover:text-pumpkin transition">(11) 94726-6216</span>
+</div>
+</div>
+<span class="text-[11px] text-pumpkin font-medium flex items-center gap-0.5">
+            Abrir
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</span>
+</a>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-2.5 truncate">
+<div class="w-7 h-7 rounded-full bg-[#2a1e36] border border-[#3c294d] flex items-center justify-center text-lavender-muted">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<rect height="16" rx="2" width="20" x="2" y="4"></rect>
+<path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+</svg>
+</div>
+<div class="truncate">
+<span class="text-[10px] uppercase font-semibold text-lavender-muted block">E-mail</span>
+<span class="text-[11px] text-lavender-light truncate font-mono block">pompompetesteticaanimal@gmail.com</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Linha 4: Redes & Prova Social de Carinho -->
+<div class="pt-3 flex items-center justify-between" data-purpose="social-row">
+<a class="tap-scale flex items-center gap-2 text-lavender-light hover:text-pumpkin" href="https://instagram.com/pompompetesteticaanimal">
+<div class="w-6 h-6 rounded-md bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 flex items-center justify-center text-white">
+<svg class="w-3.5 h-3.5 fill-current" viewbox="0 0 24 24">
+<path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path>
+</svg>
+</div>
+<span class="text-xs font-semibold">@pompompetesteticaanimal</span>
+</a>
+<div class="flex items-center gap-1 text-[11px] text-pumpkin font-semibold">
+<span>★ 5.0</span>
+<span class="text-lavender-muted font-normal">(+400 pets felizes)</span>
+</div>
+</div>
+</section>
+<!-- END: InfoCompactCard -->
+<!-- BEGIN: QuickActionsRow -->
+<!-- Botões Auxiliares: Como Chegar (Maps) e Ligar -->
+<div class="grid grid-cols-2 gap-2.5 mb-6" data-purpose="botoes-rotas">
+<a class="tap-scale flex items-center justify-center gap-2 py-3 px-3 rounded-xl bg-[#2a1e36] border border-[#3c294d] text-white hover:border-pumpkin/50 text-xs font-medium" href="https://maps.google.com/?q=R.+dos+Flox,+954+Cajamar" rel="noopener noreferrer" target="_blank">
+<span class="text-base">🗺️</span>
+<span>Como Chegar</span>
+</a>
+<a class="tap-scale flex items-center justify-center gap-2 py-3 px-3 rounded-xl bg-[#2a1e36] border border-[#3c294d] text-white hover:border-pumpkin/50 text-xs font-medium" href="tel:11947266216">
+<span class="text-base">📞</span>
+<span>Ligar Agora</span>
+</a>
+</div>
+<!-- END: QuickActionsRow -->
+<!-- BEGIN: HeroCTASection -->
+<!-- Banner com Gradiente e CTA Heroico de Agendamento -->
+<section class="relative z-10 rounded-2xl p-5 border border-pumpkin/30 bg-gradient-to-b from-[#2a1738] via-[#23152d] to-[#1c1024] subtle-glow text-center" data-purpose="hero-cta-agendamento">
+<!-- Mini Ícone de Abóbora / Calendário Mágico -->
+<div class="w-11 h-11 mx-auto rounded-full bg-pumpkin/15 border border-pumpkin/30 flex items-center justify-center text-xl mb-3">
+        🎃
+      </div>
+<h2 class="text-xl font-serif font-bold text-white leading-snug">
+        Pronto para cuidar do seu pet neste Halloween?
+      </h2>
+<p class="text-xs text-lavender-muted mt-1.5 mb-4 max-w-[270px] mx-auto leading-relaxed">
+        Garantimos banho relaxante, tosa higiênica e muito carinho com temática especial.
+      </p>
+<!-- Botão Primário Alvo: WhatsApp 56px de altura -->
+<a class="tap-scale w-full h-14 bg-pumpkin hover:bg-pumpkin-hover text-[#17101f] font-bold text-sm tracking-wide rounded-xl flex items-center justify-center gap-2.5 shadow-lg shadow-pumpkin/20 border border-pumpkin transition" href="https://wa.me/5511947266216?text=Olá!%20Gostaria%20de%20agendar%20um%20horário%20para%20o%20especial%20de%20Halloween%20da%20PomPom%20Pet!" rel="noopener noreferrer" target="_blank">
+<svg class="w-5 h-5 fill-[#17101f]" viewbox="0 0 24 24">
+<path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"></path>
+</svg>
+<span>Agendar pelo WhatsApp</span>
+</a>
+<!-- Subtexto de Confiança e Escassez Delicada -->
+<div class="mt-3.5 flex items-center justify-center gap-1.5 text-[10px] text-lavender-muted">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+<span>Atendimento humanizado • Vagas limitadas para o especial</span>
+</div>
+</section>
+<!-- END: HeroCTASection -->
+<!-- BEGIN: FooterMinimal -->
+<footer class="mt-8 text-center text-[11px] text-lavender-muted/60">
+<p>PomPom Pet © 2024 · Cajamar - SP</p>
+</footer>
+<!-- END: FooterMinimal -->
+</main>
+<script data-purpose="clipboard-action">
+    function copyAddress() {
+      const addressText = "R. dos Flox, 954 – Sala 1, Portal dos Ipês, Cajamar - SP, CEP 07791-060";
+      navigator.clipboard.writeText(addressText).then(() => {
+        const copyBtn = document.getElementById('copy-address-btn');
+        const copyText = document.getElementById('copy-text');
+        
+        copyText.textContent = "Copiado!";
+        copyBtn.classList.add('border-emerald-500', 'text-emerald-400');
+
+        setTimeout(() => {
+          copyText.textContent = "Copiar";
+          copyBtn.classList.remove('border-emerald-500', 'text-emerald-400');
+        }, 2000);
+      }).catch(err => {
+        console.error("Erro ao copiar: ", err);
+      });
+    }
+  </script>
+</body></html>

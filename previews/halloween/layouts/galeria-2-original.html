@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galeria PomPom Pet - Stories & Cartões Deslizáveis</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            aubergine: '#17101f',
+            aubergineCard: '#24192e',
+            aubergineBorder: '#352543',
+            pumpkin: '#ffad66',
+            creme: '#fff3df',
+            lavender: '#cbb6e5'
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #17101f;
+      color: #fff3df;
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+</head>
+<body class="w-[390px] mx-auto min-h-screen bg-[#17101f] text-[#fff3df] relative overflow-x-hidden pb-8">
+
+  <!-- Cabeçalho de Navegação Rápida -->
+  <header class="px-5 pt-6 pb-2 flex items-center justify-between">
+    <div>
+      <span class="text-[11px] font-bold uppercase tracking-wider text-[#ffad66]">Momentos do Dia</span>
+      <h1 class="text-2xl font-serif font-bold text-[#fff3df]">Nosso Trabalho</h1>
+    </div>
+    <div class="flex items-center gap-1.5 text-xs text-[#cbb6e5] bg-[#24192e] px-3 py-1.5 rounded-full border border-[#352543]">
+      <svg class="w-3.5 h-3.5 text-[#ffad66]" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm1 11H9v-2h2v2zm0-4H9V5h2v4z"/>
+      </svg>
+      <span>Atualizado hoje</span>
+    </div>
+  </header>
+
+  <!-- Carrossel de Stories de Pets com Borda Gradiente -->
+  <section class="pt-3 pb-4">
+    <div class="flex items-center gap-3.5 px-5 overflow-x-auto no-scrollbar">
+      
+      <!-- Story 1: Thor (Pug) -->
+      <div class="flex flex-col items-center gap-1.5 shrink-0 cursor-pointer">
+        <div class="w-[66px] h-[66px] rounded-full p-[2.5px] bg-gradient-to-tr from-[#ffad66] via-[#cbb6e5] to-[#ffad66] shadow-md relative">
+          <div class="w-full h-full rounded-full overflow-hidden bg-[#24192e] border-2 border-[#17101f]">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeKz6gI-wQt8k4k08_XtSBW6My3recESgUDt7uK_EAQIJ9ByuAYrDjUQ_B0oKkIUf0B8ACfvU-TBz6h2ZKTQ2lfshKa0WFQPZTc9FSLAbU9MdqTXiTh8lVSoSoTQgG18k2P8VNQKcFY8TkTu-PuZFBwlcQDhzClaukusbsONMsKeQBkUtZ81PQHWtK_Tn9GGJ6kBkI_zjvFcq12CZ2dByd3aAOL7u1cNngpZDK975rTQ_4ObDDqtK-JoSf8VbLvebzqxSnqm5x-HE" alt="Thor" class="w-full h-full object-cover object-top" />
+          </div>
+          <span class="absolute -bottom-1 -right-1 bg-[#17101f] border border-[#ffad66] text-[#ffad66] rounded-full p-0.5 text-[10px]">
+            🧛
+          </span>
+        </div>
+        <span class="text-[11px] font-semibold text-[#fff3df]">Thor</span>
+      </div>
+
+      <!-- Story 2: Melzinha (Shih Tzu) -->
+      <div class="flex flex-col items-center gap-1.5 shrink-0 cursor-pointer">
+        <div class="w-[66px] h-[66px] rounded-full p-[2.5px] bg-gradient-to-tr from-[#ffad66] via-[#cbb6e5] to-[#ffad66] shadow-md relative">
+          <div class="w-full h-full rounded-full overflow-hidden bg-[#24192e] border-2 border-[#17101f]">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeKz6gI-wQt8k4k08_XtSBW6My3recESgUDt7uK_EAQIJ9ByuAYrDjUQ_B0oKkIUf0B8ACfvU-TBz6h2ZKTQ2lfshKa0WFQPZTc9FSLAbU9MdqTXiTh8lVSoSoTQgG18k2P8VNQKcFY8TkTu-PuZFBwlcQDhzClaukusbsONMsKeQBkUtZ81PQHWtK_Tn9GGJ6kBkI_zjvFcq12CZ2dByd3aAOL7u1cNngpZDK975rTQ_4ObDDqtK-JoSf8VbLvebzqxSnqm5x-HE" alt="Melzinha" class="w-full h-full object-cover object-center" />
+          </div>
+          <span class="absolute -bottom-1 -right-1 bg-[#17101f] border border-[#ffad66] text-[#ffad66] rounded-full p-0.5 text-[10px]">
+            🎃
+          </span>
+        </div>
+        <span class="text-[11px] font-semibold text-[#fff3df]">Melzinha</span>
+      </div>
+
+      <!-- Story 3: Bidu (Yorkshire) -->
+      <div class="flex flex-col items-center gap-1.5 shrink-0 cursor-pointer">
+        <div class="w-[66px] h-[66px] rounded-full p-[2.5px] bg-gradient-to-tr from-[#ffad66] to-[#cbb6e5] shadow-md relative">
+          <div class="w-full h-full rounded-full overflow-hidden bg-[#24192e] border-2 border-[#17101f]">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeKz6gI-wQt8k4k08_XtSBW6My3recESgUDt7uK_EAQIJ9ByuAYrDjUQ_B0oKkIUf0B8ACfvU-TBz6h2ZKTQ2lfshKa0WFQPZTc9FSLAbU9MdqTXiTh8lVSoSoTQgG18k2P8VNQKcFY8TkTu-PuZFBwlcQDhzClaukusbsONMsKeQBkUtZ81PQHWtK_Tn9GGJ6kBkI_zjvFcq12CZ2dByd3aAOL7u1cNngpZDK975rTQ_4ObDDqtK-JoSf8VbLvebzqxSnqm5x-HE" alt="Bidu" class="w-full h-full object-cover object-bottom" />
+          </div>
+          <span class="absolute -bottom-1 -right-1 bg-[#17101f] border border-[#cbb6e5] text-[#cbb6e5] rounded-full p-0.5 text-[10px]">
+            ✨
+          </span>
+        </div>
+        <span class="text-[11px] font-semibold text-[#fff3df]">Bidu</span>
+      </div>
+
+      <!-- Story 4: Deisiane & Pomerânia -->
+      <div class="flex flex-col items-center gap-1.5 shrink-0 cursor-pointer">
+        <div class="w-[66px] h-[66px] rounded-full p-[2px] bg-[#352543] relative">
+          <div class="w-full h-full rounded-full overflow-hidden bg-[#24192e] border-2 border-[#17101f]">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfSbuUoMikTIat1brZoL_xrxeYDhy_7RIZXBpfCjkVrJuB2knr-jEaB_Fo5KyMMIaMoRiCRVhqL4eVGp32miz47wx09KicHZ_1yT2T7-mq_zPW1OX8uNiK0OPQQe-7P-VkpQyjouBuJHMlOIyDpK2kPwygFoGpcRXnOi5lXaRI5pWR0JuICNhT8Qd7ToVATgNqwBbn19Vgyp9NBIRkrGVAxmle1CyBu6iq5_QMTaUjTZTQtowr_2Uv4MQ6MSKYKb16s0QQp-_MBB8" alt="Bastidores" class="w-full h-full object-cover object-top" />
+          </div>
+        </div>
+        <span class="text-[11px] font-medium text-[#cbb6e5]">Equipe</span>
+      </div>
+
+      <!-- Story 5: Ver Mais -->
+      <div class="flex flex-col items-center gap-1.5 shrink-0 cursor-pointer">
+        <div class="w-[66px] h-[66px] rounded-full border border-dashed border-[#cbb6e5]/40 flex items-center justify-center text-[#cbb6e5]">
+          <svg class="w-5 h-5 text-[#ffad66]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+          </svg>
+        </div>
+        <span class="text-[11px] font-medium text-[#cbb6e5]/70">+12 pets</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Cartões Deslizáveis com Efeito Carousel Peek -->
+  <section class="mt-2">
+    <div class="px-5 flex items-center justify-between mb-3">
+      <div class="flex items-center gap-2">
+        <h2 class="text-base font-serif font-bold text-[#fff3df]">Ensaio Fotográfico</h2>
+        <span class="bg-[#ffad66]/20 text-[#ffad66] text-[10px] font-bold px-2 py-0.5 rounded-full">Edição Outubro</span>
+      </div>
+      <div class="flex items-center gap-1 text-xs text-[#cbb6e5]">
+        <span>Deslize</span>
+        <svg class="w-3.5 h-3.5 text-[#ffad66]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Container Deslizável com Cards 280px -->
+    <div class="flex gap-4 px-5 overflow-x-auto no-scrollbar pb-3">
+
+      <!-- Card Deslizável 1: Pug com Capa Vampiro -->
+      <div class="w-[280px] shrink-0 bg-[#24192e] rounded-3xl overflow-hidden border border-[#352543] shadow-xl flex flex-col">
+        <div class="relative h-[290px] bg-black/30">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeKz6gI-wQt8k4k08_XtSBW6My3recESgUDt7uK_EAQIJ9ByuAYrDjUQ_B0oKkIUf0B8ACfvU-TBz6h2ZKTQ2lfshKa0WFQPZTc9FSLAbU9MdqTXiTh8lVSoSoTQgG18k2P8VNQKcFY8TkTu-PuZFBwlcQDhzClaukusbsONMsKeQBkUtZ81PQHWtK_Tn9GGJ6kBkI_zjvFcq12CZ2dByd3aAOL7u1cNngpZDK975rTQ_4ObDDqtK-JoSf8VbLvebzqxSnqm5x-HE" alt="Thor Conde Pet" class="w-full h-full object-cover object-top" />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#24192e] via-transparent to-black/20"></div>
+          
+          <div class="absolute top-3 left-3 bg-[#17101f]/80 backdrop-blur-md px-3 py-1 rounded-full border border-[#ffad66]/40 text-[#ffad66] text-[11px] font-semibold">
+            🧛 Fantasia Exclusiva
+          </div>
+          <div class="absolute top-3 right-3 w-8 h-8 rounded-full bg-[#17101f]/70 text-[#fff3df] flex items-center justify-center border border-[#352543]">
+            <svg class="w-4 h-4 text-[#ffad66]" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="p-4 pt-1 flex-1 flex flex-col justify-between">
+          <div>
+            <h3 class="font-serif font-bold text-lg text-[#fff3df]">Thor, o Pug Drácula</h3>
+            <p class="text-xs text-[#cbb6e5] mt-1 line-clamp-2">
+              Sessão fotográfica temática após banho completo com xampu hipoalergênico e tosa higiênica.
+            </p>
+          </div>
+          <div class="pt-3 mt-3 border-t border-[#352543] flex items-center justify-between">
+            <span class="text-[11px] text-[#ffad66] font-medium">Cajamar · Sala 1</span>
+            <button class="px-3.5 py-2 bg-[#ffad66] text-[#17101f] text-xs font-bold rounded-xl min-h-[44px] flex items-center gap-1.5 shadow">
+              <span>Quero igual</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card Deslizável 2: Shih Tzu Drácula com Abóboras -->
+      <div class="w-[280px] shrink-0 bg-[#24192e] rounded-3xl overflow-hidden border border-[#352543] shadow-xl flex flex-col">
+        <div class="relative h-[290px] bg-black/30">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeKz6gI-wQt8k4k08_XtSBW6My3recESgUDt7uK_EAQIJ9ByuAYrDjUQ_B0oKkIUf0B8ACfvU-TBz6h2ZKTQ2lfshKa0WFQPZTc9FSLAbU9MdqTXiTh8lVSoSoTQgG18k2P8VNQKcFY8TkTu-PuZFBwlcQDhzClaukusbsONMsKeQBkUtZ81PQHWtK_Tn9GGJ6kBkI_zjvFcq12CZ2dByd3aAOL7u1cNngpZDK975rTQ_4ObDDqtK-JoSf8VbLvebzqxSnqm5x-HE" alt="Melzinha Shih Tzu" class="w-full h-full object-cover object-center" />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#24192e] via-transparent to-black/20"></div>
+          
+          <div class="absolute top-3 left-3 bg-[#17101f]/80 backdrop-blur-md px-3 py-1 rounded-full border border-[#ffad66]/40 text-[#ffad66] text-[11px] font-semibold">
+            🎃 Cenário Noturno
+          </div>
+          <div class="absolute top-3 right-3 w-8 h-8 rounded-full bg-[#17101f]/70 text-[#fff3df] flex items-center justify-center border border-[#352543]">
+            <svg class="w-4 h-4 text-[#ffad66]" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="p-4 pt-1 flex-1 flex flex-col justify-between">
+          <div>
+            <h3 class="font-serif font-bold text-lg text-[#fff3df]">Melzinha no Castelo</h3>
+            <p class="text-xs text-[#cbb6e5] mt-1 line-clamp-2">
+              Pelagem sedosa e desembaraçada, laço gótico decorativo e sessão na lua cheia.
+            </p>
+          </div>
+          <div class="pt-3 mt-3 border-t border-[#352543] flex items-center justify-between">
+            <span class="text-[11px] text-[#ffad66] font-medium">Hidratação Especial</span>
+            <button class="px-3.5 py-2 bg-[#ffad66] text-[#17101f] text-xs font-bold rounded-xl min-h-[44px] flex items-center gap-1.5 shadow">
+              <span>Quero igual</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Indicador de Paginação Discreta -->
+  <div class="flex items-center justify-center gap-1.5 mt-2">
+    <div class="w-6 h-1.5 rounded-full bg-[#ffad66]"></div>
+    <div class="w-1.5 h-1.5 rounded-full bg-[#352543]"></div>
+    <div class="w-1.5 h-1.5 rounded-full bg-[#352543]"></div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+body.halloween-theme{--night:#941e31;--surface:#ad2a3d;--surface-raised:#bb3948;--line:#d4a368;--cream:#fff6e5;--muted:#f2d6ca;--pumpkin:#efcd84;--lilac:#f0d49e;background:var(--night)!important;color:var(--cream)!important}
+html body.halloween-theme :is(.hero-mobile,#hero-bg){background:radial-gradient(ellipse at 60% 35%,#c83443,#9c2033 65%,#7d192d)!important}
+html body.halloween-theme :is(section,.halloween-showcase-slide,.service-pill,.service-card,.review-card,.testimonial-card,.menu-panel,.compact-menu-heading,#lojinha-sheet,#lojinha-header,#lojinha-footer,.product-detail,.product-detail-bar,.product-detail-tools){background:var(--surface)!important;border-color:var(--line)!important;color:var(--cream)!important}
+html body.halloween-theme :is(.sticky-header,#navbar.scrolled){background:var(--night)!important}
+html body.halloween-theme .section-tag{background:#25583e!important;border-color:#cda569!important;color:#fff5df!important}
+html body.halloween-theme .service-card::after{background:url('/previews/natal/ornamento.svg') top right/contain no-repeat!important}
+html body.halloween-theme :is(.bg-rose-50,.bg-rose-100,.bg-rose-600,.bg-rose-700){background:var(--surface-raised)!important}
+body[data-christmas-palette="claro"]{--night:#a62135;--surface:#b42d40;--surface-raised:#bf4250}
+html body[data-christmas-palette="claro"] :is(#servicos,#sobre,#espaco,#galeria,#vitrine,#avaliacoes,#contato){--cream:#652333;--muted:#805453;--pumpkin:#ae2337;--surface:#fff9ee;background:#fff5e5!important;color:#652333!important}
+body[data-christmas-palette="pinheiro"]{--night:#9d2433;--surface:#9f2939;--surface-raised:#c6404d;--pumpkin:#f3d59a}
+html body[data-christmas-palette="pinheiro"] :is(.section-tag,.marquee-wrap){background:#24563e!important}
+.christmas-wrapped-photo{object-fit:cover!important}
+.christmas-photo-band{position:absolute;display:block;z-index:7;pointer-events:none;text-align:center;box-sizing:border-box;padding:5px 2px;color:#8b1e2e;background:linear-gradient(#fff1ca,#e8c17b);border-block:1px solid #dbb66c;font-weight:850;font-family:system-ui;line-height:1.2;box-shadow:0 3px 7px #3d102844;transform:rotate(-6deg);white-space:nowrap}
+.christmas-ball{position:absolute!important;object-fit:contain;opacity:1!important;filter:drop-shadow(0 0 8px #f3cc69) drop-shadow(0 0 16px #ffd97a55);animation:christmas-glow 2.6s ease-in-out infinite alternate}
+.christmas-ball-0{width:100px;top:70px;left:-12px}.christmas-ball-1{width:100px;top:65px;right:-10px}.christmas-ball-2{width:50px;top:62%;left:12px;animation-delay:-1s}.christmas-ball-3{width:55px;top:72%;right:12px;animation-delay:-1.7s}
+@keyframes christmas-glow{from{filter:drop-shadow(0 0 5px #ebbe5c) drop-shadow(0 0 12px #ffd97a33)}to{filter:drop-shadow(0 0 12px #ffe195) drop-shadow(0 0 22px #ffd97aaa)}}
+.reset-opening{position:fixed;inset:0;z-index:2147483640;display:grid;place-content:center;justify-items:center;text-align:center;background:radial-gradient(circle,#c32c41,#82192e);color:#fff5e3;padding:25px;font-family:system-ui}.reset-opening img{width:125px;height:125px;border-radius:50%;margin:24px}.reset-opening h1{font:800 42px 'Baloo 2',system-ui;margin:10px}.reset-opening button{background:#f1ce84;color:#7a1d2c;border:0;min-height:48px;padding:12px 25px;border-radius:30px;font-weight:800;margin-top:20px}.reset-opening-balls{font-size:48px;color:#f4d598;letter-spacing:15px;animation:christmas-glow 2s ease-in-out infinite alternate}
+@media(prefers-reduced-motion:reduce){.christmas-ball,.reset-opening-balls{animation:none}}
+img[data-christmas-mascot="true"]{object-fit:contain!important;mask-image:none!important;-webkit-mask-image:none!important;background:none!important;border:0!important;box-shadow:none!important}
+.halloween-mobile-art:has(img[data-christmas-mascot="true"]){margin:8px auto 8px}

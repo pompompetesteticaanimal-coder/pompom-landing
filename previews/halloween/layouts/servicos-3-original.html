@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=390px, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>PomPom Pet - Serviços Encantados</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@1,500;1,600&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'deep-aubergine': '#17101f',
+            'night-card': '#24192e',
+            'card-border': '#392548',
+            'cream-soft': '#fff3df',
+            'pumpkin-orange': '#ffad66',
+            'pumpkin-hover': '#ff9b47',
+            'lavender-magic': '#c084fc',
+            'lavender-muted': '#3e324c',
+            'lavender-subtle': '#8b709e'
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            serif: ['"Playfair Display"', 'serif'],
+            display: ['"Cinzel"', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: Custom CSS Styling -->
+<style data-purpose="base-styling">
+    body {
+      background-color: #17101f;
+      color: #fff3df;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+      width: 100%;
+      max-width: 390px;
+      margin-left: auto;
+      margin-right: auto;
+      overflow-x: hidden;
+    }
+    
+    /* Scroll horizontal suave sem barras nativas feias */
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style data-purpose="halloween-decorations">
+    /* Decorações temáticas delicadas */
+    .spiderweb-bg {
+      background-image: radial-gradient(circle at 100% 0%, rgba(192, 132, 252, 0.08) 0%, transparent 60%),
+                        radial-gradient(circle at 0% 50%, rgba(255, 173, 102, 0.05) 0%, transparent 50%);
+    }
+
+    .card-glow {
+      box-shadow: 0 10px 25px -5px rgba(23, 16, 31, 0.7), 0 0 18px -4px rgba(255, 173, 102, 0.18);
+    }
+  </style>
+<!-- END: Custom CSS Styling -->
+</head>
+<body class="spiderweb-bg min-h-screen relative pb-24 text-cream-soft">
+<!-- BEGIN: TopHeader -->
+<header class="pt-5 px-5 pb-3 flex items-center justify-between border-b border-[#2d1f3b] relative z-20" data-purpose="header-navigation">
+<!-- Logotipo PomPom Pet com elemento mágico -->
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-gradient-to-tr from-pumpkin-orange to-lavender-magic flex items-center justify-center shadow-md">
+<span class="text-sm font-black text-[#17101f]">🐾</span>
+</div>
+<div>
+<span class="font-bold text-base tracking-tight text-cream-soft flex items-center gap-1">
+          PomPom <span class="text-pumpkin-orange">Pet</span>
+</span>
+</div>
+</div>
+<!-- Badge Outubro Encantado -->
+<div class="px-2.5 py-1 rounded-full bg-[#291a38] border border-lavender-magic/30 flex items-center gap-1.5 shadow-sm">
+<span class="text-xs">✨</span>
+<span class="text-[11px] font-medium text-pumpkin-orange tracking-wide">Outubro Encantado</span>
+</div>
+</header>
+<!-- END: TopHeader -->
+<!-- BEGIN: HeroIntroduction -->
+<section class="px-5 pt-6 pb-4 relative z-10" data-purpose="section-header">
+<!-- Badge Nossos Serviços -->
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#2c1d3c] border border-lavender-magic/20 mb-3 shadow-inner">
+<span class="text-xs text-pumpkin-orange">✂️</span>
+<span class="text-xs font-semibold tracking-wider uppercase text-pumpkin-orange">O que fazemos</span>
+</div>
+<!-- Título Principal com estilo sofisticado -->
+<h1 class="text-[27px] leading-tight font-serif text-cream-soft">
+      Um toque de magia.<br/>
+<span class="italic text-pumpkin-orange font-normal">O cuidado de sempre.</span>
+</h1>
+<!-- Subtítulo e instrução de gesto -->
+<p class="mt-2.5 text-xs text-[#d6c4e4] leading-relaxed flex items-center gap-1.5">
+<span>Cuidado completo com produtos premium.</span>
+<span class="text-lavender-magic font-medium inline-flex items-center gap-0.5">
+        Deslize <span class="text-pumpkin-orange">→</span>
+</span>
+</p>
+</section>
+<!-- END: HeroIntroduction -->
+<!-- BEGIN: HorizontalServicesCarousel -->
+<section class="mt-2 relative" data-purpose="services-carousel">
+<!-- Container de Rolagem Horizontal com Peek Effect -->
+<div class="flex overflow-x-auto gap-4 px-5 snap-x snap-mandatory hide-scrollbar pb-3 pt-1">
+<!-- Card 1: Banho Completo (Card Destaque Ativo) -->
+<article class="flex-none w-[295px] snap-center rounded-2xl bg-gradient-to-b from-[#2a1c36] to-[#1f1528] border border-pumpkin-orange/40 p-5 card-glow relative flex flex-col justify-between" data-purpose="active-service-card">
+<!-- Detalhe decorativo sutil de teia/brilho no canto -->
+<div class="absolute top-2 right-2 text-lavender-magic/20 text-xl pointer-events-none select-none">✦</div>
+<div>
+<!-- Tag de Destaque Temático -->
+<div class="flex items-center justify-between mb-3.5">
+<span class="inline-flex items-center gap-1 text-[11px] font-semibold text-pumpkin-orange bg-pumpkin-orange/15 px-2.5 py-0.5 rounded-full border border-pumpkin-orange/30">
+<span>🎃</span> O mais querido
+            </span>
+<span class="text-xs text-lavender-magic font-mono">01/04</span>
+</div>
+<!-- Ícone e Título Principal -->
+<div class="flex items-center gap-3 mb-2.5">
+<div class="w-12 h-12 rounded-xl bg-[#362247] border border-lavender-magic/30 flex items-center justify-center text-2xl shadow-inner">
+              🛁
+            </div>
+<div>
+<h2 class="text-lg font-bold text-cream-soft leading-snug">Banho Completo</h2>
+<p class="text-[11px] text-lavender-magic">Hipoalergênico &amp; Relaxante</p>
+</div>
+</div>
+<!-- Descrição Detalhada -->
+<p class="text-xs text-[#cfbfdc] leading-relaxed mb-4">
+            Shampoo premium hipoalergênico, secagem carinhosa com toalhas aquecidas e perfume delicado de longa duração.
+          </p>
+<!-- Pílulas de Atributos/Benefícios -->
+<div class="flex flex-wrap gap-1.5 mb-5">
+<span class="text-[10px] font-medium bg-[#372449]/70 text-[#f5e6ff] px-2.5 py-1 rounded-md border border-white/5">
+              Higiene profunda
+            </span>
+<span class="text-[10px] font-medium bg-[#372449]/70 text-[#f5e6ff] px-2.5 py-1 rounded-md border border-white/5">
+              Secagem carinhosa
+            </span>
+<span class="text-[10px] font-medium bg-[#372449]/70 text-[#f5e6ff] px-2.5 py-1 rounded-md border border-white/5">
+              Perfume duradouro
+            </span>
+</div>
+</div>
+<!-- Botão CTA Dedicado (Touch Target > 44px) -->
+<button class="w-full h-11 bg-gradient-to-r from-pumpkin-orange to-pumpkin-hover text-[#17101f] font-bold text-xs uppercase tracking-wider rounded-xl shadow-lg flex items-center justify-center gap-2 active:scale-[0.98] transition-transform">
+<span>Agendar este serviço</span>
+<span>✨</span>
+</button>
+</article>
+<!-- Card 2: Tosa Especializada (Card Peek Parcial à Direita) -->
+<article class="flex-none w-[285px] snap-center rounded-2xl bg-gradient-to-b from-[#24192e] to-[#1c1224] border border-card-border p-5 relative flex flex-col justify-between opacity-90" data-purpose="secondary-service-card">
+<div>
+<!-- Tag do card 2 -->
+<div class="flex items-center justify-between mb-3.5">
+<span class="inline-flex items-center gap-1 text-[11px] font-medium text-lavender-magic bg-lavender-magic/10 px-2.5 py-0.5 rounded-full border border-lavender-magic/20">
+              Tesoura &amp; Máquina
+            </span>
+<span class="text-xs text-lavender-muted font-mono">02/04</span>
+</div>
+<!-- Ícone e Título -->
+<div class="flex items-center gap-3 mb-2.5">
+<div class="w-12 h-12 rounded-xl bg-[#2e1d3e] border border-lavender-magic/20 flex items-center justify-center text-2xl">
+              ✂️
+            </div>
+<div>
+<h2 class="text-lg font-bold text-cream-soft leading-snug">Tosa Especializada</h2>
+<p class="text-[11px] text-lavender-magic">Higienização e estilo</p>
+</div>
+</div>
+<!-- Descrição -->
+<p class="text-xs text-[#cfbfdc] leading-relaxed mb-4">
+            Higiênica ou completa com acabamento artístico respeitando o padrão e conforto térmico de cada raça.
+          </p>
+<!-- Pílulas -->
+<div class="flex flex-wrap gap-1.5 mb-5">
+<span class="text-[10px] font-medium bg-[#312042] text-[#f5e6ff] px-2.5 py-1 rounded-md">
+              Todas as raças
+            </span>
+<span class="text-[10px] font-medium bg-[#312042] text-[#f5e6ff] px-2.5 py-1 rounded-md">
+              Corte na tesoura
+            </span>
+</div>
+</div>
+<!-- Botão CTA Card 2 -->
+<button class="w-full h-11 bg-[#37244b] hover:bg-[#442c5e] text-cream-soft font-semibold text-xs rounded-xl flex items-center justify-center gap-2 border border-lavender-magic/30">
+<span>Ver detalhes da tosa</span>
+</button>
+</article>
+<!-- Card 3: Hidratação Mágica -->
+<article class="flex-none w-[285px] snap-center rounded-2xl bg-gradient-to-b from-[#24192e] to-[#1c1224] border border-card-border p-5 relative flex flex-col justify-between opacity-85">
+<div>
+<div class="flex items-center justify-between mb-3.5">
+<span class="inline-flex items-center gap-1 text-[11px] font-medium text-pumpkin-orange bg-pumpkin-orange/10 px-2.5 py-0.5 rounded-full border border-pumpkin-orange/20">
+              Spa Pet
+            </span>
+<span class="text-xs text-lavender-muted font-mono">03/04</span>
+</div>
+<div class="flex items-center gap-3 mb-2.5">
+<div class="w-12 h-12 rounded-xl bg-[#2e1d3e] border border-lavender-magic/20 flex items-center justify-center text-2xl">
+              ✨
+            </div>
+<div>
+<h2 class="text-lg font-bold text-cream-soft leading-snug">Hidratação Mágica</h2>
+<p class="text-[11px] text-lavender-magic">Nutrição profunda</p>
+</div>
+</div>
+<p class="text-xs text-[#cfbfdc] leading-relaxed mb-4">
+            Máscaras ricas em óleos nutritivos para desembaraço imediato, brilho sedoso e toque macio ao pelo.
+          </p>
+<div class="flex flex-wrap gap-1.5 mb-5">
+<span class="text-[10px] font-medium bg-[#312042] text-[#f5e6ff] px-2.5 py-1 rounded-md">
+              Brilho espelhado
+            </span>
+<span class="text-[10px] font-medium bg-[#312042] text-[#f5e6ff] px-2.5 py-1 rounded-md">
+              Pelagem macia
+            </span>
+</div>
+</div>
+<button class="w-full h-11 bg-[#37244b] text-cream-soft font-semibold text-xs rounded-xl flex items-center justify-center gap-2 border border-lavender-magic/30">
+<span>Conhecer tratamento</span>
+</button>
+</article>
+</div>
+<!-- Controles de Navegação e Paginação do Carrossel -->
+<div class="px-5 mt-2 flex items-center justify-between" data-purpose="carousel-pagination">
+<!-- Indicadores de Pontos (Dots) -->
+<div class="flex items-center gap-1.5">
+<!-- Ponto ativo (pill alongado abóbora) -->
+<div class="w-6 h-2 rounded-full bg-pumpkin-orange shadow-sm"></div>
+<!-- Outros pontos -->
+<div class="w-2 h-2 rounded-full bg-lavender-muted"></div>
+<div class="w-2 h-2 rounded-full bg-lavender-muted"></div>
+<div class="w-2 h-2 rounded-full bg-lavender-muted"></div>
+</div>
+<!-- Setinhas Sutis de Navegação Chevrons -->
+<div class="flex items-center gap-2">
+<button aria-label="Anterior" class="w-8 h-8 rounded-full bg-[#271a33] border border-lavender-magic/20 text-[#a895b8] flex items-center justify-center text-xs opacity-60">
+          ‹
+        </button>
+<button aria-label="Próximo" class="w-8 h-8 rounded-full bg-[#271a33] border border-lavender-magic/30 text-pumpkin-orange flex items-center justify-center text-xs active:bg-[#342345]">
+          ›
+        </button>
+</div>
+</div>
+</section>
+<!-- END: HorizontalServicesCarousel -->
+<!-- BEGIN: QuickAccessServicesList -->
+<section class="mt-7 px-5" data-purpose="quick-access-list">
+<!-- Cabeçalho da Lista Secundária -->
+<div class="flex items-center justify-between mb-3">
+<h3 class="text-xs font-semibold uppercase tracking-wider text-[#d0badf] flex items-center gap-1.5">
+<span>⚡</span> Acesso Rápido a Serviços
+      </h3>
+<span class="text-[11px] text-lavender-magic">Ver todos</span>
+</div>
+<!-- Lista Compacta de Navegação Instantânea -->
+<div class="space-y-2.5">
+<!-- Item: Tosa -->
+<div class="w-full bg-[#24192e]/90 hover:bg-[#2c1e38] transition-colors border border-card-border rounded-xl p-3 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-[#342247] flex items-center justify-center text-base">
+            ✂️
+          </div>
+<div>
+<h4 class="text-xs font-bold text-cream-soft">Tosa Higiênica ou Completa</h4>
+<p class="text-[11px] text-[#b3a1c5]">Todas as raças e portes</p>
+</div>
+</div>
+<span class="text-pumpkin-orange text-xs">→</span>
+</div>
+<!-- Item: Hidratação -->
+<div class="w-full bg-[#24192e]/90 hover:bg-[#2c1e38] transition-colors border border-card-border rounded-xl p-3 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-[#342247] flex items-center justify-center text-base">
+            ✨
+          </div>
+<div>
+<h4 class="text-xs font-bold text-cream-soft">Hidratação &amp; Spa</h4>
+<p class="text-[11px] text-[#b3a1c5]">Pelo macio, brilhoso e saudável</p>
+</div>
+</div>
+<span class="text-pumpkin-orange text-xs">→</span>
+</div>
+<!-- Item: Lojinha Pet Encantada -->
+<div class="w-full bg-[#24192e]/90 hover:bg-[#2c1e38] transition-colors border border-card-border rounded-xl p-3 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-[#342247] flex items-center justify-center text-base">
+            🛍️
+          </div>
+<div>
+<h4 class="text-xs font-bold text-cream-soft">Lojinha PomPom</h4>
+<p class="text-[11px] text-[#b3a1c5]">Acessórios, petiscos e mimos</p>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<span class="text-[11px] font-medium text-pumpkin-orange">Explorar</span>
+<span class="text-pumpkin-orange text-xs">→</span>
+</div>
+</div>
+</div>
+</section>
+<!-- END: QuickAccessServicesList -->
+<!-- BEGIN: FloatingWhatsAppButton -->
+<!-- Botão Flutuante de WhatsApp (Touch target confortável 52px) -->
+<aside class="fixed bottom-5 right-5 z-50" data-purpose="whatsapp-float">
+<a aria-label="Falar no WhatsApp" class="w-[52px] h-[52px] rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-xl hover:scale-105 active:scale-95 transition-transform border-2 border-[#17101f]" href="#whatsapp">
+<svg class="w-7 h-7 fill-current" viewbox="0 0 24 24">
+<path d="M12.031 2c-5.518 0-9.998 4.479-9.998 9.999 0 1.761.458 3.479 1.328 4.991L2 22l5.163-1.354A9.957 9.957 0 0012.031 22c5.519 0 9.998-4.48 9.998-10S17.55 2 12.031 2zm0 18.257c-1.543 0-3.048-.415-4.364-1.2l-.313-.186-3.243.85.865-3.161-.205-.326a8.217 8.217 0 01-1.258-4.435c0-4.557 3.708-8.265 8.265-8.265 4.556 0 8.264 3.708 8.264 8.265 0 4.558-3.708 8.257-8.264 8.257zm4.53-6.195c-.248-.124-1.468-.724-1.696-.807-.228-.083-.394-.124-.56.124-.166.248-.642.807-.787.973-.145.166-.29.186-.539.062a6.794 6.794 0 01-1.996-1.232 7.502 7.502 0 01-1.38-1.722c-.145-.248-.016-.382.108-.506.111-.111.248-.29.373-.435.124-.145.166-.248.248-.414.083-.166.042-.311-.02-.435-.063-.124-.56-1.349-.768-1.849-.202-.487-.407-.421-.56-.429l-.477-.008c-.166 0-.435.062-.663.311-.228.248-.871.851-.871 2.074 0 1.223.892 2.405 1.016 2.571.124.166 1.755 2.68 4.252 3.758.594.257 1.058.41 1.42.525.597.19 1.141.163 1.57.099.479-.072 1.468-.6 1.675-1.18.207-.58.207-1.077.145-1.18-.062-.104-.228-.166-.477-.29z"></path>
+</svg>
+</a>
+</aside>
+<!-- END: FloatingWhatsAppButton -->
+</body></html>

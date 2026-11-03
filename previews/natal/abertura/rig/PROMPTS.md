@@ -1,0 +1,15 @@
+# Artes do rig de Natal
+
+Geradas com a ferramenta de imagens integrada, usando `../artes/papai-noel-treno.png` como referência visual. Sem fotografias de terceiros. PNGs originais preservados; versões WebP usadas pelo navegador. O atlas tem oito peças, usadas duas vezes em esqueletos independentes.
+
+## treno-santa-rig
+
+Create an animation CUTOUT ASSET matching the supplied reference art: ONLY Santa seated in his ornate RED and GOLD sleigh, with the sack and wrapped gifts behind him. REMOVE ALL reindeer and ALL reins, leaving true transparent alpha in their former area. Preserve the reference's beautiful friendly Santa, red velvet coat, white beard and fur trim, black boots, gold carved runners, glowing lantern and red/gold gift details. Full sleigh and every runner inside bounds. Side view pointing RIGHT, as in reference. One isolated entire Santa-and-sleigh asset on transparent background, generous 10% padding, no ground, no sky, no text. Landscape composition. Professional richly detailed soft 3D storybook painted finish, not a sketch or simple geometric model.
+
+## rena-rig-atlas
+
+Create a PRODUCTION CHARACTER RIG SPRITE ATLAS matching the REINDEER in the reference. TRUE transparent background. EXACTLY 8 SEPARATED CUTOUT PARTS in an EXACT 4-column by 2-row grid of equal square cells, total canvas landscape 2:1 (ideally 2048x1024). No grid lines, no labels, no text. Each part centered in its own cell with ample 12% transparent padding, no piece crosses a cell. All pieces same warm detailed 3D storybook painted rendering and caramel fur with ivory highlights, dark brown hooves, red harness with gold bells. SIDE VIEW pointing RIGHT. Cell order left to right: TOP ROW cell1 = ONLY reindeer torso/body with harness, NO head, NO legs, NO tail; cell2 = complete head AND neck AND full antlers, neck bottom cut rounded at attachment to body, NO torso; cell3 = one FRONT UPPER LEG segment, straight vertically downward, rounded shoulder joint at top and knee at bottom, fur; cell4 = one FRONT LOWER LEG with dark hoof at bottom, knee joint at top, vertically downward. BOTTOM ROW cell1 = one REAR UPPER THIGH segment, vertically downward, rounded hip at top and knee at bottom, fur; cell2 = one REAR LOWER LEG with dark hoof, vertical with knee at top; cell3 = one long RED scarf streamer/ribbon with gold edge, isolated, blowing horizontally left; cell4 = reindeer's small fluffy TAIL alone, pointing left, golden brown with cream tuft. No complete animal assembled anywhere. This is an asset sheet for skeletal animation: DO NOT draw extra legs on torso or join the separate pieces together. Texture the joint overlap ends with matching fur so pieces can rotate and overlap seamlessly.
+
+## Refinamento do atlas
+
+Uma edição posterior pediu transparência limpa e preservação das oito peças, suas posições e o estilo. Resultado em `rena-atlas-limpo.png`. Como o resultado ainda continha névoa de baixo alfa, os materiais do Blender e o filtro SVG aplicam remapeamento de alfa (10 × alfa − 8,8); os originais permanecem intactos. `rena-atlas.webp` deriva desse PNG; `treno-santa.webp` deriva de `treno-santa-rig.png`.

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=390, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>PomPom Pet - Capa Imersiva Halloween</title>
+<!-- Tailwind CSS CDN with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            aubergine: {
+              950: '#110b17',
+              900: '#17101f',
+              800: '#24192e',
+              700: '#342343',
+            },
+            pumpkin: {
+              400: '#ffad66',
+              500: '#f99846',
+              600: '#e5802a',
+            },
+            creme: {
+              100: '#fffbf4',
+              200: '#fff3df',
+              300: '#f5e4c6',
+            },
+            lavender: {
+              200: '#eedeff',
+              300: '#d7c1f8',
+              400: '#ba9ceb',
+            }
+          },
+          fontFamily: {
+            serif: ['Playfair Display', 'Georgia', 'serif'],
+            sans: ['Plus Jakarta Sans', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+            handwriting: ['Caveat', 'cursive']
+          }
+        }
+      }
+    }
+  </script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&amp;family=Playfair+Display:ital,wght@0,600;0,700;1,700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Custom styles for layout & micro-details -->
+<style data-purpose="base-styling">
+    body {
+      background-color: #17101f;
+      color: #fff3df;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Subtle shimmer and glow decorations */
+    .glow-overlay {
+      background: radial-gradient(circle at 50% 35%, rgba(255, 173, 102, 0.15), transparent 70%);
+    }
+
+    .glass-header {
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      background: rgba(23, 16, 31, 0.55);
+      border-bottom: 1px solid rgba(215, 193, 248, 0.1);
+    }
+
+    .card-glass {
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background: linear-gradient(180deg, rgba(36, 25, 46, 0.94) 0%, rgba(23, 16, 31, 0.98) 100%);
+      box-shadow: 0 -12px 36px -4px rgba(10, 6, 15, 0.7), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+    }
+  </style>
+</head>
+<body class="flex justify-center items-start min-h-screen bg-aubergine-950">
+<!-- BEGIN: MobileContainer -->
+<!-- Main canvas set to standard 390px mobile viewport -->
+<div class="relative w-[390px] min-h-[844px] bg-aubergine-900 overflow-hidden flex flex-col justify-between shadow-2xl">
+<!-- BEGIN: ImmersiveHeroBackground -->
+<!-- The hero illustration occupies 60-65% height with soft gradients -->
+<div class="absolute inset-0 h-[64%] w-full z-0 overflow-hidden" data-purpose="hero-artwork-container">
+<img alt="Aquarela fofa de Halloween PomPom Pet" class="w-full h-full object-cover object-center scale-[1.03] transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpJ5qcjROWkxQu-wxTOp8HK0vopEzY1Og4gc5Gr8S-evemRXtILIz_GtQKYb3MzKJn8Y_Hr5x6FlY4s66q5VXz9Kr3iDofWXmTpq3oYTZuGXawHmcbmWQrxQhjC0poHmB_Vvr9POQXdSy4fFtB7vYQCneFTusTeqxiLHQ_SpVZtOMIpBXorDj6cevWDa_I7XhzfRrFa8uqfvrkx-Qj03YQ_8uEuMpHzahSyxmg6nvvhQMBm03sFJlZC18eoYooXlpqxEvAp2nwo8U"/>
+<!-- Ambient warm moonlight glow -->
+<div class="absolute inset-0 glow-overlay pointer-events-none"></div>
+<!-- Top gradient shadow for header legibility -->
+<div class="absolute top-0 inset-x-0 h-28 bg-gradient-to-b from-[#110b17]/80 via-[#17101f]/40 to-transparent pointer-events-none"></div>
+<!-- Bottom seamless fade into dark card section -->
+<div class="absolute bottom-0 inset-x-0 h-44 bg-gradient-to-t from-aubergine-900 via-aubergine-900/80 to-transparent pointer-events-none"></div>
+</div>
+<!-- END: ImmersiveHeroBackground -->
+<!-- BEGIN: Header -->
+<header class="relative z-30 w-full px-5 pt-4 pb-3 flex items-center justify-between glass-header" data-purpose="floating-header">
+<!-- Brand Logo / Badge -->
+<div class="flex items-center gap-2.5">
+<div class="relative w-10 h-10 rounded-full p-0.5 bg-gradient-to-tr from-pumpkin-400 to-lavender-300 shadow-md">
+<div class="w-full h-full rounded-full bg-aubergine-900 flex items-center justify-center overflow-hidden">
+<span class="text-base select-none">🐾</span>
+</div>
+</div>
+<div class="flex flex-col">
+<span class="font-bold text-lg tracking-tight leading-none text-creme-100 font-serif italic">PomPom Pet</span>
+<span class="text-[9px] tracking-wider font-semibold text-pumpkin-400 uppercase mt-0.5">Estética Animal com Amor</span>
+</div>
+</div>
+<!-- Hamburger Action Button -->
+<button aria-label="Abrir Menu de Navegação" class="w-10 h-10 rounded-full flex flex-col items-center justify-center gap-1 bg-white/10 hover:bg-white/15 border border-white/10 active:scale-95 transition-all text-creme-200">
+<span class="w-4 h-0.5 bg-current rounded-full"></span>
+<span class="w-5 h-0.5 bg-current rounded-full"></span>
+<span class="w-3.5 h-0.5 bg-current rounded-full self-start ml-2.5"></span>
+</button>
+</header>
+<!-- END: Header -->
+<!-- BEGIN: MidArtworkFloatingBadges -->
+<section class="relative z-20 px-6 pt-5 flex flex-col items-center" data-purpose="floating-edition-tag">
+<!-- Floating pill badge over artwork -->
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-aubergine-900/75 border border-pumpkin-400/40 backdrop-blur-md shadow-lg shadow-black/40">
+<span class="w-1.5 h-1.5 rounded-full bg-pumpkin-400 animate-pulse"></span>
+<span class="text-[11px] font-semibold tracking-wide text-creme-200 uppercase">
+          Edição Especial de Outubro 🎃
+        </span>
+</div>
+</section>
+<!-- END: MidArtworkFloatingBadges -->
+<!-- BEGIN: ContentCardSection -->
+<main class="relative z-20 mt-auto px-4 pb-6" data-purpose="structured-info-card">
+<div class="w-full rounded-3xl p-6 border border-lavender-400/20 card-glass relative overflow-hidden">
+<!-- Subtle corner aesthetic highlight -->
+<div class="absolute -top-12 -right-12 w-28 h-28 bg-pumpkin-400/10 rounded-full blur-2xl pointer-events-none"></div>
+<!-- Section Title & Headline -->
+<div class="text-center space-y-2 mb-5">
+<div class="inline-flex items-center justify-center gap-2 mb-1">
+<span class="h-[1px] w-6 bg-pumpkin-400/50"></span>
+<span class="text-[10px] uppercase font-bold tracking-widest text-pumpkin-400">Outubro Encantado</span>
+<span class="h-[1px] w-6 bg-pumpkin-400/50"></span>
+</div>
+<h1 class="text-[31px] leading-[1.12] font-serif font-bold text-creme-100 tracking-tight">
+            Um Halloween <br/>
+            cheio de <span class="italic font-serif text-pumpkin-400 font-bold decoration-wavy underline-offset-4">fofura.</span>
+</h1>
+<p class="text-[13.5px] leading-relaxed text-creme-200/80 px-2 pt-1 font-normal">
+            Um toque de magia e o cuidado de sempre. Banho, tosa e muito carinho para seu pet.
+          </p>
+</div>
+<!-- Call to Action Button -->
+<div class="space-y-3.5 pt-1">
+<a class="group relative w-full py-4 px-6 bg-pumpkin-400 hover:bg-pumpkin-500 active:scale-[0.98] text-aubergine-950 font-bold rounded-2xl flex items-center justify-center gap-2.5 shadow-lg shadow-pumpkin-500/25 transition-all duration-200" data-purpose="primary-action-button" href="#agendamento">
+<!-- WhatsApp Chat Icon -->
+<svg class="w-5 h-5 text-aubergine-950 transition-transform group-hover:scale-110" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24">
+<path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+</svg>
+<span class="text-[15px] tracking-tight">Agendar pelo WhatsApp</span>
+</a>
+<!-- Social Proof & Location Tag -->
+<div class="flex items-center justify-center gap-2 text-creme-300/80 text-[11px] pt-1">
+<!-- 5 Gold Stars -->
+<div aria-label="Avaliação 5 estrelas" class="flex items-center text-pumpkin-400 gap-0.5 text-xs select-none">
+<span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+</div>
+<span class="font-medium text-creme-200">Cuidado com amor</span>
+<span class="text-white/30">•</span>
+<span class="text-creme-200/70 font-normal">Cajamar</span>
+</div>
+</div>
+</div>
+</main>
+<!-- END: ContentCardSection -->
+</div>
+<!-- END: MobileContainer -->
+</body></html>

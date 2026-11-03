@@ -1,0 +1,234 @@
+{
+  "title": "PomPom Pet — Estudos de Natal",
+  "scope": "12 partes · mesma estrutura · 3 acabamentos visuais por parte",
+  "parts": [
+    {
+      "slug": "menu",
+      "title": "Menu",
+      "description": "Mantém o menu compacto atual e os mesmos seis destinos; só mudam cores, ornamentos e acabamento visual.",
+      "options": [
+        {
+          "title": "Vermelho rubi",
+          "description": "Vermelho rubi como cor principal, creme no fundo e dourado nos detalhes; folhagem verde só em pequenos ornamentos. Mantém estrutura, conteúdo e interações."
+        },
+        {
+          "title": "Bordô e dourado",
+          "description": "Bordô como cor principal, creme e dourado para contraste; verde discreto apenas em pequenos ramos. Mantém estrutura, conteúdo e interações."
+        },
+        {
+          "title": "Vermelho PomPom",
+          "description": "Vermelho vivo com rosa PomPom como apoio, creme no fundo e dourado; folhagem verde bem pontual. Mantém estrutura, conteúdo e interações."
+        }
+      ]
+    },
+    {
+      "slug": "capa",
+      "title": "Capa",
+      "description": "Mantém a capa atual, a mesma ordem, foto, chamada e ação. Variam apenas paleta e decoração sazonal.",
+      "options": [
+        {
+          "title": "Vermelho rubi",
+          "description": "Vermelho rubi como cor principal, creme no fundo e dourado nos detalhes; folhagem verde só em pequenos ornamentos. Mantém estrutura, conteúdo e interações."
+        },
+        {
+          "title": "Bordô e dourado",
+          "description": "Bordô como cor principal, creme e dourado para contraste; verde discreto apenas em pequenos ramos. Mantém estrutura, conteúdo e interações."
+        },
+        {
+          "title": "Vermelho PomPom",
+          "description": "Vermelho vivo com rosa PomPom como apoio, creme no fundo e dourado; folhagem verde bem pontual. Mantém estrutura, conteúdo e interações."
+        }
+      ]
+    },
+    {
+      "slug": "servicos",
+      "title": "Serviços",
+      "description": "Mantém os cartões, textos e ações atuais. O tema muda somente cores, bordas, ícones decorativos e fundo.",
+      "options": [
+        {
+          "title": "Vermelho rubi",
+          "description": "Vermelho rubi como cor principal, creme no fundo e dourado nos detalhes; folhagem verde só em pequenos ornamentos. Mantém estrutura, conteúdo e interações."
+        },
+        {
+          "title": "Bordô e dourado",
+          "description": "Bordô como cor principal, creme e dourado para contraste; verde discreto apenas em pequenos ramos. Mantém estrutura, conteúdo e interações."
+        },
+        {
+          "title": "Vermelho PomPom",
+          "description": "Vermelho vivo com rosa PomPom como apoio, creme no fundo e dourado; folhagem verde bem pontual. Mantém estrutura, conteúdo e interações."
+        }
+      ]
+    },
+    {
+      "slug": "galeria",
+      "title": "Galeria",
+      "description": "Mantém a grade, filtros, fotos e interações atuais. O acabamento natalino não reorganiza as imagens.",
+      "options": [
+        {
+          "title": "Vermelho rubi",
+          "description": "Vermelho rubi como cor principal, creme no fundo e dourado nos detalhes; folhagem verde só em pequenos ornamentos. Mantém estrutura, conteúdo e interações."
+        },
+        {
+          "title": "Bordô e dourado",
+          "description": "Bordô como cor principal, creme e dourado para contraste; verde discreto apenas em pequenos ramos. Mantém estrutura, conteúdo e interações."
+        },
+        {
+          "title": "Vermelho PomPom",
+          "description": "Vermelho vivo com rosa PomPom como apoio, creme no fundo e dourado; folhagem verde bem pontual. Mantém estrutura, conteúdo e interações."
+        }
+      ]
+    },
+    {
+      "slug": "lojinha",
+      "title": "Lojinha",
+      "description": "Mantém a entrada e o fluxo atual da loja. Variam apenas paleta, detalhes gráficos e acabamento sazonal.",
+      "options": [
+        {
+          "title": "Vermelho rubi",
+          "description": "Vermelho rubi como cor principal, creme no fundo e dourado nos detalhes; folhagem verde só em pequenos ornamentos. Mantém estrutura, conteúdo e interações."
+        },
+        {
+          "title": "Bordô e dourado",
+          "description": "Bordô como cor principal, creme e dourado para contraste; verde discreto apenas em pequenos ramos. Mantém estrutura, conteúdo e interações."
+        },
+        {
+          "title": "Vermelho PomPom",
+          "description": "Vermelho vivo com rosa PomPom como apoio, creme no fundo e dourado; folhagem verde bem pontual. Mantém estrutura, conteúdo e interações."
+        }
+      ]
+    },
+    {
+      "slug": "apresentacao",
+      "title": "Apresentação",
+      "description": "Mantém foto, texto e composição atuais; a proposta natalina acrescenta somente um acabamento visual removível.",
+      "options": [
+        {
+          "title": "Vermelho rubi",
+          "description": "Vermelho rubi como cor principal, creme no fundo e dourado nos detalhes; folhagem verde só em pequenos ornamentos. Mantém estrutura, conteúdo e interações."
+        },
+        {
+          "title": "Bordô e dourado",
+          "description": "Bordô como cor principal, creme e dourado para contraste; verde discreto apenas em pequenos ramos. Mantém estrutura, conteúdo e interações."
+        },
+        {
+          "title": "Vermelho PomPom",
+          "description": "Vermelho vivo com rosa PomPom como apoio, creme no fundo e dourado; folhagem verde bem pontual. Mantém estrutura, conteúdo e interações."
+        }
+      ]
+    },
+    {
+      "slug": "contato",
+      "title": "Contato e localização",
+      "description": "Mantém mapa, endereço, horários, redes e atalhos nas posições atuais; muda apenas a apresentação visual.",
+      "options": [
+        {
+          "title": "Vermelho rubi",
+          "description": "Vermelho rubi como cor principal, creme no fundo e dourado nos detalhes; folhagem verde só em pequenos ornamentos. Mantém estrutura, conteúdo e interações."
+        },
+        {
+          "title": "Bordô e dourado",
+          "description": "Bordô como cor principal, creme e dourado para contraste; verde discreto apenas em pequenos ramos. Mantém estrutura, conteúdo e interações."
+        },
+        {
+          "title": "Vermelho PomPom",
+          "description": "Vermelho vivo com rosa PomPom como apoio, creme no fundo e dourado; folhagem verde bem pontual. Mantém estrutura, conteúdo e interações."
+        }
+      ]
+    },
+    {
+      "slug": "vitrine",
+      "title": "Vitrine",
+      "description": "Mantém a vitrine, fotos, cartões e ação atuais. A campanha acrescenta cores e ornamentos, sem mover os elementos.",
+      "options": [
+        {
+          "title": "Vermelho rubi",
+          "description": "Vermelho rubi como cor principal, creme no fundo e dourado nos detalhes; folhagem verde só em pequenos ornamentos. Mantém estrutura, conteúdo e interações."
+        },
+        {
+          "title": "Bordô e dourado",
+          "description": "Bordô como cor principal, creme e dourado para contraste; verde discreto apenas em pequenos ramos. Mantém estrutura, conteúdo e interações."
+        },
+        {
+          "title": "Vermelho PomPom",
+          "description": "Vermelho vivo com rosa PomPom como apoio, creme no fundo e dourado; folhagem verde bem pontual. Mantém estrutura, conteúdo e interações."
+        }
+      ]
+    },
+    {
+      "slug": "avaliacoes",
+      "title": "Avaliações",
+      "description": "Mantém os depoimentos reais, autores, origem e carrossel atuais. Só mudam cores e acabamento dos cartões.",
+      "options": [
+        {
+          "title": "Vermelho rubi",
+          "description": "Vermelho rubi como cor principal, creme no fundo e dourado nos detalhes; folhagem verde só em pequenos ornamentos. Mantém estrutura, conteúdo e interações."
+        },
+        {
+          "title": "Bordô e dourado",
+          "description": "Bordô como cor principal, creme e dourado para contraste; verde discreto apenas em pequenos ramos. Mantém estrutura, conteúdo e interações."
+        },
+        {
+          "title": "Vermelho PomPom",
+          "description": "Vermelho vivo com rosa PomPom como apoio, creme no fundo e dourado; folhagem verde bem pontual. Mantém estrutura, conteúdo e interações."
+        }
+      ]
+    },
+    {
+      "slug": "abertura",
+      "title": "Abertura",
+      "description": "Mesmo conteúdo, marca, chamada e botão dispensável. As alternativas mudam somente o efeito visual da entrada.",
+      "options": [
+        {
+          "title": "Luzes rubi",
+          "description": "Pontos de luz dourada acendem sobre fundo vermelho; mesma marca, texto e botão Entrar."
+        },
+        {
+          "title": "Laço bordô",
+          "description": "Laço dourado se move sobre fundo bordô; mesma marca, texto, duração e botão."
+        },
+        {
+          "title": "Boas-vindas PomPom",
+          "description": "Pequena aparição ilustrada de cão e gato sobre vermelho; mesma marca, texto e botão."
+        }
+      ]
+    },
+    {
+      "slug": "marca",
+      "title": "Marca",
+      "description": "Mantém o logotipo, assinatura, tipografia e posição. Testa ornamentos natalinos separados e removíveis.",
+      "options": [
+        {
+          "title": "Vermelho rubi",
+          "description": "Vermelho rubi como cor principal, creme no fundo e dourado nos detalhes; folhagem verde só em pequenos ornamentos. Mantém estrutura, conteúdo e interações."
+        },
+        {
+          "title": "Bordô e dourado",
+          "description": "Bordô como cor principal, creme e dourado para contraste; verde discreto apenas em pequenos ramos. Mantém estrutura, conteúdo e interações."
+        },
+        {
+          "title": "Vermelho PomPom",
+          "description": "Vermelho vivo com rosa PomPom como apoio, creme no fundo e dourado; folhagem verde bem pontual. Mantém estrutura, conteúdo e interações."
+        }
+      ]
+    },
+    {
+      "slug": "catalogo",
+      "title": "Catálogo",
+      "description": "Mantém as sete categorias, cartões, ampliação, zoom e consulta nas mesmas posições e com as mesmas ações.",
+      "options": [
+        {
+          "title": "Vermelho rubi",
+          "description": "Vermelho rubi como cor principal, creme no fundo e dourado nos detalhes; folhagem verde só em pequenos ornamentos. Mantém estrutura, conteúdo e interações."
+        },
+        {
+          "title": "Bordô e dourado",
+          "description": "Bordô como cor principal, creme e dourado para contraste; verde discreto apenas em pequenos ramos. Mantém estrutura, conteúdo e interações."
+        },
+        {
+          "title": "Vermelho PomPom",
+          "description": "Vermelho vivo com rosa PomPom como apoio, creme no fundo e dourado; folhagem verde bem pontual. Mantém estrutura, conteúdo e interações."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>PomPom Pet · Um Halloween Cheio de Fofura</title>
+<!-- Tailwind CSS v3 with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Playfair Display (editorial serif) & Plus Jakarta Sans / Caveat for signature cursive -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#140c1c',
+              purple: '#1f132b',
+              surface: '#261737',
+              accent: '#ffad66',
+              accentHover: '#ff9c47',
+              lilac: '#c8b6e2',
+              cream: '#fdf8f0',
+              whatsapp: '#25D366'
+            }
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            cursive: ['"Caveat"', 'cursive']
+          }
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: Custom Atmospheric CSS & Animations -->
+<style data-purpose="halloween-animations">
+    @keyframes gentleFlicker {
+      0%, 100% { opacity: 0.15; }
+      45% { opacity: 0.22; }
+      48% { opacity: 0.85; filter: drop-shadow(0 0 14px rgba(255, 200, 255, 0.9)); }
+      50% { opacity: 0.18; }
+      54% { opacity: 0.7; filter: drop-shadow(0 0 10px rgba(255, 200, 255, 0.7)); }
+      56% { opacity: 0.2; }
+      78% { opacity: 0.25; }
+    }
+
+    @keyframes batFlutterLeft {
+      0% { transform: translate(30px, 40px) scale(0.65) rotate(15deg); opacity: 0; }
+      20% { opacity: 1; }
+      80% { opacity: 0.9; }
+      100% { transform: translate(-120px, -70px) scale(1.08) rotate(-12deg); opacity: 0; }
+    }
+
+    @keyframes batFlutterRight {
+      0% { transform: translate(-30px, 45px) scale(0.6) rotate(-18deg); opacity: 0; }
+      25% { opacity: 1; }
+      85% { opacity: 0.85; }
+      100% { transform: translate(130px, -80px) scale(1.02) rotate(15deg); opacity: 0; }
+    }
+
+    @keyframes batHoverCenter {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-7px) rotate(2deg); }
+    }
+
+    @keyframes fogDrift {
+      0% { transform: translateX(-5%) translateY(0); }
+      50% { transform: translateX(5%) translateY(-8px); }
+      100% { transform: translateX(-5%) translateY(0); }
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% { transform: scale(1); opacity: 0.45; }
+      50% { transform: scale(1.08); opacity: 0.75; }
+    }
+
+    .lightning-branch {
+      animation: gentleFlicker 6.8s infinite ease-in-out;
+    }
+
+    .bat-left {
+      animation: batFlutterLeft 4.5s ease-out forwards;
+    }
+
+    .bat-right {
+      animation: batFlutterRight 4.8s 0.2s ease-out forwards;
+    }
+
+    .bat-ambient {
+      animation: batHoverCenter 3.6s ease-in-out infinite;
+    }
+
+    .fog-layer {
+      animation: fogDrift 14s ease-in-out infinite alternate;
+    }
+
+    .moon-halo {
+      animation: pulseGlow 4s ease-in-out infinite;
+    }
+
+    /* Dissolve effect for cinematic exit */
+    .cinematic-exit {
+      transition: opacity 1.3s cubic-bezier(0.4, 0, 0.2, 1), transform 1.3s cubic-bezier(0.4, 0, 0.2, 1), filter 1.3s ease;
+      opacity: 0 !important;
+      transform: scale(1.03) translateY(-12px) !important;
+      filter: blur(10px) !important;
+      pointer-events: none !important;
+    }
+
+    /* Reduced Motion Handling */
+    @media (prefers-reduced-motion: reduce) {
+      .lightning-branch, .bat-left, .bat-right, .bat-ambient, .fog-layer, .moon-halo {
+        animation: none !important;
+      }
+      .cinematic-exit {
+        transition: opacity 0.5s ease !important;
+        transform: none !important;
+        filter: none !important;
+      }
+    }
+  </style>
+<style data-purpose="mobile-shell">
+    /* Constrain viewport strictly for authentic mobile presentation */
+    body {
+      background-color: #0b0710;
+      color: #fdf8f0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .mobile-frame {
+      width: 100%;
+      max-width: 420px;
+      margin: 0 auto;
+      min-height: 100vh;
+      position: relative;
+      background: #17101f;
+      box-shadow: 0 0 50px rgba(0, 0, 0, 0.85);
+    }
+  </style>
+<!-- END: Custom Atmospheric CSS & Animations -->
+</head>
+<body class="selection:bg-amber-400 selection:text-neutral-900">
+<!-- BEGIN: MobileDeviceContainer -->
+<div class="mobile-frame flex flex-col justify-between overflow-hidden relative">
+<!-- ============================================================== -->
+<!-- BEGIN: Cinematic Halloween Welcome Overlay                     -->
+<!-- ============================================================== -->
+<aside aria-label="Boas-vindas de Halloween PomPom Pet" aria-modal="true" class="fixed inset-0 max-w-[420px] mx-auto z-50 overflow-hidden flex flex-col justify-between items-center text-center px-6 py-8 transition-opacity duration-1000 bg-gradient-to-b from-[#0f0817] via-[#1a0f28] to-[#12091c]" data-purpose="cinematic-welcome-overlay" id="halloweenOverlay" role="dialog">
+<!-- Atmospheric Background Aura & Mist Layers -->
+<div class="absolute inset-0 pointer-events-none overflow-hidden">
+<!-- Deep Purple Ambient Light -->
+<div class="absolute -top-16 left-1/2 -translate-x-1/2 w-80 h-80 bg-purple-700/25 rounded-full blur-[90px] moon-halo"></div>
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 w-96 h-80 bg-orange-600/15 rounded-full blur-[110px]"></div>
+<!-- Ethereal Fog Gradients -->
+<div class="absolute -bottom-10 inset-x-0 h-72 bg-gradient-to-t from-[#140c1c] via-[#211233]/70 to-transparent fog-layer opacity-80"></div>
+<!-- Lightning Graphic Top Left -->
+<svg class="lightning-branch absolute top-2 left-3 w-28 h-36 text-purple-200/40 pointer-events-none" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.2" viewbox="0 0 100 130">
+<path d="M45,2 L42,32 L58,40 L38,72 L48,78 L20,126" opacity="0.85"></path>
+<path d="M42,32 L25,48 L32,60" opacity="0.6"></path>
+<path d="M38,72 L52,86" opacity="0.5"></path>
+</svg>
+<!-- Lightning Graphic Top Right -->
+<svg class="lightning-branch absolute top-4 right-2 w-28 h-36 text-purple-200/40 pointer-events-none" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.2" style="animation-delay: 2.3s;" viewbox="0 0 100 130">
+<path d="M60,0 L56,28 L38,36 L54,68 L42,75 L68,122" opacity="0.8"></path>
+<path d="M56,28 L72,42 L65,54" opacity="0.55"></path>
+<path d="M54,68 L36,82" opacity="0.45"></path>
+</svg>
+<!-- Dynamic Bats Flying Across Screen -->
+<!-- Bat 1: Top Left departing outward -->
+<svg class="bat-left absolute top-28 left-8 w-14 h-9 text-[#2b183d] drop-shadow-[0_4px_10px_rgba(0,0,0,0.6)]" fill="currentColor" viewbox="0 0 74 38">
+<path d="M37 13c-4.2-6-10-8-16-6.5-5.5 1.4-10.5 6.2-18 8 2.8 3.5 7.5 4.8 11.5 3.5 2.5 4.8 7.5 7.2 12.5 6 3.5 4 8 4 10-1 2 5 6.5 5 10 1 5 1.2 10-1.2 12.5-6 4 1.3 8.7 0 11.5-3.5-7.5-1.8-12.5-6.6-18-8-6-1.5-11.8.5-16 6.5z"></path>
+<!-- Glowing Eyes -->
+<circle cx="34.5" cy="14" fill="#ffad66" r="0.9"></circle>
+<circle cx="39.5" cy="14" fill="#ffad66" r="0.9"></circle>
+</svg>
+<!-- Bat 2: Mid Right ascending into night sky -->
+<svg class="bat-right absolute top-44 right-10 w-12 h-8 text-[#251436] drop-shadow-[0_4px_8px_rgba(0,0,0,0.7)]" fill="currentColor" viewbox="0 0 74 38">
+<path d="M37 13c-4.2-6-10-8-16-6.5-5.5 1.4-10.5 6.2-18 8 2.8 3.5 7.5 4.8 11.5 3.5 2.5 4.8 7.5 7.2 12.5 6 3.5 4 8 4 10-1 2 5 6.5 5 10 1 5 1.2 10-1.2 12.5-6 4 1.3 8.7 0 11.5-3.5-7.5-1.8-12.5-6.6-18-8-6-1.5-11.8.5-16 6.5z"></path>
+<circle cx="35" cy="14" fill="#ffad66" r="0.8"></circle>
+<circle cx="39" cy="14" fill="#ffad66" r="0.8"></circle>
+</svg>
+<!-- Bat 3: Subtle ambient bat hovering top center -->
+<svg class="bat-ambient absolute top-16 left-1/2 -translate-x-1/2 w-8 h-5 text-purple-950/80" fill="currentColor" viewbox="0 0 74 38">
+<path d="M37 13c-4.2-6-10-8-16-6.5-5.5 1.4-10.5 6.2-18 8 2.8 3.5 7.5 4.8 11.5 3.5 2.5 4.8 7.5 7.2 12.5 6 3.5 4 8 4 10-1 2 5 6.5 5 10 1 5 1.2 10-1.2 12.5-6 4 1.3 8.7 0 11.5-3.5-7.5-1.8-12.5-6.6-18-8-6-1.5-11.8.5-16 6.5z"></path>
+</svg>
+</div>
+<!-- Overlay Top Header / Brand Tag -->
+<div class="relative z-10 w-full pt-4 flex flex-col items-center">
+<!-- Spaced Eyebrow -->
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-amber-400/20 bg-amber-400/10 backdrop-blur-sm shadow-sm">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-[#ffad66] animate-ping"></span>
+<span class="tracking-[0.25em] text-[10px] text-[#ffad66] font-semibold uppercase font-sans">
+            POMPOM PET · TEMPORADA DE FOFURAS
+          </span>
+</div>
+</div>
+<!-- Overlay Central Climax Typography & Magical Emblem -->
+<div class="relative z-10 flex flex-col items-center justify-center my-auto transition-all duration-1000" id="overlayContent">
+<!-- Central Ethereal Moon Emblem with Miniature Bat -->
+<div class="relative mb-5 flex items-center justify-center">
+<div class="w-24 h-24 rounded-full bg-gradient-to-tr from-amber-200/20 via-purple-300/30 to-amber-100/40 blur-md absolute moon-halo"></div>
+<div class="w-20 h-20 rounded-full border border-amber-200/40 bg-gradient-to-b from-[#3a205a]/80 to-[#1f1033]/90 shadow-[0_0_25px_rgba(255,173,102,0.35)] flex items-center justify-center relative overflow-hidden backdrop-blur-md">
+<!-- Moon texture craters faint SVG -->
+<div class="absolute -right-2 top-2 w-8 h-8 rounded-full bg-purple-200/10 blur-[1px]"></div>
+<div class="absolute left-3 bottom-3 w-5 h-5 rounded-full bg-purple-200/10 blur-[1px]"></div>
+<!-- Tiny cute bat silhouette inside emblem -->
+<svg class="w-9 h-6 text-amber-100 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] relative z-10" fill="currentColor" viewbox="0 0 74 38">
+<path d="M37 13c-4.2-6-10-8-16-6.5-5.5 1.4-10.5 6.2-18 8 2.8 3.5 7.5 4.8 11.5 3.5 2.5 4.8 7.5 7.2 12.5 6 3.5 4 8 4 10-1 2 5 6.5 5 10 1 5 1.2 10-1.2 12.5-6 4 1.3 8.7 0 11.5-3.5-7.5-1.8-12.5-6.6-18-8-6-1.5-11.8.5-16 6.5z"></path>
+<circle cx="34.5" cy="14" fill="#ffad66" r="1.1"></circle>
+<circle cx="39.5" cy="14" fill="#ffad66" r="1.1"></circle>
+</svg>
+</div>
+<!-- Little Stars Sparkles -->
+<span class="absolute -top-1 -right-2 text-amber-300 text-sm animate-pulse">✦</span>
+<span class="absolute -bottom-1 -left-2 text-purple-300 text-xs animate-pulse" style="animation-delay: 1.2s">✨</span>
+</div>
+<!-- Headline Typography -->
+<h1 class="font-serif text-3xl font-normal text-[#fdf8f0] tracking-tight drop-shadow-md leading-tight">
+          Halloween chegou.
+        </h1>
+<h2 class="font-serif text-3xl font-medium italic text-[#ffad66] mt-1 drop-shadow-[0_2px_8px_rgba(255,173,102,0.4)]">
+          Venha conferir!
+        </h2>
+<!-- Soft Editorial Subtitle -->
+<p class="text-xs text-white/75 max-w-[270px] mx-auto mt-4 font-light leading-relaxed tracking-wide font-sans">
+          Um sustinho de fofura espera por você e pelo seu companheiro de quatro patas.
+        </p>
+<!-- Little cute paw prints flourish -->
+<div class="mt-4 flex items-center justify-center gap-2 opacity-50 text-[10px] tracking-widest text-[#c8b6e2]">
+<span>🐾</span>
+<span>🎃</span>
+<span>🐾</span>
+</div>
+</div>
+<!-- Overlay Footer Actions / Skip pill button -->
+<div class="relative z-10 w-full pb-2 flex flex-col items-center gap-2">
+<button aria-label="Pular introdução de Halloween e entrar no site" class="border border-white/20 bg-white/5 backdrop-blur-md text-white/80 hover:text-white hover:bg-white/10 text-xs px-5 py-2.5 rounded-full transition-all duration-200 active:scale-95 flex items-center gap-1.5 shadow-lg group" id="skipIntroBtn" type="button">
+<span class="font-medium tracking-wide">Pular introdução</span>
+<span class="text-white/40 group-hover:text-white/80 transition-colors text-xs font-mono ml-0.5">✕</span>
+</button>
+<span class="text-[10px] text-white/35 font-light">
+          Abrindo o site automaticamente...
+        </span>
+</div>
+</aside>
+<!-- END: Cinematic Halloween Welcome Overlay -->
+<!-- ============================================================== -->
+<!-- BEGIN: Underlying Mobile PomPom Pet Website                    -->
+<!-- Reference: Exactly matches DATA:IMAGE:IMAGE_1                  -->
+<!-- ============================================================== -->
+<!-- Spiderweb SVG Background Decors (Top Left & Top Right) -->
+<div class="absolute top-0 left-0 w-32 h-32 pointer-events-none opacity-20 z-0">
+<svg fill="none" stroke="#fdf8f0" stroke-width="0.8" viewbox="0 0 100 100">
+<path d="M0,0 L90,0 M0,0 L85,25 M0,0 L70,55 M0,0 L45,80 M0,0 L0,90"></path>
+<path d="M20,0 Q18,6 0,20"></path>
+<path d="M40,0 Q36,14 0,40"></path>
+<path d="M60,0 Q54,24 0,60"></path>
+<path d="M80,0 Q72,36 0,80"></path>
+</svg>
+</div>
+<div class="absolute top-0 right-0 w-32 h-32 pointer-events-none opacity-20 z-0 scale-x-[-1]">
+<svg fill="none" stroke="#fdf8f0" stroke-width="0.8" viewbox="0 0 100 100">
+<path d="M0,0 L90,0 M0,0 L85,25 M0,0 L70,55 M0,0 L45,80 M0,0 L0,90"></path>
+<path d="M20,0 Q18,6 0,20"></path>
+<path d="M40,0 Q36,14 0,40"></path>
+<path d="M60,0 Q54,24 0,60"></path>
+<path d="M80,0 Q72,36 0,80"></path>
+</svg>
+</div>
+<!-- Floating Purple Bat Accents across the hero background -->
+<div class="absolute top-64 left-3 pointer-events-none opacity-45">
+<svg class="w-8 h-5 text-purple-400 -rotate-12" fill="currentColor" viewbox="0 0 74 38">
+<path d="M37 13c-4.2-6-10-8-16-6.5-5.5 1.4-10.5 6.2-18 8 2.8 3.5 7.5 4.8 11.5 3.5 2.5 4.8 7.5 7.2 12.5 6 3.5 4 8 4 10-1 2 5 6.5 5 10 1 5 1.2 10-1.2 12.5-6 4 1.3 8.7 0 11.5-3.5-7.5-1.8-12.5-6.6-18-8-6-1.5-11.8.5-16 6.5z"></path>
+</svg>
+</div>
+<div class="absolute top-80 right-2 pointer-events-none opacity-40">
+<svg class="w-7 h-4 text-purple-300 rotate-12" fill="currentColor" viewbox="0 0 74 38">
+<path d="M37 13c-4.2-6-10-8-16-6.5-5.5 1.4-10.5 6.2-18 8 2.8 3.5 7.5 4.8 11.5 3.5 2.5 4.8 7.5 7.2 12.5 6 3.5 4 8 4 10-1 2 5 6.5 5 10 1 5 1.2 10-1.2 12.5-6 4 1.3 8.7 0 11.5-3.5-7.5-1.8-12.5-6.6-18-8-6-1.5-11.8.5-16 6.5z"></path>
+</svg>
+</div>
+<!-- BEGIN: MainHeader -->
+<header class="relative z-20 px-5 pt-4 pb-3 flex items-center justify-between" data-purpose="site-header">
+<!-- Brand Logo & Slogan -->
+<a aria-label="PomPom Pet Home" class="flex items-center gap-3 group focus:outline-none" href="#">
+<!-- Circular Illustrated Mascot Avatar -->
+<div class="w-12 h-12 rounded-full overflow-hidden border-2 border-white/20 bg-[#fdecdb] flex items-center justify-center p-1 shadow-md">
+<svg class="w-10 h-10" fill="none" viewbox="0 0 64 64">
+<!-- Cute cat and dog head illustration representation -->
+<circle cx="26" cy="34" fill="#fff5ea" r="16"></circle>
+<circle cx="20" cy="22" fill="#f8d8c0" r="5"></circle>
+<circle cx="32" cy="22" fill="#f8d8c0" r="5"></circle>
+<!-- Dog snout & ears -->
+<ellipse cx="26" cy="38" fill="#faebd7" rx="8" ry="6"></ellipse>
+<circle cx="26" cy="35" fill="#5c3826" r="2.2"></circle>
+<circle cx="21" cy="31" fill="#3a2518" r="2"></circle>
+<circle cx="31" cy="31" fill="#3a2518" r="2"></circle>
+<ellipse cx="14" cy="28" fill="#dfbe9f" rx="4" ry="8" transform="rotate(-20 14 28)"></ellipse>
+<!-- Kitten beside dog -->
+<circle cx="44" cy="36" fill="#f7ab6d" r="13"></circle>
+<polygon fill="#e28743" points="36,26 41,18 45,26"></polygon>
+<polygon fill="#e28743" points="46,26 50,18 55,27"></polygon>
+<circle cx="40" cy="35" fill="#301e12" r="1.8"></circle>
+<circle cx="47" cy="35" fill="#301e12" r="1.8"></circle>
+<polygon fill="#ff7f7f" points="43.5,39 42,37.5 45,37.5"></polygon>
+</svg>
+</div>
+<!-- Typography: PomPom Pet & Tagline -->
+<div class="flex flex-col text-left">
+<span class="font-cursive text-2xl font-bold tracking-wide text-[#fdf8f0] leading-none drop-shadow-sm">
+            PomPom Pet
+          </span>
+<span class="text-[9px] uppercase tracking-[0.16em] text-[#ffad66] font-semibold flex items-center gap-1 mt-1">
+<span class="text-[10px]">✨</span> ESTÉTICA ANIMAL COM AMOR
+          </span>
+</div>
+</a>
+<!-- Hamburger Menu Button -->
+<button aria-label="Abrir menu de navegação" class="w-11 h-11 rounded-full border border-white/20 bg-white/5 flex flex-col items-center justify-center gap-1.5 focus:outline-none focus:ring-2 focus:ring-amber-400 active:scale-95 transition-transform" type="button">
+<span class="w-5 h-[2px] bg-white/90 rounded-full"></span>
+<span class="w-5 h-[2px] bg-white/90 rounded-full"></span>
+</button>
+</header>
+<!-- END: MainHeader -->
+<!-- BEGIN: MainContentHero -->
+<main class="relative z-10 flex-1 px-5 pt-3 pb-8 flex flex-col items-center text-center">
+<!-- Eyebrow Ribbon -->
+<div class="inline-flex items-center gap-2 mb-2">
+<span class="w-5 h-[1.5px] bg-[#ffad66]"></span>
+<span class="text-[10px] uppercase font-bold tracking-[0.2em] text-[#c8b6e2]">
+          OUTUBRO ENCANTADO · POMPOM PET
+        </span>
+</div>
+<!-- Main Headline: Um Halloween cheio de fofura. -->
+<h2 class="font-serif text-[32px] leading-[1.12] text-[#fdf8f0] font-normal tracking-tight max-w-[340px]">
+        Um Halloween <br/>
+        cheio de <span class="italic font-medium text-[#ffad66]">fofura.</span>
+</h2>
+<!-- Subtitle Description -->
+<p class="text-xs text-white/80 max-w-[290px] mt-3 font-normal leading-relaxed">
+        Um toque de magia e o cuidado de sempre. Banho, tosa e muito carinho para seu pet.
+      </p>
+<!-- Center Hero Illustration Container -->
+<!-- Visual portrait of puppy & kitten in witch hats with jack-o-lanterns & moon -->
+<div class="relative w-full max-w-[330px] aspect-square my-4 flex items-center justify-center">
+<!-- Glowing circular background backdrop -->
+<div class="absolute inset-2 rounded-full bg-gradient-to-b from-[#ffb470]/30 via-[#45225c]/50 to-[#140c1c] blur-sm"></div>
+<!-- Moon with Bat Silhouettes SVG Backdrop -->
+<svg class="w-full h-full relative z-0" viewbox="0 0 320 320">
+<defs>
+<radialgradient cx="58%" cy="34%" id="moonGlow" r="40%">
+<stop offset="0%" stop-color="#fff6dd" stop-opacity="0.95"></stop>
+<stop offset="65%" stop-color="#e9bb76" stop-opacity="0.4"></stop>
+<stop offset="100%" stop-color="#2a143d" stop-opacity="0"></stop>
+</radialgradient>
+<radialgradient cx="50%" cy="50%" id="pumpkinGlow" r="50%">
+<stop offset="0%" stop-color="#ff9933"></stop>
+<stop offset="85%" stop-color="#cc5200"></stop>
+<stop offset="100%" stop-color="#662200"></stop>
+</radialgradient>
+<clippath id="archCircle">
+<circle cx="160" cy="160" r="142"></circle>
+</clippath>
+</defs>
+<!-- Masked Circular Vignette Scene -->
+<g clip-path="url(#archCircle)">
+<!-- Night Sky & Full Moon -->
+<rect fill="#1b1028" height="320" width="320"></rect>
+<circle cx="210" cy="110" fill="url(#moonGlow)" r="62"></circle>
+<!-- Flying Bats across the Moon -->
+<path d="M185 85 Q190 82 195 86 Q200 82 205 85 Q198 90 195 87 Q192 90 185 85Z" fill="#1c0f2a"></path>
+<path d="M225 115 Q229 112 233 115 Q237 112 241 115 Q235 119 233 116 Q231 119 225 115Z" fill="#1c0f2a"></path>
+<path d="M210 135 Q213 133 216 135 Q219 133 222 135 Q217 138 216 136 Q214 138 210 135Z" fill="#1c0f2a"></path>
+<!-- Distant Castles & Forest Silhouette -->
+<path d="M0 240 L40 220 L60 235 L90 210 L120 230 L160 215 L200 235 L260 205 L290 225 L320 220 L320 320 L0 320 Z" fill="#241436" opacity="0.8"></path>
+<!-- Glowing Jack-O'-Lanterns at sides -->
+<!-- Left Pumpkin -->
+<g transform="translate(24, 205) scale(0.72)">
+<ellipse cx="50" cy="50" fill="url(#pumpkinGlow)" rx="42" ry="34"></ellipse>
+<ellipse cx="50" cy="50" fill="#e66000" opacity="0.6" rx="25" ry="34"></ellipse>
+<!-- Carved face with warm yellow inner glow -->
+<polygon fill="#ffef99" points="35,42 42,42 38.5,36"></polygon>
+<polygon fill="#ffef99" points="58,42 65,42 61.5,36"></polygon>
+<polygon fill="#ffef99" points="50,47 47,52 53,52"></polygon>
+<path d="M33 58 Q50 72 67 58 Q50 64 33 58" fill="#ffef99"></path>
+</g>
+<!-- Right Pumpkin -->
+<g transform="translate(210, 210) scale(0.68)">
+<ellipse cx="50" cy="50" fill="url(#pumpkinGlow)" rx="40" ry="32"></ellipse>
+<polygon fill="#ffef99" points="37,42 43,42 40,37"></polygon>
+<polygon fill="#ffef99" points="57,42 63,42 60,37"></polygon>
+<path d="M35 56 Q50 68 65 56 Q50 61 35 56" fill="#ffef99"></path>
+</g>
+<!-- Warm Fluffy White Puppy with Purple Witch Hat -->
+<g transform="translate(70, 95)">
+<!-- Puppy Body & Fur -->
+<ellipse cx="65" cy="140" fill="#fdfbf7" rx="45" ry="40"></ellipse>
+<!-- Fluffy Chest texture -->
+<ellipse cx="65" cy="135" fill="#f5ede0" rx="36" ry="30"></ellipse>
+<!-- Puppy Head -->
+<ellipse cx="65" cy="90" fill="#fffdfa" rx="38" ry="32"></ellipse>
+<!-- Puppy Ears -->
+<ellipse cx="32" cy="90" fill="#eed9c4" rx="14" ry="24" transform="rotate(15 32 90)"></ellipse>
+<ellipse cx="98" cy="90" fill="#eed9c4" rx="14" ry="24" transform="rotate(-15 98 90)"></ellipse>
+<!-- Puppy Eyes with warm highlights -->
+<circle cx="52" cy="85" fill="#24140b" r="5"></circle>
+<circle cx="50.5" cy="83.5" fill="#ffffff" r="1.5"></circle>
+<circle cx="78" cy="85" fill="#24140b" r="5"></circle>
+<circle cx="76.5" cy="83.5" fill="#ffffff" r="1.5"></circle>
+<!-- Nose & Smiling Tongue -->
+<ellipse cx="65" cy="94" fill="#1b120c" rx="4.5" ry="3.5"></ellipse>
+<path d="M62 97 Q65 101 68 97" fill="none" stroke="#1b120c" stroke-width="1.4"></path>
+<path d="M63 99 Q65 106 67 99" fill="#ff8093"></path>
+<!-- Purple Witch Hat with Autumn Leaves -->
+<ellipse cx="65" cy="68" fill="#321a47" rx="48" ry="14"></ellipse>
+<ellipse cx="65" cy="67" fill="#43245f" rx="36" ry="9"></ellipse>
+<polygon fill="#2c163f" points="38,65 92,65 68,14 62,14"></polygon>
+<!-- Golden Buckle / Ribbon -->
+<rect fill="#d97724" height="7" rx="2" width="46" x="42" y="58"></rect>
+<rect fill="#ffcc66" height="11" rx="2" width="10" x="60" y="56"></rect>
+<rect fill="#321a47" height="7" rx="1" width="6" x="62" y="58"></rect>
+</g>
+<!-- Cute Ginger Kitten in Matching Small Witch Hat (Right side) -->
+<g transform="translate(145, 125) scale(0.85)">
+<!-- Cat Body -->
+<ellipse cx="50" cy="120" fill="#e57b32" rx="30" ry="32"></ellipse>
+<ellipse cx="50" cy="120" fill="#fbd3a2" rx="22" ry="26"></ellipse>
+<!-- Kitten Head -->
+<ellipse cx="50" cy="80" fill="#e57b32" rx="28" ry="24"></ellipse>
+<ellipse cx="50" cy="84" fill="#fbd3a2" rx="19" ry="16"></ellipse>
+<!-- Cat Pointed Ears -->
+<polygon fill="#d66820" points="26,72 32,48 44,66"></polygon>
+<polygon fill="#ffc2b4" points="31,70 34,54 41,66"></polygon>
+<polygon fill="#d66820" points="56,66 68,48 74,72"></polygon>
+<polygon fill="#ffc2b4" points="59,66 66,54 69,70"></polygon>
+<!-- Big Curious Cat Eyes -->
+<ellipse cx="40" cy="78" fill="#75ba38" rx="4.5" ry="5.5"></ellipse>
+<ellipse cx="40" cy="78" fill="#18240f" rx="2" ry="4.5"></ellipse>
+<circle cx="38.5" cy="76" fill="#ffffff" r="1.3"></circle>
+<ellipse cx="60" cy="78" fill="#75ba38" rx="4.5" ry="5.5"></ellipse>
+<ellipse cx="60" cy="78" fill="#18240f" rx="2" ry="4.5"></ellipse>
+<circle cx="58.5" cy="76" fill="#ffffff" r="1.3"></circle>
+<!-- Nose & Whiskers -->
+<polygon fill="#ff8ba0" points="50,85 48,83 52,83"></polygon>
+<line stroke="#fff" stroke-width="0.75" x1="36" x2="24" y1="85" y2="83"></line>
+<line stroke="#fff" stroke-width="0.75" x1="36" x2="23" y1="87" y2="88"></line>
+<line stroke="#fff" stroke-width="0.75" x1="64" x2="76" y1="85" y2="83"></line>
+<line stroke="#fff" stroke-width="0.75" x1="64" x2="77" y1="87" y2="88"></line>
+<!-- Little Kitten Witch Hat -->
+<ellipse cx="50" cy="62" fill="#321a47" rx="32" ry="10"></ellipse>
+<polygon fill="#251235" points="32,60 68,60 52,22"></polygon>
+<rect fill="#c05621" height="5" rx="1" width="28" x="36" y="55"></rect>
+</g>
+<!-- Autumn Leaves on Ground -->
+<ellipse cx="160" cy="300" fill="#150b1f" rx="140" ry="25"></ellipse>
+<circle cx="95" cy="275" fill="#cc5200" r="3"></circle>
+<circle cx="140" cy="285" fill="#e67e22" r="2.5"></circle>
+<circle cx="215" cy="280" fill="#d35400" r="3.5"></circle>
+</g>
+<!-- Circular border ring with glowing orange-amber rim -->
+<circle cx="160" cy="160" fill="none" r="142" stroke="#ffad66" stroke-opacity="0.35" stroke-width="2"></circle>
+</svg>
+<!-- Ambient Magic Sparkle particles -->
+<span class="absolute top-12 left-10 text-amber-300 text-xs animate-ping">✨</span>
+<span class="absolute bottom-14 right-8 text-amber-200 text-sm animate-pulse">✦</span>
+</div>
+<!-- Main CTA Button: Agendar pelo WhatsApp -->
+<a class="w-full max-w-[340px] py-3.5 px-6 rounded-2xl bg-[#ffad66] hover:bg-[#ff9c47] active:scale-[0.98] transition-all text-[#1b1028] font-bold text-base flex items-center justify-center gap-2.5 shadow-[0_6px_20px_rgba(255,173,102,0.35)]" data-purpose="primary-booking-cta" href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20de%20Halloween%20para%20meu%20pet." rel="noopener noreferrer" target="_blank">
+<!-- WhatsApp Icon Inside Button -->
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24">
+<path d="M12.031 2C6.505 2 2.016 6.47 2.016 11.973c0 1.896.536 3.737 1.554 5.334L2 22l4.838-1.53a9.92 9.92 0 005.193 1.455h.005c5.524 0 10.014-4.47 10.014-9.974A9.926 9.926 0 0012.031 2zm0 18.257h-.004a8.23 8.23 0 01-4.2-1.149l-.3-.178-3.125.987.99-3.036-.197-.311a8.21 8.21 0 01-1.26-4.597c0-4.547 3.714-8.245 8.296-8.245 2.217 0 4.298.86 5.86 2.42a8.19 8.19 0 012.42 5.836c0 4.549-3.713 8.252-8.48 8.252zm4.54-6.173c-.248-.124-1.47-.723-1.698-.806-.228-.083-.394-.124-.56.124-.166.248-.642.806-.787.97-.145.166-.29.186-.538.062-.249-.124-1.049-.386-1.998-1.23-.738-.658-1.237-1.472-1.382-1.72-.145-.248-.016-.382.108-.506.112-.111.249-.29.373-.435.124-.145.166-.248.249-.414.083-.166.041-.311-.021-.435-.062-.124-.56-1.346-.767-1.843-.202-.484-.407-.418-.56-.426l-.477-.008c-.166 0-.435.062-.663.311-.228.248-.87.85-87 2.073 0 1.222.89 2.404 1.014 2.57.125.166 1.752 2.67 4.244 3.743.593.256 1.056.409 1.417.524.595.189 1.137.162 1.565.098.477-.071 1.47-.6 1.677-1.18.207-.58.207-1.077.145-1.18-.062-.103-.228-.165-.477-.289z"></path>
+</svg>
+<span>Agendar pelo WhatsApp</span>
+</a>
+<!-- Rating Social Proof & Location -->
+<div class="mt-4 flex items-center justify-center gap-2 text-xs text-white/80 font-medium">
+<div class="flex text-amber-400 gap-0.5">
+<span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+</div>
+<span class="text-white/70">Cuidado com amor</span>
+<span class="text-white/30">|</span>
+<span class="text-white/70">Cajamar</span>
+</div>
+</main>
+<!-- END: MainContentHero -->
+<!-- BEGIN: BottomSheetTicker & Floating WhatsApp -->
+<!-- Dark Purple Bottom Bar -->
+<footer class="relative z-10 w-full px-5 py-4 rounded-t-3xl bg-[#1e132b] border-t border-purple-500/20 flex items-center justify-between shadow-2xl">
+<div class="flex items-center gap-3">
+<span class="w-8 h-[2px] bg-[#ffad66]"></span>
+<span class="text-xs uppercase font-bold tracking-[0.22em] text-[#c8b6e2]">
+          HALLOWEEN NA POMPOM
+        </span>
+</div>
+<!-- Small preview replay button for convenience -->
+<button class="text-[10px] text-white/50 hover:text-white underline transition-colors" id="replayIntroBtn" title="Ver introdução novamente" type="button">
+        Rever intro
+      </button>
+</footer>
+<!-- Floating WhatsApp FAB at bottom right -->
+<a aria-label="Falar conosco no WhatsApp" class="fixed bottom-6 right-6 z-30 w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#20ba59] active:scale-90 text-white flex items-center justify-center shadow-[0_8px_25px_rgba(37,211,102,0.45)] transition-all" href="https://wa.me/5511999999999" rel="noopener noreferrer" target="_blank">
+<svg class="w-8 h-8 fill-current" viewbox="0 0 24 24">
+<path d="M12.031 2C6.505 2 2.016 6.47 2.016 11.973c0 1.896.536 3.737 1.554 5.334L2 22l4.838-1.53a9.92 9.92 0 005.193 1.455h.005c5.524 0 10.014-4.47 10.014-9.974A9.926 9.926 0 0012.031 2zm0 18.257h-.004a8.23 8.23 0 01-4.2-1.149l-.3-.178-3.125.987.99-3.036-.197-.311a8.21 8.21 0 01-1.26-4.597c0-4.547 3.714-8.245 8.296-8.245 2.217 0 4.298.86 5.86 2.42a8.19 8.19 0 012.42 5.836c0 4.549-3.713 8.252-8.48 8.252zm4.54-6.173c-.248-.124-1.47-.723-1.698-.806-.228-.083-.394-.124-.56.124-.166.248-.642.806-.787.97-.145.166-.29.186-.538.062-.249-.124-1.049-.386-1.998-1.23-.738-.658-1.237-1.472-1.382-1.72-.145-.248-.016-.382.108-.506.112-.111.249-.29.373-.435.124-.145.166-.248.249-.414.083-.166.041-.311-.021-.435-.062-.124-.56-1.346-.767-1.843-.202-.484-.407-.418-.56-.426l-.477-.008c-.166 0-.435.062-.663.311-.228.248-.87.85-.87 2.073 0 1.222.89 2.404 1.014 2.57.125.166 1.752 2.67 4.244 3.743.593.256 1.056.409 1.417.524.595.189 1.137.162 1.565.098.477-.071 1.47-.6 1.677-1.18.207-.58.207-1.077.145-1.18-.062-.103-.228-.165-.477-.289z"></path>
+</svg>
+</a>
+<!-- END: BottomSheetTicker & Floating WhatsApp -->
+</div>
+<!-- END: MobileDeviceContainer -->
+<!-- ============================================================== -->
+<!-- BEGIN: Interactive Sequence Controller Script                  -->
+<!-- ============================================================== -->
+<script data-purpose="cinematic-choreography">
+    document.addEventListener('DOMContentLoaded', () => {
+      const overlay = document.getElementById('halloweenOverlay');
+      const content = document.getElementById('overlayContent');
+      const skipBtn = document.getElementById('skipIntroBtn');
+      const replayBtn = document.getElementById('replayIntroBtn');
+
+      const STORAGE_KEY = 'pompom_halloween_seen_2025';
+      const urlParams = new URLSearchParams(window.location.search);
+      const isForcedPreview = urlParams.get('intro') === 'preview';
+
+      let autoDismissTimer = null;
+      let isDismissed = false;
+
+      // Check if user prefers reduced motion
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // Function to gracefully dismiss the overlay
+      function dismissOverlay() {
+        if (isDismissed || !overlay) return;
+        isDismissed = true;
+        
+        clearTimeout(autoDismissTimer);
+
+        // Add blur & vaporize transition to typography
+        if (content) {
+          content.style.transition = 'transform 1.2s ease, opacity 1s ease, filter 1s ease';
+          content.style.transform = 'translateY(-26px)';
+          content.style.opacity = '0';
+          content.style.filter = 'blur(8px)';
+        }
+
+        // Dissolve entire overlay window
+        setTimeout(() => {
+          overlay.classList.add('cinematic-exit');
+          setTimeout(() => {
+            overlay.style.display = 'none';
+          }, 1300);
+        }, 300);
+
+        try {
+          localStorage.setItem(STORAGE_KEY, 'true');
+        } catch (e) {
+          // localStorage disabled fallback
+        }
+      }
+
+      // Check previously seen state
+      const hasSeen = localStorage.getItem(STORAGE_KEY);
+      if (hasSeen && !isForcedPreview) {
+        // Instant pass if already viewed
+        overlay.style.display = 'none';
+      } else {
+        // Choreographed sequence:
+        // Reduced motion: 2.6s calm presentation
+        // Standard: 6.7s total sequence with typography dissolve at 5.2s
+        const totalDuration = prefersReducedMotion ? 2600 : 5400;
+        autoDismissTimer = setTimeout(() => {
+          dismissOverlay();
+        }, totalDuration);
+      }
+
+      // Skip Button click handler
+      if (skipBtn) {
+        skipBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          dismissOverlay();
+        });
+      }
+
+      // Escape key to exit intro quickly
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          dismissOverlay();
+        }
+      });
+
+      // Replay button handler
+      if (replayBtn) {
+        replayBtn.addEventListener('click', () => {
+          isDismissed = false;
+          overlay.style.display = 'flex';
+          overlay.classList.remove('cinematic-exit');
+          if (content) {
+            content.style.transform = 'translateY(0)';
+            content.style.opacity = '1';
+            content.style.filter = 'none';
+          }
+          clearTimeout(autoDismissTimer);
+          autoDismissTimer = setTimeout(dismissOverlay, 5400);
+        });
+      }
+    });
+  </script>
+<!-- END: Interactive Sequence Controller Script -->
+</body></html>

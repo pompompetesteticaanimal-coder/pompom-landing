@@ -6,3 +6,14 @@
 server.py
 fix*.py
 fotos/produtos/
+backups/
+previews/
+.stitch/
+.ai-memory.toml
+scripts/
+tests/
+.env
+.env.*
+*.pem
+*.key
+node_modules/

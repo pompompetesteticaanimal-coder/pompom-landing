@@ -1,0 +1,7 @@
+# Papel detalhado de Natal
+
+Arquivo: `natal-detalhado.png`. Gerado com a ferramenta integrada `image_gen`, em estilo fotográfico. É um embrulho de prévia para cobrir as fotos originais do Halloween.
+
+## Prompt final
+
+Create a realistic, full-bleed 4:3 landscape macro photograph of elaborate Christmas gift wrapping completely covering a FLAT RECTANGULAR PHOTO. Fill all four image edges: no isolated boxes, no empty margins, no transparent background. Deep CHRISTMAS RED embossed paper with finely detailed metallic GOLD botanical scrollwork, tiny gold Christmas trees, stars, snowflakes, scattered small cream pet paw prints, delicate forest-green holly leaves and red berries. The repeat pattern is intricate, luxurious and legible at thumbnail size, with real tactile paper fibers and shallow embossed highlights. A wide GOLD SATIN ribbon crosses vertically left of center and horizontally in upper third, with a dimensional beautifully folded bow at upper-left; real fabric weave, rich highlights, soft shadows and folded paper corners. Dominant red and gold, minimal green accent. Warm professional studio product photograph, overhead view, photorealistic materials, no drawing, no CGI look, no logo, no text, no lettering, no watermark. Lower middle has relatively quieter patterned paper for our own HTML 'Em breve' ribbon. The wrapped rectangle fills the entire picture like a real photo covered in detailed Christmas paper. Do not show the concealed photo or animals themselves.

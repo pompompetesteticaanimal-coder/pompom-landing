@@ -1,0 +1,380 @@
+[
+  {
+    "file": "capa-3",
+    "layout": "3",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "capa-2",
+    "layout": "2",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "capa-1",
+    "layout": "1",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "menu-1",
+    "layout": "1",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "menu-2",
+    "layout": "2",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "servicos-1",
+    "layout": "1",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "menu-3",
+    "layout": "3",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "servicos-2",
+    "layout": "2",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "servicos-3",
+    "layout": "3",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "galeria-1",
+    "layout": "1",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "galeria-2",
+    "layout": "2",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "galeria-3",
+    "layout": "3",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "lojinha-1",
+    "layout": "1",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "lojinha-2",
+    "layout": "2",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "lojinha-3",
+    "layout": "3",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "apresentacao-1",
+    "layout": "1",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "apresentacao-2",
+    "layout": "2",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "apresentacao-3",
+    "layout": "3",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "espaco-2",
+    "layout": "2",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "espaco-1",
+    "layout": "1",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "espaco-3",
+    "layout": "3",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "contato-1",
+    "layout": "1",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "contato-2",
+    "layout": "2",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "contato-3",
+    "layout": "3",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "vitrine-1",
+    "layout": "1",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "vitrine-2",
+    "layout": "2",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "vitrine-3",
+    "layout": "3",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "avaliacoes-1",
+    "layout": "1",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "avaliacoes-2",
+    "layout": "2",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "avaliacoes-3",
+    "layout": "3",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "abertura-1",
+    "layout": "1",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "abertura-2",
+    "layout": "2",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "abertura-3",
+    "layout": "3",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "marca-1",
+    "layout": "1",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "marca-2",
+    "layout": "2",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "marca-3",
+    "layout": "3",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "catalogo-1",
+    "layout": "1",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "catalogo-2",
+    "layout": "2",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "catalogo-3",
+    "layout": "3",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "produto-1",
+    "layout": "1",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "produto-2",
+    "layout": "2",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "produto-3",
+    "layout": "3",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "zoom-1",
+    "layout": "1",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "zoom-2",
+    "layout": "2",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "zoom-3",
+    "layout": "3",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "transformacoes-1",
+    "layout": "1",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "transformacoes-2",
+    "layout": "2",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "transformacoes-3",
+    "layout": "3",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "capa-1-cartoon-2d",
+    "layout": "1",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "capa-2-cartoon-2d",
+    "layout": "2",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "capa-3-cartoon-2d",
+    "layout": "3",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "capa-1-3d-fofo",
+    "layout": "1",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "capa-2-3d-fofo",
+    "layout": "2",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "capa-3-3d-fofo",
+    "layout": "3",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "capa-1-aquarela",
+    "layout": "1",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "capa-2-aquarela",
+    "layout": "2",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "capa-3-aquarela",
+    "layout": "3",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "capa-1-realista",
+    "layout": "1",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "capa-2-realista",
+    "layout": "2",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "capa-3-realista",
+    "layout": "3",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "capa-1-vetor-editorial",
+    "layout": "1",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "capa-2-vetor-editorial",
+    "layout": "2",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  },
+  {
+    "file": "capa-3-vetor-editorial",
+    "layout": "3",
+    "seasonalHalloween": [],
+    "visibleBroken": []
+  }
+]

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lojinha PomPom Pet — Coleção Outubro Encantado</title>
+<!-- Google Fonts & Material Symbols -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Configuration -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "error-container": "#93000a",
+            "outline": "#a38c7d",
+            "primary-fixed-dim": "#ffb77d",
+            "background": "#17101f",
+            "on-surface": "#ebdef4",
+            "on-secondary-fixed": "#2c0051",
+            "on-tertiary-container": "#693700",
+            "inverse-on-surface": "#352d3e",
+            "surface-variant": "#3a3142",
+            "on-secondary-fixed-variant": "#62259b",
+            "inverse-primary": "#914d00",
+            "secondary": "#ddb8ff",
+            "on-tertiary-fixed-variant": "#6d3900",
+            "surface-container": "#241c2c",
+            "surface-bright": "#3e3647",
+            "outline-variant": "#554336",
+            "surface": "#17101f",
+            "error": "#ffb4ab",
+            "on-secondary": "#490081",
+            "on-tertiary-fixed": "#2e1500",
+            "primary-container": "#ff9838",
+            "surface-tint": "#ffb77d",
+            "on-background": "#ebdef4",
+            "secondary-container": "#62259b",
+            "on-secondary-container": "#d1a1ff",
+            "on-primary": "#4d2600",
+            "surface-container-high": "#2f2737",
+            "secondary-fixed-dim": "#ddb8ff",
+            "on-tertiary": "#4d2700",
+            "on-surface-variant": "#dbc2b1",
+            "tertiary-fixed": "#ffdcc2",
+            "primary-fixed": "#ffdcc3",
+            "on-primary-fixed-variant": "#6e3900",
+            "inverse-surface": "#ebdef4",
+            "surface-container-highest": "#3a3142",
+            "on-error": "#690005",
+            "on-primary-container": "#6a3700",
+            "surface-container-low": "#201828",
+            "tertiary": "#ffbf8c",
+            "secondary-fixed": "#f0dbff",
+            "tertiary-container": "#ef9f5a",
+            "tertiary-fixed-dim": "#ffb77b",
+            "surface-container-lowest": "#120b1a",
+            "on-error-container": "#ffdad6",
+            "on-primary-fixed": "#2f1500",
+            "primary": "#ffc08e",
+            "surface-dim": "#17101f"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-lg": "2rem",
+            "gutter": "1rem",
+            "space-md": "1rem",
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "margin": "1.25rem",
+            "space-lg": "1.5rem",
+            "gutter-sm": "0.75rem",
+            "space-xl": "2rem"
+          },
+          "fontFamily": {
+            "headline-md": ["Playfair Display"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "title-editorial": ["Playfair Display"],
+            "headline-lg": ["Playfair Display"],
+            "display-lg-mobile": ["Playfair Display"],
+            "display-lg": ["Playfair Display"],
+            "label-md": ["Plus Jakarta Sans"],
+            "label-caps": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "label-lg": ["15px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "700" }],
+            "title-editorial": ["20px", { "lineHeight": "26px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "headline-lg": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "display-lg-mobile": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "600" }],
+            "label-caps": ["11px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "800" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      display: none;
+    }
+    .custom-scroll {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased min-h-screen selection:bg-primary-container selection:text-on-primary-container flex flex-col justify-between items-center">
+<!-- Main Mobile Canvas Container (Max 460px) -->
+<div class="w-full max-w-[460px] min-h-screen flex flex-col relative bg-surface pb-32">
+<!-- Top Ambient Glow Aura -->
+<div class="pointer-events-none absolute -top-16 left-1/2 -translate-x-1/2 w-80 h-72 rounded-full bg-secondary-container/20 blur-[90px]"></div>
+<!-- SHARED COMPONENT: TopAppBar (Source of Truth JSON) -->
+<header class="sticky top-0 z-40 bg-surface-container/90 backdrop-blur-md shadow-md border-b border-outline-variant/30">
+<div class="flex justify-between items-center w-full px-margin py-space-sm max-w-[460px] mx-auto">
+<!-- Leading Icon & Brand Headline -->
+<div class="flex items-center gap-space-xs text-headline-sm font-headline-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-[22px]" data-icon="storefront">storefront</span>
+<span class="font-headline-sm text-headline-sm tracking-tight text-on-surface font-bold">Lojinha PomPom Pet</span>
+</div>
+<!-- Trailing Action Button -->
+<button aria-label="Fechar" class="w-10 h-10 rounded-full bg-surface-bright/50 border border-on-surface-variant/20 flex items-center justify-center text-on-surface-variant hover:bg-surface-bright/70 active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="close">close</span>
+</button>
+</div>
+<!-- Sub-Bar: City Badge & Micro Status -->
+<div class="px-margin pb-space-xs flex items-center justify-between">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-secondary-container/40 border border-secondary/20">
+<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+<span class="font-body-sm text-body-sm text-secondary font-medium">Atendimento Online Cajamar</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Toque para encomendar</p>
+</div>
+</header>
+<!-- Category Filter Chips Slider -->
+<section class="mt-space-sm px-margin overflow-x-auto custom-scroll flex items-center gap-space-sm py-space-xs">
+<button class="flex items-center gap-1.5 px-4 py-2 rounded-full bg-primary-container text-on-primary-container font-label-md text-label-md shadow-[0_2px_12px_rgba(255,152,56,0.35)] shrink-0 active:scale-95 transition-transform">
+<span>👗</span>
+<span>Roupas</span>
+</button>
+<button class="flex items-center gap-1.5 px-4 py-2 rounded-full bg-surface-container border border-secondary/20 text-on-surface font-label-md text-label-md hover:border-secondary/40 shrink-0 active:scale-95 transition-transform">
+<span>🐕</span>
+<span>Guias &amp; Peitorais</span>
+</button>
+<button class="flex items-center gap-1.5 px-4 py-2 rounded-full bg-surface-container border border-secondary/20 text-on-surface font-label-md text-label-md hover:border-secondary/40 shrink-0 active:scale-95 transition-transform">
+<span>🎾</span>
+<span>Brinquedos</span>
+</button>
+<button class="flex items-center gap-1.5 px-4 py-2 rounded-full bg-surface-container border border-secondary/20 text-on-surface font-label-md text-label-md hover:border-secondary/40 shrink-0 active:scale-95 transition-transform">
+<span>🎀</span>
+<span>Laços &amp; Adornos</span>
+</button>
+</section>
+<!-- HERO HIGHLIGHT CARD: Coleção Halloween Fofura -->
+<section class="px-margin mt-space-md">
+<div class="relative overflow-hidden rounded-lg bg-surface-container p-4 border border-secondary/20 shadow-[0_8px_24px_-4px_rgba(192,132,252,0.12)]">
+<!-- Ambient Candle/Pumpkin Glow Corner -->
+<div class="absolute -right-8 -top-8 w-36 h-36 rounded-full bg-primary-container/20 blur-2xl pointer-events-none"></div>
+<div class="flex items-center justify-between mb-2">
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-secondary-container/70 border border-secondary/30 text-secondary font-label-caps text-label-caps uppercase">
+<span class="material-symbols-outlined text-[14px]" data-icon="sparkles" data-weight="fill" style="font-variation-settings: 'FILL' 1;">arrow_back_ios_new</span>
+            Destaque da Semana
+          </span>
+<span class="font-body-sm text-body-sm text-tertiary font-medium">Conheça a lojinha</span>
+</div>
+<!-- Featured Pet Picture with Rounded Frame -->
+<div class="relative w-full h-48 rounded-xl overflow-hidden my-3 border border-secondary/20 shadow-inner group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Produto C-20" src="https://storage.googleapis.com/pompom-produtos/C-20.jpeg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-2.5 left-3">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-sm text-primary font-label-caps text-label-caps border border-primary/30">
+              Coleção Halloween Fofura
+            </span>
+</div>
+</div>
+<!-- Hero Content & Copy -->
+<div class="mt-2 space-y-1">
+<h2 class="font-headline-md text-headline-md text-on-surface">Um Halloween Encantado e Confortável</h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Conforto e charme para sessões de fotos e passeios mágicos em Cajamar. Consulte tamanhos e disponibilidade com a equipe.
+          </p>
+</div>
+<!-- Hero CTA Button -->
+<div class="mt-4 pt-2 border-t border-outline-variant/30 flex items-center justify-between">
+<div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">A partir de</p>
+<p class="font-headline-sm text-headline-sm text-primary font-bold">Consultar</p>
+</div>
+<a class="inline-flex items-center gap-2 h-11 px-5 rounded-full bg-primary-container text-on-primary-container font-label-lg text-label-lg shadow-[0_4px_16px_rgba(255,152,56,0.35)] hover:brightness-105 active:scale-95 transition-all" href="https://wa.me/5511947266216" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[18px]" data-icon="chat" data-weight="fill" style="font-variation-settings: 'FILL' 1;">chat</span>
+<span>Encomendar Destaque</span>
+</a>
+</div>
+</div>
+</section>
+<!-- SECTION: Nossos Queridinhos (Vertical Curated List of Product Cards) -->
+<section class="px-margin mt-space-lg">
+<div class="flex items-center justify-between mb-space-sm">
+<div>
+<h3 class="font-title-editorial text-title-editorial text-on-surface">Nossos Queridinhos</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Produtos para conhecer e consultar</p>
+</div>
+<span class="font-label-caps text-label-caps text-tertiary">Consulte disponibilidade</span>
+</div>
+<div class="flex flex-col gap-3">
+<!-- Card 1: Produto C-62 -->
+<article class="p-3 rounded-lg bg-surface-container border border-secondary/15 hover:border-secondary/35 transition-all flex items-center gap-3.5 shadow-sm">
+<div class="relative shrink-0 w-20 h-20 rounded-full p-1 bg-surface-container-high border-2 border-secondary/30 overflow-hidden shadow-[0_0_12px_rgba(192,132,252,0.15)]">
+<img class="w-full h-full object-cover rounded-full" data-alt="Produto C-62" src="https://storage.googleapis.com/pompom-produtos/C-62.jpeg"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-start justify-between">
+<h4 class="font-headline-sm text-headline-sm text-on-surface truncate">Produto C-62</h4>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1 mt-0.5">
+              Consulte tamanhos e disponibilidade.
+            </p>
+<div class="mt-2 flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-primary">Consultar</span>
+<a class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-bright/70 border border-primary/40 text-primary font-label-caps text-label-caps hover:bg-primary hover:text-on-primary active:scale-95 transition-all" href="https://wa.me/5511947266216" rel="noopener noreferrer" target="_blank">
+<span>Pedir no WhatsApp</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="chat">chat</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Card 2: Produto C-81 G -->
+<article class="p-3 rounded-lg bg-surface-container border border-secondary/15 hover:border-secondary/35 transition-all flex items-center gap-3.5 shadow-sm">
+<div class="relative shrink-0 w-20 h-20 rounded-full p-1 bg-surface-container-high border-2 border-secondary/30 overflow-hidden shadow-[0_0_12px_rgba(192,132,252,0.15)]">
+<img class="w-full h-full object-cover rounded-full" data-alt="Produto C-81 G" src="https://storage.googleapis.com/pompom-produtos/C-81%20G.jpeg"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-start justify-between">
+<h4 class="font-headline-sm text-headline-sm text-on-surface truncate">Produto C-81 G</h4>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1 mt-0.5">
+              Consulte tamanhos e disponibilidade.
+            </p>
+<div class="mt-2 flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-primary">Consultar</span>
+<a class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-bright/70 border border-primary/40 text-primary font-label-caps text-label-caps hover:bg-primary hover:text-on-primary active:scale-95 transition-all" href="https://wa.me/5511947266216" rel="noopener noreferrer" target="_blank">
+<span>Pedir no WhatsApp</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="chat">chat</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Card 3: Produto A0020 -->
+<article class="p-3 rounded-lg bg-surface-container border border-secondary/15 hover:border-secondary/35 transition-all flex items-center gap-3.5 shadow-sm">
+<div class="relative shrink-0 w-20 h-20 rounded-full p-1 bg-surface-container-high border-2 border-secondary/30 overflow-hidden shadow-[0_0_12px_rgba(192,132,252,0.15)]">
+<img class="w-full h-full object-cover rounded-full" data-alt="Produto A0020" src="https://storage.googleapis.com/pompom-produtos/A0020.jpeg"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-start justify-between">
+<h4 class="font-headline-sm text-headline-sm text-on-surface truncate">Produto A0020</h4>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1 mt-0.5">
+              Consulte tamanhos e disponibilidade.
+            </p>
+<div class="mt-2 flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-primary">Consultar</span>
+<a class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-bright/70 border border-primary/40 text-primary font-label-caps text-label-caps hover:bg-primary hover:text-on-primary active:scale-95 transition-all" href="https://wa.me/5511947266216" rel="noopener noreferrer" target="_blank">
+<span>Pedir no WhatsApp</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="chat">chat</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Card 4: Bolinha -->
+<article class="p-3 rounded-lg bg-surface-container border border-secondary/15 hover:border-secondary/35 transition-all flex items-center gap-3.5 shadow-sm">
+<div class="relative shrink-0 w-20 h-20 rounded-full p-1 bg-surface-container-high border-2 border-secondary/30 overflow-hidden shadow-[0_0_12px_rgba(192,132,252,0.15)]">
+<img class="w-full h-full object-cover rounded-full" data-alt="Produto bolinha" src="https://storage.googleapis.com/pompom-produtos/bolinha.jpg"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-start justify-between">
+<h4 class="font-headline-sm text-headline-sm text-on-surface truncate">Bolinha</h4>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1 mt-0.5">
+              Consulte tamanhos e disponibilidade.
+            </p>
+<div class="mt-2 flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-primary">Consultar</span>
+<a class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-bright/70 border border-primary/40 text-primary font-label-caps text-label-caps hover:bg-primary hover:text-on-primary active:scale-95 transition-all" href="https://wa.me/5511947266216" rel="noopener noreferrer" target="_blank">
+<span>Pedir no WhatsApp</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="chat">chat</span>
+</a>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- BANNER: Atendimento Personalizado Local -->
+<section class="px-margin mt-space-lg mb-space-sm">
+<div class="p-4 rounded-lg bg-surface-container-high border border-outline-variant/40 flex items-start gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container/20 flex items-center justify-center shrink-0 text-primary-container">
+<span class="material-symbols-outlined text-[20px]" data-icon="verified">verified</span>
+</div>
+<div>
+<h5 class="font-headline-sm text-headline-sm text-on-surface">Atendimento Exclusivo via WhatsApp</h5>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-normal">
+            Consulte produtos, tamanhos e disponibilidade diretamente com a equipe PomPom Pet.
+          </p>
+</div>
+</div>
+</section>
+<!-- Quick Micro FAQ / Testimonial Anchor -->
+<section class="px-margin my-space-xs pb-4">
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant px-1">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary" data-icon="local_shipping">local_shipping</span>
+          Consulte a equipe
+        </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary" data-icon="favorite">favorite</span>
+          Modelos para seu pet
+        </span>
+</div>
+</section>
+<!-- SHARED COMPONENT: BottomNavBar (Source of Truth JSON) -->
+<!-- Executing styles: fixed bottom-0 left-0 w-full z-50 rounded-t-none border-t border-outline-variant/20 bg-surface-container/95 backdrop-blur-md shadow-[0_-8px_24px_-4px_rgba(255,152,56,0.28)] -->
+<div class="fixed bottom-0 left-0 w-full z-50 border-t border-outline-variant/20 bg-surface-container/95 backdrop-blur-md shadow-[0_-8px_24px_-4px_rgba(255,152,56,0.28)]">
+<div class="flex items-center justify-center px-margin py-space-sm max-w-[460px] mx-auto w-full">
+<!-- Active Primary WhatsApp CTA as mapped in style_active_navigation -->
+<a class="flex items-center justify-center w-full h-[50px] bg-primary text-on-primary rounded-full font-label-lg text-label-lg shadow-[0_6px_20px_rgba(255,152,56,0.35)] hover:brightness-105 active:scale-[0.99] transition-all gap-2" href="https://wa.me/5511947266216" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[20px]" data-icon="chat" data-weight="fill" style="font-variation-settings: 'FILL' 1;">chat</span>
+<span>Consultar pelo WhatsApp</span>
+</a>
+<!-- Secondary hidden destination to adhere precisely to destination_count: 2 in json -->
+<div class="hidden">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</div>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prévia mobile · Halloween PomPom Pet</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #100b17; color: #fff3df; font: 14px/1.5 system-ui, sans-serif; }
+    main { display: flex; flex-direction: column; align-items: center; padding: 20px 16px; min-height: 100dvh; }
+    .toolbar { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 12px; margin-bottom: 16px; }
+    h1 { font-size: 16px; font-weight: 600; margin: 0 12px 0 0; }
+    button, a { border: 1px solid #755681; border-radius: 99px; min-height: 42px; padding: 10px 16px; color: #e2cce9; background: #24182f; text-decoration: none; font: inherit; cursor: pointer; }
+    button { background: #ffad66; color: #271527; border-color: #ffad66; }
+    button:focus-visible, a:focus-visible { outline: 2px solid #fff3df; outline-offset: 4px; }
+    .phone { width: min(390px, 100%); height: min(844px, calc(100dvh - 155px)); min-height: 440px; border-radius: 24px; overflow: hidden; border: 1px solid #63466f; box-shadow: 0 16px 90px #08050b; background: #17101f; }
+    iframe { width: 100%; height: 100%; border: 0; display: block; }
+    p { font-size: 12px; color: #b69cc1; margin: 14px 0 0; text-align: center; }
+    @media(max-width: 500px) { .toolbar { gap: 8px; } h1 { width: 100%; text-align: center; } .phone { height: calc(100dvh - 185px); } }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="toolbar">
+      <h1>Abertura de Halloween · PomPom Pet</h1>
+      <button id="replay" type="button">Repetir abertura ↻</button>
+      <a href="../../mobile.html?intro=preview" target="_blank" rel="noopener">Abrir no celular ↗</a>
+      <a href="https://stitch.google.com/projects/10444169902472125204" target="_blank" rel="noopener">Ver no Stitch ↗</a>
+    </div>
+    <div class="phone"><iframe id="preview" src="../../mobile.html?intro=preview" title="Prévia da abertura mobile de Halloween"></iframe></div>
+    <p>Nesta prévia, a abertura pode ser repetida. No site, ela reaparece numa nova visita após cinco horas.</p>
+  </main>
+  <script>
+    document.getElementById('replay').addEventListener('click', () => {
+      document.getElementById('preview').src = '../../mobile.html?intro=preview&replay=' + Date.now();
+    });
+  </script>
+</body>
+</html>

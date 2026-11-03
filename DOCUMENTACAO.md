@@ -2,6 +2,7 @@
 
 > Landing page do pet shop PomPom Pet Estética Animal.
 > Site estático (HTML/CSS/JS puro) com versão desktop e mobile separadas.
+> Última atualização operacional: 12/08/2026.
 
 ---
 
@@ -80,6 +81,8 @@ python -m http.server 8080
 ## Como Fazer Deploy (Cloud Run)
 
 O site é servido via **Docker + Nginx** no Google Cloud Run.
+O projeto GCP correto é `pompom-evolution` e o serviço público do site é `pompom-site`.
+Fazer deploy sempre nas duas regiões; o domínio público aponta para `us-east1`.
 
 ### Build e deploy manual
 
@@ -87,13 +90,40 @@ O site é servido via **Docker + Nginx** no Google Cloud Run.
 # Autenticar no Google Cloud
 gcloud auth login
 
-# Build e deploy direto pelo Cloud Build
+# Região principal do domínio
+gcloud run deploy pompom-site \
+  --source . \
+  --region us-east1 \
+  --allow-unauthenticated \
+  --port 8080 \
+  --project pompom-evolution
+
+# Região secundária mantida em paridade
 gcloud run deploy pompom-site \
   --source . \
   --region us-central1 \
   --allow-unauthenticated \
-  --port 8080
+  --port 8080 \
+  --project pompom-evolution
 ```
+
+Estado publicado em 11/08/2026:
+
+| Região | Revisão | Tráfego |
+|---|---|---|
+| `us-east1` | `pompom-site-00069-xmw` | 100% |
+| `us-central1` | `pompom-site-00006-9pn` | 100% |
+
+### Domínios e serviços relacionados
+
+| Item | Estado |
+|---|---|
+| `https://pompompetshop.com.br` | Site ativo |
+| `https://www.pompompetshop.com.br` | Site ativo via domain mapping |
+| Domínio `.com` sem `.br` | Deve ficar fora do ar |
+| `petgestor-frontend` | App web/admin deve continuar sem acesso público (`ingress: internal`) |
+
+Não reativar o app web/admin ao publicar o site. O pedido vigente é manter somente o site `.com.br` no ar.
 
 ### Como funciona o Dockerfile
 
@@ -137,7 +167,7 @@ Ambas as páginas usam **HTML puro + TailwindCSS via CDN + Google Fonts**. Não 
 |---|---|---|
 | Hero | `#inicio` | Fundo com gradient rose + mosaico de fotos dos pets rolando |
 | Serviços | `#servicos` | Cards de Banho, Tosa, Hidratação, Lojinha |
-| Stats | — | Faixa rose: 3000+ pets, ★★★★★ |
+| Stats | — | Faixa rose com prova social local e avaliação ★★★★★ |
 | Sobre | `#sobre` | Foto da Deisiane + texto + destaques |
 | Galeria | `#galeria` | 8 fotos de raças diferentes (antes/depois incluso) |
 | Avaliações | — | Depoimentos reais do Google Maps |
@@ -172,6 +202,19 @@ Ambas as páginas usam **HTML puro + TailwindCSS via CDN + Google Fonts**. Não 
 
 ## Histórico de Mudanças Relevantes
 
+### 11/08/2026 — Site reativado e tema permanente
+
+| Mudança | Arquivo(s) |
+|---|---|
+| Reativado/publicado o site no Cloud Run `pompom-site` em `us-east1` e `us-central1` | Cloud Run |
+| Confirmado domínio `.com.br` no ar e app web/admin `petgestor-frontend` mantido fora do acesso público | Cloud Run / domain mappings |
+| Removido tema da Copa do Mundo, álbum de figurinhas, roupas Copa, modais e scripts relacionados | desktop.html, mobile.html |
+| Removidas referências públicas a `fotos/copa` da página e do Dockerfile | desktop.html, mobile.html, Dockerfile |
+| Substituídas imagens principais por fotos permanentes de `fotos/ambiente/` | desktop.html, mobile.html |
+| Open Graph, Twitter card e schema passaram a usar `fotos/ambiente/frente.png` | desktop.html, mobile.html |
+| Prova social alterada de número fixo para copy local: `Todo mês` / `centenas de pets de Cajamar e região` | desktop.html, mobile.html |
+| `tailwind.css` regenerado após remoção do tema | tailwind.css |
+
 ### Sessão atual (branch `claude/adoring-hawking-92d433`)
 
 | Mudança | Arquivo(s) |
@@ -196,7 +239,7 @@ Ambas as páginas usam **HTML puro + TailwindCSS via CDN + Google Fonts**. Não 
 - Correções de segurança: `rel="noopener noreferrer"`, CSP, Referrer-Policy
 - Link do Instagram corrigido para @pompompet_esteticaanimal
 - Remoção de preços dos serviços e produtos
-- Stats: "3000+ Pets atendidos" e "★★★★★"
+- Stats anteriores usavam "3000+ Pets atendidos"; copy atual usa prova social local sem número fixo.
 
 ---
 
@@ -222,7 +265,7 @@ python ssh_qr_watch.py
 ## Pendências e Próximos Passos
 
 - [ ] **Merge das correções** da branch `claude/adoring-hawking-92d433` para `main`
-- [ ] **Deploy no Cloud Run** com o domínio `pompompetshop.com.br`
+- [x] **Deploy no Cloud Run** com o domínio `pompompetshop.com.br`
 - [ ] **Fotos a adicionar na galeria**: spitz preto, pitbull, chow chow, salsicha
 - [ ] **Yorkshire Terrier**: adicionar foto quando disponível em `fotos/cachorros/york-nova.jpg`
 - [ ] **Google Maps**: avaliar migração para Google Maps Embed API com chave (URL atual é deprecated)

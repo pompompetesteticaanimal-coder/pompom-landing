@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>PomPom — Identidade e experiência da loja</title>
+  <style>
+    *{box-sizing:border-box}body{margin:0;background:#17101f;color:#fff3df;font:14px/1.6 system-ui,sans-serif}main{max-width:600px;margin:auto;padding:24px 16px}a{color:#ffad66}h1{font:32px/1.15 Georgia,serif;margin:18px 0 12px}p{color:#c7b7ce}.notice{border-left:3px solid #ffad66;background:#24192e;padding:12px;border-radius:10px;font-size:12px}.controls{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}button{min-height:44px;border:1px solid #705079;border-radius:12px;background:#24192e;color:#fff3df;padding:8px 14px;font:inherit;cursor:pointer}button[aria-pressed=true]{background:#ffad66;color:#17101f}button:focus-visible,a:focus-visible{outline:3px solid #d0a5ea;outline-offset:4px}.stage{width:390px;max-width:100%;margin:20px auto;border:1px solid #705079;border-radius:22px;overflow:hidden}iframe{width:100%;height:844px;border:0;display:block;background:#17101f}.status{font-size:12px;color:#ffad66;min-height:24px}.replay{display:block;margin:auto}.footnote{font-size:12px}
+  </style>
+</head>
+<body><main>
+  <a id="back" href="layouts.html#abertura">← Voltar à comparação</a>
+  <h1 id="title">Identidade e loja</h1><p id="description"></p>
+  <div class="notice">Experimento local: não altera o site principal e não foi publicado. Escolha uma opção para testar. As fotos e categorias são do catálogo atual; preços e disponibilidade não foram inventados.</div>
+  <div class="controls" id="variants" aria-label="Alternativas"></div>
+  <button id="replay" class="replay" hidden type="button">Repetir abertura</button>
+  <p class="status" id="status" role="status">Preparando a prévia…</p>
+  <div class="stage"><iframe id="site" title="Experimento mobile PomPom"></iframe></div>
+  <p class="footnote" id="hint"></p>
+</main>
+<script>
+  const params=new URLSearchParams(location.search);
+  const requested=params.get('parte');
+  const part=['abertura','marca','catalogo'].includes(requested)?requested:'abertura';
+  let variant=Math.max(1,Math.min(3,Number(params.get('opcao'))||1));
+  const titles={abertura:['Marca abaixo do logo','Marca acima do logo','Assinatura em destaque'],marca:['Fofo moderno · Fredoka','Acolhedor · Baloo 2','Marcante · Lilita One'],catalogo:['Círculos maiores','Cards com foto inteira','Um produto por vez']};
+  const descriptions={abertura:'O nome e o serviço ficam claros antes da mensagem de Halloween.',marca:'Compare as letras sobre a capa atual, com a mesma aquarela e paleta.',catalogo:'Toque na foto para ampliar. O WhatsApp só abre pelo botão de consulta, depois de visualizar o produto.'};
+  document.querySelector('#title').textContent={abertura:'Quem está dando as boas-vindas?',marca:'Um nome que chama atenção',catalogo:'Veja os produtos de pertinho'}[part];
+  document.querySelector('#description').textContent=descriptions[part];
+  document.querySelector('#back').href='layouts.html#'+part;
+  document.querySelector('#hint').textContent=part==='abertura'?'A animação usa os morcegos, raios e fumaça atuais. O modo de teste pode ser repetido e não grava o intervalo de cinco horas.':part==='marca'?'A tipografia muda apenas a assinatura da marca neste exemplo. Os títulos do restante do site são preservados.':'Sete categorias reais. Experimente ampliar, usar o zoom e fechar para continuar navegando. As referências são os códigos dos arquivos do catálogo.';
+  const frame=document.querySelector('#site');
+  const replay=document.querySelector('#replay');replay.hidden=part!=='abertura';
+  function controls(){document.querySelector('#variants').replaceChildren(...titles[part].map((title,i)=>{const b=document.createElement('button');b.type='button';b.textContent=(i+1)+' · '+title;b.setAttribute('aria-pressed',String(variant===i+1));b.onclick=()=>{variant=i+1;history.replaceState(null,'','?parte='+part+'&opcao='+variant);controls();load()};return b}))}
+  let attempts=0;
+  function load(){attempts=0;document.querySelector('#status').textContent='Preparando a prévia…';frame.dataset.ready='false';frame.src=part==='abertura'?'intro-identidade.html?intro=preview&opcao='+variant:'../../mobile.html?intro=off';}
+  function ready(){frame.dataset.ready='true';document.querySelector('#status').textContent='Prévia pronta para testar.';}
+  function connect(){
+    if(part==='abertura'){ready();return;}
+    const doc=frame.contentDocument;
+    if(!doc?.querySelector('#lojinha-sheet')||typeof frame.contentWindow?.abrirLojinha!=='function'){if(++attempts<100)setTimeout(connect,100);return;}
+    const s=doc.createElement('script');s.id='identity-demo-script';s.src=new URL('identidade-demo.js',location.href).href;s.onload=()=>{frame.contentWindow.PomPomIdentidade.render(part,variant);ready();};doc.body.append(s);
+  }
+  frame.addEventListener('load',connect);replay.onclick=load;controls();load();
+</script>
+</body></html>

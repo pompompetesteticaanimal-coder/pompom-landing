@@ -19,3 +19,16 @@ extracted_log.md
 *.zip
 extraido/
 node_modules/
+fotos/produtos/
+
+# Backups e revisões visuais ficam locais, fora do envio para build.
+backups/
+previews/
+.stitch/
+.ai-memory.toml
+scripts/
+tests/
+.env
+.env.*
+*.pem
+*.key

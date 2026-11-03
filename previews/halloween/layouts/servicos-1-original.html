@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=390px, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>PomPom Pet - Serviços</title>
+<!-- Google Fonts: Playfair Display (Serifada Elegante) & Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            aubergine: {
+              DEFAULT: '#17101f',
+              dark: '#120c19',
+              card: '#24192e',
+              cardHover: '#2d1f39',
+              border: '#3c2b4d',
+            },
+            cream: {
+              DEFAULT: '#fff3df',
+              muted: '#dfd2c0',
+            },
+            lavender: {
+              soft: '#c084fc',
+              badge: '#2f1f42',
+            },
+            pumpkin: {
+              DEFAULT: '#ffad66',
+              glow: '#ff9033',
+            }
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-decorations">
+    /* Decorações sutis e refinadas de Halloween fofo */
+    .web-pattern {
+      background-image: radial-gradient(circle at 100% 0%, rgba(192, 132, 252, 0.08) 0%, transparent 65%);
+    }
+    .halloween-glow {
+      box-shadow: 0 8px 24px -6px rgba(255, 173, 102, 0.12);
+    }
+  </style>
+</head>
+<body class="bg-aubergine text-cream font-sans antialiased w-[390px] mx-auto min-h-screen relative flex flex-col justify-between selection:bg-pumpkin selection:text-aubergine-dark pb-24 overflow-x-hidden">
+<!-- BEGIN: Header -->
+<header class="relative px-5 pt-6 pb-4 flex items-center justify-between border-b border-aubergine-border/40 web-pattern" data-purpose="app-header">
+<!-- Teia decorativa sutil no canto superior esquerdo -->
+<svg class="absolute top-0 left-0 w-16 h-16 text-lavender-soft/20 pointer-events-none" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 100 100">
+<path d="M0,0 L100,0 M0,0 L0,100 M0,0 L85,85 M0,0 L45,95 M0,0 L95,45"></path>
+<path d="M25,0 C25,12 12,25 0,25"></path>
+<path d="M55,0 C55,30 30,55 0,55"></path>
+<path d="M85,0 C85,50 50,85 0,85"></path>
+</svg>
+<!-- Morceguinho Fofo Decorativo -->
+<div class="absolute top-3 right-16 text-lavender-soft/40 transform -rotate-12 pointer-events-none">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24">
+<path d="M12 9c-1.5 0-2.5 1-3.5 0C6.5 7 2 7 2 11c0 4 3 6 5 6s4-3 5-3 3 3 5 3 5-2 5-6c0-4-4.5-4-6.5-2-1 1-2 0-3.5 0z"></path>
+</svg>
+</div>
+<!-- Marca PomPom Pet -->
+<div class="flex items-center gap-2.5 z-10">
+<div class="w-10 h-10 rounded-full bg-aubergine-card border border-aubergine-border flex items-center justify-center shadow-inner">
+<!-- Ícone de Patinha Delicada -->
+<span aria-label="PomPom Pet" class="text-xl" role="img">🐾</span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<h1 class="text-base font-bold text-cream tracking-tight">PomPom Pet</h1>
+<span class="text-xs">✨</span>
+</div>
+<p class="text-[11px] text-lavender-soft tracking-wide uppercase font-medium">Estética Animal com Amor</p>
+</div>
+</div>
+<!-- Botão de Menu Compacto -->
+<button aria-label="Menu" class="w-10 h-10 rounded-xl bg-aubergine-card/80 border border-aubergine-border flex items-center justify-center text-cream hover:text-pumpkin transition-colors z-10" type="button">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</header>
+<!-- END: Header -->
+<!-- BEGIN: MainContent -->
+<main class="px-5 pt-6 flex-1" data-purpose="services-showcase">
+<!-- Tag & Cabeçalho da Seção -->
+<div class="mb-5 text-left">
+<!-- Tag / Badge do Tema -->
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-lavender-badge border border-lavender-soft/30 text-pumpkin text-xs font-semibold mb-3">
+<span>🔮</span>
+<span>O que fazemos</span>
+</div>
+<!-- Headline Elegante Serifada -->
+<h2 class="font-serif text-[28px] leading-tight text-cream mb-2 font-semibold">
+        Um toque de magia.<br/>
+<span class="italic text-pumpkin font-normal">O cuidado de sempre.</span>
+</h2>
+<!-- Subtítulo Suave -->
+<p class="text-xs text-cream-muted leading-relaxed font-normal">
+        Cuidado completo com produtos premium
+      </p>
+</div>
+<!-- BEGIN: ServicesGrid (Layout 2x2) -->
+<div class="grid grid-cols-2 gap-3.5 mb-4" data-purpose="services-grid-2x2">
+<!-- Card 1: Banho Completo -->
+<article class="bg-aubergine-card rounded-2xl p-4 border border-aubergine-border/80 flex flex-col justify-between hover:border-pumpkin/40 transition-all halloween-glow" data-purpose="service-item">
+<div>
+<!-- Ícone com Container Lilás Sutil -->
+<div class="w-11 h-11 rounded-xl bg-aubergine/80 border border-aubergine-border flex items-center justify-center text-xl mb-3 shadow-sm">
+            🛁
+          </div>
+<h3 class="text-sm font-bold text-cream mb-1 tracking-tight">Banho Completo</h3>
+<p class="text-[11px] text-cream-muted/90 leading-snug font-normal">
+            Shampoo premium, secagem cuidadosa e perfume suave.
+          </p>
+</div>
+<div class="mt-4 pt-2.5 border-t border-aubergine-border/50">
+<span class="inline-flex items-center text-[11px] font-semibold text-pumpkin hover:text-pumpkin-glow transition-colors">
+            Detalhes <span class="ml-1 text-[13px]">→</span>
+</span>
+</div>
+</article>
+<!-- Card 2: Tosa -->
+<article class="bg-aubergine-card rounded-2xl p-4 border border-aubergine-border/80 flex flex-col justify-between hover:border-pumpkin/40 transition-all halloween-glow" data-purpose="service-item">
+<div>
+<!-- Ícone com Container Lilás Sutil -->
+<div class="w-11 h-11 rounded-xl bg-aubergine/80 border border-aubergine-border flex items-center justify-center text-xl mb-3 shadow-sm">
+            ✂️
+          </div>
+<h3 class="text-sm font-bold text-cream mb-1 tracking-tight">Tosa</h3>
+<p class="text-[11px] text-cream-muted/90 leading-snug font-normal">
+            Higiênica ou completa para todas as raças.
+          </p>
+</div>
+<div class="mt-4 pt-2.5 border-t border-aubergine-border/50">
+<span class="inline-flex items-center text-[11px] font-semibold text-pumpkin hover:text-pumpkin-glow transition-colors">
+            Detalhes <span class="ml-1 text-[13px]">→</span>
+</span>
+</div>
+</article>
+<!-- Card 3: Hidratação -->
+<article class="bg-aubergine-card rounded-2xl p-4 border border-aubergine-border/80 flex flex-col justify-between hover:border-pumpkin/40 transition-all halloween-glow" data-purpose="service-item">
+<div>
+<!-- Ícone com Container Lilás Sutil -->
+<div class="w-11 h-11 rounded-xl bg-aubergine/80 border border-aubergine-border flex items-center justify-center text-xl mb-3 shadow-sm">
+            ✨
+          </div>
+<h3 class="text-sm font-bold text-cream mb-1 tracking-tight">Hidratação</h3>
+<p class="text-[11px] text-cream-muted/90 leading-snug font-normal">
+            Pelo macio, brilhoso e pele saudável.
+          </p>
+</div>
+<div class="mt-4 pt-2.5 border-t border-aubergine-border/50">
+<span class="inline-flex items-center text-[11px] font-semibold text-pumpkin hover:text-pumpkin-glow transition-colors">
+            Detalhes <span class="ml-1 text-[13px]">→</span>
+</span>
+</div>
+</article>
+<!-- Card 4: Lojinha Pet -->
+<article class="bg-aubergine-card rounded-2xl p-4 border border-aubergine-border/80 flex flex-col justify-between hover:border-pumpkin/40 transition-all halloween-glow" data-purpose="service-item">
+<div>
+<!-- Ícone com Container Lilás Sutil -->
+<div class="w-11 h-11 rounded-xl bg-aubergine/80 border border-aubergine-border flex items-center justify-center text-xl mb-3 shadow-sm">
+            🛍️
+          </div>
+<h3 class="text-sm font-bold text-cream mb-1 tracking-tight">Lojinha Pet</h3>
+<p class="text-[11px] text-cream-muted/90 leading-snug font-normal">
+            Acessórios exclusivos, roupinhas e petiscos.
+          </p>
+</div>
+<div class="mt-4 pt-2.5 border-t border-aubergine-border/50">
+<span class="inline-flex items-center text-[11px] font-semibold text-pumpkin hover:text-pumpkin-glow transition-colors">
+            Explorar <span class="ml-1 text-[13px]">→</span>
+</span>
+</div>
+</article>
+</div>
+<!-- END: ServicesGrid -->
+</main>
+<!-- END: MainContent -->
+<!-- BEGIN: WhatsAppStickyFooter -->
+<!-- Barra de Ação Fixa Inferior com Botão WhatsApp -->
+<aside class="fixed bottom-0 left-1/2 -translate-x-1/2 w-[390px] p-4 bg-aubergine-dark/95 backdrop-blur-md border-t border-aubergine-border/60 z-30" data-purpose="floating-action-footer">
+<a class="h-12 w-full rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm flex items-center justify-center gap-2.5 shadow-lg shadow-emerald-950/40 transition-all active:scale-[0.98]" href="https://wa.me/" rel="noopener noreferrer" target="_blank">
+<!-- Ícone Oficial WhatsApp em SVG -->
+<svg aria-hidden="true" class="w-5 h-5 fill-current" viewbox="0 0 24 24">
+<path d="M12.031 2c-5.506 0-9.985 4.478-9.985 9.984 0 1.761.459 3.477 1.332 4.992L2 22l5.163-1.353a9.932 9.932 0 0 0 4.868 1.266h.004c5.506 0 9.985-4.478 9.985-9.984 0-2.668-1.039-5.176-2.925-7.062A9.923 9.923 0 0 0 12.031 2zm0 18.291h-.003a8.27 8.27 0 0 1-4.218-1.155l-.302-.18-3.067.804.818-2.99-.197-.314a8.26 8.26 0 0 1-1.266-4.472c0-4.57 3.719-8.289 8.29-8.289 2.214 0 4.296.863 5.862 2.429a8.236 8.236 0 0 1 2.427 5.86c-.001 4.57-3.72 8.289-8.29 8.289zm4.544-6.204c-.249-.125-1.474-.728-1.703-.811-.229-.083-.395-.125-.561.125s-.644.811-.79 1c-.146.188-.291.209-.54.084-.249-.125-1.052-.388-2.003-1.237-.741-.661-1.241-1.478-1.387-1.727-.146-.249-.016-.384.108-.508.112-.111.249-.291.374-.437.125-.145.166-.25.249-.415.083-.166.042-.312-.021-.437-.062-.125-.561-1.352-.769-1.851-.203-.487-.41-.42-.561-.428l-.478-.008c-.166 0-.437.062-.665.312s-.873.853-.873 2.08c0 1.227.894 2.412 1.019 2.579.125.166 1.76 2.688 4.263 3.769.595.257 1.061.411 1.424.526.598.19 1.143.163 1.573.099.48-.072 1.474-.603 1.682-1.185.208-.582.208-1.081.146-1.185-.063-.105-.229-.167-.478-.292z"></path>
+</svg>
+<span>Agendar pelo WhatsApp</span>
+</a>
+</aside>
+<!-- END: WhatsAppStickyFooter -->
+</body></html>

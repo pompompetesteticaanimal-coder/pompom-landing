@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=390, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>PomPom Pet - Serviços Encantados</title>
+<!-- Tailwind CSS CDN with forms and container queries plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Custom Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            aubergine: {
+              DEFAULT: '#17101f',
+              dark: '#120b19',
+              surface: '#24192e',
+              inner: '#1c1326',
+              border: '#342442',
+              borderLight: '#4d365f'
+            },
+            pumpkin: {
+              DEFAULT: '#ffad66',
+              hover: '#ff9b47',
+              glow: 'rgba(255, 173, 102, 0.25)'
+            },
+            creme: {
+              DEFAULT: '#fff3df',
+              muted: '#bfaec9'
+            },
+            ghostPurple: '#9d84ad'
+          },
+          fontFamily: {
+            serif: ['Georgia', 'Cambria', '"Times New Roman"', 'serif'],
+            sans: ['-apple-system', 'BlinkMacSystemFont', '"SF Pro Text"', 'Roboto', 'sans-serif']
+          },
+          boxShadow: {
+            'glow-pumpkin': '0 4px 20px -2px rgba(255, 173, 102, 0.25)',
+            'floating-cta': '0 10px 25px -5px rgba(23, 16, 31, 0.8)'
+          }
+        }
+      }
+    }
+  </script>
+<!-- Typography & Custom Theme Adjustments -->
+<style data-purpose="custom-typography">
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", Roboto, sans-serif;
+      background-color: #17101f;
+      color: #fff3df;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .font-magic-title {
+      font-family: Georgia, Cambria, serif;
+      letter-spacing: -0.02em;
+    }
+  </style>
+<!-- Accordion and Animation Styles -->
+<style data-purpose="accordion-effects">
+    .accordion-transition {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    /* Subtle Halloween atmospheric details */
+    .decor-web {
+      opacity: 0.15;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body class="bg-aubergine text-creme min-h-screen flex justify-center selection:bg-pumpkin selection:text-aubergine-dark">
+<!-- Mobile Viewport Container (Fixed width 390px, no bezel) -->
+<div class="w-[390px] relative overflow-hidden bg-aubergine min-h-screen pb-24 shadow-2xl">
+<!-- Subtle Magical Web Accent (Top Right) -->
+<div aria-hidden="true" class="absolute -top-4 -right-4 w-32 h-32 decor-web">
+<svg fill="none" stroke="#fff3df" stroke-width="0.8" viewbox="0 0 100 100">
+<path d="M0 0 L100 100 M0 30 L100 70 M30 0 L70 100 M0 70 L70 0" stroke-opacity="0.3"></path>
+<path d="M100 0 Q60 10 40 40 Q10 60 0 100" fill="none"></path>
+<path d="M100 20 Q75 25 55 55 Q25 75 0 100" fill="none"></path>
+<path d="M100 45 Q85 50 70 70 Q50 85 0 100" fill="none"></path>
+</svg>
+</div>
+<!-- BEGIN: Header -->
+<header class="pt-6 px-5 pb-4 flex items-center justify-between border-b border-aubergine-border/60 relative z-10" data-purpose="topbar">
+<!-- Brand & Mascot Identity -->
+<div class="flex items-center space-x-2.5">
+<div class="w-9 h-9 rounded-full bg-aubergine-surface border border-pumpkin/40 flex items-center justify-center shadow-inner text-lg">
+          🐾
+        </div>
+<div>
+<span class="block text-base font-bold tracking-tight text-creme font-magic-title leading-tight">PomPom Pet</span>
+<span class="block text-[11px] text-ghostPurple tracking-wide uppercase font-semibold">Estética Animal</span>
+</div>
+</div>
+<!-- Halloween Seasonal Tag -->
+<div class="flex items-center space-x-1.5 bg-[#2c1d37] border border-pumpkin/30 px-2.5 py-1 rounded-full text-[11px] font-medium text-pumpkin shadow-sm">
+<span>✨</span>
+<span>Outubro Encantado</span>
+<span class="text-xs">🦇</span>
+</div>
+</header>
+<!-- END: Header -->
+<!-- BEGIN: MainContent -->
+<main class="px-5 pt-6 pb-4">
+<!-- Section Intro & Badges -->
+<section class="mb-6" data-purpose="section-header">
+<!-- Festive Badge -->
+<div class="inline-flex items-center gap-1.5 bg-[#2a1d35] border border-aubergine-border px-3 py-1 rounded-full text-xs font-semibold text-pumpkin mb-3">
+<span>✂️</span>
+<span>O que fazemos</span>
+</div>
+<!-- Section Title with Serif Contrast -->
+<h1 class="text-[27px] leading-[1.2] font-magic-title text-creme mb-2">
+          Um toque de magia.<br/>
+<span class="italic font-normal text-pumpkin">O cuidado de sempre.</span>
+</h1>
+<p class="text-sm text-creme-muted leading-relaxed font-sans">
+          Cuidado completo com produtos premium
+        </p>
+</section>
+<!-- BEGIN: ServicesAccordion -->
+<section class="space-y-3.5" data-purpose="services-accordion" id="services-list">
+<!-- ITEM 1: BANHO COMPLETO (EXPANDED STATE) -->
+<article class="bg-aubergine-surface rounded-2xl border border-pumpkin/50 shadow-glow-pumpkin overflow-hidden transition-all duration-300" data-purpose="accordion-item-expanded">
+<!-- Accordion Trigger Button -->
+<button aria-controls="content-banho" aria-expanded="true" class="w-full p-4 flex items-center justify-between text-left focus:outline-none" type="button">
+<div class="flex items-center gap-3.5">
+<!-- Service Icon -->
+<div class="w-12 h-12 rounded-xl bg-aubergine-inner border border-pumpkin/30 flex items-center justify-center text-xl shadow-inner shrink-0 relative">
+                🛁
+                <span class="absolute -top-1 -right-1 text-xs" title="Toque especial">✨</span>
+</div>
+<div>
+<h2 class="text-base font-bold text-creme font-magic-title tracking-wide">Banho Completo</h2>
+<p class="text-xs text-creme-muted mt-0.5">Shampoo premium · Secagem · Perfume</p>
+</div>
+</div>
+<!-- Expansion Indicator Icon (Minus / Up Arrow in Warm Pumpkin) -->
+<div aria-hidden="true" class="w-8 h-8 rounded-full bg-pumpkin/15 flex items-center justify-center text-pumpkin shrink-0 ml-2">
+<svg class="w-4 h-4 transform rotate-180 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+</button>
+<!-- Accordion Expanded Body -->
+<div class="px-4 pb-4.5 pt-1" data-purpose="accordion-details" id="content-banho">
+<div class="bg-aubergine-inner border border-pumpkin/25 rounded-xl p-4 space-y-3.5">
+<!-- Service Summary -->
+<p class="text-xs text-creme/90 leading-relaxed font-medium">
+                Tratamento completo para revitalizar o pelo e relaxar seu pet com todo carinho e conforto.
+              </p>
+<!-- Stages / Highlights List -->
+<ul class="space-y-2.5 text-xs text-creme-muted">
+<li class="flex items-start gap-2.5">
+<span aria-hidden="true" class="text-pumpkin text-sm leading-none mt-0.5">🐾</span>
+<span>Shampoo hipoalergênico &amp; condicionador premium</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span aria-hidden="true" class="text-pumpkin text-sm leading-none mt-0.5">🐾</span>
+<span>Secagem acústica anti-estresse e escovação</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span aria-hidden="true" class="text-pumpkin text-sm leading-none mt-0.5">🐾</span>
+<span>Limpeza de ouvidos e corte de unhas delicado</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span aria-hidden="true" class="text-pumpkin text-sm leading-none mt-0.5">🐾</span>
+<span class="text-creme font-medium">Finalização com perfume suave e lacinho temático 🎀</span>
+</li>
+</ul>
+<!-- Service Action Button (Min 44px for Mobile Ergonomics) -->
+<div class="pt-1.5">
+<a class="w-full h-11 bg-pumpkin hover:bg-pumpkin-hover text-aubergine-dark font-bold text-xs uppercase tracking-wider rounded-xl flex items-center justify-center gap-2 shadow-md transition-colors active:scale-[0.98]" href="#whatsapp-contato">
+<span>Agendar Banho</span>
+<span aria-hidden="true">→</span>
+</a>
+</div>
+</div>
+</div>
+</article>
+<!-- ITEM 2: TOSA (COLLAPSED STATE) -->
+<article class="bg-aubergine-surface rounded-2xl border border-aubergine-border hover:border-aubergine-borderLight transition-colors" data-purpose="accordion-item-collapsed">
+<button aria-expanded="false" class="w-full p-4 flex items-center justify-between text-left focus:outline-none" type="button">
+<div class="flex items-center gap-3.5">
+<!-- Service Icon -->
+<div class="w-12 h-12 rounded-xl bg-aubergine-inner border border-aubergine-border flex items-center justify-center text-xl shrink-0">
+                ✂️
+              </div>
+<div>
+<h2 class="text-base font-bold text-creme font-magic-title tracking-wide">Tosa</h2>
+<p class="text-xs text-creme-muted mt-0.5">Higiênica ou completa · Todas as raças</p>
+</div>
+</div>
+<!-- Collapsed Indicator Down Arrow -->
+<div aria-hidden="true" class="w-8 h-8 rounded-full bg-aubergine-inner border border-aubergine-border flex items-center justify-center text-ghostPurple shrink-0 ml-2">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+</button>
+</article>
+<!-- ITEM 3: HIDRATAÇÃO (COLLAPSED STATE) -->
+<article class="bg-aubergine-surface rounded-2xl border border-aubergine-border hover:border-aubergine-borderLight transition-colors" data-purpose="accordion-item-collapsed">
+<button aria-expanded="false" class="w-full p-4 flex items-center justify-between text-left focus:outline-none" type="button">
+<div class="flex items-center gap-3.5">
+<!-- Service Icon -->
+<div class="w-12 h-12 rounded-xl bg-aubergine-inner border border-aubergine-border flex items-center justify-center text-xl shrink-0">
+                ✨
+              </div>
+<div>
+<h2 class="text-base font-bold text-creme font-magic-title tracking-wide">Hidratação</h2>
+<p class="text-xs text-creme-muted mt-0.5">Pelo macio · Brilhoso · Saudável</p>
+</div>
+</div>
+<!-- Collapsed Indicator Down Arrow -->
+<div aria-hidden="true" class="w-8 h-8 rounded-full bg-aubergine-inner border border-aubergine-border flex items-center justify-center text-ghostPurple shrink-0 ml-2">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+</button>
+</article>
+<!-- ITEM 4: LOJINHA PET (COLLAPSED STATE / SPECIAL LINK) -->
+<article class="bg-aubergine-surface rounded-2xl border border-aubergine-border hover:border-aubergine-borderLight transition-colors" data-purpose="accordion-item-collapsed">
+<button aria-expanded="false" class="w-full p-4 flex items-center justify-between text-left focus:outline-none" type="button">
+<div class="flex items-center gap-3.5">
+<!-- Service Icon -->
+<div class="w-12 h-12 rounded-xl bg-aubergine-inner border border-aubergine-border flex items-center justify-center text-xl shrink-0">
+                🛍️
+              </div>
+<div>
+<h2 class="text-base font-bold text-creme font-magic-title tracking-wide">Lojinha Pet</h2>
+<p class="text-xs text-creme-muted mt-0.5">Acessórios, petiscos e roupinhas temáticas</p>
+</div>
+</div>
+<!-- Right navigation hint -->
+<div class="flex items-center gap-1 text-pumpkin/90 text-xs font-semibold shrink-0 ml-2">
+<span>Ver</span>
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+</button>
+</article>
+</section>
+<!-- END: ServicesAccordion -->
+<!-- Seasonal Guarantee / Cozy Notice -->
+<section class="mt-7 p-3.5 rounded-xl bg-aubergine-surface/60 border border-aubergine-border text-center flex items-center justify-center gap-2 text-xs text-creme-muted" data-purpose="trust-note">
+<span class="text-base">🎃</span>
+<span>Espaço climatizado e carinho garantido em cada sessão.</span>
+</section>
+</main>
+<!-- END: MainContent -->
+<!-- BEGIN: FloatingWhatsAppCTA -->
+<!-- Fixed WhatsApp Floating Button (Bottom Right) -->
+<aside class="fixed bottom-5 right-5 z-50 pointer-events-auto" data-purpose="floating-action-button" id="whatsapp-contato">
+<a aria-label="Fale conosco pelo WhatsApp" class="w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-lg shadow-black/40 hover:scale-105 active:scale-95 transition-transform" href="https://wa.me/5511947266216" rel="noopener noreferrer" target="_blank">
+<!-- WhatsApp Icon SVG -->
+<svg class="w-7 h-7 fill-current" viewbox="0 0 24 24">
+<path d="M12.031 2C6.495 2 2 6.495 2 12.031c0 1.954.558 3.784 1.528 5.334L2.09 22.09l4.896-1.428a10.026 10.026 0 0 0 5.045 1.369h.005c5.535 0 10.03-4.495 10.03-10.031S17.566 2 12.031 2zm0 18.375h-.004a8.348 8.348 0 0 1-4.258-1.163l-.305-.181-3.16.922.923-3.08-.198-.316a8.312 8.312 0 0 1-1.332-4.526c0-4.6 3.742-8.342 8.343-8.342 4.602 0 8.344 3.742 8.344 8.342 0 4.601-3.742 8.344-8.344 8.344zm4.577-6.242c-.251-.126-1.485-.733-1.715-.816-.23-.084-.397-.126-.565.126-.167.251-.649.816-.795.983-.147.168-.293.189-.544.063-.251-.126-1.06-.391-2.02-1.246-.746-.666-1.25-1.489-1.397-1.74-.146-.251-.016-.387.11-.512.113-.113.251-.293.377-.44.125-.146.167-.251.251-.418.084-.168.042-.314-.021-.44-.063-.125-.565-1.361-.774-1.864-.204-.49-.41-.424-.565-.432-.146-.008-.314-.009-.481-.009s-.44.063-.669.314c-.23.251-.879.858-.879 2.093 0 1.235.899 2.43 1.025 2.597.126.168 1.768 2.702 4.286 3.788.599.259 1.067.414 1.433.53.602.191 1.15.164 1.583.1 483-.072 1.485-.607 1.694-1.193.209-.586.209-1.088.147-1.193-.063-.105-.23-.168-.481-.293z"></path>
+</svg>
+</a>
+</aside>
+<!-- END: FloatingWhatsAppCTA -->
+</div>
+<!-- Interactive Accordion Toggle Script -->
+<script data-purpose="accordion-toggle">
+    // Minimal interaction script to allow toggling accordion states gracefully
+    document.addEventListener('DOMContentLoaded', () => {
+      const accordionArticles = document.querySelectorAll('#services-list > article');
+
+      accordionArticles.forEach(article => {
+        const button = article.querySelector('button');
+        if (!button) return;
+
+        button.addEventListener('click', () => {
+          const isCurrentlyExpanded = button.getAttribute('aria-expanded') === 'true';
+          const content = article.querySelector('[data-purpose="accordion-details"]');
+
+          // If clicking an already open card, keep it accessible or collapse
+          if (content) {
+            if (isCurrentlyExpanded) {
+              button.setAttribute('aria-expanded', 'false');
+              content.classList.add('hidden');
+              article.classList.remove('border-pumpkin/50', 'shadow-glow-pumpkin');
+              article.classList.add('border-aubergine-border');
+              
+              const iconSvg = button.querySelector('svg');
+              if (iconSvg) iconSvg.classList.remove('rotate-180');
+            } else {
+              button.setAttribute('aria-expanded', 'true');
+              content.classList.remove('hidden');
+              article.classList.add('border-pumpkin/50', 'shadow-glow-pumpkin');
+              article.classList.remove('border-aubergine-border');
+              
+              const iconSvg = button.querySelector('svg');
+              if (iconSvg) iconSvg.classList.add('rotate-180');
+            }
+          }
+        });
+      });
+    });
+  </script>
+</body></html>

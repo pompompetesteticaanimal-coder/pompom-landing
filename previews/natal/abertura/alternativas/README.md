@@ -1,0 +1,25 @@
+# Aberturas alternativas — revisão 16
+
+Os três ambientes ilustrados v15 estão preservados. Duas linguagens novas foram acrescentadas no mesmo laboratório:
+
+1. **Voo 3D · miniatura de Natal**: personagens modelados proceduralmente com volume, materiais, iluminação e câmera em perspectiva. Three.js 0.187.0, versionado localmente com licença. Trenó vermelho com perfis dourados, Papai Noel modelado, presentes e duas renas articuladas. É um estudo estilizado; não é uma renderização fotorrealista nem utiliza o atlas 2.5D anterior. Requer WebGL2.
+2. **Teatro de papel · vermelho e ouro**: SVG original com cortinas abrindo, moldura, lua em relevo, bosque em camadas, Papai Noel e renas em peças articuladas. Estética gráfica distinta do 3D e da ilustração anterior.
+
+Ambas têm onze segundos, a passagem central prolongada para avaliação, neve e nevasca que revela a página. Mantêm o texto final e os mascotes selecionados no laboratório. Pausa, repetição, seis posições de revisão, entrada imediata, Escape e movimento reduzido continuam disponíveis. Em caso de falha do renderizador, a entrada e os controles externos permanecem disponíveis.
+
+## Física
+
+`simular.cjs` usa Matter.js 0.20.0 (biblioteca em `../rig/vendor/`). Cada rédea liga os corpos dinâmicos do trenó e da rena por treze partículas intermediárias. As cordas transmitem força aos pontos de fixação fora do centro de massa, produzindo torque; não são linhas apenas acompanhando pontos estáticos.
+
+Forças de inércia programadas representam arrancada, subida e frenagem; os corpos respondem por integração física. Guias de propulsão conduzem as renas, com sustentação suave no trenó. Cabeça, cauda, sinos e lanterna têm respostas amortecidas. As pernas usam galope controlado com IK. A física de translação é planar, reproduzida nos modelos 3D; não é uma simulação volumétrica completa do animal. O modelo 3D não simula pele nem pelagem. Nem toda peça secundária é desenhada pelos dois renderizadores.
+
+Reproduzir: `node previews/natal/abertura/alternativas/simular.cjs` na raiz. Exporta `fisica.json`: 661 quadros a 60 fps, integração a 120 Hz. A simulação é preparada antes e o navegador interpola os dados, permitindo revisão determinística com pausa e salto de tempo. O motor físico não roda no celular.
+
+## Referências consultadas
+
+- [Benjamin Esdor — Reindeer Animation](https://benjaminesdor.com/reindeer-animation/): modelagem, armature, cenário e interação entre trenó e renas.
+- [Three.js — soft-body rope](https://threejs.org/examples/physics_ammo_rope.html): referência de cordas flexíveis; o solver usado neste estudo é Matter.js, não Ammo.
+- [Three.js — skinning and morphing](https://threejs.org/examples/webgl_animation_skinning_morph.html): referência de articulação e animação de personagens.
+- [Codrops — Christmas Tree Algorithm](https://tympanus.net/codrops/2021/12/27/three-js-animation-with-k-d-christmas-tree-algorithm/): referência de experimentação natalina com geometria e WebGL.
+
+Referências de direção/técnica; não foram copiados modelos, texturas ou códigos de personagens desses trabalhos. Modelos e SVG locais foram construídos em código para a prévia. A anterior imagem gerada e o `.blend` foram preservados.

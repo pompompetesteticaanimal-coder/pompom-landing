@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lojinha PomPom Pet - Outubro Encantado</title>
+<!-- Google Fonts & Material Symbols -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "error-container": "#93000a",
+            "outline": "#a38c7d",
+            "primary-fixed-dim": "#ffb77d",
+            "background": "#17101f",
+            "on-surface": "#ebdef4",
+            "on-secondary-fixed": "#2c0051",
+            "on-tertiary-container": "#693700",
+            "inverse-on-surface": "#352d3e",
+            "surface-variant": "#3a3142",
+            "on-secondary-fixed-variant": "#62259b",
+            "inverse-primary": "#914d00",
+            "secondary": "#ddb8ff",
+            "on-tertiary-fixed-variant": "#6d3900",
+            "surface-container": "#241c2c",
+            "surface-bright": "#3e3647",
+            "outline-variant": "#554336",
+            "surface": "#17101f",
+            "error": "#ffb4ab",
+            "on-secondary": "#490081",
+            "on-tertiary-fixed": "#2e1500",
+            "primary-container": "#ff9838",
+            "surface-tint": "#ffb77d",
+            "on-background": "#ebdef4",
+            "secondary-container": "#62259b",
+            "on-secondary-container": "#d1a1ff",
+            "on-primary": "#4d2600",
+            "surface-container-high": "#2f2737",
+            "secondary-fixed-dim": "#ddb8ff",
+            "on-tertiary": "#4d2700",
+            "on-surface-variant": "#dbc2b1",
+            "tertiary-fixed": "#ffdcc2",
+            "primary-fixed": "#ffdcc3",
+            "on-primary-fixed-variant": "#6e3900",
+            "inverse-surface": "#ebdef4",
+            "surface-container-highest": "#3a3142",
+            "on-error": "#690005",
+            "on-primary-container": "#6a3700",
+            "surface-container-low": "#201828",
+            "tertiary": "#ffbf8c",
+            "secondary-fixed": "#f0dbff",
+            "tertiary-container": "#ef9f5a",
+            "tertiary-fixed-dim": "#ffb77b",
+            "surface-container-lowest": "#120b1a",
+            "on-error-container": "#ffdad6",
+            "on-primary-fixed": "#2f1500",
+            "primary": "#ffc08e",
+            "surface-dim": "#17101f"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-lg": "2rem",
+            "gutter": "1rem",
+            "space-md": "1rem",
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "margin": "1.25rem",
+            "space-lg": "1.5rem",
+            "gutter-sm": "0.75rem",
+            "space-xl": "2rem"
+          },
+          "fontFamily": {
+            "headline-md": ["Playfair Display"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "title-editorial": ["Playfair Display"],
+            "headline-lg": ["Playfair Display"],
+            "display-lg-mobile": ["Playfair Display"],
+            "display-lg": ["Playfair Display"],
+            "label-md": ["Plus Jakarta Sans"],
+            "label-caps": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "label-lg": ["15px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "700" }],
+            "title-editorial": ["20px", { "lineHeight": "26px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "headline-lg": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "display-lg-mobile": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "600" }],
+            "label-caps": ["11px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "800" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "700" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    /* Custom subtle scrollbar & delicate glows */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .magical-glow {
+      box-shadow: 0 0 16px -2px rgba(192, 132, 252, 0.25);
+    }
+    .pumpkin-glow {
+      box-shadow: 0 6px 20px rgba(255, 152, 56, 0.35);
+    }
+    .subtle-border {
+      border: 1px solid rgba(192, 132, 252, 0.15);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased min-h-screen relative flex justify-center items-end overflow-hidden select-none font-body-md">
+<!-- Background App Canvas (Simulated Main Screen Behind Modal) -->
+<div class="fixed inset-0 flex flex-col items-center justify-start pointer-events-none opacity-40 blur-sm scale-95 transition-all duration-300">
+<!-- Faux Header -->
+<div class="w-full max-w-[460px] pt-8 px-margin flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="text-secondary text-2xl">✨</span>
+<h1 class="font-title-editorial text-title-editorial text-on-surface">PomPom Pet Boutique</h1>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">pets</span>
+</div>
+<!-- Faux Hero Card with Halloween theme behind -->
+<div class="w-full max-w-[460px] p-margin mt-4">
+<div class="bg-surface-container rounded-lg p-space-lg border border-outline-variant/30 text-center flex flex-col items-center">
+<span class="text-3xl mb-2">🎃</span>
+<h2 class="font-display-lg-mobile text-display-lg-mobile text-primary tracking-tight">Um Halloween Encantado</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 max-w-xs">Coleção especial de Outubro para deixar seu pet no clima mais fofo da temporada.</p>
+</div>
+</div>
+</div>
+<!-- Dimmed Modal Backdrop Overlay -->
+<div class="fixed inset-0 bg-[#0d0812]/75 backdrop-blur-[6px] z-10"></div>
+<!-- Bottom Sheet Container (Max 460px fluid mobile centered) -->
+<main class="relative z-20 w-full max-w-[460px] h-[813px] max-h-[820px] bg-surface-container rounded-t-lg shadow-2xl flex flex-col overflow-hidden border-t subtle-border">
+<!-- Drag Handle / Grabber Indicator -->
+<div class="w-full flex justify-center pt-3 pb-1 cursor-grab active:cursor-grabbing">
+<div class="w-12 h-1.5 bg-outline-variant/60 rounded-full"></div>
+</div>
+<!-- Shared Component: TopAppBar -->
+<header class="bg-surface-container dark:bg-surface-container text-primary dark:text-primary docked full-width top-0 rounded-t-lg border-b border-outline-variant/30 shadow-md flex justify-between items-center w-full px-margin py-space-sm max-w-[460px] mx-auto">
+<div class="flex items-center gap-space-xs">
+<span class="text-xl">🛍️</span>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface dark:text-on-surface leading-tight">Lojinha PomPom Pet</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant dark:text-on-surface-variant">Toque em qualquer item para encomendar</p>
+</div>
+</div>
+<!-- Close Utility Button -->
+<button aria-label="Fechar gaveta" class="w-10 h-10 rounded-full bg-surface-bright/50 flex items-center justify-center text-on-surface hover:bg-surface-bright transition-colors active:scale-95 duration-150 subtle-border" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="close">close</span>
+</button>
+</header>
+<!-- Scrollable Content Canvas -->
+<div class="flex-1 overflow-y-auto no-scrollbar px-margin pt-space-md pb-28">
+<!-- Category Filter Chips (Sliding Horizontal Track) -->
+<nav aria-label="Categorias da Loja" class="flex items-center gap-space-xs overflow-x-auto no-scrollbar pb-space-sm">
+<!-- Active Chip: Roupas -->
+<button class="flex items-center gap-1.5 px-4 py-2 rounded-full bg-primary-container text-on-primary-container font-label-md text-label-md shrink-0 shadow-[0_2px_12px_rgba(255,152,56,0.3)] transition-all">
+<span>👗</span>
+<span>Roupas</span>
+</button>
+<!-- Inactive Chip: Guias & Peitorais -->
+<button class="flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-surface-container-high border border-secondary/20 text-on-surface hover:bg-surface-bright/50 font-label-md text-label-md shrink-0 transition-colors">
+<span>🐕</span>
+<span class="text-on-surface-variant">Guias &amp; Peitorais</span>
+</button>
+<!-- Inactive Chip: Brinquedos -->
+<button class="flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-surface-container-high border border-secondary/20 text-on-surface hover:bg-surface-bright/50 font-label-md text-label-md shrink-0 transition-colors">
+<span>🎾</span>
+<span class="text-on-surface-variant">Brinquedos</span>
+</button>
+<!-- Inactive Chip: Acessórios -->
+<button class="flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-surface-container-high border border-secondary/20 text-on-surface hover:bg-surface-bright/50 font-label-md text-label-md shrink-0 transition-colors">
+<span>🎀</span>
+<span class="text-on-surface-variant">Acessórios</span>
+</button>
+</nav>
+<!-- Decorative subtle banner text -->
+<div class="mt-space-sm mb-space-md flex items-center justify-between px-1">
+<span class="font-label-caps text-label-caps text-secondary/80 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span>
+          EDIÇÃO ESPECIAL DE OUTUBRO
+        </span>
+<span class="font-body-sm text-body-sm text-outline">12 produtos</span>
+</div>
+<!-- 3-Column Catalog Shelf Grid -->
+<section aria-label="Grade de Produtos" class="grid grid-cols-3 gap-x-gutter-sm gap-y-space-lg justify-items-center">
+<!-- Product 1 -->
+<article class="flex flex-col items-center group cursor-pointer w-full text-center">
+<div class="relative w-[84px] h-[84px] rounded-full p-[2px] bg-gradient-to-tr from-secondary/40 via-primary/30 to-secondary/10 transition-transform duration-200 group-hover:scale-105">
+<div class="w-full h-full rounded-full overflow-hidden bg-surface-container-high border border-secondary/20">
+<img alt="Capa Vampirinho" class="w-full h-full object-cover" data-alt="An adorable small white Pomeranian wearing a cozy velvet Halloween vampire cape with soft aubergine and warm pumpkin orange trim. The studio setting features soft candlelight glows, gentle pastel purple mist, and autumnal twilight shadows in an editorial pet photography aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7qfvbpORx6mgoBfDJ6Bq3b5-qk3QScoZpwzjAnq9N7QY_d2Iu80hI60jivFgHxsdtkBUIGNMZZX2CFkyrkbGBFzC21wSoA0hWEuN1xLBfz4qd2eeuoz22adFT371BWZkAm8nOSXEoZ5biTmMSe2M1EVz9O2C_Mn-IhE5OeAjJxn1c6y84jaRVVRZJ5NpypovOVCLsWqamgUmyVRdYp9MIHVrIWHSc1YOCkOu-hA9WCrIv6mfX5UOpdrScGuh9HwAlIMZy4pRaCKE"/>
+</div>
+</div>
+<p class="font-label-md text-label-md text-on-surface mt-2 font-medium truncate w-full px-1">Capa Vampiro</p>
+<div class="mt-1 inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high border border-primary-container/30 group-hover:border-primary-container transition-colors">
+<span class="text-[11px]">🛍️</span>
+<span class="font-label-caps text-label-caps text-primary">Quero</span>
+</div>
+</article>
+<!-- Product 2 -->
+<article class="flex flex-col items-center group cursor-pointer w-full text-center">
+<div class="relative w-[84px] h-[84px] rounded-full p-[2px] bg-gradient-to-tr from-secondary/40 via-primary/30 to-secondary/10 transition-transform duration-200 group-hover:scale-105">
+<div class="w-full h-full rounded-full overflow-hidden bg-surface-container-high border border-secondary/20">
+<img alt="Gravata Abóbora" class="w-full h-full object-cover" data-alt="A festive artisanal pet bow tie crafted in warm pumpkin orange velvet with delicate embroidered golden stars and mini pumpkins. Photographed on a luxurious deep purple silk fabric with subtle enchanted candlelight sparkles in an editorial boutique pet style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-BkXfJtnWr5MygzKygb8dyFc2rcmmpwmDC3dgD_UzPPaCsLiV1yGIF5POvir7DyGhHefu2TIsBMoU58zvTGCxDjjJz5MGBsYWeoqJ4_uvXeQy_a9n2X1e363wfIQRAWUIQGiBy2n-haMBn2RALpmM1bbRXOSveWUS2p1j6FUzV8RCqGLsm9Hy99C98Wg_2quWKDhDsJ21Fw4cMSQGClojms6YPvTOCmKwD0YHdVJ-7BSUyhYMZN-cCcwitmyaIULfqlDI9ej11DE"/>
+</div>
+</div>
+<p class="font-label-md text-label-md text-on-surface mt-2 font-medium truncate w-full px-1">Gravata Abóbora</p>
+<div class="mt-1 inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high border border-primary-container/30 group-hover:border-primary-container transition-colors">
+<span class="text-[11px]">🛍️</span>
+<span class="font-label-caps text-label-caps text-primary">Quero</span>
+</div>
+</article>
+<!-- Product 3 -->
+<article class="flex flex-col items-center group cursor-pointer w-full text-center">
+<div class="relative w-[84px] h-[84px] rounded-full p-[2px] bg-gradient-to-tr from-secondary/40 via-primary/30 to-secondary/10 transition-transform duration-200 group-hover:scale-105">
+<div class="w-full h-full rounded-full overflow-hidden bg-surface-container-high border border-secondary/20">
+<img alt="Coleira Estrelas" class="w-full h-full object-cover" data-alt="A handcrafted soft lavender leather pet collar embellished with tiny polished brass moon and star charms. Resting gently on dark aubergine velvet bathed in cozy golden candlelight with faint whimsical bokeh circles in a whimsical high-end pet product catalog." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDETOROsCcast3-xQbBrEToT_s9WhUydvWk9UvTZXea1GIa2YWou5dyxIx7-xp89eqjk01EtUeGGRAesXvN_RvX20V0nPWNAk35HZBPybxygXmwgkC60s9DuTTMsztTzVmfE8cTGcp0cvolH07DLvX62_vsjaliMGu03CgPaXATYxRHI-NGA5pMtSsjMe-IVliagEOfa2s2hRnwGWkxSh906mIGWZEVm7kaMchKsWC8V8aB1PX8Cf2s3C6c6uY736MGvnvHb8dtmKU"/>
+</div>
+</div>
+<p class="font-label-md text-label-md text-on-surface mt-2 font-medium truncate w-full px-1">Coleira Estrelas</p>
+<div class="mt-1 inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high border border-primary-container/30 group-hover:border-primary-container transition-colors">
+<span class="text-[11px]">🛍️</span>
+<span class="font-label-caps text-label-caps text-primary">Quero</span>
+</div>
+</article>
+<!-- Product 4 -->
+<article class="flex flex-col items-center group cursor-pointer w-full text-center">
+<div class="relative w-[84px] h-[84px] rounded-full p-[2px] bg-gradient-to-tr from-secondary/40 via-primary/30 to-secondary/10 transition-transform duration-200 group-hover:scale-105">
+<div class="w-full h-full rounded-full overflow-hidden bg-surface-container-high border border-secondary/20">
+<img alt="Gorro Bruxinha" class="w-full h-full object-cover" data-alt="A sweet fluffy kitten sporting a miniature pastel sorcery witch hat with sheer violet organza and a tiny golden bell. Lit warmly from the front with warm pumpkin orange luminescence against a dark moody aubergine background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDd45UAHJcpqyqQtESnqsb6hz_4HN8hJUvYYrZ8XA6R3g6_Pk1l_3iCMafEQ0Vz4Hk0u5SgjKpVB1PImB6XFAAKYABEZqaqhCQsAtPMoZQXdHhq-_S2r719-w4tU_StaP__f3qvJ4Iot6FpoqoN9D_8mGOXJNbKR9C8EixFDqH1Betd4rA_oMz410vKjOpkyMyASKAKjKPU0owgVJY8ouuXGaorn_R4Bh4xEeK_L0CyYR8Jkon5cCiJjE_a63aPoMjiGQ5PWGTA_-U"/>
+</div>
+</div>
+<p class="font-label-md text-label-md text-on-surface mt-2 font-medium truncate w-full px-1">Gorro Bruxinha</p>
+<div class="mt-1 inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high border border-primary-container/30 group-hover:border-primary-container transition-colors">
+<span class="text-[11px]">🛍️</span>
+<span class="font-label-caps text-label-caps text-primary">Quero</span>
+</div>
+</article>
+<!-- Product 5 -->
+<article class="flex flex-col items-center group cursor-pointer w-full text-center">
+<div class="relative w-[84px] h-[84px] rounded-full p-[2px] bg-gradient-to-tr from-secondary/40 via-primary/30 to-secondary/10 transition-transform duration-200 group-hover:scale-105">
+<div class="w-full h-full rounded-full overflow-hidden bg-surface-container-high border border-secondary/20">
+<img alt="Bandana Fantasma" class="w-full h-full object-cover" data-alt="A charming pet bandana featuring playful cute little cartoon ghosts and candy pumpkins on a twilight violet cotton fabric. Styled flat-lay on dark rustic wood with small decorative glowing fairy lanterns in soft focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCneVZ8Lnir7_OZXUuHeJQ64J93P62JOq2biZVlS3cZXuubuHxvU0yTys6N-mAzuwNiBfqspMw4UR4S5-W55Ulmvi3Nl6JCN6TMYF0AwOLOOO77Ec1t5kmMCjMibcE1lFSaaB4F-zbvKOC6ajrwlkNqFcyIteiruDXBRKLzenpnq9k0Y0UoWfHMHaHBpx0xqYC2wC3aDoNtcIL9GufKtpbLWKqAUJ2V6DgouNrEIuFo1gdTqkTjfs0DJ74c4QXUkfwpvsd0VEUnoq8"/>
+</div>
+</div>
+<p class="font-label-md text-label-md text-on-surface mt-2 font-medium truncate w-full px-1">Bandana Boo</p>
+<div class="mt-1 inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high border border-primary-container/30 group-hover:border-primary-container transition-colors">
+<span class="text-[11px]">🛍️</span>
+<span class="font-label-caps text-label-caps text-primary">Quero</span>
+</div>
+</article>
+<!-- Product 6 -->
+<article class="flex flex-col items-center group cursor-pointer w-full text-center">
+<div class="relative w-[84px] h-[84px] rounded-full p-[2px] bg-gradient-to-tr from-secondary/40 via-primary/30 to-secondary/10 transition-transform duration-200 group-hover:scale-105">
+<div class="w-full h-full rounded-full overflow-hidden bg-surface-container-high border border-secondary/20">
+<img alt="Peitoral Morcego" class="w-full h-full object-cover" data-alt="A soft plush bat harness designed for small dogs and cats with felt wings and gentle purple reflective piping. Placed next to mini decorative gourds on an aubergine textured textile with delicate warm illumination." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7-hTJqOnhaAenhywVtrey93cOHmOiEo2sQRD4DB-6ZXq-LT3Se-mMoqDHK3WlMBDa0Ic2RXT3_SgngSQ1pfvotU2_OjIYjczw0nwLqem1VYL1jjLoHT60Am28kai24UwqF5W6d5UzXSIhgNVooW0gcbIuwD66J84RkAiQVRev_FF8VkUk1_eXYR4bzyWnZtD_U489bfu7ikdWhYbrTpqQY7uBbgTvUzUg_gEmrJmoOZNfuAe0y64iXbXqzhZo-V-dWYYh3gk7hb8"/>
+</div>
+</div>
+<p class="font-label-md text-label-md text-on-surface mt-2 font-medium truncate w-full px-1">Peitoral Asas</p>
+<div class="mt-1 inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high border border-primary-container/30 group-hover:border-primary-container transition-colors">
+<span class="text-[11px]">🛍️</span>
+<span class="font-label-caps text-label-caps text-primary">Quero</span>
+</div>
+</article>
+<!-- Product 7 -->
+<article class="flex flex-col items-center group cursor-pointer w-full text-center">
+<div class="relative w-[84px] h-[84px] rounded-full p-[2px] bg-gradient-to-tr from-secondary/40 via-primary/30 to-secondary/10 transition-transform duration-200 group-hover:scale-105">
+<div class="w-full h-full rounded-full overflow-hidden bg-surface-container-high border border-secondary/20">
+<img alt="Suéter Abobrinha" class="w-full h-full object-cover" data-alt="A knitted cozy pet pumpkin sweater in warm amber orange with delicate leafy green turtleneck details. Displayed on a French Bulldog puppy in a cozy enchanted Halloween parlor with soft ambient lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJKmA6rtL6D_vQ4aUbgU7aeUHRczc3-WXZ0OV1l1nmyueZxn06UmqjTuZS-6rZlIYPdFBJQuY0-rYub7wjhOrWAfFlQ5Zm35Qrq4hBOSuKBaOzFhH9JdXqx5scL0WZwkUKOgED3XAQiaW4W9om5NV1hz_f5IOJ1gLfvWS5ITx_y1-xN1sGDAsKYvHVjMxVXNF4bwAz04tJ1q1LxqfCqt8UmDb9iKtF_vIVi0qiTjz2HroSJIphr_B2EVEv6NCB7YWdxgdFxS4GZQc"/>
+</div>
+</div>
+<p class="font-label-md text-label-md text-on-surface mt-2 font-medium truncate w-full px-1">Suéter Abobrinha</p>
+<div class="mt-1 inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high border border-primary-container/30 group-hover:border-primary-container transition-colors">
+<span class="text-[11px]">🛍️</span>
+<span class="font-label-caps text-label-caps text-primary">Quero</span>
+</div>
+</article>
+<!-- Product 8 -->
+<article class="flex flex-col items-center group cursor-pointer w-full text-center">
+<div class="relative w-[84px] h-[84px] rounded-full p-[2px] bg-gradient-to-tr from-secondary/40 via-primary/30 to-secondary/10 transition-transform duration-200 group-hover:scale-105">
+<div class="w-full h-full rounded-full overflow-hidden bg-surface-container-high border border-secondary/20">
+<img alt="Pelúcia Caldeirão" class="w-full h-full object-cover" data-alt="A cute set of plush squeaky pet toys shaped like a smiling smiling cauldron and candy corn. Arranged neatly against a dark velvet twilight purple background with gentle warm spotlighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWfJNLua1_YoNQ_mY7uIneAoOh6UmzO7HjbsOGDCGv0fGEW4oqu4dhlYHoaeErzVNTDTGA1yyr1sTsulst-zzaVIb1WgeKkQvtzzce6JIO_3YL_NAqCNagFtg-R6WPGztQ-V0xDfbsv_IdMl_cgdyR6GEeFNkn6YpZ2daR4Fgl1npnErmvUl9O4JU2W2FGkcr2VuXyfDIbjhzZAmVZp9mZDYiBJSIrcRwNoCb01XdbJ4IL5JGQcFupdG2ncur41riI8dPAUZsCR2c"/>
+</div>
+</div>
+<p class="font-label-md text-label-md text-on-surface mt-2 font-medium truncate w-full px-1">Trio Poção</p>
+<div class="mt-1 inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high border border-primary-container/30 group-hover:border-primary-container transition-colors">
+<span class="text-[11px]">🛍️</span>
+<span class="font-label-caps text-label-caps text-primary">Quero</span>
+</div>
+</article>
+<!-- Product 9 -->
+<article class="flex flex-col items-center group cursor-pointer w-full text-center">
+<div class="relative w-[84px] h-[84px] rounded-full p-[2px] bg-gradient-to-tr from-secondary/40 via-primary/30 to-secondary/10 transition-transform duration-200 group-hover:scale-105">
+<div class="w-full h-full rounded-full overflow-hidden bg-surface-container-high border border-secondary/20">
+<img alt="Pingente Lua Mágica" class="w-full h-full object-cover" data-alt="An artisanal pet tag made of polished rose gold enamel with a delicate crescent moon and sleeping cat motif. Backlit by faint lavender starlight reflections with rich warm orange highlights in an enchanted boutique style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBl25zHV9Dnn8uHw0WkaxitTNzVwPmzpu4TtRw0_NJVyP9dClvP8YEtKgHDQFVEEK4jaGHzaRhc-O1k946M432P8EjseY0GAEfHC2pam6mABm59Lf-bX-rM8QyLrYwGGLmfVOe8ubZh-6SP0QIMDJKa0EU87ixSyCpE-G1MeLqkdW4f-Or6Nm5P4BH7ymCZ9sViZPVOcR9KHPTiNOH_hAjE4adgBUcP39LzK7LmmCm8z6qjD8LWFCrfad_BA_rviDsjcirOuUusU00"/>
+</div>
+</div>
+<p class="font-label-md text-label-md text-on-surface mt-2 font-medium truncate w-full px-1">Pingente Luar</p>
+<div class="mt-1 inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high border border-primary-container/30 group-hover:border-primary-container transition-colors">
+<span class="text-[11px]">🛍️</span>
+<span class="font-label-caps text-label-caps text-primary">Quero</span>
+</div>
+</article>
+</section>
+<!-- Trust & Service micro-card -->
+<div class="mt-space-xl p-space-md rounded-2xl bg-surface-container-low border border-secondary/10 flex items-center gap-space-sm text-left">
+<div class="w-10 h-10 rounded-full bg-primary-container/20 flex items-center justify-center shrink-0">
+<span class="text-xl">🪄</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface font-semibold">Feito sob medida para seu pet</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tamanhos do PP ao GG com ajuste confortável e tecidos hipoalergênicos.</p>
+</div>
+</div>
+</div>
+<!-- Fixed Bottom Safe Area with Primary Action (BottomNavBar execution) -->
+<footer class="fixed bottom-0 left-0 w-full z-50 rounded-t-none border-t border-outline-variant/20 bg-surface-container/95 backdrop-blur-md shadow-[0_-8px_24px_-4px_rgba(255,152,56,0.28)] flex items-center justify-center px-margin py-space-sm max-w-[460px] mx-auto">
+<a class="flex items-center justify-center gap-2 w-full h-[50px] bg-primary-container text-on-primary-container rounded-full font-label-lg text-label-lg shadow-[0_6px_20px_rgba(255,152,56,0.35)] hover:brightness-105 active:scale-[0.99] transition-all duration-150" href="https://wa.me/?text=Olá!%20Gostaria%20de%20consultar%20produtos%20da%20Lojinha%20PomPom%20Pet" rel="noopener noreferrer" target="_blank">
+<!-- SVG WhatsApp Icon -->
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24">
+<path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"></path>
+</svg>
+<span>Consultar pelo WhatsApp</span>
+</a>
+</footer>
+</main>
+<script>
+    // Lightweight micro-interaction to switch categories
+    document.querySelectorAll('nav[aria-label="Categorias da Loja"] button').forEach(button => {
+      button.addEventListener('click', function() {
+        document.querySelectorAll('nav[aria-label="Categorias da Loja"] button').forEach(b => {
+          b.className = 'flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-surface-container-high border border-secondary/20 text-on-surface hover:bg-surface-bright/50 font-label-md text-label-md shrink-0 transition-colors';
+          const span = b.querySelector('span:last-child');
+          if (span) span.className = 'text-on-surface-variant';
+        });
+        
+        this.className = 'flex items-center gap-1.5 px-4 py-2 rounded-full bg-primary-container text-on-primary-container font-label-md text-label-md shrink-0 shadow-[0_2px_12px_rgba(255,152,56,0.3)] transition-all';
+        const activeSpan = this.querySelector('span:last-child');
+        if (activeSpan) activeSpan.className = 'font-bold';
+      });
+    });
+  </script>
+</body></html>

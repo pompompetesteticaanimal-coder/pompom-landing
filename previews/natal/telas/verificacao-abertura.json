@@ -1,0 +1,10 @@
+[
+  {
+    "part": "abertura",
+    "menu": false,
+    "store": false,
+    "product": false,
+    "opening": true,
+    "broken": []
+  }
+]

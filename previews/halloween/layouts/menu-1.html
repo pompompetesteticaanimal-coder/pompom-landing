@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Menu Mobile — Variante 1: Drawer Lateral Elegante (Side Sheet)</title>
+<!-- Tailwind CSS CDN com plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Configurações personalizadas de fontes e temas -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            aubergine: {
+              DEFAULT: '#17101f',
+              card: '#24192e',
+              surface: '#2b1f37',
+              border: '#3c2b4d'
+            },
+            creme: {
+              DEFAULT: '#fff3df',
+              muted: '#d6c8b6'
+            },
+            pumpkin: {
+              DEFAULT: '#ffad66',
+              hover: '#ff9a47',
+              glow: 'rgba(255, 173, 102, 0.25)'
+            },
+            lavender: {
+              DEFAULT: '#cfb8e8',
+              soft: '#8e7a9e'
+            }
+          },
+          fontFamily: {
+            sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
+            serif: ['Georgia', 'Cambria', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+<!-- Estilos gerais e suporte a backdrop blur -->
+<style data-purpose="custom-layout">
+    body {
+      background-color: #17101f;
+      color: #fff3df;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+    
+    /* Scrollbar discreta para o drawer se necessário */
+    .custom-scroll::-webkit-scrollbar {
+      width: 4px;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: #3c2b4d;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="w-full min-h-screen bg-aubergine flex justify-center items-start overflow-x-hidden">
+<!-- Container principal limitado a proporção mobile (390px padrão iOS) -->
+<div class="relative w-full max-w-[390px] min-h-[844px] bg-aubergine overflow-hidden shadow-2xl flex flex-col">
+<!-- BEGIN: BackgroundUnderlay -->
+<!-- Fundo de trás simulando a capa da PomPom Pet visualmente aberta atrás do backdrop -->
+<div class="absolute inset-0 z-0 pointer-events-none filter blur-[1.5px] opacity-40">
+<img alt="Referência de fundo PomPom Pet" class="w-full h-full object-cover object-top" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpJ5qcjROWkxQu-wxTOp8HK0vopEzY1Og4gc5Gr8S-evemRXtILIz_GtQKYb3MzKJn8Y_Hr5x6FlY4s66q5VXz9Kr3iDofWXmTpq3oYTZuGXawHmcbmWQrxQhjC0poHmB_Vvr9POQXdSy4fFtB7vYQCneFTusTeqxiLHQ_SpVZtOMIpBXorDj6cevWDa_I7XhzfRrFa8uqfvrkx-Qj03YQ_8uEuMpHzahSyxmg6nvvhQMBm03sFJlZC18eoYooXlpqxEvAp2nwo8U"/>
+<div class="absolute inset-0 bg-[#120b18]/70 mix-blend-multiply"></div>
+</div>
+<!-- END: BackgroundUnderlay -->
+<!-- BEGIN: BackdropScrim -->
+<!-- Camada escura de scrim com fechamento visual ao toque -->
+<div aria-label="Área de clique externa para fechar" class="absolute inset-0 z-10 bg-black/60 backdrop-blur-[2px] transition-opacity" data-purpose="modal-backdrop"></div>
+<!-- END: BackdropScrim -->
+<!-- BEGIN: MobileSideDrawer -->
+<!-- Drawer Lateral que ocupa ~85% da tela alinhado à direita -->
+<aside aria-label="Menu Principal de Navegação" class="relative z-20 ml-auto w-[85%] max-w-[335px] h-full min-h-screen bg-[#21162b] border-l border-aubergine-border shadow-[-12px_0_32px_rgba(0,0,0,0.65)] flex flex-col justify-between" data-purpose="navigation-drawer">
+<!-- Decorações temáticas em SVG no topo do drawer (Teia e Morcego) -->
+<div class="absolute top-0 right-0 w-28 h-28 pointer-events-none opacity-20 text-lavender overflow-hidden">
+<svg class="w-full h-full" fill="none" stroke="currentColor" stroke-width="1.2" viewbox="0 0 100 100">
+<path d="M100 0 L0 0 M100 0 L0 30 M100 0 L0 60 M100 0 L0 100 M100 0 L30 100 M100 0 L60 100"></path>
+<path d="M30 0 A 70 70 0 0 0 100 70"></path>
+<path d="M50 0 A 50 50 0 0 0 100 50"></path>
+<path d="M70 0 A 30 30 0 0 0 100 30"></path>
+</svg>
+</div>
+<!-- Morceguinho estilizado sutil -->
+<div class="absolute top-16 right-5 pointer-events-none opacity-25 text-lavender">
+<svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12 9c-1.5-2.5-4-3-6-2.5 1.5 2.5 1 5.5-2 6.5 2.5 1 5.5 0 6.5-2 .5 1.5 2.5 1.5 3 0 1 2 4 3 6.5 2-3-1-3.5-4-2-6.5-2-.5-4.5 0-6 2.5z"></path>
+</svg>
+</div>
+<!-- Conteúdo com rolagem contida -->
+<div class="flex-1 overflow-y-auto custom-scroll px-5 pt-5 pb-4">
+<!-- BEGIN: DrawerHeader -->
+<div class="flex items-center justify-between pb-4 border-b border-aubergine-border/70">
+<!-- Identidade da marca -->
+<div class="flex flex-col">
+<span class="font-serif italic font-bold text-xl text-creme tracking-tight flex items-center gap-1.5">
+              PomPom Pet
+              <span class="text-xs text-pumpkin not-italic font-normal">✨</span>
+</span>
+<span class="text-[9.5px] uppercase tracking-wider text-lavender font-medium">
+              Estética Animal com Amor
+            </span>
+</div>
+<!-- Botão de Fechar com área de toque mínima de 44x44px -->
+<button aria-label="Fechar menu de navegação" class="w-11 h-11 flex items-center justify-center rounded-full bg-aubergine-surface/80 border border-aubergine-border text-creme-muted active:scale-95 active:bg-aubergine-border transition-all focus:outline-none" type="button">
+<svg class="w-5 h-5 text-creme" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<line x1="18" x2="6" y1="6" y2="18"></line>
+<line x1="6" x2="18" y1="6" y2="18"></line>
+</svg>
+</button>
+</div>
+<!-- END: DrawerHeader -->
+<!-- BEGIN: SeasonalBadge -->
+<!-- Chip de destaque Outubro Encantado / Halloween -->
+<div class="mt-4 mb-4">
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#341d3b] border border-pumpkin/30 text-pumpkin text-xs font-medium shadow-sm">
+<span class="text-sm">🎃</span>
+<span class="tracking-wide">Especial de Halloween</span>
+</div>
+</div>
+<!-- END: SeasonalBadge -->
+<!-- BEGIN: NavigationLinks -->
+<!-- Lista de navegação principal com ícones SVG vetoriais consistentes -->
+<nav aria-label="Navegação móvel" class="space-y-1">
+<!-- Item 1: Início -->
+<a class="flex items-center justify-between px-3.5 py-3 rounded-xl text-creme hover:bg-aubergine-surface active:bg-aubergine-surface/90 transition-colors group" href="#">
+<div class="flex items-center gap-3.5">
+<span class="text-pumpkin">
+<!-- Ícone Patinha / Casa elegante -->
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+</span>
+<span class="text-sm font-medium tracking-wide">Início</span>
+</div>
+<svg class="w-4 h-4 text-lavender-soft opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</a>
+<!-- Item 2: Serviços & Banhos -->
+<a class="flex items-center justify-between px-3.5 py-3 rounded-xl text-creme hover:bg-aubergine-surface active:bg-aubergine-surface/90 transition-colors group" href="#">
+<div class="flex items-center gap-3.5">
+<span class="text-pumpkin">
+<!-- Ícone Banho / Tesoura Grooming -->
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M14 4c0-1.1-.9-2-2-2s-2 .9-2 2v2H6a2 2 0 0 0-2 2v1h16V8a2 2 0 0 0-2-2h-4V4z"></path>
+<path d="M4 11v6a5 5 0 0 0 5 5h6a5 5 0 0 0 5-5v-6H4z"></path>
+<circle cx="12" cy="15" r="1"></circle>
+</svg>
+</span>
+<span class="text-sm font-medium tracking-wide">Serviços &amp; Banhos</span>
+</div>
+<svg class="w-4 h-4 text-lavender-soft opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</a>
+<!-- Item 3: Galeria / Nosso Trabalho com Badge -->
+<a class="flex items-center justify-between px-3.5 py-3 rounded-xl text-creme hover:bg-aubergine-surface active:bg-aubergine-surface/90 transition-colors group" href="#">
+<div class="flex items-center gap-3.5">
+<span class="text-pumpkin">
+<!-- Ícone Fotos / Câmera -->
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24">
+<rect height="18" rx="2" ry="2" width="18" x="3" y="3"></rect>
+<circle cx="8.5" cy="8.5" r="1.5"></circle>
+<polyline points="21 15 16 10 5 21"></polyline>
+</svg>
+</span>
+<span class="text-sm font-medium tracking-wide">Nosso Trabalho</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 text-[10px] uppercase font-bold tracking-wider rounded-md bg-pumpkin/20 text-pumpkin border border-pumpkin/30">
+                Novo
+              </span>
+<svg class="w-4 h-4 text-lavender-soft opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</div>
+</a>
+<!-- Item 4: Quem Cuida -->
+<a class="flex items-center justify-between px-3.5 py-3 rounded-xl text-creme hover:bg-aubergine-surface active:bg-aubergine-surface/90 transition-colors group" href="#">
+<div class="flex items-center gap-3.5">
+<span class="text-pumpkin">
+<!-- Ícone Coração / Cuidado -->
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+</svg>
+</span>
+<span class="text-sm font-medium tracking-wide">Quem Cuida</span>
+</div>
+<svg class="w-4 h-4 text-lavender-soft opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</a>
+<!-- Item 5: Lojinha Pet -->
+<a class="flex items-center justify-between px-3.5 py-3 rounded-xl text-creme hover:bg-aubergine-surface active:bg-aubergine-surface/90 transition-colors group" href="#">
+<div class="flex items-center gap-3.5">
+<span class="text-pumpkin">
+<!-- Ícone Sacola de compras -->
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+<line x1="3" x2="21" y1="6" y2="6"></line>
+<path d="M16 10a4 4 0 0 1-8 0"></path>
+</svg>
+</span>
+<span class="text-sm font-medium tracking-wide">Lojinha Pet</span>
+</div>
+<svg class="w-4 h-4 text-lavender-soft opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</a>
+<!-- Item 6: Onde Estamos & Horários -->
+<a class="flex items-center justify-between px-3.5 py-3 rounded-xl text-creme hover:bg-aubergine-surface active:bg-aubergine-surface/90 transition-colors group" href="#">
+<div class="flex items-center gap-3.5">
+<span class="text-pumpkin">
+<!-- Ícone Pin / Localização -->
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+<circle cx="12" cy="10" r="3"></circle>
+</svg>
+</span>
+<span class="text-sm font-medium tracking-wide">Onde Estamos</span>
+</div>
+<svg class="w-4 h-4 text-lavender-soft opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<polyline points="9 18 15 12 9 6"></polyline>
+</svg>
+</a>
+</nav>
+<!-- END: NavigationLinks -->
+</div>
+<!-- BEGIN: DrawerFooter -->
+<!-- Rodapé fixo na base do painel com CTA WhatsApp e card de informações locais -->
+<div class="p-5 pt-3 border-t border-aubergine-border bg-aubergine-card/70 backdrop-blur-sm space-y-3.5">
+<!-- CTA Principal WhatsApp: Altura 50px (>=48px recomendados para touch mobile) -->
+<a class="w-full h-12 rounded-xl bg-pumpkin text-[#1e1308] font-bold text-sm tracking-wide flex items-center justify-center gap-2.5 shadow-lg shadow-orange-950/40 active:scale-[0.98] transition-transform" href="https://wa.me/5511947266216" rel="noopener noreferrer" target="_blank">
+<!-- WhatsApp Icon em SVG preenchido -->
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24">
+<path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.693.078-2.227-.557-1.785-.74-2.934-2.553-3.023-2.671-.089-.119-.724-.963-.724-1.836 0-.873.458-1.303.621-1.481.164-.179.359-.224.478-.224.12 0 .24.002.344.007.11.005.257-.042.402.308.15.359.51 1.246.554 1.336.045.09.075.194.015.313-.06.12-.089.194-.179.299-.089.104-.188.233-.269.313-.09.09-.183.187-.079.366.104.179.465.767.998 1.242.686.611 1.264.8 1.444.89.179.089.284.074.388-.045.105-.119.448-.523.568-.702.119-.179.239-.149.403-.09.164.06 1.045.493 1.224.583.179.09.299.134.344.209.045.075.045.433-.099.838z"></path>
+</svg>
+<span>Agendar pelo WhatsApp</span>
+</a>
+<!-- Mini Card de Endereço e Horários de Cajamar -->
+<div class="rounded-lg bg-aubergine-surface/90 border border-aubergine-border/60 p-2.5 flex items-start gap-2.5">
+<div class="mt-0.5 text-lavender shrink-0">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+</svg>
+</div>
+<div class="flex-1 text-[11px] leading-tight text-creme-muted">
+<p class="font-medium text-creme">R. dos Flox, 954 · Cajamar</p>
+<p class="text-lavender-soft mt-0.5">Terça a Sexta: 9h às 17h</p>
+</div>
+</div>
+<!-- Indicador de avaliação rápida -->
+<div class="flex items-center justify-center gap-1.5 pt-1 text-[11px] text-creme-muted/80">
+<span class="text-pumpkin text-xs">★★★★★</span>
+<span class="text-[10px] text-lavender-soft">• Cuidado com amor</span>
+</div>
+</div>
+<!-- END: DrawerFooter -->
+</aside>
+<!-- END: MobileSideDrawer -->
+</div>
+</body></html>

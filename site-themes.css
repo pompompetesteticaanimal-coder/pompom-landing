@@ -1,0 +1,125 @@
+/* Normal theme on the approved layout. The opening is managed separately. */
+#transformacoes { scroll-margin-top: 84px; }
+.ba-pets[hidden], .ba-pet-description[hidden], .ba-art-note[hidden] { display: none; }
+.ba-pets { display: flex; gap: 10px; margin: 0 0 12px; }
+.ba-pets button { flex: 1; display: flex; align-items: center; gap: 10px; min-height: 64px; padding: 8px 12px; background: var(--surface); color: var(--cream); border: 1px solid var(--line); border-radius: 16px; text-align: left; cursor: pointer; font: 700 14px/1.4 Inter,system-ui,sans-serif; }
+.ba-pets img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; object-position: center 25%; }
+.ba-pets small { display: block; color: var(--muted); font-size: 11px; font-weight: 400; }
+.ba-pets button[aria-pressed='true'] { border-color: var(--pumpkin); background: #ff94181a; box-shadow: inset 0 0 0 1px var(--pumpkin); }
+.ba-pets button:focus-visible { outline: 3px solid var(--pumpkin); outline-offset: 3px; }
+.ba-pet-description { color: var(--cream); font: 500 13px/1.6 Inter,system-ui,sans-serif; margin: 0 0 12px; }
+.ba-art-note { color: var(--muted); font: 400 11px/1.5 Inter,system-ui,sans-serif; margin: 8px 0 0; text-align: center; }
+.halloween-transformations .ba-container { aspect-ratio: 3/4; background: var(--surface); border: 1px solid var(--line); }
+.halloween-transformations .ba-img { object-position: center; }
+.ba-container.ba-focused { outline: 3px solid var(--pumpkin); outline-offset: 4px; }
+.halloween-transformations .ba-handle { color: #211126; background: #fff2da; font-size: 22px; }
+.theme-preview-toggle[hidden] { display: none; }
+.theme-preview-toggle {
+  position: fixed; z-index: 900; right: 14px; bottom: max(18px, env(safe-area-inset-bottom));
+  min-height: 44px; padding: 0 17px; border: 1px solid rgba(255,255,255,.7);
+  border-radius: 999px; background: #9f1239; color: #fff; font: 700 13px/1 Inter,system-ui,sans-serif;
+  box-shadow: 0 5px 20px rgba(38,13,28,.24);
+}
+.theme-preview-toggle:focus-visible { outline: 3px solid #fbbf24; outline-offset: 3px; }
+.normal-mobile-preview, .normal-desktop-preview, .normal-hero-photos { display: none; }
+
+body.theme-normal {
+  --night: #fdf6f0; --surface: #fff; --surface-raised: #fff7f2; --line: #f3d8dc;
+  --cream: #1c1917; --muted: #78716c; --pumpkin: #be123c; --lilac: #9f1239;
+  background: #fdf6f0; color: #1c1917; color-scheme: light;
+}
+body.theme-normal .hero-mobile {
+  min-height: 82svh; background: linear-gradient(160deg,#9f1239 0%,#e11d48 55%,#fb7185 100%);
+  position: relative; overflow: hidden; display: flex; flex-direction: column; padding-bottom: 30px;
+}
+body.theme-normal .hero-mobile::before {
+  display: block; content: ''; position: absolute; inset: 0; opacity: .18;
+  background: url('fotos/hero-dog.jpg') center 15%/cover no-repeat; mix-blend-mode: overlay;
+}
+body.theme-normal .hero-mobile > div:first-of-type { padding: max(22px,env(safe-area-inset-top)) 24px 12px; }
+body.theme-normal .hero-mobile .nav-brand-pill { color: #fff; font-size: 1.7rem; }
+body.theme-normal .hero-mobile .brand-pet { color: #ffe4e6; }
+body.theme-normal .hero-mobile .nav-brand-sub { color: rgba(255,255,255,.92); font-size: 8px; }
+body.theme-normal .hero-mobile button span { background: #fff; }
+body.theme-normal .halloween-scene, body.theme-normal .halloween-mobile-art,
+body.theme-normal .halloween-mobile-intro, body.theme-normal .halloween-feature { display: none !important; }
+body.theme-normal .normal-mobile-preview {
+  display: block; position: relative; z-index: 3; margin: auto 24px 20px; padding-top: 90px; text-align: left; color: #fff;
+}
+body.theme-normal .normal-preview-kicker { display: block; margin-bottom: 14px; color: #ffe4e6; font: 700 10px/1.4 Inter,system-ui,sans-serif; letter-spacing: .13em; text-transform: uppercase; }
+body.theme-normal .normal-mobile-preview h1 { margin: 0 0 14px; color: #fff; font: 700 32px/1.15 'Playfair Display',Georgia,serif; letter-spacing: -.015em; }
+body.theme-normal .normal-mobile-preview h1 em { color: #fecdd3; font-weight: 400; }
+body.theme-normal .normal-mobile-preview p { max-width: 320px; margin: 0; padding-top: 24px; color: rgba(255,255,255,.92); font: 400 14px/1.65 Inter,system-ui,sans-serif; }
+body.theme-normal .normal-hero-photos { display: block; top: 110px; }
+body.theme-normal .normal-hero-stats { display: flex; gap: 12px; margin-top: 22px; }
+body.theme-normal .normal-hero-stats > div { flex: 1; min-width: 0; padding: 12px; border: 1px solid #ffffff40; border-radius: 16px; background: #ffffff20; backdrop-filter: blur(8px); text-align: center; }
+body.theme-normal .normal-hero-stats strong { display: block; color: #fff; font-size: 19px; line-height: 1.3; }
+body.theme-normal .normal-hero-stats span { display: block; color: #fff; font-size: 10px; line-height: 1.4; margin-top: 5px; }
+body.theme-normal .halloween-mobile-bottom { position: relative; z-index: 3; padding: 0 24px; }
+body.theme-normal .halloween-primary { background: #fff !important; border-color: #fff !important; color: #9f1239 !important; }
+body.theme-normal .halloween-mobile-bottom .halloween-proof { color: rgba(255,255,255,.9); }
+body.theme-normal .hero-wave { height: 30px; }
+body.theme-normal .hero-wave path { fill: #fdf6f0; }
+body.theme-normal.halloween-mobile section:not(.hero-mobile) { color: #1c1917; }
+body.theme-normal.halloween-mobile #servicos > .px-5 > div { background: #fff; border-color: #f3d8dc; }
+body.theme-normal.halloween-mobile :is(.service-card,.testimonial-card,.review-card,.product-card,.product-item) { background: #fff; border-color: #f3d8dc; color: #1c1917; }
+body.theme-normal.halloween-mobile .menu-panel { background: #fff; border-color: #f3d8dc; }
+body.theme-normal.halloween-mobile .menu-link { color: #292524; border-color: #f3d8dc; }
+body.theme-normal.halloween-mobile .compact-menu-heading h2 { color: #1c1917; }
+body.theme-normal .halloween-menu-close { background: #fff1f2; color: #9f1239; }
+body.theme-normal .sticky-header { background: rgba(255,255,255,.97); border-color: #f3d8dc; }
+body.theme-normal .sticky-header .nav-brand-pill { color: #9f1239; }
+body.theme-normal .sticky-header .nav-brand-sub { color: #78716c; }
+body.theme-normal footer { background: #1c1917; color: #fff; }
+body.theme-normal .theme-preview-toggle { background: #9f1239; color: #fff; }
+@media (min-width: 768px) { .theme-preview-toggle { right: 22px; bottom: 22px; } }
+
+/* Seasonal colors are replaced while legacy structural classes remain. */
+body.theme-normal :is(.bg-rose-50,.bg-rose-100) { background: #fff1f2; }
+body.theme-normal :is(.bg-rose-600,.bg-rose-700) { background: #be123c; }
+body.theme-normal :is(.text-rose-300,.text-rose-200) { color: #be123c; }
+body.theme-normal .from-white { --tw-gradient-from: #fff var(--tw-gradient-from-position); --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position); }
+body.theme-normal #sobre { background: #fff !important; }
+body.theme-normal .section-tag { background: #fff1f2; border-color: var(--line); color: var(--pumpkin); }
+body.theme-normal .marquee-wrap { background: #fff1f2; border-color: var(--line); }
+body.theme-normal .marquee-item { color: #9f1239; }
+body.theme-normal .service-card::before { background: linear-gradient(140deg,#fff1f2,transparent 65%); }
+body.theme-normal .service-card::after { display: none; }
+body.theme-normal .service-icon { background: #fff1f2; border-color: var(--line); }
+body.theme-normal .service-card:hover .service-icon { background: #ffe4e6; }
+body.theme-normal :is(.product-img,.story-card,.galeria-m-story-item) { background: #fff1f2; }
+body.theme-normal .team-photo { box-shadow: 25px 25px 0 #ffe4e6; }
+body.theme-normal :is(.scroll-hint-btn,.scroll-hint-btn-d) { background: #fff1f2; }
+body.theme-normal [style*='background: linear-gradient(135deg, #fff1f2'] { background: linear-gradient(135deg,#fff1f2,#fdf2f8) !important; }
+body.theme-normal .compact-menu-grid .menu-link { background: #fff7f7; border-color: var(--line); color: var(--cream); }
+body.theme-normal .compact-menu-grid .menu-link:hover { background: #ffe4e6; }
+body.theme-normal .compact-menu-heading .halloween-menu-close { background: #fff1f2; color: var(--pumpkin); }
+body.theme-normal :is(.contact-location-card,.contact-social,.shop-entry,.reviews-merit) { background: #fff; border-color: var(--line); box-shadow: 0 10px 28px #9f12390d; }
+body.theme-normal :is(.contact-directions a,.contact-social-link,.shop-product,.reviews-google-link,.reviews-nav button,.reviews-avatar,.product-detail-close) { background: #fff1f2; border-color: var(--line); }
+body.theme-normal :is(.contact-social-link:hover,.shop-entry:hover) { background: #fff7f7; border-color: var(--pumpkin); }
+body.theme-normal .contact-live-badge { color: #be123c; border-color: var(--line); }
+body.theme-normal .shop-product > span { color: var(--muted); }
+body.theme-normal :is(.shop-entry-arrow,.shop-entry-cta,.product-whatsapp) { background: var(--pumpkin); color: #fff; }
+body.theme-normal .approved-reviews .review-card p { color: #57534e; }
+body.theme-normal .reviews-stars { color: #b45309; }
+body.theme-normal :is(.cat-tab,.cat-tab-d) { background: #fff1f2; border-color: var(--line); }
+body.theme-normal :is(.cat-tab,.cat-tab-d).ativa { color: #fff; }
+body.theme-normal :is(.catalog-product,.product-detail,.product-detail-bar,.product-detail-tools,.product-detail-close) { border-color: var(--line); }
+body.theme-normal .galeria-tab-btn.ativa, body.theme-normal .galeria-m-tab-btn.ativa { color: #fff !important; }
+body.theme-normal #contato .bg-rose-700 { background: linear-gradient(135deg,#fff1f2,#fff); }
+body.theme-normal footer { --cream: #fff; --muted: #d6d3d1; --lilac: #fecdd3; --pumpkin: #fecdd3; }
+body.theme-normal .halloween-proof strong { color: #ffe4e6; }
+
+/* Desktop uses the same brand, catalog and contact layout as mobile. */
+body.theme-normal .seasonal-desktop-copy, body.theme-normal .halloween-art { display: none; }
+body.theme-normal .normal-desktop-preview { display: block; }
+body.theme-normal #hero-bg { background: linear-gradient(135deg,#9f1239,#e11d48 60%,#fb7185); }
+body.theme-normal #hero .hero-content :is(h1,p,.halloween-eyebrow) { color: #fff !important; }
+body.theme-normal #hero .hero-content h1 em { color: #fecdd3; }
+body.theme-normal #hero .halloween-proof { color: #ffe4e6; }
+body.theme-normal #hero .halloween-secondary { background: #ffffff18; border-color: #ffffff77 !important; color: #fff; }
+body.theme-normal .normal-desktop-art img { display: block; width: 100%; max-height: 510px; object-fit: cover; border-radius: 36px; box-shadow: 0 24px 70px #4b071955; }
+body.theme-normal #navbar, body.theme-normal #navbar.scrolled { background: #fffffffa; border-bottom: 1px solid var(--line); }
+body.theme-normal #navbar .nav-brand-pill { color: var(--cream); }
+body.theme-normal #navbar :is(.nav-link,.nav-link:hover) { color: var(--cream); }
+body.theme-normal #nav-cta { background: var(--pumpkin) !important; color: #fff !important; }

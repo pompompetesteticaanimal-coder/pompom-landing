@@ -1,0 +1,130 @@
+[
+  {
+    "part": "capa",
+    "menu": false,
+    "store": false,
+    "product": false,
+    "opening": false,
+    "broken": []
+  },
+  {
+    "part": "menu",
+    "menu": true,
+    "store": false,
+    "product": false,
+    "opening": false,
+    "broken": []
+  },
+  {
+    "part": "servicos",
+    "menu": false,
+    "store": false,
+    "product": false,
+    "opening": false,
+    "broken": []
+  },
+  {
+    "part": "galeria",
+    "menu": false,
+    "store": false,
+    "product": false,
+    "opening": false,
+    "broken": []
+  },
+  {
+    "part": "lojinha",
+    "menu": false,
+    "store": true,
+    "product": false,
+    "opening": false,
+    "broken": []
+  },
+  {
+    "part": "apresentacao",
+    "menu": false,
+    "store": false,
+    "product": false,
+    "opening": false,
+    "broken": []
+  },
+  {
+    "part": "espaco",
+    "menu": false,
+    "store": false,
+    "product": false,
+    "opening": false,
+    "broken": []
+  },
+  {
+    "part": "contato",
+    "menu": false,
+    "store": false,
+    "product": false,
+    "opening": false,
+    "broken": []
+  },
+  {
+    "part": "vitrine",
+    "menu": false,
+    "store": false,
+    "product": false,
+    "opening": false,
+    "broken": []
+  },
+  {
+    "part": "avaliacoes",
+    "menu": false,
+    "store": false,
+    "product": false,
+    "opening": false,
+    "broken": []
+  },
+  {
+    "part": "abertura",
+    "menu": false,
+    "store": false,
+    "product": false,
+    "opening": true,
+    "broken": []
+  },
+  {
+    "part": "marca",
+    "menu": false,
+    "store": false,
+    "product": false,
+    "opening": false,
+    "broken": []
+  },
+  {
+    "part": "catalogo",
+    "menu": false,
+    "store": true,
+    "product": false,
+    "opening": false,
+    "broken": []
+  },
+  {
+    "part": "produto",
+    "menu": false,
+    "store": true,
+    "product": true,
+    "opening": false,
+    "broken": []
+  },
+  {
+    "part": "zoom",
+    "menu": false,
+    "store": true,
+    "product": true,
+    "opening": false,
+    "broken": []
+  },
+  {
+    "part": "transformacoes",
+    "menu": false,
+    "store": false,
+    "product": false,
+    "opening": false,
+    "broken": []
+  }
+]

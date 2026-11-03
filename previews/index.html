@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>PomPom — Laboratório de temas e layouts</title>
+  <link rel="stylesheet" href="laboratorio.css?v=20261004-5">
+  <script src="laboratorio.js?v=20261004-5" defer></script>
+</head>
+<body class="lab-page">
+  <header class="lab-header">
+    <a class="lab-brand" href="index.html"><img src="../fotos/logo-icon.png" alt="" width="44" height="44"><span>PomPom <strong>Laboratório</strong></span></a>
+    <nav aria-label="Material do projeto"><a href="natal/">Estudos de Natal</a><a href="halloween/layouts.html">Comparador original</a><a href="artes.html">Escolher arte</a><a href="guia.html">Como funciona ↗</a></nav>
+  </header>
+  <div class="lab-intro"><span class="eyebrow">UM SITE, DIFERENTES ÉPOCAS DO ANO</span><h1>Vamos experimentar?</h1><p>Veja o site no celular, compare os temas e reveja as opções de cada parte.</p></div>
+  <main class="workspace">
+    <aside class="panel controls" aria-label="Controles da prévia">
+      <h2>Sua prévia</h2>
+      <label for="content">O que você quer ver?</label>
+      <select id="content"><option value="site">Site atual · interativo</option><option value="studies">Estudos de layout · opções</option><option value="arts">Estilos de arte · cachorro e gato</option></select>
+      <div id="site-controls">
+        <fieldset><legend>Tema do site</legend><div class="segmented"><button type="button" data-theme="normal" aria-pressed="false">Normal</button><button type="button" data-theme="halloween" aria-pressed="true">Halloween</button></div></fieldset>
+        <label for="opening">Abertura</label><select id="opening"><option value="auto">Acompanhar o tema</option><option value="none">Sem abertura</option><option value="halloween">Halloween · testar animação</option></select>
+        <label for="section">Parte da página</label><select id="section"><option value="inicio">Página completa</option><option value="menu">Menu</option><option value="servicos">Serviços</option><option value="sobre">Sobre a PomPom</option><option value="espaco">Nosso espaço</option><option value="galeria">Galeria</option><option value="transformacoes">Antes e depois · Halloween</option><option value="vitrine">Vitrine da loja</option><option value="catalogo">Loja aberta</option><option value="avaliacoes">Avaliações</option><option value="contato">Mapa e redes sociais</option></select>
+      </div>
+      <div id="study-controls" hidden><label for="study-part">Parte que vamos comparar</label><select id="study-part"></select><div id="variants" class="variants" aria-label="Opções de layout"></div><button id="choose" type="button" class="primary">Escolher esta opção</button><button id="copy" type="button" class="secondary">Copiar minhas escolhas</button><textarea id="copy-fallback" aria-label="Escolhas para copiar" readonly hidden></textarea></div>
+      <div id="art-controls" hidden><p class="art-help">O mesmo cachorro e gato do logo, em cinco estilos.</p><div id="art-options" class="art-options" aria-label="Estilos da arte"></div><button id="choose-art" type="button" class="primary">Escolher este estilo</button><p id="art-choice" class="art-choice" role="status"></p></div>
+      <label for="device">Tamanho do celular</label><select id="device"><option value="390x844">iPhone · 390 × 844</option><option value="430x932">iPhone maior · 430 × 932</option><option value="375x812">Compacto · 375 × 812</option><option value="320x640">Pequeno · 320 × 640</option></select>
+      <div class="actions"><button id="reload" type="button" class="secondary">Reiniciar prévia ↻</button><a id="open-mobile" href="../mobile.html?previewThemes=1" target="_blank" rel="noopener">Abrir no meu celular ↗</a><a id="open-desktop" href="../desktop.html?previewThemes=1" target="_blank" rel="noopener">Conferir desktop ↗</a></div>
+    </aside>
+    <section class="stage" aria-label="Prévia do celular">
+      <div class="stage-toolbar"><div class="device-label"><span class="status-dot"></span><span id="preview-label">Halloween · site atual</span></div><button id="fullscreen-phone" type="button" aria-pressed="false" aria-controls="phone">⛶ Ampliar celular</button></div>
+      <div id="phone-sizer" class="phone-sizer"><div id="phone" class="phone"><div class="camera" aria-hidden="true"></div><div id="screen" class="screen"><iframe id="site" title="Site PomPom em tela mobile"></iframe><div id="study-screen" class="study-screen" hidden><img id="study-image" alt=""></div></div></div></div>
+      <p id="status" class="status" role="status">Preparando a prévia…</p>
+    </section>
+    <aside class="panel context">
+      <span class="eyebrow">O QUE ESTÁ SENDO TESTADO</span><h2 id="context-title">Halloween</h2><p id="context-description">Campanha com aquarela, morcegos e a abertura já escolhida.</p>
+      <div class="note"><strong>O layout continua.</strong><p>Menu compacto, vitrine em duas linhas, fotos ampliadas e contato com mapa permanecem ao trocar o tema.</p></div>
+      <p class="small">Quando a campanha terminar, o tema normal volta com as melhorias aprovadas e sem abertura festiva. A abertura só fica disponível no tema Halloween.</p>
+      <a id="prototype-link" href="halloween/layouts.html" hidden target="_blank" rel="noopener">Abrir protótipo desta opção ↗</a>
+      <a id="stitch-project" href="https://stitch.google.com/projects/3957235714949665270" target="_blank" rel="noopener">Projeto e artes no Stitch ↗</a>
+      <p class="small">As escolhas aqui são uma prévia local. Elas não publicam mudanças no site oficial.</p>
+    </aside>
+  </main>
+</body>
+</html>

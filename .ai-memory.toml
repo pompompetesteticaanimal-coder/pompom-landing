@@ -1,0 +1,13 @@
+# Explicit opt-in for the public PomPom Pet Shop website.
+workspace = "pompom"
+project = "pompom-site"
+project_strategy = "repo-root"
+
+[capture]
+ignore_paths = [
+  ".env*",
+  "**/.env*",
+  "backups/**",
+  "exports/**",
+  "private/**",
+]

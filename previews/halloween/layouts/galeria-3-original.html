@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galeria PomPom Pet - Abas Compactas & Grid 2 Colunas</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            aubergine: '#17101f',
+            aubergineCard: '#24192e',
+            aubergineBorder: '#352543',
+            pumpkin: '#ffad66',
+            creme: '#fff3df',
+            lavender: '#cbb6e5'
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #17101f;
+      color: #fff3df;
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
+</head>
+<body class="w-[390px] mx-auto min-h-screen bg-[#17101f] text-[#fff3df] relative overflow-x-hidden pb-12">
+
+  <!-- Cabeçalho com Seletor de Álbum Dropdown -->
+  <header class="px-5 pt-7 pb-3">
+    <div class="flex items-center justify-between mb-3">
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-[#ffad66]"></span>
+        <span class="text-xs font-semibold tracking-wide uppercase text-[#cbb6e5]">Portfólio PomPom</span>
+      </div>
+      
+      <!-- Seletor de Álbum Dropdown Estilizado -->
+      <button class="bg-[#24192e] border border-[#352543] text-xs text-[#fff3df] px-3 py-1.5 rounded-xl flex items-center gap-2 font-medium min-h-[38px]">
+        <span>Álbum: <strong>2024</strong></span>
+        <svg class="w-3.5 h-3.5 text-[#ffad66]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </button>
+    </div>
+
+    <h1 class="text-2xl font-serif font-bold text-[#fff3df]">
+      Galeria de Clientes
+    </h1>
+    <p class="text-xs text-[#cbb6e5] mt-1">
+      Trabalhos realizados com carinho pela Groomer Deisiane França.
+    </p>
+
+    <!-- Abas Compactas Segmentadas (Segmented Control) -->
+    <div class="mt-4 p-1 rounded-2xl bg-[#24192e] border border-[#352543] flex items-center">
+      <button class="flex-1 py-2.5 rounded-xl bg-[#ffad66] text-[#17101f] text-xs font-bold text-center shadow transition-all min-h-[44px] flex items-center justify-center gap-1.5">
+        <span>🎃 Halloween</span>
+        <span class="text-[10px] bg-[#17101f]/20 px-1.5 py-0.5 rounded-full">14</span>
+      </button>
+      <button class="flex-1 py-2.5 rounded-xl text-[#fff3df]/80 hover:text-[#fff3df] text-xs font-medium text-center transition-all min-h-[44px] flex items-center justify-center gap-1.5">
+        <span>✨ Outras Datas</span>
+        <span class="text-[10px] bg-[#352543] px-1.5 py-0.5 rounded-full text-[#cbb6e5]">34</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Filtro Secundário por Porte/Tipo de Serviço -->
+  <div class="px-5 py-2 flex items-center justify-between text-xs text-[#cbb6e5] border-b border-[#352543]/60 mb-4">
+    <div class="flex items-center gap-3">
+      <span class="text-[#ffad66] font-semibold border-b-2 border-[#ffad66] pb-1">Todos</span>
+      <span class="pb-1 hover:text-[#fff3df]">Pequeno Porte</span>
+      <span class="pb-1 hover:text-[#fff3df]">Tosados</span>
+    </div>
+    <span class="text-[11px] text-[#cbb6e5]/70">Exibindo 6 fotos</span>
+  </div>
+
+  <!-- Grid Editorial 2 Colunas -->
+  <main class="px-5 grid grid-cols-2 gap-3.5">
+
+    <!-- Card 1: Pug Vampiro -->
+    <div class="bg-[#24192e] rounded-2xl overflow-hidden border border-[#352543] flex flex-col group">
+      <div class="relative aspect-square w-full bg-black/40 overflow-hidden">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeKz6gI-wQt8k4k08_XtSBW6My3recESgUDt7uK_EAQIJ9ByuAYrDjUQ_B0oKkIUf0B8ACfvU-TBz6h2ZKTQ2lfshKa0WFQPZTc9FSLAbU9MdqTXiTh8lVSoSoTQgG18k2P8VNQKcFY8TkTu-PuZFBwlcQDhzClaukusbsONMsKeQBkUtZ81PQHWtK_Tn9GGJ6kBkI_zjvFcq12CZ2dByd3aAOL7u1cNngpZDK975rTQ_4ObDDqtK-JoSf8VbLvebzqxSnqm5x-HE" alt="Thor Pug Vampiro" class="w-full h-full object-cover object-top" />
+        <div class="absolute inset-0 bg-gradient-to-t from-[#24192e]/90 via-transparent to-transparent"></div>
+        <span class="absolute top-2 left-2 bg-[#17101f]/80 backdrop-blur-sm text-[#ffad66] text-[10px] font-semibold px-2 py-0.5 rounded-md border border-[#ffad66]/30">
+          Tosa &amp; Capa
+        </span>
+      </div>
+      <div class="p-3 flex-1 flex flex-col justify-between">
+        <div>
+          <h3 class="font-serif font-bold text-sm text-[#fff3df]">Thor (Pug)</h3>
+          <p class="text-[11px] text-[#cbb6e5] mt-0.5">Ensaio Halloween</p>
+        </div>
+        <div class="mt-2.5 pt-2 border-t border-[#352543] flex items-center justify-between text-[11px] text-[#ffad66]">
+          <span>Ver detalhes</span>
+          <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2: Shih Tzu Fantasiada -->
+    <div class="bg-[#24192e] rounded-2xl overflow-hidden border border-[#352543] flex flex-col group">
+      <div class="relative aspect-square w-full bg-black/40 overflow-hidden">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeKz6gI-wQt8k4k08_XtSBW6My3recESgUDt7uK_EAQIJ9ByuAYrDjUQ_B0oKkIUf0B8ACfvU-TBz6h2ZKTQ2lfshKa0WFQPZTc9FSLAbU9MdqTXiTh8lVSoSoTQgG18k2P8VNQKcFY8TkTu-PuZFBwlcQDhzClaukusbsONMsKeQBkUtZ81PQHWtK_Tn9GGJ6kBkI_zjvFcq12CZ2dByd3aAOL7u1cNngpZDK975rTQ_4ObDDqtK-JoSf8VbLvebzqxSnqm5x-HE" alt="Melzinha Shih Tzu" class="w-full h-full object-cover object-center" />
+        <div class="absolute inset-0 bg-gradient-to-t from-[#24192e]/90 via-transparent to-transparent"></div>
+        <span class="absolute top-2 left-2 bg-[#17101f]/80 backdrop-blur-sm text-[#cbb6e5] text-[10px] font-semibold px-2 py-0.5 rounded-md border border-[#352543]">
+          Hidratação
+        </span>
+      </div>
+      <div class="p-3 flex-1 flex flex-col justify-between">
+        <div>
+          <h3 class="font-serif font-bold text-sm text-[#fff3df]">Melzinha</h3>
+          <p class="text-[11px] text-[#cbb6e5] mt-0.5">Shih Tzu com Lacinhos</p>
+        </div>
+        <div class="mt-2.5 pt-2 border-t border-[#352543] flex items-center justify-between text-[11px] text-[#ffad66]">
+          <span>Ver detalhes</span>
+          <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3: Antes e Depois (Yorkshire) -->
+    <div class="bg-[#24192e] rounded-2xl overflow-hidden border border-[#352543] flex flex-col group">
+      <div class="relative aspect-square w-full bg-black/40 overflow-hidden">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeKz6gI-wQt8k4k08_XtSBW6My3recESgUDt7uK_EAQIJ9ByuAYrDjUQ_B0oKkIUf0B8ACfvU-TBz6h2ZKTQ2lfshKa0WFQPZTc9FSLAbU9MdqTXiTh8lVSoSoTQgG18k2P8VNQKcFY8TkTu-PuZFBwlcQDhzClaukusbsONMsKeQBkUtZ81PQHWtK_Tn9GGJ6kBkI_zjvFcq12CZ2dByd3aAOL7u1cNngpZDK975rTQ_4ObDDqtK-JoSf8VbLvebzqxSnqm5x-HE" alt="Antes e Depois Yorkshire" class="w-full h-full object-cover object-bottom" />
+        <div class="absolute inset-0 bg-gradient-to-t from-[#24192e]/90 via-transparent to-transparent"></div>
+        <span class="absolute top-2 left-2 bg-[#ffad66] text-[#17101f] text-[10px] font-bold px-2 py-0.5 rounded-md">
+          Antes &amp; Depois
+        </span>
+      </div>
+      <div class="p-3 flex-1 flex flex-col justify-between">
+        <div>
+          <h3 class="font-serif font-bold text-sm text-[#fff3df]">Bidu (Yorkie)</h3>
+          <p class="text-[11px] text-[#cbb6e5] mt-0.5">Gravatinha Laranja</p>
+        </div>
+        <div class="mt-2.5 pt-2 border-t border-[#352543] flex items-center justify-between text-[11px] text-[#ffad66]">
+          <span>Ver foto dupla</span>
+          <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4: Groomer com Lulu da Pomerânia -->
+    <div class="bg-[#24192e] rounded-2xl overflow-hidden border border-[#352543] flex flex-col group">
+      <div class="relative aspect-square w-full bg-black/40 overflow-hidden">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfSbuUoMikTIat1brZoL_xrxeYDhy_7RIZXBpfCjkVrJuB2knr-jEaB_Fo5KyMMIaMoRiCRVhqL4eVGp32miz47wx09KicHZ_1yT2T7-mq_zPW1OX8uNiK0OPQQe-7P-VkpQyjouBuJHMlOIyDpK2kPwygFoGpcRXnOi5lXaRI5pWR0JuICNhT8Qd7ToVATgNqwBbn19Vgyp9NBIRkrGVAxmle1CyBu6iq5_QMTaUjTZTQtowr_2Uv4MQ6MSKYKb16s0QQp-_MBB8" alt="Deisiane e Pomerânia" class="w-full h-full object-cover object-top" />
+        <div class="absolute inset-0 bg-gradient-to-t from-[#24192e]/90 via-transparent to-transparent"></div>
+        <span class="absolute top-2 left-2 bg-[#17101f]/80 backdrop-blur-sm text-[#ffad66] text-[10px] font-semibold px-2 py-0.5 rounded-md border border-[#ffad66]/30">
+          Bastidores
+        </span>
+      </div>
+      <div class="p-3 flex-1 flex flex-col justify-between">
+        <div>
+          <h3 class="font-serif font-bold text-sm text-[#fff3df]">Deisiane &amp; Pipoca</h3>
+          <p class="text-[11px] text-[#cbb6e5] mt-0.5">Penteado &amp; PomPom</p>
+        </div>
+        <div class="mt-2.5 pt-2 border-t border-[#352543] flex items-center justify-between text-[11px] text-[#ffad66]">
+          <span>Ver história</span>
+          <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Botão Flutuante / Fixo CTA para WhatsApp -->
+  <div class="fixed bottom-3 inset-x-5 max-w-[350px] mx-auto z-20">
+    <a href="#" class="w-full bg-[#ffad66] hover:bg-[#f99e50] text-[#17101f] font-bold text-sm py-3.5 px-4 rounded-2xl shadow-xl flex items-center justify-center gap-2 border border-[#fff3df]/30 min-h-[48px]">
+      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"/>
+      </svg>
+      <span>Agendar Ensaio Temático</span>
+    </a>
+  </div>
+
+</body>
+</html>

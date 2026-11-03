@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galeria PomPom Pet - Mosaico Dinâmico</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            aubergine: '#17101f',
+            aubergineCard: '#24192e',
+            aubergineBorder: '#352543',
+            pumpkin: '#ffad66',
+            pumpkinHover: '#f99e50',
+            creme: '#fff3df',
+            lavender: '#cbb6e5'
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #17101f;
+      color: #fff3df;
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+    .custom-scroll::-webkit-scrollbar { display: none; }
+    .custom-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+</head>
+<body class="w-[390px] mx-auto min-h-screen bg-[#17101f] text-[#fff3df] relative overflow-x-hidden pb-10">
+
+  <!-- Detalhe decorativo discreto de teia no topo -->
+  <div class="absolute top-0 right-0 w-36 h-36 opacity-15 pointer-events-none">
+    <svg viewBox="0 0 100 100" fill="none" stroke="#ffad66" stroke-width="0.75">
+      <path d="M100 0 L0 0 M100 0 L20 100 M100 0 L0 60 M100 0 L50 100 M100 0 L80 100"/>
+      <path d="M40 0 A60 60 0 0 0 100 60" stroke-dasharray="2,2"/>
+      <path d="M70 0 A30 30 0 0 0 100 30" stroke-dasharray="2,2"/>
+      <path d="M15 0 A85 85 0 0 0 100 85" stroke-dasharray="2,2"/>
+    </svg>
+  </div>
+
+  <!-- Header / Seção Introdução -->
+  <header class="px-5 pt-7 pb-4 relative z-10">
+    <div class="flex items-center justify-between mb-4">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#24192e] border border-[#352543] text-xs font-semibold text-[#cbb6e5]">
+        <svg class="w-3.5 h-3.5 text-[#ffad66]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+          <circle cx="12" cy="13" r="3" />
+        </svg>
+        <span>Galeria PomPom Pet</span>
+      </div>
+      <span class="text-xs text-[#cbb6e5]/70 font-medium">Outubro Encantado</span>
+    </div>
+
+    <h1 class="text-[28px] leading-tight font-serif font-semibold text-[#fff3df] tracking-tight">
+      Transformações &amp; <br><span class="italic text-[#ffad66]">fofuras fantasiadas</span>
+    </h1>
+    <p class="text-xs text-[#fff3df]/70 mt-2 leading-relaxed">
+      Acompanhe os cliques dos nossos clientes peludos depois do banho temático e tosa com amor em Cajamar.
+    </p>
+  </header>
+
+  <!-- Filtros de Ocasião (Chips) -->
+  <nav class="px-5 mb-5 overflow-x-auto custom-scroll flex items-center gap-2">
+    <button class="px-4 py-2.5 rounded-full text-xs font-semibold bg-[#ffad66] text-[#17101f] shadow-sm flex items-center gap-1.5 shrink-0 min-h-[44px]">
+      <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2l1.6 4.9h5.1l-4.1 3 1.5 4.9-4.1-3-4.1 3 1.5-4.9-4.1-3h5.1z"/>
+      </svg>
+      Halloween
+    </button>
+    <button class="px-4 py-2.5 rounded-full text-xs font-medium bg-[#24192e] text-[#fff3df]/90 border border-[#352543] hover:border-[#ffad66]/40 flex items-center gap-1.5 shrink-0 min-h-[44px]">
+      <span>Todas</span>
+      <span class="text-[10px] text-[#cbb6e5] bg-[#17101f] px-1.5 py-0.5 rounded-full">48</span>
+    </button>
+    <button class="px-4 py-2.5 rounded-full text-xs font-medium bg-[#24192e] text-[#fff3df]/90 border border-[#352543] hover:border-[#ffad66]/40 flex items-center gap-1.5 shrink-0 min-h-[44px]">
+      <span>Natal</span>
+    </button>
+    <button class="px-4 py-2.5 rounded-full text-xs font-medium bg-[#24192e] text-[#fff3df]/90 border border-[#352543] hover:border-[#ffad66]/40 flex items-center gap-1.5 shrink-0 min-h-[44px]">
+      <span>Páscoa</span>
+    </button>
+    <button class="px-4 py-2.5 rounded-full text-xs font-medium bg-[#24192e] text-[#fff3df]/90 border border-[#352543] hover:border-[#ffad66]/40 flex items-center gap-1.5 shrink-0 min-h-[44px]">
+      <span>Dia a Dia</span>
+    </button>
+  </nav>
+
+  <!-- Mosaico Assimétrico (Layout 1) -->
+  <main class="px-5 space-y-4">
+
+    <!-- Card Destaque Heroico (Pug Vampirinho) -->
+    <div class="bg-[#24192e] rounded-2xl p-3 border border-[#352543] shadow-lg relative group">
+      <div class="relative w-full h-[220px] rounded-xl overflow-hidden bg-black/40">
+        <img src="https://pompom-site-halloween-preview-120718400087.us-east1.run.app/fotos/datas-comemorativas/halloween/princiapal.jpg" alt="Pet da PomPom no Halloween" class="w-full h-full object-cover object-top scale-105" />
+        <div class="absolute inset-0 bg-gradient-to-t from-[#17101f]/90 via-transparent to-black/20"></div>
+        
+        <span class="absolute top-2.5 left-2.5 bg-[#17101f]/80 backdrop-blur-md border border-[#ffad66]/30 text-[#ffad66] text-[11px] font-semibold px-2.5 py-1 rounded-full flex items-center gap-1">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#ffad66] animate-pulse"></span>
+          Halloween PomPom
+        </span>
+
+        <div class="absolute bottom-3 left-3 right-3 flex items-end justify-between">
+          <div>
+            <h3 class="font-serif font-semibold text-lg text-[#fff3df]">Fofura de Halloween</h3>
+            <p class="text-xs text-[#cbb6e5]">Banho relaxante + gravatinha asas de morcego</p>
+          </div>
+          <button class="w-9 h-9 rounded-full bg-[#ffad66] text-[#17101f] flex items-center justify-center font-bold text-xs shrink-0 shadow-md">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Grade 2 colunas com alturas variadas (Masonry Style) -->
+    <div class="grid grid-cols-2 gap-3.5">
+      <!-- Coluna 1: Shih Tzu Bruxinha -->
+      <div class="bg-[#24192e] rounded-2xl p-2.5 border border-[#352543] flex flex-col justify-between">
+        <div class="relative h-[180px] rounded-xl overflow-hidden bg-black/40">
+          <img src="https://pompom-site-halloween-preview-120718400087.us-east1.run.app/fotos/datas-comemorativas/halloween/principal_2.JPG" alt="Pet da PomPom no Halloween" class="w-full h-full object-cover object-center" />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#17101f]/80 via-transparent to-transparent"></div>
+          <span class="absolute top-2 right-2 bg-[#24192e]/80 text-[#cbb6e5] text-[10px] px-2 py-0.5 rounded-full border border-[#352543]">
+            Halloween
+          </span>
+        </div>
+        <div class="pt-2 px-1">
+          <h4 class="font-semibold text-xs text-[#fff3df]">Pet da PomPom</h4>
+          <p class="text-[11px] text-[#cbb6e5]/80 mt-0.5">Laço gótico &amp; hidratação</p>
+        </div>
+      </div>
+
+      <!-- Coluna 2: Antes e Depois Interativo Compacto -->
+      <div class="bg-[#24192e] rounded-2xl p-2.5 border border-[#352543] flex flex-col justify-between">
+        <div class="relative h-[180px] rounded-xl overflow-hidden bg-black/40">
+          <img src="https://pompom-site-halloween-preview-120718400087.us-east1.run.app/fotos/datas-comemorativas/halloween/principal_3.JPG" alt="Pet da PomPom no Halloween" class="w-full h-full object-cover object-bottom" />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#17101f]/80 via-transparent to-transparent"></div>
+          
+          <div class="absolute top-2 left-2 flex gap-1">
+            <span class="bg-[#17101f]/90 text-[9px] text-[#ffad66] font-semibold px-1.5 py-0.5 rounded">Halloween</span>
+            <span class="bg-[#ffad66] text-[9px] text-[#17101f] font-semibold px-1.5 py-0.5 rounded">PomPom</span>
+          </div>
+
+          <div class="absolute bottom-2 inset-x-2 flex justify-center">
+            <span class="bg-[#24192e]/90 text-[#fff3df] border border-[#ffad66]/40 text-[10px] px-2 py-1 rounded-full font-medium flex items-center gap-1 shadow">
+              <svg class="w-3 h-3 text-[#ffad66]" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z"/>
+              </svg>
+              Halloween
+            </span>
+          </div>
+        </div>
+        <div class="pt-2 px-1">
+          <h4 class="font-semibold text-xs text-[#fff3df]">Fofura da PomPom</h4>
+          <p class="text-[11px] text-[#cbb6e5]/80 mt-0.5">Cliques da nossa galeria</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mini banner com chamada de agendamento -->
+    <div class="rounded-2xl p-4 bg-gradient-to-r from-[#24192e] to-[#2d1b3b] border border-[#ffad66]/30 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-[#ffad66]/15 border border-[#ffad66]/30 flex items-center justify-center text-[#ffad66] shrink-0">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <div>
+          <p class="text-xs font-semibold text-[#fff3df]">Quer ver seu pet aqui?</p>
+          <p class="text-[11px] text-[#cbb6e5]">Fale com a equipe para agendar.</p>
+        </div>
+      </div>
+      <a href="#" class="px-3.5 py-2 rounded-xl bg-[#ffad66] text-[#17101f] text-xs font-bold shrink-0 min-h-[44px] flex items-center shadow">
+        Agendar
+      </a>
+    </div>
+
+  </main>
+</body>
+</html>

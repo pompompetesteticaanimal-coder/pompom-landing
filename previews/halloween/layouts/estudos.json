@@ -1,0 +1,374 @@
+{
+  "project": "3957235714949665270",
+  "scope": "mobile",
+  "art": "Aquarela — opção 3",
+  "parts": [
+    {
+      "slug": "menu",
+      "title": "Menu",
+      "description": "Painel lateral, menu compacto ou barra inferior: três formas de acessar as mesmas opções.",
+      "reference": "layouts/menu-atual.png",
+      "options": [
+        {
+          "number": 1,
+          "title": "Painel lateral",
+          "stitchId": "5cfcf0cd337b4382b91a449e225c443c",
+          "image": "layouts/menu-1.png",
+          "html": "layouts/menu-1.html",
+          "validatedStitchId": "13097454256564653677"
+        },
+        {
+          "number": 2,
+          "title": "Menu compacto abaixo do topo",
+          "stitchId": "82a7adf15ea740149e4ee1fc311c4c39",
+          "image": "layouts/menu-2.png",
+          "html": "../../mobile.html?intro=off",
+          "validatedStitchId": "17984309294307960627"
+        },
+        {
+          "number": 3,
+          "title": "Barra inferior + painel Mais",
+          "stitchId": "ee0a60da006b4e76a0a293c964554f01",
+          "image": "layouts/menu-3.png",
+          "html": "layouts/menu-3.html",
+          "validatedStitchId": "4460158058958685526"
+        }
+      ],
+      "approvedOption": 2
+    },
+    {
+      "slug": "capa",
+      "title": "Capa",
+      "description": "A mesma aquarela em três composições: editorial, imersiva e compacta com atalhos.",
+      "reference": "layouts/capa-atual.png",
+      "options": [
+        {
+          "number": 1,
+          "title": "Editorial com aquarela",
+          "stitchId": "5e1537760bc3486e8196ed48d86c066a",
+          "image": "layouts/capa-1.png",
+          "html": "layouts/capa-1.html",
+          "validatedStitchId": "11001024769347005458"
+        },
+        {
+          "number": 2,
+          "title": "Capa imersiva",
+          "stitchId": "8149c2a32a6045e38a43efc78557d29d",
+          "image": "layouts/capa-2.png",
+          "html": "layouts/capa-2.html",
+          "validatedStitchId": "11628674663760482607"
+        },
+        {
+          "number": 3,
+          "title": "Capa compacta com atalhos",
+          "stitchId": "3043a9eeab17432c832c6129daaf8488",
+          "image": "layouts/capa-3.png",
+          "html": "layouts/capa-3.html",
+          "validatedStitchId": "7759975159503523883"
+        }
+      ]
+    },
+    {
+      "slug": "servicos",
+      "title": "Serviços",
+      "description": "Compare cartões, acordeão e carrossel. A escolha muda como o cliente descobre os serviços.",
+      "reference": "layouts/servicos-atual.png",
+      "options": [
+        {
+          "number": 1,
+          "title": "Cartões em duas colunas",
+          "stitchId": "e814ec51c1854c1c97e3d01ef1cb31c9",
+          "image": "layouts/servicos-1.png",
+          "html": "layouts/servicos-1.html",
+          "validatedStitchId": "4536108252157336428"
+        },
+        {
+          "number": 2,
+          "title": "Acordeão de serviços",
+          "stitchId": "d932ab9e3527441bba3f809ef100b2af",
+          "image": "layouts/servicos-2.png",
+          "html": "layouts/servicos-2.html",
+          "validatedStitchId": "17091460137635975336"
+        },
+        {
+          "number": 3,
+          "title": "Carrossel horizontal",
+          "stitchId": "623eea49297740b3ab3acaed1e07dc69",
+          "image": "layouts/servicos-3.png",
+          "html": "layouts/servicos-3.html",
+          "validatedStitchId": "8047366117127479415"
+        }
+      ]
+    },
+    {
+      "slug": "galeria",
+      "title": "Galeria",
+      "description": "Compare mosaico, stories e abas com álbuns; as imagens da PomPom são preservadas.",
+      "reference": "layouts/galeria-atual.png",
+      "options": [
+        {
+          "number": 1,
+          "title": "Mosaico com filtros",
+          "stitchId": "2327472986904dfaa4277bb4e6a11080",
+          "image": "layouts/galeria-1.png",
+          "html": "layouts/galeria-1.html",
+          "validatedStitchId": "2578133884286261963"
+        },
+        {
+          "number": 2,
+          "title": "Stories e cartões deslizáveis",
+          "stitchId": "d7ccf6ff15f949f299eccb790ae4c4f8",
+          "image": "layouts/galeria-2.png",
+          "html": "layouts/galeria-2.html",
+          "validatedStitchId": "335842823292157859"
+        },
+        {
+          "number": 3,
+          "title": "Abas com álbuns",
+          "stitchId": "1e8f5f74f8d0486ea7093d62c30ff03f",
+          "image": "layouts/galeria-3.png",
+          "html": "layouts/galeria-3.html",
+          "validatedStitchId": "8279609576791346137"
+        }
+      ]
+    },
+    {
+      "slug": "lojinha",
+      "title": "Lojinha",
+      "description": "Catálogo em painel, catálogo com busca e lista de produtos. Encomendas pelo WhatsApp.",
+      "reference": "layouts/lojinha-atual.png",
+      "options": [
+        {
+          "number": 1,
+          "title": "Catálogo em painel inferior",
+          "stitchId": "930873bb627f4c58a15649c503ff904e",
+          "image": "layouts/lojinha-1.png",
+          "html": "layouts/lojinha-1.html",
+          "validatedStitchId": "1511560816400335798"
+        },
+        {
+          "number": 2,
+          "title": "Catálogo com busca",
+          "stitchId": "2c0346e512ea4f2fbfe878e384ae3d9b",
+          "image": "layouts/lojinha-2.png",
+          "html": "layouts/lojinha-2.html",
+          "validatedStitchId": "4425439787935524975"
+        },
+        {
+          "number": 3,
+          "title": "Lista com produto em destaque",
+          "stitchId": "3e8f7c8aadcc488da573f0c92c76acbe",
+          "image": "layouts/lojinha-3.png",
+          "html": "layouts/lojinha-3.html",
+          "validatedStitchId": "4460158058958687197"
+        }
+      ]
+    },
+    {
+      "slug": "apresentacao",
+      "title": "Apresentação",
+      "description": "Três formas de apresentar Deisiane e o cuidado com os pets.",
+      "reference": "layouts/apresentacao-atual.png",
+      "options": [
+        {
+          "number": 1,
+          "title": "Retrato editorial",
+          "stitchId": "eb7b87a1142d4cb895be7178ee8cd378",
+          "image": "layouts/apresentacao-1.png",
+          "html": "layouts/apresentacao-1.html",
+          "validatedStitchId": "4087981209324588869"
+        },
+        {
+          "number": 2,
+          "title": "Cartão com trajetória",
+          "stitchId": "d86b40b361a64a9fbbbdba52fcc5ec54",
+          "image": "layouts/apresentacao-2.png",
+          "html": "layouts/apresentacao-2.html",
+          "validatedStitchId": "4259231491351373304"
+        },
+        {
+          "number": 3,
+          "title": "Blocos com indicadores",
+          "stitchId": "9902bcaef18f4f9a8e21f7d7b971c769",
+          "image": "layouts/apresentacao-3.png",
+          "html": "layouts/apresentacao-3.html",
+          "validatedStitchId": "12285938864172055137"
+        }
+      ]
+    },
+    {
+      "slug": "contato",
+      "title": "Contato",
+      "description": "Ações rápidas, localização em destaque ou ficha compacta com agendamento.",
+      "reference": "layouts/contato-atual.png",
+      "options": [
+        {
+          "number": 1,
+          "title": "Ações rápidas",
+          "stitchId": "825f0863653343fdacd0cf16d75a7e0d",
+          "image": "layouts/contato-1.png",
+          "html": "layouts/contato-1.html",
+          "validatedStitchId": "3512097727833795646"
+        },
+        {
+          "number": 2,
+          "title": "Mapa e localização em destaque",
+          "stitchId": "9bd027b0c75c44d0ad93e76149d621d5",
+          "image": "layouts/contato-2.png",
+          "html": "../../mobile.html?intro=off#contato",
+          "validatedStitchId": "7543173907714263344"
+        },
+        {
+          "number": 3,
+          "title": "Ficha compacta com agendamento",
+          "stitchId": "20bb681a93b543509503a9c8afc86f10",
+          "image": "layouts/contato-3.png",
+          "html": "layouts/contato-3.html",
+          "validatedStitchId": "4245962534532158095"
+        }
+      ],
+      "approvedOption": 2
+    },
+    {
+      "slug": "vitrine",
+      "title": "Vitrine",
+      "description": "Duas linhas de produtos em um card clicável que abre sua lojinha atual. Compare fotos redondas, cartões e vitrine deslizável.",
+      "reference": "layouts/vitrine-atual.png",
+      "options": [
+        {
+          "number": 1,
+          "title": "Seu modelo com duas linhas",
+          "image": "layouts/vitrine-1.png",
+          "html": "experimento.html?parte=vitrine&opcao=1",
+          "validatedStitchId": "16170983167670515288"
+        },
+        {
+          "number": 2,
+          "title": "Cartão com fotos em duas linhas",
+          "image": "layouts/vitrine-2.png",
+          "html": "../../mobile.html?intro=off#vitrine",
+          "validatedStitchId": "10556499932664321747"
+        },
+        {
+          "number": 3,
+          "title": "Duas linhas deslizáveis",
+          "image": "layouts/vitrine-3.png",
+          "html": "experimento.html?parte=vitrine&opcao=3",
+          "validatedStitchId": "14895093453298071037"
+        }
+      ],
+      "approvedOption": 2
+    },
+    {
+      "slug": "avaliacoes",
+      "title": "Avaliações",
+      "description": "Exemplos de apresentação das avaliações Google. Dados simulados identificados, depoimentos do site atual e integração real ainda não conectada.",
+      "reference": "layouts/avaliacoes-atual.png",
+      "options": [
+        {
+          "number": 1,
+          "title": "Nota em destaque + depoimento",
+          "image": "layouts/avaliacoes-1.png",
+          "html": "../../mobile.html?intro=off#avaliacoes",
+          "validatedStitchId": "825751821973019392"
+        },
+        {
+          "number": 2,
+          "title": "Carrossel de reconhecimento",
+          "image": "layouts/avaliacoes-2.png",
+          "html": "experimento.html?parte=avaliacoes&opcao=2",
+          "validatedStitchId": "17753619082943072327"
+        },
+        {
+          "number": 3,
+          "title": "Selo com distribuição das estrelas",
+          "image": "layouts/avaliacoes-3.png",
+          "html": "experimento.html?parte=avaliacoes&opcao=3",
+          "validatedStitchId": "12818840943271163694"
+        }
+      ],
+      "approvedOption": 1
+    },
+    {
+      "slug": "abertura",
+      "title": "Abertura · Identificação",
+      "description": "Logo e nome PomPom Pet com Estética Animal: compare a marca abaixo, acima ou em uma assinatura destacada. Abra o protótipo para assistir à animação e repetir.",
+      "reference": "layouts/capa-atual.png",
+      "options": [
+        {
+          "number": 1,
+          "title": "Marca abaixo do logo",
+          "image": "layouts/abertura-1.png",
+          "html": "identidade.html?parte=abertura&opcao=1"
+        },
+        {
+          "number": 2,
+          "title": "Marca acima do logo",
+          "image": "layouts/abertura-2.png",
+          "html": "identidade.html?parte=abertura&opcao=2"
+        },
+        {
+          "number": 3,
+          "title": "Assinatura em destaque",
+          "image": "layouts/abertura-3.png",
+          "html": "identidade.html?parte=abertura&opcao=3"
+        }
+      ],
+      "approvedOption": 1
+    },
+    {
+      "slug": "marca",
+      "title": "Letras da marca",
+      "description": "Três estilos sobre a capa atual: Fredoka, Baloo 2 e Lilita One. A aquarela e os demais títulos continuam iguais.",
+      "reference": "layouts/capa-atual.png",
+      "options": [
+        {
+          "number": 1,
+          "title": "Fofo moderno · Fredoka",
+          "image": "layouts/marca-1.png",
+          "html": "identidade.html?parte=marca&opcao=1"
+        },
+        {
+          "number": 2,
+          "title": "Acolhedor · Baloo 2",
+          "image": "layouts/marca-2.png",
+          "html": "identidade.html?parte=marca&opcao=2"
+        },
+        {
+          "number": 3,
+          "title": "Marcante · Lilita One",
+          "image": "layouts/marca-3.png",
+          "html": "identidade.html?parte=marca&opcao=3"
+        }
+      ],
+      "approvedOption": 2
+    },
+    {
+      "slug": "catalogo",
+      "title": "Loja · Fotos maiores",
+      "description": "Sete categorias reais. Escolha entre círculos maiores, cards com foto inteira e um produto por vez. Toque na foto para ampliar e usar o zoom; WhatsApp somente pelo botão de consulta.",
+      "reference": "layouts/lojinha-atual.png",
+      "options": [
+        {
+          "number": 1,
+          "title": "Círculos maiores",
+          "image": "layouts/catalogo-1.png",
+          "html": "identidade.html?parte=catalogo&opcao=1"
+        },
+        {
+          "number": 2,
+          "title": "Cards com foto inteira",
+          "image": "layouts/catalogo-2.png",
+          "html": "identidade.html?parte=catalogo&opcao=2"
+        },
+        {
+          "number": 3,
+          "title": "Um produto por vez",
+          "image": "layouts/catalogo-3.png",
+          "html": "identidade.html?parte=catalogo&opcao=3"
+        }
+      ],
+      "approvedOption": 2
+    }
+  ]
+}

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <script>if ('scrollRestoration' in history) history.scrollRestoration = 'manual';</script>
+  <script src="/site-scripts/mobile-1.js"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <meta name="theme-color" content="#e11d48" />
+  <meta name="theme-color" content="#17101f" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
@@ -12,7 +12,7 @@
   <link rel="icon" type="image/png" href="fotos/logo.png" />
   <link rel="apple-touch-icon" href="fotos/logo.png" />
   <link rel="manifest" href="/manifest.json" />
-  <meta name="description" content="PomPom Pet — Estética animal em Cajamar/SP. Banho, tosa, hidratação e cuidado especializado para cães e gatos. Mais de 3.000 pets atendidos. Agende pelo WhatsApp." />
+  <meta name="description" content="PomPom Pet — Estética animal em Cajamar/SP. Banho, tosa, hidratação e cuidado especializado. Todo mês, centenas de pets de Cajamar e região passam por aqui. Agende pelo WhatsApp." />
   <link rel="canonical" href="https://pompompetshop.com.br/" />
   <link rel="alternate" hreflang="pt-BR" href="https://pompompetshop.com.br/" />
   <link rel="alternate" hreflang="x-default" href="https://pompompetshop.com.br/" />
@@ -30,9 +30,9 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://pompompetshop.com.br/" />
   <meta property="og:title" content="PomPom Pet — Estética Animal em Cajamar" />
-  <meta property="og:description" content="Banho, tosa e hidratação com carinho e técnica especializada. Mais de 3.000 pets atendidos. Agende pelo WhatsApp." />
-  <meta property="og:image" content="https://pompompetshop.com.br/fotos/copa/frente-copa.jpeg" />
-  <meta property="og:image:secure_url" content="https://pompompetshop.com.br/fotos/copa/frente-copa.jpeg" />
+  <meta property="og:description" content="Banho, tosa e hidratação com carinho e técnica especializada. Todo mês, centenas de pets de Cajamar e região passam por aqui. Agende pelo WhatsApp." />
+  <meta property="og:image" content="https://pompompetshop.com.br/fotos/ambiente/frente.png" />
+  <meta property="og:image:secure_url" content="https://pompompetshop.com.br/fotos/ambiente/frente.png" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -44,7 +44,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="PomPom Pet — Estética Animal em Cajamar" />
   <meta name="twitter:description" content="Banho, tosa e hidratação com carinho. Agende pelo WhatsApp." />
-  <meta name="twitter:image" content="https://pompompetshop.com.br/fotos/copa/frente-copa.jpeg" />
+  <meta name="twitter:image" content="https://pompompetshop.com.br/fotos/ambiente/frente.png" />
   <meta name="twitter:image:alt" content="Fachada da PomPom Pet — Banho e Tosa em Cajamar/SP" />
 
   <!-- Structured Data — LocalBusiness + Services + FAQ -->
@@ -57,11 +57,11 @@
         "@id": "https://pompompetshop.com.br/#business",
         "name": "PomPom Pet",
         "alternateName": ["PomPom Pet Estética Animal", "PomPom Petshop", "Pom Pom Pet"],
-        "description": "Estética animal especializada em banho, tosa higiênica, tosa na tesoura, tosa na máquina e hidratação para cães e gatos em Cajamar/SP. Atende também Polvilho, Jordanésia e Pirituba. Mais de 3.000 pets atendidos.",
+        "description": "Estética animal especializada em banho, tosa higiênica, tosa na tesoura, tosa na máquina e hidratação para cães e gatos em Cajamar/SP. Atende também Polvilho, Jordanésia e Pirituba. Todo mês, centenas de pets de Cajamar e região passam por aqui.",
         "slogan": "Banho e tosa com carinho em Cajamar",
         "url": "https://pompompetshop.com.br/",
         "image": [
-          "https://pompompetshop.com.br/fotos/copa/frente-copa.jpeg",
+          "https://pompompetshop.com.br/fotos/ambiente/frente.png",
           "https://pompompetshop.com.br/fotos/hero-dog.jpg",
           "https://pompompetshop.com.br/fotos/trabalho1.jpg"
         ],
@@ -97,7 +97,8 @@
           }
         ],
         "sameAs": [
-          "https://www.instagram.com/pompompet_esteticaanimal/"
+          "https://www.instagram.com/pompompet_esteticaanimal/",
+          "https://www.tiktok.com/@deiisii.rodrigues"
         ],
         "priceRange": "$$",
         "paymentAccepted": ["Pix", "Cartão de Crédito", "Cartão de Débito", "Dinheiro"],
@@ -168,13 +169,6 @@
               }
             }
           ]
-        },
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "5.0",
-          "reviewCount": "35",
-          "bestRating": "5",
-          "worstRating": "1"
         }
       },
       {
@@ -272,16 +266,11 @@
   </script>
 
   <link rel="stylesheet" href="/tailwind.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600;700&family=Baloo+2:wght@700;800&family=Fredoka:wght@600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet" />
 
   <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-39SJ335X7K"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-39SJ335X7K');
-  </script>
+  <script src="/site-scripts/mobile-2.js"></script>
 
   <style>
     * { -webkit-tap-highlight-color: transparent; box-sizing: border-box; }
@@ -836,38 +825,37 @@
       border-radius: 8px;
     }
   </style>
+  <link rel="stylesheet" href="halloween.css?v=20261002-9" />
+  <link rel="stylesheet" href="halloween-showcase.css?v=20261020-4" />
+  <link rel="stylesheet" href="halloween-intro.css?v=20261002-7" />
+  <link rel="stylesheet" href="site-themes.css?v=20261004-7" />
+  <link rel="stylesheet" href="halloween-transformations.css?v=20261004-10" />
+  <script src="site-theme-config.js?v=20261004-4"></script>
+  <link rel="preload" as="image" href="fotos/halloween/pets-aquarela.webp" />
+<script src="/site-events.js" defer></script>
 </head>
-<body>
+<body class="halloween-theme halloween-mobile">
+<script src="site-theme.js?v=20261004-6"></script>
+<script src="site-opening.js?v=20261004-4"></script>
 
 <!-- ===== SIDE MENU ===== -->
 <div id="side-menu">
-  <div class="menu-overlay" onclick="closeMenu()"></div>
-  <div class="menu-panel">
-    <!-- Logo no menu -->
-    <div class="flex items-center gap-3 mb-8">
-      <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-rose-100 bg-white flex-shrink-0">
-        <img src="fotos/logo-icon.png" alt="Logo PomPom Pet — Banho e Tosa em Cajamar" class="w-full h-full object-cover" style="object-position:center 30%;" />
-      </div>
-      <div>
-        <div class="nav-brand-pill">PomPom Pet</div>
-        <div class="nav-brand-sub">✨ Estética Animal com amor</div>
-      </div>
-    </div>
-    <a href="#inicio"   class="menu-link" onclick="closeMenu()"><span class="menu-icon">🏠</span> Início</a>
-    <a href="#servicos" class="menu-link" onclick="closeMenu()"><span class="menu-icon">✂️</span> Serviços</a>
-    <a href="#galeria"  class="menu-link" onclick="closeMenu()"><span class="menu-icon">📸</span> Galeria</a>
-    <a href="#sobre"    class="menu-link" onclick="closeMenu()"><span class="menu-icon">💗</span> Sobre nós</a>
-    <a href="#contato"  class="menu-link" onclick="closeMenu()"><span class="menu-icon">📍</span> Contato</a>
-    <a href="https://wa.me/5511947266216?text=Olá! Quero agendar" target="_blank" rel="noopener noreferrer"
-       class="mt-6 bg-green-500 text-white font-bold py-4 rounded-2xl text-center flex items-center justify-center gap-2 active:scale-95 transition-transform">
-      💬 Agendar pelo WhatsApp
-    </a>
+  <div class="menu-overlay" data-site-action="close-menu"></div>
+  <div class="menu-panel" role="dialog" aria-modal="true" aria-labelledby="menu-title">
+    <div class="compact-menu-heading"><h2 id="menu-title">Explore a PomPom</h2><button type="button" class="halloween-menu-close" data-site-action="close-menu" aria-label="Fechar menu">✕</button></div>
+    <nav class="compact-menu-grid" aria-label="Navegação principal">
+      <a href="#inicio" class="menu-link" data-site-action="close-menu"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg> Início</a>
+      <a href="#servicos" class="menu-link" data-site-action="close-menu"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="m8 8 13 13M8 16l13-13"/></svg> Serviços</a>
+      <a href="#galeria" class="menu-link" data-site-action="close-menu"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8" cy="8" r="1.5"/><path d="m3 17 5-5 4 4 4-6 5 7"/></svg> Galeria</a>
+      <a href="#sobre" class="menu-link" data-site-action="close-menu"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"/></svg> Sobre nós</a>
+      <button type="button" class="menu-link" data-site-action="menu-store"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16l1 14H3zM8 7V5a4 4 0 0 1 8 0v2"/></svg> Lojinha</button>
+      <a href="#contato" class="menu-link" data-site-action="close-menu"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0z"/><circle cx="12" cy="10" r="2.5"/></svg> Localização</a>
+    </nav>
   </div>
 </div>
 
 <!-- ===== HERO ===== -->
 <section id="inicio" class="hero-mobile">
-
   <!-- Top bar dentro do hero -->
   <div class="relative z-10 flex items-center justify-between px-5 pt-10 pb-4">
     <!-- LOGO SVG MELHORADO -->
@@ -876,12 +864,12 @@
         <img src="fotos/logo-icon.png" alt="PomPom Pet Logo" class="w-full h-full object-cover" style="object-position:center 30%;" />
       </div>
       <div class="flex flex-col items-start gap-0.5">
-        <div class="nav-brand-pill" style="border-color: rgba(255,255,255,0.5);">PomPom Pet</div>
-        <div class="nav-brand-sub">✨ Estética Animal com amor</div>
+        <div class="nav-brand-pill" style="border-color: rgba(255,255,255,0.5);">PomPom <span class="brand-pet">Pet</span></div>
+        <div class="nav-brand-sub">Estética Animal</div>
       </div>
     </a>
     <!-- Hamburguer -->
-    <button onclick="openMenu()"
+    <button id="mobile-menu-trigger" data-site-action="open-menu" type="button" aria-label="Abrir menu" aria-controls="side-menu" aria-expanded="false"
             class="w-10 h-10 bg-white/20 backdrop-blur-sm border border-white/30 rounded-full flex flex-col items-center justify-center gap-1.5">
       <span class="w-5 h-0.5 bg-white rounded-full block"></span>
       <span class="w-5 h-0.5 bg-white rounded-full block"></span>
@@ -889,50 +877,41 @@
     </button>
   </div>
 
-  <!-- 3 fotos flutuantes do espaço -->
-  <div class="hero-photos">
-    <div class="hero-photo hp-1"><img src="fotos/copa/cafe-copa.jpeg" alt="Recepção da PomPom Pet decorada para a Copa 2026"  loading="lazy" decoding="async" /></div>
-    <div class="hero-photo hp-2"><img src="fotos/copa/frente-copa.jpeg"   alt="Fachada da PomPom Pet decorada para a Copa do Mundo 2026"  loading="lazy" decoding="async" /></div>
-    <div class="hero-photo hp-3"><img src="fotos/copa/cafe2-copa.jpeg" alt="Interior PomPom Pet decorado Copa 2026"  loading="lazy" decoding="async" /></div>
+
+  <div class="halloween-scene" aria-hidden="true">
+    <img class="halloween-scene-web halloween-scene-web--left" src="fotos/halloween/web.svg" alt="" width="160" height="160" />
+    <img class="halloween-scene-web halloween-scene-web--right" src="fotos/halloween/web.svg" alt="" width="160" height="160" />
+    <img class="halloween-scene-bat halloween-scene-bat--one" src="fotos/halloween/bat.svg" alt="" width="62" height="34" />
+    <img class="halloween-scene-bat halloween-scene-bat--two" src="fotos/halloween/bat.svg" alt="" width="40" height="22" />
   </div>
-
-  <!-- Conteúdo hero -->
-  <div class="relative z-10 flex-1 flex flex-col justify-end px-6 pb-10">
-
-    <div>
-    <h1 class="text-[32px] font-bold text-white leading-tight mb-3" style="letter-spacing:-0.5px">
-      Seu pet<br/>merece o<br/><span class="text-rose-200 italic">melhor</span>
-    </h1>
-    <p class="text-sm mb-8 leading-relaxed max-w-xs" style="color: rgba(255,255,255,0.92)">
-      Banho, tosa e hidratação com carinho. Agende agora e deixe seu pet radiante!
-    </p>
-
-    <!-- Stats row -->
-    <div class="flex gap-3 mb-8">
-      <div class="bg-white/15 backdrop-blur-sm rounded-2xl px-4 py-3 border border-white/20 text-center flex-1">
-        <div class="text-white font-bold text-xl font-serif">3000+</div>
-        <div class="text-white/85 text-[10px] mt-0.5">🐶 Pets atendidos</div>
-      </div>
-      <div class="bg-white/15 backdrop-blur-sm rounded-2xl px-4 py-3 border border-white/20 text-center flex-1">
-        <div class="text-yellow-300 font-bold text-xl">★★★★★</div>
-        <div class="text-white/85 text-[10px] mt-0.5">Avaliação</div>
-      </div>
-    </div>
-
-    <!-- CTA -->
-    <a href="https://wa.me/5511947266216?text=Olá! Quero agendar para meu pet" target="_blank" rel="noopener noreferrer"
-       class="flex items-center justify-center gap-3 bg-white text-rose-700 font-bold text-base py-4 rounded-2xl shadow-2xl active:scale-95 transition-transform">
-      <svg viewBox="0 0 24 24" class="w-5 h-5 fill-green-500"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      Agendar pelo WhatsApp
+  <div class="halloween-mobile-intro">
+    <div class="halloween-eyebrow">Outubro encantado · PomPom Pet</div>
+    <h1>Um Halloween<br/>cheio de <em>fofura.</em></h1>
+    <p>Um toque de magia e o cuidado de sempre.<br/>Banho, tosa e muito carinho para seu pet.</p>
+  </div>
+  <div class="hero-photos normal-hero-photos" aria-hidden="true">
+    <div class="hero-photo hp-1"><img src="fotos/ambiente/recepcao.png.webp" alt="Recepção da PomPom Pet" width="130" height="95" decoding="async" /></div>
+    <div class="hero-photo hp-2"><img src="fotos/ambiente/frente.png.webp" alt="Fachada da PomPom Pet" width="130" height="95" decoding="async" /></div>
+    <div class="hero-photo hp-3"><img src="fotos/ambiente/interior.png.webp" alt="Interior da PomPom Pet" width="130" height="95" decoding="async" /></div>
+  </div>
+  <div class="normal-mobile-preview" aria-hidden="true">
+    <h1>Seu pet<br/>merece o<br/><em>melhor.</em></h1>
+    <p>Banho, tosa e hidratação com carinho. Agende agora e deixe seu pet radiante!</p>
+    <div class="normal-hero-stats"><div><strong>Todo mês</strong><span>Centenas de pets de Cajamar e região</span></div><div><strong>★★★★★</strong><span>Carinho nos depoimentos</span></div></div>
+  </div>
+  <figure class="halloween-mobile-art">
+    <img src="fotos/halloween/pets-aquarela.webp" alt="Ilustração em aquarela de um cachorrinho creme e um gato laranja com chapéus de bruxa, lua e abóboras de Halloween" width="512" height="512" fetchpriority="high" decoding="async" />
+  </figure>
+  <div class="halloween-mobile-bottom">
+    <a href="https://wa.me/5511947266216?text=Olá! Quero agendar para meu pet" target="_blank" rel="noopener noreferrer" class="halloween-primary">
+      <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.4 14.7l-.4-.2-2.3.6.6-2.2-.3-.4A8 8 0 0 1 12 4zm-3.3 3.5c-.3 0-.6.1-.8.4-.5.6-.7 1.2-.6 2 .2 2 2.3 4.5 5.5 5.7 1.3.5 2.6.3 3.3-.8.3-.5.3-.9.2-1.1-.1-.2-1.7-.9-2-.8-.2.1-.6.7-.9.9-.3.2-1.1-.2-1.8-.7-.8-.5-1.5-1.3-1.7-1.8-.2-.4.4-.7.6-1 .2-.2.2-.4.1-.6l-.9-2.1c-.1-.2-.3-.2-1-.1z"/></svg> Agendar pelo WhatsApp
     </a>
-    </div>
+    <div class="halloween-proof"><strong aria-label="5 estrelas">★★★★★</strong><span>Cuidado com amor</span><span>Cajamar</span></div>
   </div>
-
-  <!-- Onda separadora -->
-  <svg class="hero-wave" viewBox="0 0 375 48" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 48 C80 20 200 0 375 30 L375 48 Z" fill="#fdf6f0"/>
-  </svg>
 </section>
+
+<button class="theme-preview-toggle" type="button" aria-pressed="false" hidden>Ver tema normal</button>
+<script src="theme-preview.js?v=20261004-4" defer></script>
 
 <!-- ===== STICKY HEADER (aparece ao rolar) ===== -->
 <div class="sticky-header" id="sticky-hdr">
@@ -941,231 +920,33 @@
       <img src="fotos/logo-icon.png" alt="PomPom Pet" class="w-full h-full object-cover" style="object-position:center 30%;" />
     </div>
     <div>
-      <div class="nav-brand-pill" style="font-size: 1.25rem; padding: 2px 12px 3px;">PomPom Pet</div>
-      <div class="nav-brand-sub">✨ Estética Animal com amor</div>
+      <div class="nav-brand-pill" style="font-size: 1.25rem; padding: 2px 12px 3px;">PomPom <span class="brand-pet">Pet</span></div>
+      <div class="nav-brand-sub">Estética Animal</div>
     </div>
   </a>
-  <a href="https://wa.me/5511947266216?text=Olá! Quero agendar" target="_blank" rel="noopener noreferrer"
-     class="bg-rose-600 text-white text-xs font-bold px-4 py-2 rounded-full active:scale-95 transition-transform">
-    Agendar
-  </a>
+  <button id="sticky-menu-trigger" data-site-action="open-menu" type="button" aria-label="Abrir menu" aria-controls="side-menu" aria-expanded="false" class="compact-menu-trigger">☰</button>
 </div>
 
-<!-- ⚽ COPA DO MUNDO 2026 — ÁLBUM DE FIGURINHAS ⚽ -->
-<style>
-.copa-outer{background:linear-gradient(160deg,#012e18 0%,#015c2c 45%,#012e18 100%);padding:2.5rem 1.25rem;}
-/* Desktop: Copa é a 1ª seção — precisa descer do navbar fixo (~90px) */
-@media(min-width:641px){.copa-outer{padding:110px 2rem 3.5rem;}}
-.copa-card{max-width:860px;margin:0 auto;border-radius:20px;overflow:hidden;box-shadow:0 12px 60px rgba(0,0,0,.4);}
-.copa-card-head{background:linear-gradient(135deg,#009c3b,#00b44c);padding:1.25rem 1.75rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;}
-.copa-card-title{font-size:1.5rem;font-weight:900;color:#fff;line-height:1.15;letter-spacing:-.5px;text-transform:uppercase;}
-.copa-card-title em{color:#FFD700;font-style:normal;display:block;font-size:1.8rem;}
-.copa-card-badge{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.15);border:1.5px solid rgba(255,255,255,.3);border-radius:14px;padding:10px 16px;flex-shrink:0;}
-.copa-card-badge-txt{font-size:.65rem;font-weight:800;color:#fff;text-transform:uppercase;letter-spacing:1px;line-height:1.4;}
-.copa-card-body{background:#f4faf5;padding:1.25rem;}
-/* Desktop: 6 colunas → 12 slots = 2 linhas, sem rolagem */
-.copa-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;}
-/* Mobile: 4 colunas → 12 slots = 3 linhas, sem rolagem */
-@media(max-width:640px){.copa-grid{grid-template-columns:repeat(4,1fr);gap:7px;}.copa-card-body{padding:.9rem;}.copa-card-head{padding:1rem 1.25rem;}.copa-card-title{font-size:1.1rem;}.copa-card-title em{font-size:1.3rem;}}
-.copa-slot-filled{border-radius:9px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.2);cursor:pointer;transition:transform .2s cubic-bezier(.34,1.56,.64,1);}
-.copa-slot-filled:hover{transform:scale(1.06) rotate(-1deg);}
-.copa-slot-filled img{width:100%;display:block;}
-.copa-slot-empty{border-radius:9px;background:#fff;border:2px dashed #a7f3d0;aspect-ratio:9/14;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;}
-.copa-slot-empty-code{font-size:.6rem;font-weight:700;color:#6ee7b7;letter-spacing:1px;}
-.copa-slot-empty-num{font-size:1.4rem;font-weight:900;color:#a7f3d0;line-height:1;}
-/* ── Pacote de figurinhas ── */
-.pack-open-btn{display:flex;align-items:center;gap:8px;margin:0 auto 1rem;background:linear-gradient(135deg,#FFD700,#e8a000);color:#012e18;font-weight:900;font-size:.9rem;padding:11px 22px;border-radius:100px;border:none;cursor:pointer;box-shadow:0 4px 18px rgba(255,215,0,.35);transition:transform .2s,box-shadow .2s;}
-.pack-open-btn:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(255,215,0,.5);}
-.pack-open-btn:active{transform:scale(.97);}
-.album-counter{font-size:.72rem;font-weight:700;color:#6ee7b7;letter-spacing:.5px;margin-top:4px;}
-#pack-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:9998;align-items:center;justify-content:center;padding:1rem;}
-#pack-modal.open{display:flex;}
-.pack-modal-box{background:#fff;border-radius:20px;padding:1.75rem;max-width:360px;width:100%;text-align:center;box-shadow:0 24px 80px rgba(0,0,0,.4);}
-.pack-modal-icon{font-size:2.2rem;margin-bottom:.4rem;}
-.pack-modal-title{font-size:1.2rem;font-weight:900;color:#012e18;margin-bottom:.3rem;}
-.pack-modal-sub{font-size:.82rem;color:#555;margin-bottom:1.1rem;line-height:1.5;}
-.pack-modal-box input{width:100%;box-sizing:border-box;border:2px solid #ddd;border-radius:12px;padding:11px 14px;font-size:1rem;text-align:center;font-weight:700;letter-spacing:2px;outline:none;text-transform:uppercase;transition:border-color .2s;}
-.pack-modal-box input:focus{border-color:#009c3b;}
-.pack-modal-box input.shake{animation:shake .4s ease;}
-#pack-error{color:#e53e3e;font-size:.78rem;min-height:1.1rem;margin:.4rem 0 0;}
-.pack-modal-btns{display:flex;gap:10px;margin-top:1rem;}
-.pack-modal-btns button{flex:1;padding:11px;border-radius:100px;border:none;cursor:pointer;font-weight:800;font-size:.88rem;transition:opacity .2s;}
-.pack-modal-btns button:first-child{background:#f0f0f0;color:#555;}
-.pack-modal-btns button:last-child{background:linear-gradient(135deg,#009c3b,#00b44c);color:#fff;}
-.pack-modal-btns button:hover{opacity:.85;}
-.pack-visual-wrap{position:relative;width:140px;height:210px;margin:0 auto 1.25rem;}
-.pack-half{position:absolute;left:0;width:100%;overflow:hidden;transition:transform .7s cubic-bezier(.34,1.56,.64,1);}
-.pack-top-half{top:0;height:50%;transform-origin:top center;}
-.pack-bottom-half{bottom:0;height:50%;transform-origin:bottom center;}
-.pack-top-half.open{transform:translateY(-90px) rotate(-8deg);}
-.pack-bottom-half.open{transform:translateY(90px) rotate(5deg);}
-.pack-inner-full{position:absolute;left:0;width:140px;height:210px;background:linear-gradient(160deg,#005c23,#009c3b 55%,#00b44c);border-radius:10px;border:2px solid rgba(255,215,0,.75);}
-.pack-top-half .pack-inner-full{top:0;}
-.pack-bottom-half .pack-inner-full{bottom:0;}
-.pack-face{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:10px;}
-.pack-face-top{font-size:.48rem;font-weight:800;color:rgba(255,255,255,.75);text-transform:uppercase;letter-spacing:1.5px;}
-.pack-face-main{font-size:.65rem;font-weight:900;color:#FFD700;text-transform:uppercase;letter-spacing:.5px;text-align:center;line-height:1.3;}
-.pack-face-icon{font-size:1.6rem;}
-.pack-face-bot{font-size:.42rem;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:1px;}
-.pack-tear{position:absolute;top:calc(50% - 1px);left:0;width:100%;height:3px;background:rgba(255,215,0,.6);z-index:5;pointer-events:none;}
-.pack-stickers-row{display:flex;gap:10px;justify-content:center;min-height:120px;margin:0 0 .75rem;}
-.pack-sticker-reveal{width:74px;flex-shrink:0;border-radius:8px;overflow:hidden;box-shadow:0 5px 20px rgba(0,0,0,.28);transform:scale(0) rotate(-15deg);opacity:0;transition:transform .5s cubic-bezier(.34,1.56,.64,1),opacity .3s;}
-.pack-sticker-reveal.show{transform:scale(1) rotate(0deg);opacity:1;}
-.pack-sticker-reveal img{width:100%;display:block;}
-.pack-sticker-reveal .psrn{font-size:.55rem;font-weight:800;color:#fff;background:#009c3b;padding:2px 4px;text-align:center;text-transform:uppercase;}
-.pack-sticker-reveal.dupe .psrn{background:#888;}
-#pack-anim-msg{margin-top:.5rem;}
-.pack-congrats{font-size:1.15rem;font-weight:900;color:#012e18;margin-bottom:.3rem;}
-.pack-congrats-sub{font-size:.8rem;color:#666;margin-bottom:.9rem;}
-.pack-confirm-btn{background:linear-gradient(135deg,#009c3b,#00b44c);color:#fff;border:none;border-radius:100px;padding:11px 28px;font-weight:800;font-size:.9rem;cursor:pointer;}
-.pack-confirm-btn:hover{opacity:.85;}
-@keyframes packShake{0%,100%{transform:rotate(0)}20%{transform:rotate(-5deg) scale(1.02)}40%{transform:rotate(5deg)}60%{transform:rotate(-4deg)}80%{transform:rotate(4deg) scale(1.02)}}
-.copa-slot-new{animation:slotReveal .6s cubic-bezier(.34,1.56,.64,1);}
-@keyframes slotReveal{0%{transform:scale(0) rotate(-10deg);opacity:0}100%{transform:scale(1) rotate(0);opacity:1}}
-</style>
-<section id="copa-album">
-  <div class="copa-outer">
-    <div class="copa-card">
-      <div class="copa-card-head">
-        <div class="copa-card-title">Craques do<br/><em>PomPom 2026</em></div>
-        <div class="copa-card-badge">
-          <span style="font-size:1.8rem;line-height:1">🇧🇷</span>
-          <span class="copa-card-badge-txt">Equipe<br/>do Ano</span>
-        </div>
-      </div>
-      <div class="copa-card-body">
-        <div style="text-align:center;margin-bottom:1rem;">
-          <button class="pack-open-btn" onclick="openPackModal()">🎴 Tenho um código de pacote</button>
-          <div id="album-counter" class="album-counter"></div>
-        </div>
-        <div class="copa-grid">
-          <div class="copa-slot-empty" data-slot="BRA-01"><span class="copa-slot-empty-code">BRA</span><span class="copa-slot-empty-num">1</span></div>
-          <div class="copa-slot-empty" data-slot="BRA-02"><span class="copa-slot-empty-code">BRA</span><span class="copa-slot-empty-num">2</span></div>
-          <div class="copa-slot-empty" data-slot="BRA-03"><span class="copa-slot-empty-code">BRA</span><span class="copa-slot-empty-num">3</span></div>
-          <div class="copa-slot-empty" data-slot="BRA-04"><span class="copa-slot-empty-code">BRA</span><span class="copa-slot-empty-num">4</span></div>
-          <div class="copa-slot-empty" data-slot="BRA-05"><span class="copa-slot-empty-code">BRA</span><span class="copa-slot-empty-num">5</span></div>
-          <div class="copa-slot-empty" data-slot="BRA-06"><span class="copa-slot-empty-code">BRA</span><span class="copa-slot-empty-num">6</span></div>
-          <div class="copa-slot-empty" data-slot="BRA-07"><span class="copa-slot-empty-code">BRA</span><span class="copa-slot-empty-num">7</span></div>
-          <div class="copa-slot-empty" data-slot="BRA-08"><span class="copa-slot-empty-code">BRA</span><span class="copa-slot-empty-num">8</span></div>
-          <div class="copa-slot-empty"><span class="copa-slot-empty-code">BRA</span><span class="copa-slot-empty-num">9</span></div>
-          <div class="copa-slot-empty"><span class="copa-slot-empty-code">BRA</span><span class="copa-slot-empty-num">10</span></div>
-          <div class="copa-slot-empty"><span class="copa-slot-empty-code">BRA</span><span class="copa-slot-empty-num">11</span></div>
-          <div class="copa-slot-empty"><span class="copa-slot-empty-code">BRA</span><span class="copa-slot-empty-num">12</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 🇧🇷 ROUPINHAS COPA 2026 -->
-<style>
-#roupinhas-copa{position:relative;background:linear-gradient(135deg,#014421 0%,#006633 50%,#014421 100%);overflow:hidden;padding:4rem 2rem;}
-@media(max-width:640px){#roupinhas-copa{padding:3rem 1.25rem;}}
-#confetti-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;}
-.roupinhas-inner{position:relative;z-index:1;max-width:900px;margin:0 auto;display:flex;align-items:center;gap:3.5rem;}
-@media(max-width:640px){.roupinhas-inner{flex-direction:column;gap:2rem;align-items:flex-start;}}
-.roupinhas-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(255,215,0,.15);border:1px solid rgba(255,215,0,.4);color:#FFD700;font-size:.68rem;font-weight:800;padding:5px 14px;border-radius:100px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:1rem;}
-.roupinhas-h2{font-size:3rem;font-weight:900;color:#fff;line-height:1.05;letter-spacing:-1.5px;margin-bottom:.8rem;}
-.roupinhas-h2 em{color:#FFD700;font-style:normal;}
-@media(max-width:640px){.roupinhas-h2{font-size:2.1rem;}}
-.roupinhas-p{color:rgba(255,255,255,.82);font-size:.95rem;line-height:1.65;margin-bottom:1.75rem;max-width:360px;}
-.roupinhas-cta{display:inline-flex;align-items:center;gap:10px;background:#FFD700;color:#014421;font-weight:800;font-size:1rem;padding:14px 28px;border-radius:100px;text-decoration:none;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 22px rgba(255,215,0,.35);}
-.roupinhas-cta:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(255,215,0,.5);}
-.roupinhas-cta:active{transform:scale(.97);}
-.roupinhas-foto-wrap{position:relative;flex-shrink:0;width:300px;}
-@media(max-width:640px){.roupinhas-foto-wrap{width:100%;max-width:280px;align-self:center;}}
-.roupinhas-foto{width:100%;border-radius:18px;box-shadow:0 18px 55px rgba(0,0,0,.45);display:block;}
-.roupinhas-badge{position:absolute;top:-14px;right:-10px;background:#FFD700;color:#014421;font-weight:900;font-size:.68rem;padding:9px 13px;border-radius:100px;box-shadow:0 4px 14px rgba(255,215,0,.4);text-transform:uppercase;letter-spacing:.5px;white-space:nowrap;}
-.bola-float{position:absolute;bottom:-10px;left:-18px;font-size:2.6rem;animation:bolaFloat 3.5s ease-in-out infinite;filter:drop-shadow(0 4px 6px rgba(0,0,0,.3));}
-@keyframes bolaFloat{0%,100%{transform:translateY(0) rotate(0deg);}50%{transform:translateY(-16px) rotate(200deg);}}
-</style>
-<section id="roupinhas-copa">
-  <canvas id="confetti-canvas"></canvas>
-  <div class="roupinhas-inner">
-    <div>
-      <div class="roupinhas-tag">🇧🇷 À venda na loja</div>
-      <h2 class="roupinhas-h2">Roupinhas<br/><em>Copa 2026</em></h2>
-      <p class="roupinhas-p">Vista seu pet com a camisa da Seleção! Vestidos e camisetas do Brasil disponíveis para cães e gatos. Perfeito para torcer junto!</p>
-      <a href="https://wa.me/5511947266216?text=Oi%21+Quero+saber+sobre+as+roupinhas+da+Copa+2026%21+%F0%9F%87%A7%F0%9F%87%B7%E2%9A%BD" class="roupinhas-cta" target="_blank" rel="noopener noreferrer">
-        <svg viewBox="0 0 24 24" style="width:1.1rem;height:1.1rem;fill:#014421;flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Quero comprar!
-      </a>
-    </div>
-    <div class="roupinhas-foto-wrap">
-      <img src="fotos/copa/roupas-copa.jpeg" alt="Roupinhas Copa 2026 para pets — PomPom Pet" class="roupinhas-foto" loading="lazy" decoding="async"/>
-      <div class="roupinhas-badge">🇧🇷 Disponível agora!</div>
-      <div class="bola-float">⚽</div>
-    </div>
-  </div>
-</section>
-<script>
-(function(){
-  var canvas=document.getElementById('confetti-canvas');
-  if(!canvas)return;
-  var ctx=canvas.getContext('2d');
-  var W=0,H=0;
-  var colors=['#009c3b','#FFD700','#002776','#fff','#009c3b','#FFD700','#CBDA3C'];
-  var pieces=[];
-  function resize(){
-    W=canvas.width=canvas.offsetWidth;
-    H=canvas.height=canvas.offsetHeight;
-  }
-  resize();
-  window.addEventListener('resize',resize,{passive:true});
-  for(var i=0;i<90;i++){
-    pieces.push({
-      x:Math.random()*W,
-      y:Math.random()*H*1.5-H*.5,
-      w:Math.random()*9+3,
-      h:Math.random()*5+2,
-      r:Math.random()*Math.PI*2,
-      vx:(Math.random()-.5)*.9,
-      vy:Math.random()*1.4+.4,
-      vr:(Math.random()-.5)*.07,
-      color:colors[Math.floor(Math.random()*colors.length)],
-      shape:Math.random()>.7?'circle':'rect'
-    });
-  }
-  var raf;
-  function draw(){
-    ctx.clearRect(0,0,W,H);
-    for(var i=0;i<pieces.length;i++){
-      var p=pieces[i];
-      ctx.save();
-      ctx.translate(p.x,p.y);
-      ctx.rotate(p.r);
-      ctx.fillStyle=p.color;
-      ctx.globalAlpha=.75;
-      if(p.shape==='circle'){
-        ctx.beginPath();
-        ctx.arc(0,0,p.w/2,0,Math.PI*2);
-        ctx.fill();
-      } else {
-        ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h);
-      }
-      ctx.restore();
-      p.x+=p.vx; p.y+=p.vy; p.r+=p.vr;
-      if(p.y>H+20){p.y=-20;p.x=Math.random()*W;}
-      if(p.x<-20)p.x=W+20;
-      if(p.x>W+20)p.x=-20;
-    }
-    raf=requestAnimationFrame(draw);
-  }
-  /* só anima quando visível */
-  var obs=new IntersectionObserver(function(entries){
-    if(entries[0].isIntersecting){resize();draw();}
-    else{cancelAnimationFrame(raf);}
-  },{threshold:.1});
-  obs.observe(canvas.parentElement);
-})();
-</script>
-
-
 <!-- ===== SERVIÇOS ===== -->
+<section id="halloween-destaques" class="halloween-feature" aria-label="Pets da PomPom no Halloween">
+  <div>
+    <div class="halloween-eyebrow">Halloween na PomPom</div>
+    <h2>Pequenos monstros.<br/><em>Grandes fofuras.</em></h2>
+    <p>O clima de Halloween já faz parte das nossas memórias. Conheça os pets que passaram por aqui e se encante com cada detalhe.</p>
+    <a href="#galeria" data-site-action="gallery-halloween-mobile">Explorar a galeria de Halloween ↗</a>
+  </div>
+  <div class="halloween-feature-photos halloween-pet-photos">
+    <img src="fotos/datas-comemorativas/halloween/princiapal.jpg" alt="Pet atendido pela PomPom em cenário de Halloween" width="170" height="226" loading="lazy" decoding="async" />
+    <img src="fotos/datas-comemorativas/halloween/principal_2.JPG" alt="Pet da PomPom com decoração de Halloween" width="170" height="226" loading="lazy" decoding="async" />
+    <img src="fotos/datas-comemorativas/halloween/principal_3.JPG" alt="Mais um pet da PomPom no Halloween" width="170" height="226" loading="lazy" decoding="async" />
+    <img src="fotos/datas-comemorativas/halloween/IMG_4013.JPG.webp" alt="Bulldog da PomPom em cenário de Halloween" width="864" height="1184" loading="lazy" decoding="async" />
+  </div>
+</section>
+
 <section id="servicos">
   <div class="section-header fade-up">
     <div class="section-tag">✂️ O que fazemos</div>
-    <div class="section-title">Nossos Serviços</div>
+    <div class="section-title">Um toque de magia.<br/><em class="text-rose-600 font-normal">O cuidado de sempre.</em></div>
     <div class="section-sub">Cuidado completo com produtos premium</div>
   </div>
 
@@ -1200,7 +981,7 @@
         <div class="font-semibold text-stone-800 text-sm">Lojinha Pet</div>
         <div class="text-xs text-stone-500 mt-0.5 truncate">Acessórios · Petiscos · Roupinhas</div>
       </div>
-      <button onclick="abrirLojinha()" class="text-rose-600 font-bold text-sm whitespace-nowrap ml-2 bg-transparent border-none cursor-pointer p-0">Ver →</button>
+      <button data-site-action="open-store" class="text-rose-600 font-bold text-sm whitespace-nowrap ml-2 bg-transparent border-none cursor-pointer p-0">Ver →</button>
     </div>
   </div>
 </section>
@@ -1215,9 +996,10 @@
   <div class="px-5 fade-up">
     <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-rose-50">
       <div class="h-72 bg-rose-50 relative overflow-hidden">
-        <img src="fotos/dona.jpg" alt="Dona da PomPom Pet — banho e tosa em Cajamar"
+        <img src="fotos/halloween/deisiane-halloween.webp" alt="Deisiane França, fundadora da PomPom Pet, com um cachorro em trajes de Halloween"
+             data-owner-photo data-normal-src="fotos/dona.jpg" data-halloween-src="fotos/halloween/deisiane-halloween.webp"
              class="w-full h-full object-cover" style="object-position: center 35%"
-             onerror="this.style.display='none'; document.getElementById('dona-placeholder').style.display='flex';"  loading="lazy" decoding="async" />
+             data-image-fallback="mobile-1"  loading="lazy" decoding="async" />
         <div id="dona-placeholder" style="display:none"
              class="absolute inset-0 flex items-center justify-center opacity-25 text-8xl">👩</div>
         <div class="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-white"></div>
@@ -1236,8 +1018,8 @@
             <div class="text-stone-500 text-xs">Anos de experiência</div>
           </div>
           <div class="bg-rose-50 rounded-2xl p-3 text-center">
-            <div class="text-rose-600 text-xl font-bold font-serif">3000+</div>
-            <div class="text-stone-500 text-xs">Pets atendidos</div>
+            <div class="text-rose-600 text-xl font-bold font-serif">Todo mês</div>
+            <div class="text-stone-500 text-xs">centenas de pets de Cajamar e região</div>
           </div>
         </div>
       </div>
@@ -1258,19 +1040,19 @@
   <div class="space-wrap-m fade-up">
     <div class="space-track-m">
       <!-- Set 1 -->
-      <div class="space-card-m"><img src="fotos/copa/frente-copa.jpeg"   alt="Fachada PomPom Pet — Copa 2026" loading="lazy" decoding="async" /><div class="label">📍 Fachada</div></div>
-      <div class="space-card-m"><img src="fotos/copa/cafe-copa.jpeg" alt="Recepção PomPom Pet decorada Copa 2026" loading="lazy" decoding="async" /><div class="label">🛎️ Recepção</div></div>
+      <div class="space-card-m"><img src="fotos/ambiente/frente.png"   alt="Fachada PomPom Pet" loading="lazy" decoding="async" /><div class="label">📍 Fachada</div></div>
+      <div class="space-card-m"><img src="fotos/ambiente/recepcao.png" alt="Recepção PomPom Pet" loading="lazy" decoding="async" /><div class="label">🛎️ Recepção</div></div>
       <div class="space-card-m"><img src="fotos/ambiente/espera.png"   alt="Área de espera climatizada PomPom Pet Cajamar" loading="lazy" decoding="async" /><div class="label">🪑 Área de espera</div></div>
-      <div class="space-card-m"><img src="fotos/copa/cafe2-copa.jpeg" alt="Interior PomPom Pet Copa 2026" loading="lazy" decoding="async" /><div class="label">✂️ Atendimento</div></div>
+      <div class="space-card-m"><img src="fotos/ambiente/interior.png" alt="Interior PomPom Pet" loading="lazy" decoding="async" /><div class="label">✂️ Atendimento</div></div>
       <div class="space-card-m"><img src="fotos/ambiente/secadora.png" alt="Secadora profissional para cães PomPom Pet" loading="lazy" decoding="async" /><div class="label">💨 Secadora</div></div>
-      <div class="space-card-m"><img src="fotos/copa/roupas-copa.jpeg"  alt="Roupinhas da Copa do Mundo para pets — PomPom Pet" loading="lazy" decoding="async" /><div class="label">🇧🇷 Roupas Copa</div></div>
+      <div class="space-card-m"><img src="fotos/ambiente/lojinha.png"  alt="Lojinha PomPom Pet" loading="lazy" decoding="async" /><div class="label">🛍️ Lojinha</div></div>
       <!-- Set 2 (duplicado para loop seamless) -->
-      <div class="space-card-m"><img src="fotos/copa/frente-copa.jpeg"   alt="" loading="lazy" decoding="async" /><div class="label">📍 Fachada</div></div>
-      <div class="space-card-m"><img src="fotos/copa/cafe-copa.jpeg" alt="" loading="lazy" decoding="async" /><div class="label">🛎️ Recepção</div></div>
+      <div class="space-card-m"><img src="fotos/ambiente/frente.png"   alt="" loading="lazy" decoding="async" /><div class="label">📍 Fachada</div></div>
+      <div class="space-card-m"><img src="fotos/ambiente/recepcao.png" alt="" loading="lazy" decoding="async" /><div class="label">🛎️ Recepção</div></div>
       <div class="space-card-m"><img src="fotos/ambiente/espera.png"   alt="" loading="lazy" decoding="async" /><div class="label">🪑 Área de espera</div></div>
-      <div class="space-card-m"><img src="fotos/copa/cafe2-copa.jpeg" alt="" loading="lazy" decoding="async" /><div class="label">✂️ Atendimento</div></div>
+      <div class="space-card-m"><img src="fotos/ambiente/interior.png" alt="" loading="lazy" decoding="async" /><div class="label">✂️ Atendimento</div></div>
       <div class="space-card-m"><img src="fotos/ambiente/secadora.png" alt="" loading="lazy" decoding="async" /><div class="label">💨 Secadora</div></div>
-      <div class="space-card-m"><img src="fotos/copa/roupas-copa.jpeg"  alt="" loading="lazy" decoding="async" /><div class="label">🇧🇷 Roupas Copa</div></div>
+      <div class="space-card-m"><img src="fotos/ambiente/lojinha.png"  alt="" loading="lazy" decoding="async" /><div class="label">🛍️ Lojinha</div></div>
     </div>
   </div>
 </section>
@@ -1283,6 +1065,9 @@
     <div class="section-sub">Deslize para ver mais</div>
   </div>
 
+  <div id="gallery-secondary">
+    <h3 id="gallery-secondary-title" hidden>Veja mais monstrinhos</h3>
+    <p id="gallery-secondary-description" hidden>Mais fofuras das nossas datas especiais. Toque para ampliar.</p>
   <div id="galeria-m-tabs-nav" class="datas-tabs-m mb-3">
     <!-- gerado por JS -->
   </div>
@@ -1293,23 +1078,32 @@
     </div>
     <div class="scroll-hint-arrow">›</div>
   </div>
+  </div>
 
   <!-- Antes / Depois -->
-  <div class="px-5 mt-2 fade-up">
-    <div class="section-tag mb-3">🔄 Antes e Depois</div>
+  <div id="transformacoes" class="px-5 mt-2 fade-up">
+    <div class="section-tag mb-3" id="ba-title">🔄 Antes e Depois</div>
+    <div id="ba-pets" class="ba-pets" role="group" aria-label="Escolha o pet para comparar" hidden>
+      <button type="button" data-transform-pet="cacau" aria-pressed="true"><img src="fotos/halloween/transformacoes/cacau-depois.webp" alt="" width="44" height="44" /><span>Cacau <small>Bruxinha</small></span></button>
+      <button type="button" data-transform-pet="lufi" aria-pressed="false"><img src="fotos/halloween/transformacoes/lufi-depois.webp" alt="" width="44" height="44" /><span>Lufi <small>Vampiro</small></span></button>
+      <button type="button" data-transform-pet="snoopydexter" aria-pressed="false"><img src="fotos/halloween/transformacoes/snoopydexter-depois.webp" alt="" width="44" height="44" /><span>Snoopy e Dexter <small>Dupla Frankenstein</small></span></button>
+      <button type="button" data-transform-pet="yoshi" aria-pressed="false"><img src="fotos/halloween/transformacoes/yoshi-depois.webp" alt="" width="44" height="44" /><span>Yoshi <small>Vampiro</small></span></button>
+    </div>
+    <p id="ba-pet-description" class="ba-pet-description" aria-live="polite" hidden></p>
     <div class="ba-container">
       <img class="ba-img" src="fotos/depois1.jpg" alt="Depois"
-           onerror="this.style.background='linear-gradient(135deg,#fb7185,#e11d48)'; this.src='';"  loading="lazy" decoding="async" />
+           data-image-fallback="mobile-2"  loading="lazy" decoding="async" />
       <img class="ba-img ba-overlay" id="ba-overlay" src="fotos/antes1.jpg" alt="Antes"
-           onerror="this.style.background='#d1d5db'; this.src='';"  loading="lazy" decoding="async" />
-      <input type="range" min="0" max="100" value="50" id="ba-range" class="ba-range" />
+           data-image-fallback="mobile-3"  loading="lazy" decoding="async" />
+      <input type="range" min="0" max="100" value="50" id="ba-range" class="ba-range" aria-label="Comparar antes e depois: arraste a linha ou use as setas" />
       <div class="ba-divider" id="ba-divider">
-        <div class="ba-handle">✨</div>
+        <div class="ba-handle" aria-hidden="true">↔</div>
       </div>
       <span class="ba-label antes">Antes</span>
       <span class="ba-label depois">Depois</span>
     </div>
     <p class="text-center text-stone-400 text-xs mt-2">Arraste para comparar</p>
+    <p id="ba-art-note" class="ba-art-note" hidden>Transformação artística de Halloween · uma brincadeira com nossos pets.</p>
   </div>
 </section>
 
@@ -1548,220 +1342,109 @@
 </section>
 
 <!-- ===== DEPOIMENTOS ===== -->
-<section>
-  <div class="section-header fade-up">
-    <div class="section-tag">✨ Avaliações</div>
-    <div class="section-title">O que dizem<br/>nossos clientes</div>
+<section id="avaliacoes" class="approved-reviews">
+  <div class="section-header"><div class="section-tag">✨ Avaliações</div><h2 class="section-title">O que dizem<br/><em>nossos clientes.</em></h2></div>
+  <div class="reviews-layout">
+    <div class="reviews-merit">
+      <span class="reviews-source">Depoimentos de clientes</span>
+      <div class="reviews-score"><strong>5,0</strong><small>Nota exibida no Google<br/>Consultada em 02/10/2026</small></div>
+      <span class="reviews-stars" role="img" aria-label="Cinco estrelas">★★★★★</span>
+      <h3>Carinho que vira<br/>reconhecimento.</h3>
+      <p>Uma seleção de avaliações cinco estrelas de quem confiou seu pet à PomPom.</p>
+      <a href="https://www.google.com/maps/place/PomPom+Pet+Estetica+animal/@-23.4032216,-46.8606506,17z/data=!3m1!4b1!4m6!3m5!1s0x94cf1d048e2576cf:0xc4280c49c383a976!8m2!3d-23.4032216!4d-46.8606506!16s%2Fg%2F11xdwy7tp5" class="reviews-google-link" target="_blank" rel="noopener noreferrer">Ver avaliações no Google ↗</a>
+    </div>
+    <div class="reviews-featured" role="region" aria-label="Depoimentos selecionados" aria-roledescription="carrossel">
+      <div class="review-box">
+        <article class="review-card" aria-label="1 de 6">
+          <span class="reviews-stars" role="img" aria-label="Cinco estrelas">★★★★★</span>
+          <p>"Amei desde a recepção até o atendimento, levei minha Luluzinha e super recomendo — ela veio muito cheirosa, limpinha, pelos macios e leves. Super indico, esse é o melhor pet da região! 💓"</p>
+          <div class="reviews-author"><span class="w-8 reviews-avatar" aria-hidden="true">DM</span><div><strong class="text-xs font-semibold">Débora Mancini</strong><small>Depoimento selecionado</small></div></div>
+        </article>
+        <article class="review-card" hidden aria-label="2 de 6">
+          <span class="reviews-stars" role="img" aria-label="Cinco estrelas">★★★★★</span>
+          <p>"O atendimento foi impecável com meu pet. Ele adorou tomar banho lá. Voltou limpinho e cheiroso. Me enviaram foto dele depois do banho. Foram super atenciosas. Recomendo muito!"</p>
+          <div class="reviews-author"><span class="w-8 reviews-avatar" aria-hidden="true">RA</span><div><strong class="text-xs font-semibold">Rebeca Agnes</strong><small>Depoimento selecionado</small></div></div>
+        </article>
+        <article class="review-card" hidden aria-label="3 de 6">
+          <span class="reviews-stars" role="img" aria-label="Cinco estrelas">★★★★★</span>
+          <p>"Experiência muito boa. São super cuidadosos com os pets e amei o corte que fizeram. Levo a Melzinha sempre lá. Muito obrigada pelo cuidado e atenção com a minha senhorinha ✨</p>
+          <div class="reviews-author"><span class="w-8 reviews-avatar" aria-hidden="true">CS</span><div><strong class="text-xs font-semibold">Cool Santos</strong><small>Depoimento selecionado</small></div></div>
+        </article>
+        <article class="review-card" hidden aria-label="4 de 6">
+          <span class="reviews-stars" role="img" aria-label="Cinco estrelas">★★★★★</span>
+          <p>"Amei o atendimento. Meu cachorro voltou lindo e cheiroso. A tosa não causou reação alérgica, o que sempre foi um problema em outros lugares. Ele voltou contente — sinal que foi muito bem tratado. 🐶✨</p>
+          <div class="reviews-author"><span class="w-8 reviews-avatar" aria-hidden="true">CC</span><div><strong class="text-xs font-semibold">Claudiceia Camargo</strong><small>Depoimento selecionado</small></div></div>
+        </article>
+        <article class="review-card" hidden aria-label="5 de 6">
+          <span class="reviews-stars" role="img" aria-label="Cinco estrelas">★★★★★</span>
+          <p>"Experiência maravilhosa… lugar que tem amor. Cuida da minha Pérola com todo carinho — ela vem toda linda, cheirosa e enfeitada. Parabéns pelo belo trabalho!"</p>
+          <div class="reviews-author"><span class="w-8 reviews-avatar" aria-hidden="true">AN</span><div><strong class="text-xs font-semibold">Andréa Patti</strong><small>Depoimento selecionado</small></div></div>
+        </article>
+        <article class="review-card" hidden aria-label="6 de 6">
+          <span class="reviews-stars" role="img" aria-label="Cinco estrelas">★★★★★</span>
+          <p>"Um lugar incrível, aconchegante, produtos de alta qualidade, muito carinho e amor pelos nossos pets 🥰"</p>
+          <div class="reviews-author"><span class="w-8 reviews-avatar" aria-hidden="true">DF</span><div><strong class="text-xs font-semibold">Dayane Ferreira</strong><small>Depoimento selecionado</small></div></div>
+        </article>
+      </div>
+      <div class="reviews-nav"><button type="button" data-review-prev aria-label="Depoimento anterior">←</button><span data-review-status aria-live="polite" aria-atomic="true">1 de 6</span><button type="button" data-review-next aria-label="Próximo depoimento">→</button></div>
+    </div>
   </div>
-
-  <div class="px-5 pb-4">
-  <div class="review-box">
-
-    <div class="review-card">
-      <div class="text-amber-400 text-sm mb-2">★★★★★</div>
-      <p class="text-stone-600 text-sm leading-relaxed">"Amei desde a recepção até o atendimento, levei minha Luluzinha e super recomendo — ela veio muito cheirosa, limpinha, pelos macios e leves. Super indico, esse é o melhor pet da região! 💓"</p>
-      <div class="flex items-center gap-2 mt-3">
-        <div class="w-8 h-8 bg-rose-100 rounded-full flex items-center justify-center text-rose-700 font-bold text-xs flex-shrink-0">DM</div>
-        <div>
-          <div class="text-xs font-semibold text-stone-800">Débora Mancini</div>
-          <div class="text-xs text-stone-400">Google Maps · 7 semanas</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="review-card">
-      <div class="text-amber-400 text-sm mb-2">★★★★★</div>
-      <p class="text-stone-600 text-sm leading-relaxed">"O atendimento foi impecável com meu pet. Ele adorou tomar banho lá. Voltou limpinho e cheiroso. Me enviaram foto dele depois do banho. Foram super atenciosas. Recomendo muito!"</p>
-      <div class="flex items-center gap-2 mt-3">
-        <div class="w-8 h-8 bg-rose-100 rounded-full flex items-center justify-center text-rose-700 font-bold text-xs flex-shrink-0">RA</div>
-        <div>
-          <div class="text-xs font-semibold text-stone-800">Rebeca Agnes</div>
-          <div class="text-xs text-stone-400">Google Maps · 8 semanas</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="review-card">
-      <div class="text-amber-400 text-sm mb-2">★★★★★</div>
-      <p class="text-stone-600 text-sm leading-relaxed">"Experiência muito boa. São super cuidadosos com os pets e amei o corte que fizeram. Levo a Melzinha sempre lá. Muito obrigada pelo cuidado e atenção com a minha senhorinha ✨</p>
-      <div class="flex items-center gap-2 mt-3">
-        <div class="w-8 h-8 bg-rose-100 rounded-full flex items-center justify-center text-rose-700 font-bold text-xs flex-shrink-0">CS</div>
-        <div>
-          <div class="text-xs font-semibold text-stone-800">Cool Santos</div>
-          <div class="text-xs text-stone-400">Google Maps · 9 semanas</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="review-card">
-      <div class="text-amber-400 text-sm mb-2">★★★★★</div>
-      <p class="text-stone-600 text-sm leading-relaxed">"Amei o atendimento. Meu cachorro voltou lindo e cheiroso. A tosa não causou reação alérgica, o que sempre foi um problema em outros lugares. Ele voltou contente — sinal que foi muito bem tratado. 🐶✨</p>
-      <div class="flex items-center gap-2 mt-3">
-        <div class="w-8 h-8 bg-rose-100 rounded-full flex items-center justify-center text-rose-700 font-bold text-xs flex-shrink-0">CC</div>
-        <div>
-          <div class="text-xs font-semibold text-stone-800">Claudiceia Camargo</div>
-          <div class="text-xs text-stone-400">Google Maps · 34 semanas</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="review-card">
-      <div class="text-amber-400 text-sm mb-2">★★★★★</div>
-      <p class="text-stone-600 text-sm leading-relaxed">"Experiência maravilhosa… lugar que tem amor. Cuida da minha Pérola com todo carinho — ela vem toda linda, cheirosa e enfeitada. Parabéns pelo belo trabalho!"</p>
-      <div class="flex items-center gap-2 mt-3">
-        <div class="w-8 h-8 bg-rose-100 rounded-full flex items-center justify-center text-rose-700 font-bold text-xs flex-shrink-0">AN</div>
-        <div>
-          <div class="text-xs font-semibold text-stone-800">Andréa Patti</div>
-          <div class="text-xs text-stone-400">Google Maps · 25 semanas</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="review-card">
-      <div class="text-amber-400 text-sm mb-2">★★★★★</div>
-      <p class="text-stone-600 text-sm leading-relaxed">"Um lugar incrível, aconchegante, produtos de alta qualidade, muito carinho e amor pelos nossos pets 🥰"</p>
-      <div class="flex items-center gap-2 mt-3">
-        <div class="w-8 h-8 bg-rose-100 rounded-full flex items-center justify-center text-rose-700 font-bold text-xs flex-shrink-0">DF</div>
-        <div>
-          <div class="text-xs font-semibold text-stone-800">Dayane Ferreira</div>
-          <div class="text-xs text-stone-400">Google Maps · 35 semanas</div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-  </div>
+  <p class="reviews-note">Depoimentos selecionados do site. Consulte as avaliações atuais no Google.</p>
 </section>
 
 <!-- ===== PRODUTOS ===== -->
-<section>
-  <div class="section-header fade-up">
-    <div class="section-tag">🇧🇷 Roupas Copa</div>
-    <div class="section-title">Produtos para<br/>seu pet</div>
-  </div>
-
-  <div class="product-scroll">
-    <div class="product-card">
-      <div class="h-28 bg-rose-50 flex items-center justify-center overflow-hidden">
-        <img src="fotos/produto1.jpg" class="w-full h-full object-cover"
-             onerror="this.parentElement.innerHTML='<span class=\'text-4xl\'>🎒</span>'" />
-      </div>
-      <div class="p-3">
-        <div class="text-xs font-semibold text-stone-800">Mochila Monstro</div>
-      </div>
-    </div>
-    <div class="product-card">
-      <div class="h-28 bg-rose-50 flex items-center justify-center overflow-hidden">
-        <img src="fotos/produto2.jpg" class="w-full h-full object-cover"
-             onerror="this.parentElement.innerHTML='<span class=\'text-4xl\'>🎀</span>'" />
-      </div>
-      <div class="p-3">
-        <div class="text-xs font-semibold text-stone-800">Peitoral + Guia</div>
-      </div>
-    </div>
-    <div class="product-card">
-      <div class="h-28 bg-rose-50 flex items-center justify-center overflow-hidden">
-        <img src="fotos/produto3.jpg" class="w-full h-full object-cover"
-             onerror="this.parentElement.innerHTML='<span class=\'text-4xl\'>🦈</span>'" />
-      </div>
-      <div class="p-3">
-        <div class="text-xs font-semibold text-stone-800">Fantasia Tubarão</div>
-      </div>
-    </div>
-    <div class="product-card">
-      <div class="h-28 bg-rose-50 flex items-center justify-center overflow-hidden">
-        <img src="fotos/produto4.jpg" class="w-full h-full object-cover"
-             onerror="this.parentElement.innerHTML='<span class=\'text-4xl\'>👗</span>'" />
-      </div>
-      <div class="p-3">
-        <div class="text-xs font-semibold text-stone-800">Camisas Florais</div>
-      </div>
-    </div>
-    <div class="product-card">
-      <div class="h-28 bg-rose-50 flex items-center justify-center overflow-hidden">
-        <img src="fotos/produto5.jpg" class="w-full h-full object-cover"
-             onerror="this.parentElement.innerHTML='<span class=\'text-4xl\'>🧸</span>'" />
-      </div>
-      <div class="p-3">
-        <div class="text-xs font-semibold text-stone-800">Brinquedos Pelúcia</div>
-      </div>
-    </div>
-  </div>
+<section id="vitrine" class="approved-shop">
+  <div class="section-header"><div class="section-tag">🛍️ Lojinha</div><h2 class="section-title">Produtos para<br/><em>seu pet.</em></h2><p class="section-sub">Uma seleção de carinho para o dia a dia.</p></div>
+  <button type="button" class="shop-entry" data-open-store aria-haspopup="dialog" aria-controls="lojinha-sheet">
+    <span class="shop-entry-heading"><strong>Lojinha PomPom</strong><span class="shop-entry-arrow" aria-hidden="true">↗</span></span>
+    <span class="shop-entry-hint">Clique no card e explore nossa loja</span>
+    <span class="shop-products product-scroll">
+      <span class="shop-product"><img src="https://storage.googleapis.com/pompom-produtos/C-20.jpeg" alt="" width="160" height="160" loading="lazy" decoding="async"/><span>Roupinhas</span></span>
+      <span class="shop-product"><img src="https://storage.googleapis.com/pompom-produtos/A0020.jpeg" alt="" width="160" height="160" loading="lazy" decoding="async"/><span>Guias &amp; peitorais</span></span>
+      <span class="shop-product"><img src="https://storage.googleapis.com/pompom-produtos/bolinha.jpg" alt="" width="160" height="160" loading="lazy" decoding="async"/><span>Brinquedos</span></span>
+      <span class="shop-product"><img src="https://storage.googleapis.com/pompom-produtos/BD-10-M.jpeg" alt="" width="160" height="160" loading="lazy" decoding="async"/><span>Caminhas</span></span>
+      <span class="shop-product"><img src="https://storage.googleapis.com/pompom-produtos/W-59.jpeg" alt="" width="160" height="160" loading="lazy" decoding="async"/><span>Comedouros</span></span>
+      <span class="shop-product"><img src="https://storage.googleapis.com/pompom-produtos/Y-04.jpeg" alt="" width="160" height="160" loading="lazy" decoding="async"/><span>Mochilas</span></span>
+    </span>
+    <span class="shop-entry-cta">Ver loja completa <span aria-hidden="true">→</span></span>
+  </button>
 </section>
 
 <!-- ===== CONTATO ===== -->
-<section id="contato">
-  <div class="section-header fade-up">
-    <div class="section-tag">📍 Localização</div>
-    <div class="section-title">Onde estamos</div>
+<section id="contato" class="contact-map-layout">
+  <div class="section-header">
+    <div class="section-tag">Localização &amp; visitas</div>
+    <h2 class="section-title">Nosso espaço<br/><em>em Cajamar.</em></h2>
+    <p class="section-sub">Venha conhecer a PomPom no Portal dos Ipês.<br/>Carinho e cuidado esperam pelo seu pet.</p>
   </div>
-
-  <div class="px-5 space-y-3 pb-10">
-    <div class="bg-white rounded-2xl p-4 flex items-center gap-4 shadow-sm border border-rose-50 fade-up">
-      <div class="w-11 h-11 bg-rose-50 rounded-xl flex items-center justify-center text-xl flex-shrink-0">📍</div>
-      <div>
-        <div class="text-[10px] font-bold text-stone-400 uppercase tracking-wider mb-1">Endereço</div>
-        <div class="text-sm text-stone-700 leading-snug">R. dos Flox, 954 – Sala 1<br/>Portal dos Ipês · Cajamar · SP<br/>CEP 07791-060</div>
+  <div class="contact-content">
+    <div class="contact-map-region">
+    <div class="contact-map" aria-label="Mapa da localização da PomPom Pet">
+      <iframe title="PomPom Pet no Google Maps" src="https://www.google.com/maps?q=-23.4032216,-46.8606506&amp;z=17&amp;hl=pt&amp;output=embed" width="100%" height="280" style="border:0;display:block" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    </div>
+    <div class="contact-location-card">
+      <span class="contact-kicker">PomPom Pet · Estética animal</span>
+      <div class="contact-address"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0z"/><circle cx="12" cy="10" r="2.5"/></svg><address>R. dos Flox, 954 – Sala 1<br/>Portal dos Ipês · Cajamar · SP<br/><small>CEP 07791-060</small></address></div>
+      <div class="contact-directions">
+        <a href="https://www.google.com/maps/dir/?api=1&amp;destination=-23.4032216,-46.8606506" target="_blank" rel="noopener noreferrer">Google Maps ↗</a>
+        <a href="https://www.waze.com/ul?ll=-23.4032216%2C-46.8606506&amp;navigate=yes" target="_blank" rel="noopener noreferrer">Abrir no Waze ↗</a>
       </div>
     </div>
-
-    <div class="bg-white rounded-2xl p-4 flex items-center gap-4 shadow-sm border border-rose-50 fade-up">
-      <div class="w-11 h-11 bg-rose-50 rounded-xl flex items-center justify-center text-xl flex-shrink-0">⏰</div>
-      <div>
-        <div class="text-[10px] font-bold text-stone-400 uppercase tracking-wider mb-1">Horário</div>
-        <div class="text-sm text-stone-700 leading-snug">
-          Ter–Sex: 9h–17h · Sáb: 9h–17h<br/>
-          <span class="text-stone-400">Dom e Seg: Fechado</span>
-        </div>
-      </div>
     </div>
-
-    <!-- Google Maps -->
-    <div class="rounded-2xl overflow-hidden shadow-sm fade-up" style="height:220px">
-      <iframe
-        src="https://www.google.com/maps?q=-23.4032216,-46.8606506&z=17&hl=pt&output=embed"
-        width="100%" height="220" style="border:0;display:block"
-        allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
+    <div class="contact-hours">
+      <h3><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Horários de atendimento</h3>
+      <dl><div><dt>Terça a sábado</dt><dd>9h–17h</dd></div><div><dt>Domingo e segunda</dt><dd>Fechado</dd></div></dl>
     </div>
-
-    <!-- Botões -->
-    <div class="grid grid-cols-2 gap-3 fade-up">
-      <a href="https://wa.me/5511947266216" target="_blank" rel="noopener noreferrer"
-         class="bg-green-500 text-white rounded-2xl py-4 text-center text-sm font-bold flex flex-col items-center gap-1 active:scale-95 transition-transform">
-        <span class="text-xl">💬</span> WhatsApp
-      </a>
-      <a href="tel:+5511947266216"
-         class="bg-rose-600 text-white rounded-2xl py-4 text-center text-sm font-bold flex flex-col items-center gap-1 active:scale-95 transition-transform">
-        <span class="text-xl">📞</span> Ligar
-      </a>
+    <div class="contact-social">
+      <span class="contact-live-badge"><span aria-hidden="true"></span> Lives todos os dias</span>
+      <h3>Um pouquinho da PomPom<br/>na sua tela.</h3>
+      <p>Bastidores, fofura e cuidado com nossos pets.<br/>Acompanhe nossas redes sociais.</p>
+      <a class="contact-social-link" href="https://www.instagram.com/pompompet_esteticaanimal/" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg><span><strong>Instagram</strong><small>@pompompet_esteticaanimal</small></span><span aria-hidden="true">↗</span></a>
+      <a class="contact-social-link" href="https://www.tiktok.com/@deiisii.rodrigues" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v12a4 4 0 1 1-4-4M14 3c0 4 3 6 6 6"/></svg><span><strong>TikTok</strong><small>@deiisii.rodrigues</small></span><span aria-hidden="true">↗</span></a>
     </div>
-
-    <a href="https://www.google.com/maps/dir/?api=1&destination=-23.4032216,-46.8606506"
-       target="_blank" rel="noopener noreferrer" id="btn-direcoes"
-       class="w-full bg-blue-500 text-white rounded-2xl py-4 text-center text-sm font-bold flex items-center justify-center gap-2 active:scale-95 transition-transform fade-up">
-      🗺️ Me leve até lá
-    </a>
-
-    <a href="mailto:pompompetesteticaanimal@gmail.com"
-       class="w-full bg-stone-100 text-stone-700 rounded-2xl py-3.5 text-center text-xs font-semibold flex items-center justify-center gap-2 active:scale-95 transition-transform fade-up">
-      📧 pompompetesteticaanimal@gmail.com
-    </a>
-
-    <a href="https://www.instagram.com/pompompet_esteticaanimal/" target="_blank" rel="noopener noreferrer"
-       class="w-full bg-gradient-to-r from-purple-600 via-rose-500 to-orange-400 text-white rounded-2xl py-4 text-center text-sm font-bold flex items-center justify-center gap-2 active:scale-95 transition-transform fade-up">
-      📸 Siga no Instagram
-    </a>
-
-    <!-- Agendamento CTA final -->
-    <div class="bg-rose-700 rounded-3xl p-6 text-center mt-2 fade-up">
-      <div class="text-4xl mb-3">📅</div>
-      <h3 class="font-serif text-xl font-bold text-white mb-2">Pronto para agendar?</h3>
-      <p class="text-rose-200 text-sm mb-5">Fale com a gente agora mesmo!</p>
-      <a href="https://wa.me/5511947266216?text=Olá! Gostaria de agendar para meu pet" target="_blank" rel="noopener noreferrer"
-         class="bg-white text-rose-700 font-bold px-8 py-3.5 rounded-full text-sm inline-flex items-center gap-2 active:scale-95 transition-transform shadow-lg">
-        💬 Agendar agora
-      </a>
+    <div class="contact-secondary">
+      <a href="tel:+5511947266216">Ligar · (11) 94726-6216</a>
+      <a href="mailto:pompompetesteticaanimal@gmail.com">Enviar e-mail ↗</a>
     </div>
   </div>
 </section>
@@ -1773,8 +1456,8 @@
       <img src="fotos/logo-icon.png" alt="PomPom Pet" class="w-full h-full object-cover" style="object-position:center 30%;" />
     </div>
     <div class="flex flex-col items-start gap-0.5">
-      <div class="nav-brand-pill">PomPom Pet</div>
-      <div class="nav-brand-sub">✨ Estética Animal com amor</div>
+      <div class="nav-brand-pill">PomPom <span class="brand-pet">Pet</span></div>
+      <div class="nav-brand-sub">Estética Animal</div>
     </div>
   </div>
   <div class="text-stone-500 text-xs">Feito com 💗 para os pets e seus tutores</div>
@@ -1785,30 +1468,24 @@
 </footer>
 
 <!-- ===== MODAL LOJINHA ===== -->
-<div id="lojinha-overlay" onclick="fecharLojinha()"></div>
+<div id="lojinha-overlay" data-site-action="close-store"></div>
 <div id="lojinha-sheet">
   <div class="lojinha-drag"></div>
   <div id="lojinha-header">
     <div>
       <div style="font-family:'Playfair Display',serif; font-size:1.15rem; font-weight:700; color:#1c1917;">🛍️ Lojinha PomPom Pet</div>
-      <div style="font-size:0.7rem; color:#a8a29e; margin-top:2px;">Toque em qualquer item para encomendar</div>
+      <div style="font-size:0.7rem; color:#a8a29e; margin-top:2px;">Selecione um produto para ampliar a foto</div>
     </div>
-    <button onclick="fecharLojinha()" style="width:34px;height:34px;border-radius:50%;background:#f5f5f4;border:none;font-size:1rem;cursor:pointer;color:#78716c;">✕</button>
+    <button data-site-action="close-store" style="width:34px;height:34px;border-radius:50%;background:#f5f5f4;border:none;font-size:1rem;cursor:pointer;color:#78716c;">✕</button>
   </div>
   <div id="lojinha-cats"></div>
   <div id="lojinha-grid"></div>
-  <div id="lojinha-footer">
-    <a href="https://wa.me/5511947266216?text=Olá! Vi os produtos da Lojinha PomPom Pet e quero saber mais!" target="_blank" rel="noopener noreferrer"
-       style="display:flex;align-items:center;justify-content:center;gap:10px;background:#e11d48;color:white;font-weight:700;font-size:0.9rem;padding:13px;border-radius:16px;text-decoration:none;">
-      <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:white;flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      Consultar pelo WhatsApp
-    </a>
-  </div>
+  <div id="lojinha-footer" class="catalog-footer">Selecione uma foto para ampliar e consultar o produto.</div>
 </div>
 
 <!-- ===== WA FLOAT ===== -->
 <!-- LIGHTBOX MOBILE -->
-<div id="lightbox-m" onclick="closeLightboxM()">
+<div id="lightbox-m" data-site-action="close-lightbox-mobile">
   <img id="lightbox-m-img" src="" alt="" />
 </div>
 
@@ -1816,597 +1493,12 @@
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
-<script>
-  // Força o topo ao recarregar
-  window.scrollTo(0, 0);
+<script src="/site-scripts/mobile-3.js"></script>
 
-  // ── MENU ──
-  function openMenu() {
-    document.getElementById('side-menu').classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeMenu() {
-    document.getElementById('side-menu').classList.remove('open');
-    document.body.style.overflow = '';
-  }
+<script src="/site-scripts/mobile-4.js"></script>
+<script src="/site-scripts/halloween-transformations.js?v=20261004-10"></script>
 
-  // ── STICKY HEADER: esconde no hero, aparece ao rolar ──
-  const stickyHdr = document.getElementById('sticky-hdr');
-  const heroSection = document.getElementById('inicio');
-  const observer = new IntersectionObserver(([e]) => {
-    stickyHdr.style.display = e.isIntersecting ? 'none' : 'flex';
-  }, { threshold: 0.1 });
-  observer.observe(heroSection);
-  stickyHdr.style.display = 'none'; // escondido no início
-
-  // ── FADE-UP ──
-  const fadeObs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.fade-up').forEach(el => fadeObs.observe(el));
-
-  // ── BEFORE/AFTER SLIDER ──
-  const baRange   = document.getElementById('ba-range');
-  const baOverlay = document.getElementById('ba-overlay');
-  const baDivider = document.getElementById('ba-divider');
-  if (baRange && baOverlay && baDivider) {
-    baRange.addEventListener('input', e => {
-      const pct = e.target.value;
-      baOverlay.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
-      baDivider.style.left = pct + '%';
-    });
-  }
-
-  // ── LOJINHA MODAL ──
-  const CATEGORIAS = {
-    roupas:     { nome:"Roupas",           emoji:"👗", files:["copa.jpeg","C-20.jpeg","C-62.jpeg","C-81 G.jpeg","C-83 G.jpeg","C-85 G.jpeg","C-86 G.jpeg","C-88-M.jpeg","CD-37 tubarão.JPEG","FZ-02.jpeg","FZ-11.jpeg","FZ-12.JPEG","FZ-23.jpeg","FZ-28.jpeg","FZ-38.jpeg","PJCQ420.jpeg","PJCQ693.jpeg","PJCQ839.jpeg","PJCQ846.jpeg","PJDC078.jpeg","JK111.jpeg","X-205.jpeg","X-206.jpeg","X-244 M.jpeg"] },
-    guias:      { nome:"Guias & Peitorais",emoji:"🦮", files:["A0020.jpeg","A0033.jpeg","A0035.jpeg","A0040.jpeg","A0113.jpeg","BL-511.jpeg","BL-8001.jpeg","FP63178-5.jpeg","JS-033.jpeg","Z0001.jpeg","Z0005.jpeg"] },
-    brinquedos: { nome:"Brinquedos",       emoji:"🎾", files:["bolinha.jpg","CJ-20.jpeg","Wj-25.jpeg","WJ-28-P.jpeg","WJ-42.jpeg","WJ-45.jpeg","Wj-48.jpeg","WJ-49.jpeg","WJ-50.jpeg","WJ-51.jpeg","W26.JPEG","W28.jpeg"] },
-    caminhas:   { nome:"Caminhas",         emoji:"🏠", files:["BD-10-M.jpeg","BD-12-13-14 P.png"] },
-    comedouros: { nome:"Comedouros",       emoji:"🍽️", files:["W-59.jpeg","CWW-PT.jpeg"] },
-    acessorios: { nome:"Acessórios",       emoji:"🎀", files:["HR2.jpeg","HR49.jpeg","chapeu.jpeg","FJ-003.jpeg","DYZ00109.jpeg","YJ-10.jpeg","JJ-006.jpeg"] },
-    mochilas:   { nome:"Mochilas",         emoji:"🎒", files:["Y-04.jpeg","y-17.jpeg","Y-57.jpeg","Y-62.jpeg","Y-66.jpeg","y-9.jpeg"] }
-  };
-  let _catAtiva = 'roupas';
-
-  function _bolinha(f) {
-    const nome = f.replace(/\.[^.]+$/, '');
-    const msg  = encodeURIComponent('Olá! Vi o produto ' + nome + ' na Lojinha PomPom Pet e quero saber mais!');
-    return `<a href="https://wa.me/5511947266216?text=${msg}" target="_blank" rel="noopener noreferrer" class="prod-bolinha">
-      <div class="prod-bolinha-img"><img src="https://storage.googleapis.com/pompom-produtos/${encodeURIComponent(f)}" alt="${nome}" style="width:80px;height:80px;object-fit:cover;border-radius:50%;display:block;" loading="lazy" decoding="async" /></div>
-      <div class="prod-bolinha-label">🛍️ Quero</div>
-    </a>`;
-  }
-
-  function mostrarCategoria(key) {
-    _catAtiva = key;
-    document.querySelectorAll('.cat-tab').forEach(t => t.classList.toggle('ativa', t.dataset.cat === key));
-    const grid = document.getElementById('lojinha-grid');
-    grid.scrollTop = 0;
-    const files = [...CATEGORIAS[key].files].sort(() => Math.random() - 0.5);
-    grid.innerHTML = files.map(_bolinha).join('');
-  }
-
-  function abrirLojinha() {
-    const overlay = document.getElementById('lojinha-overlay');
-    const sheet   = document.getElementById('lojinha-sheet');
-    const cats    = document.getElementById('lojinha-cats');
-    cats.innerHTML = Object.entries(CATEGORIAS).map(([k, c]) =>
-      `<button class="cat-tab${k===_catAtiva?' ativa':''}" data-cat="${k}" onclick="mostrarCategoria('${k}')">${c.emoji} ${c.nome}</button>`
-    ).join('');
-    mostrarCategoria(_catAtiva);
-    overlay.style.display = 'block';
-    sheet.style.display = 'block';
-    document.body.style.overflow = 'hidden';
-    requestAnimationFrame(() => sheet.classList.add('aberto'));
-  }
-
-  function fecharLojinha() {
-    const sheet = document.getElementById('lojinha-sheet');
-    sheet.classList.remove('aberto');
-    setTimeout(() => {
-      document.getElementById('lojinha-overlay').style.display = 'none';
-      sheet.style.display = 'none';
-      document.body.style.overflow = '';
-    }, 350);
-  }
-
-  // ── LIGHTBOX (mobile) ──
-  function openLightbox(src) {
-    document.getElementById('lightbox-m-img').src = src;
-    document.getElementById('lightbox-m').classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeLightboxM() {
-    document.getElementById('lightbox-m').classList.remove('open');
-    document.body.style.overflow = '';
-  }
-
-  // ── GALERIA COM ABAS (mobile) ──
-  const GALERIA_M_DADOS = {
-    halloween: {
-      label: '🎃 Halloween', cor: '#f97316',
-      fotos: [
-        'fotos/datas-comemorativas/halloween/princiapal.jpg',
-        'fotos/datas-comemorativas/halloween/principal_2.JPG',
-        'fotos/datas-comemorativas/halloween/principal_3.JPG',
-        'fotos/datas-comemorativas/halloween/1b9ea046-b68c-4c54-bbcd-0beeeccd3ec3.jpg',
-        'fotos/datas-comemorativas/halloween/6e675108-81c1-4856-bf18-653f1948833e.jpg',
-        'fotos/datas-comemorativas/halloween/98172b84-3337-4978-b0c3-e76d58025b69.jpg',
-        'fotos/datas-comemorativas/halloween/a6906787-43a0-4f2d-be25-b2ac19800553.jpg',
-        'fotos/datas-comemorativas/halloween/e29b8fd6-f43a-4288-aaaf-b106330726b7.jpg',
-        'fotos/datas-comemorativas/halloween/fb29afc2-8ef2-4187-a9ac-a3692df2ec28.jpg',
-        'fotos/datas-comemorativas/halloween/fcacc484-8166-434e-997a-239a124c74b0.jpg',
-        'fotos/datas-comemorativas/halloween/IMG_4013.JPG',
-        'fotos/datas-comemorativas/halloween/IMG_4076.JPG',
-        'fotos/datas-comemorativas/halloween/IMG_4122.JPG',
-        'fotos/datas-comemorativas/halloween/IMG_4202.JPG',
-        'fotos/datas-comemorativas/halloween/IMG_4359.JPG',
-      ]
-    },
-    natal: {
-      label: '🎄 Natal', cor: '#16a34a',
-      fotos: [
-        'fotos/datas-comemorativas/natal/principal.jpg',
-        'fotos/datas-comemorativas/natal/principal1.jpg',
-        'fotos/datas-comemorativas/natal/principal2.jpg',
-        'fotos/datas-comemorativas/natal/principal3.jpg',
-        'fotos/datas-comemorativas/natal/principal5.PNG',
-        'fotos/datas-comemorativas/natal/principal6.PNG',
-        'fotos/datas-comemorativas/natal/principal8.PNG',
-        'fotos/datas-comemorativas/natal/principal9.PNG',
-        'fotos/datas-comemorativas/natal/principal10.JPG',
-        'fotos/datas-comemorativas/natal/155e0700-0908-4f34-bb2a-6fd3286b7a0a.jpg',
-        'fotos/datas-comemorativas/natal/18bf052b-53e7-4fe8-a07c-a15f02c6dec9.jpg',
-        'fotos/datas-comemorativas/natal/292a23ca-634f-47c6-89a7-d5cf76dac580.jpg',
-        'fotos/datas-comemorativas/natal/87aac4ca-87cd-4aab-a735-b385b6ffd7b4.jpg',
-        'fotos/datas-comemorativas/natal/DSC_9119.jpeg',
-        'fotos/datas-comemorativas/natal/efb994a8-7c5a-45dc-ae0f-68098073a75e.jpg',
-        'fotos/datas-comemorativas/natal/IMG_6443.PNG',
-        'fotos/datas-comemorativas/natal/IMG_6444.PNG',
-      ]
-    },
-    pascoa: {
-      label: '🐣 Páscoa', cor: '#a855f7',
-      fotos: [
-        'fotos/datas-comemorativas/pascoa/principal.png',
-        'fotos/datas-comemorativas/pascoa/principal_1.PNG',
-        'fotos/datas-comemorativas/pascoa/principal_2.PNG',
-        'fotos/datas-comemorativas/pascoa/princiapl_3.PNG',
-        'fotos/datas-comemorativas/pascoa/principal_4.png',
-        'fotos/datas-comemorativas/pascoa/1F32B19F-2487-48AF-8219-DE48172F1C1B.png',
-        'fotos/datas-comemorativas/pascoa/77F23C0B-BE66-41EC-AF4D-23A8047522D5.png',
-        'fotos/datas-comemorativas/pascoa/84C330E9-76F7-441C-9676-AB0E6EB3BDBD.png',
-        'fotos/datas-comemorativas/pascoa/97788919-5714-4208-8106-5320C83EECF7.png',
-        'fotos/datas-comemorativas/pascoa/A1961E08-FBD5-4FB5-A8D8-AF9747AF9B4A.png',
-        'fotos/datas-comemorativas/pascoa/FE9FB7FF-BC03-46A7-8748-C16A41B9025F.png',
-        'fotos/datas-comemorativas/pascoa/IMG_1567.PNG',
-        'fotos/datas-comemorativas/pascoa/IMG_1637.PNG',
-        'fotos/datas-comemorativas/pascoa/IMG_1662.PNG',
-        'fotos/datas-comemorativas/pascoa/IMG_1668.PNG',
-      ]
-    },
-    carnaval: {
-      label: '🎭 Carnaval', cor: '#7c3aed',
-      fotos: [
-        'fotos/datas-comemorativas/carnaval/principal.png',
-        'fotos/datas-comemorativas/carnaval/principal_1.png',
-        'fotos/datas-comemorativas/carnaval/principal_2.png',
-        'fotos/datas-comemorativas/carnaval/principal_3.png',
-        'fotos/datas-comemorativas/carnaval/175C155A-C257-4C4D-9E57-673F32EB5F62.png',
-        'fotos/datas-comemorativas/carnaval/2DCD7B81-3764-4AD6-B087-C7A37F3E2E04.png',
-        'fotos/datas-comemorativas/carnaval/44813EB9-9160-4D6E-BE27-1BD338097D1E.png',
-        'fotos/datas-comemorativas/carnaval/6C26F3CC-AD97-45FF-8D70-E87B47ECE307.png',
-        'fotos/datas-comemorativas/carnaval/95F6A441-D0FD-477B-9336-D093DD026AEF.png',
-        'fotos/datas-comemorativas/carnaval/9A18D8C8-5D8F-431F-8687-8CD778639879.png',
-        'fotos/datas-comemorativas/carnaval/A3CBB488-88A6-4B81-91E5-72FA2C4080DF.png',
-        'fotos/datas-comemorativas/carnaval/F5B8E6E9-7C2A-4900-9842-E74E779E1BFD.png',
-        'fotos/datas-comemorativas/carnaval/IMG_8438.PNG',
-        'fotos/datas-comemorativas/carnaval/IMG_8456.PNG',
-      ]
-    }
-  };
-
-  const PORTFOLIO_M_FOTOS = [
-    'fotos/destaque.jpg',
-    'fotos/trabalho1.jpg',
-    'fotos/cachorros/D0E2A0A9-A99F-4AFF-97B2-5CD058DDDC0E.jpg',
-    'fotos/cachorros/809C6B43-407C-452D-9E9F-3C23FA351005.png',
-    'fotos/trabalho4.jpg',
-    'fotos/trabalho5.jpg',
-    'fotos/cachorros/7E86BC8C-B4D2-4DA1-B7B2-53DB74296FB7.png',
-    'fotos/trabalho7.jpg',
-    'fotos/trabalho8.jpg',
-  ];
-
-  function mudarGaleriaMTab(key) {
-    let fotos;
-    if (key === 'todas') {
-      const grupos = [
-        PORTFOLIO_M_FOTOS,
-        ...Object.values(GALERIA_M_DADOS).map(d =>
-          d.fotos.filter(f => /principal/i.test(f.split('/').pop()))
-        )
-      ];
-      fotos = [];
-      const max = Math.max(...grupos.map(g => g.length));
-      for (let i = 0; i < max; i++)
-        for (const g of grupos) if (i < g.length) fotos.push(g[i]);
-    } else {
-      fotos = GALERIA_M_DADOS[key].fotos;
-    }
-
-    document.querySelectorAll('.galeria-m-tab-btn').forEach(btn => {
-      const cor = btn.dataset.tab === 'todas' ? '#be123c' : (GALERIA_M_DADOS[btn.dataset.tab] || {}).cor || '#be123c';
-      if (btn.dataset.tab === key) {
-        btn.classList.add('ativa');
-        btn.style.background = cor; btn.style.borderColor = cor;
-        btn.style.color = 'white'; btn.style.boxShadow = `0 4px 14px ${cor}55`;
-      } else {
-        btn.classList.remove('ativa');
-        btn.style.background = 'white'; btn.style.borderColor = cor;
-        btn.style.color = cor; btn.style.boxShadow = '0 2px 6px rgba(0,0,0,0.08)';
-      }
-    });
-
-    const container = document.getElementById('galeria-m-grid');
-    container.innerHTML = '';
-    fotos.forEach((src, i) => {
-      const item = document.createElement('div');
-      item.className = 'story-card';
-      item.style.cssText = `opacity:0;animation:datasItemIn .4s cubic-bezier(.25,.46,.45,.94) ${i*45}ms forwards;`;
-      item.innerHTML = `<img src="${src}" alt="" loading="lazy" decoding="async"/>`;
-      item.addEventListener('click', () => openLightbox(src));
-      container.appendChild(item);
-    });
-    container.scrollLeft = 0;
-    container.closest('.scroll-hint-wrap').classList.remove('scrolled');
-  }
-
-  function abrirAlbumDataM(key) {
-    mudarGaleriaMTab(key);
-    const sec = document.getElementById('galeria');
-    window.scrollTo({ top: sec.getBoundingClientRect().top + window.scrollY - 60, behavior: 'smooth' });
-  }
-
-  document.addEventListener('DOMContentLoaded', () => {
-    const grid = document.getElementById('galeria-m-grid');
-    if (grid) grid.addEventListener('scroll', () => {
-      if (grid.scrollLeft > 20) grid.closest('.scroll-hint-wrap').classList.add('scrolled');
-    }, { passive: true });
-  });
-
-  function _initGaleriaM() {
-    const nav = document.getElementById('galeria-m-tabs-nav');
-    const todasBtn = `<button class="datas-tab-btn-m galeria-m-tab-btn" data-tab="todas" onclick="mudarGaleriaMTab('todas')" style="color:#be123c;border-color:#be123c;">✨ Todas</button>`;
-    const dataBtns = Object.entries(GALERIA_M_DADOS).map(([k, d]) =>
-      `<button class="datas-tab-btn-m galeria-m-tab-btn" data-tab="${k}" onclick="mudarGaleriaMTab('${k}')" style="color:${d.cor};border-color:${d.cor};">${d.label}</button>`
-    ).join('');
-    nav.innerHTML = todasBtn + dataBtns;
-    mudarGaleriaMTab('todas');
-  }
-  document.addEventListener('DOMContentLoaded', _initGaleriaM);
-</script>
-
-<script>
-  document.addEventListener('click', function(e) {
-    if (e.target.closest('#btn-direcoes')) {
-      gtag('event', 'directions_click', { destination: 'google_maps' });
-      return;
-    }
-    var link = e.target.closest('a[href*="wa.me"]');
-    if (!link) return;
-    var loc = 'outro';
-    if (link.classList.contains('wa-float'))          loc = 'flutuante';
-    else if (link.closest('#lojinha-sheet'))           loc = 'lojinha';
-    else if (link.closest('nav'))                      loc = 'navbar';
-    else if (link.closest('#hero'))                    loc = 'hero';
-    else if (link.closest('#contato'))                 loc = 'contato';
-    else if (link.closest('footer'))                   loc = 'footer';
-    gtag('event', 'whatsapp_click', { button_location: loc });
-  });
-</script>
-
-<!-- ===== FIGURINHA MODAL + PROTEÇÃO ===== -->
-<style>
-/* Proteção global de imagens */
-img{-webkit-user-drag:none;-webkit-touch-callout:none;user-select:none;}
-/* Modal figurinha */
-#fig-modal{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.88);align-items:center;justify-content:center;padding:1.25rem;}
-#fig-modal.open{display:flex;}
-.fig-modal-box{position:relative;max-width:340px;width:100%;animation:figModalIn .22s cubic-bezier(.34,1.56,.64,1);}
-@keyframes figModalIn{from{transform:scale(.8);opacity:0;}to{transform:scale(1);opacity:1;}}
-#fig-modal-img{width:100%;border-radius:16px;display:block;box-shadow:0 16px 60px rgba(0,0,0,.6);}
-#fig-modal-close{position:absolute;top:-14px;right:-14px;width:38px;height:38px;background:#fff;border:none;border-radius:50%;font-size:1rem;font-weight:800;cursor:pointer;box-shadow:0 3px 12px rgba(0,0,0,.3);display:flex;align-items:center;justify-content:center;color:#333;line-height:1;transition:transform .15s,background .15s;}
-#fig-modal-close:hover{background:#fee2e2;transform:scale(1.1);}
-#fig-modal-dl{display:flex;align-items:center;justify-content:center;gap:8px;background:#FFD700;color:#014421;font-weight:800;font-size:.95rem;padding:13px;border-radius:12px;margin-top:12px;cursor:pointer;border:none;width:100%;transition:transform .15s,box-shadow .15s;}
-#fig-modal-dl:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(255,215,0,.4);}
-#fig-modal-dl:active{transform:scale(.97);}
-/* Modal de código */
-#code-modal{display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,.55);align-items:center;justify-content:center;padding:1.5rem;}
-#code-modal.open{display:flex;}
-.code-modal-box{background:#fff;border-radius:20px;padding:2rem 1.75rem;max-width:320px;width:100%;text-align:center;animation:figModalIn .2s cubic-bezier(.34,1.56,.64,1);}
-.code-modal-icon{font-size:2rem;margin-bottom:.5rem;}
-.code-modal-title{font-size:1.1rem;font-weight:800;color:#014421;margin-bottom:.25rem;}
-.code-modal-sub{font-size:.82rem;color:#666;margin-bottom:1.25rem;line-height:1.4;}
-#code-input{width:100%;box-sizing:border-box;border:2px solid #a7f3d0;border-radius:10px;padding:12px 14px;font-size:1.2rem;font-weight:700;text-align:center;letter-spacing:4px;text-transform:uppercase;outline:none;transition:border-color .2s;}
-#code-input:focus{border-color:#009c3b;}
-#code-input.shake{animation:codeShake .35s ease;}
-@keyframes codeShake{0%,100%{transform:translateX(0);border-color:#dc2626;}20%,60%{transform:translateX(-7px);}40%,80%{transform:translateX(7px);}}
-#code-error{font-size:.8rem;color:#dc2626;margin-top:.5rem;min-height:1.1rem;font-weight:600;}
-.code-modal-btns{display:flex;gap:10px;margin-top:1.25rem;}
-#code-cancel{flex:1;padding:11px;border-radius:10px;border:2px solid #e5e7eb;background:#fff;color:#666;font-weight:700;font-size:.9rem;cursor:pointer;transition:background .15s;}
-#code-cancel:hover{background:#f3f4f6;}
-#code-confirm{flex:2;padding:11px;border-radius:10px;border:none;background:#009c3b;color:#fff;font-weight:800;font-size:.9rem;cursor:pointer;transition:background .15s;}
-#code-confirm:hover{background:#007d30;}
-</style>
-
-<div id="fig-modal" onclick="if(event.target===this)closeFigModal()">
-  <div class="fig-modal-box">
-    <button id="fig-modal-close" onclick="closeFigModal()" aria-label="Fechar">✕</button>
-    <img id="fig-modal-img" src="" alt="Figurinha Copa 2026"/>
-    <button id="fig-modal-dl" onclick="openCodeModal()">
-      <svg viewBox="0 0 24 24" style="width:1.1rem;height:1.1rem;fill:#014421;flex-shrink:0"><path d="M12 16l-6-6h4V4h4v6h4l-6 6zm-7 2h14v2H5v-2z"/></svg>
-      Baixar figurinha
-    </button>
-  </div>
-</div>
-
-<div id="code-modal">
-  <div class="code-modal-box">
-    <div class="code-modal-icon">🔐</div>
-    <div class="code-modal-title">Código exclusivo</div>
-    <div class="code-modal-sub">Digite o código que você recebeu para baixar sua figurinha</div>
-    <input id="code-input" type="text" placeholder="" maxlength="12" autocomplete="off" autocorrect="off" spellcheck="false"/>
-    <div id="code-error"></div>
-    <div class="code-modal-btns">
-      <button id="code-cancel" onclick="closeCodeModal()">Cancelar</button>
-      <button id="code-confirm" onclick="confirmCode()">Confirmar</button>
-    </div>
-  </div>
-</div>
-
-<!-- 🎴 MODAL PACOTE DE FIGURINHAS -->
-<div id="pack-modal">
-  <div class="pack-modal-box" id="pack-step-code">
-    <div class="pack-modal-icon">🎴</div>
-    <div class="pack-modal-title">Pacote de Figurinhas</div>
-    <div class="pack-modal-sub">Digite o código que você recebeu para ver seu pet no álbum! Pode usar quantas vezes quiser.</div>
-    <input id="pack-code-input" type="text" placeholder="Ex: POMPOM-P001" maxlength="20" autocomplete="off" autocorrect="off" spellcheck="false"/>
-    <div id="pack-error"></div>
-    <div class="pack-modal-btns">
-      <button onclick="closePackModal()">Cancelar</button>
-      <button onclick="submitPackCode()">Abrir Pacote 🎴</button>
-    </div>
-  </div>
-  <div class="pack-modal-box" id="pack-anim-box" style="display:none">
-    <div class="pack-visual-wrap">
-      <div class="pack-tear"></div>
-      <div class="pack-half pack-top-half">
-        <div class="pack-inner-full">
-          <div class="pack-face">
-            <div class="pack-face-top">Craques do</div>
-            <div class="pack-face-main">PomPom<br/>2026</div>
-            <div class="pack-face-icon">⚽</div>
-          </div>
-        </div>
-      </div>
-      <div class="pack-half pack-bottom-half">
-        <div class="pack-inner-full">
-          <div class="pack-face" style="justify-content:flex-end;padding-bottom:14px;">
-            <div class="pack-face-bot">🇧🇷 figurinha exclusiva</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="pack-stickers-row" id="pack-stickers-row">
-      <div class="pack-sticker-reveal" id="psr-0" style="width:110px"></div>
-    </div>
-    <div id="pack-anim-msg" style="display:none">
-      <div class="pack-congrats">🎉 Figurinhas adicionadas!</div>
-      <div class="pack-congrats-sub">Suas figurinhas já estão no álbum.</div>
-      <button class="pack-confirm-btn" onclick="finishPackOpen()">Ver no Álbum ↓</button>
-    </div>
-  </div>
-</div>
-
-<script>
-(function(){
-  /* ── Tabela de códigos — adicione novos aqui conforme subir figurinhas ── */
-  var CODES = {
-    'BRA-01-nala.jpeg':     'NALA26',
-    'BRA-02-luna.jpeg':     'LUNA26',
-    'BRA-03-belinhas.jpeg': 'BELI26'
-  };
-
-  /* ── Proteção global ── */
-  document.addEventListener('contextmenu', function(e){
-    if(e.target.tagName==='IMG') e.preventDefault();
-  });
-  document.addEventListener('dragstart', function(e){
-    if(e.target.tagName==='IMG') e.preventDefault();
-  });
-  document.addEventListener('keydown', function(e){
-    if(e.key==='Escape'){closeFigModal();closeCodeModal();if(window.closePackModal)closePackModal();return;}
-    if(e.ctrlKey && ['s','u','p'].indexOf(e.key.toLowerCase())>-1) e.preventDefault();
-  });
-
-  /* ── Estado ── */
-  var currentSrc = '';
-
-  /* ── Modal figurinha ── */
-  function openFigModal(src){
-    currentSrc = src;
-    document.getElementById('fig-modal-img').src = src;
-    document.getElementById('fig-modal').classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-  window.closeFigModal = function(){
-    document.getElementById('fig-modal').classList.remove('open');
-    document.body.style.overflow = '';
-  };
-
-  /* ── Modal de código ── */
-  window.openCodeModal = function(){
-    var inp = document.getElementById('code-input');
-    inp.value = '';
-    document.getElementById('code-error').textContent = '';
-    inp.classList.remove('shake');
-    document.getElementById('code-modal').classList.add('open');
-    setTimeout(function(){inp.focus();}, 100);
-  };
-  window.closeCodeModal = function(){
-    document.getElementById('code-modal').classList.remove('open');
-  };
-  window.confirmCode = function(){
-    var inp = document.getElementById('code-input');
-    var err = document.getElementById('code-error');
-    var typed = inp.value.trim().toUpperCase();
-    var fname = currentSrc.split('/').pop().replace(/\?.*/, '');
-    var expected = CODES[fname] || '';
-    if(!typed){
-      err.textContent = 'Digite o código.';
-      inp.focus();
-      return;
-    }
-    if(typed !== expected){
-      err.textContent = 'Código incorreto. Tente novamente.';
-      inp.classList.remove('shake');
-      void inp.offsetWidth;
-      inp.classList.add('shake');
-      inp.select();
-      return;
-    }
-    err.textContent = '';
-    closeCodeModal();
-    fetch(currentSrc)
-      .then(function(r){ return r.blob(); })
-      .then(function(blob){
-        var url = URL.createObjectURL(blob);
-        var a = document.createElement('a');
-        a.href = url; a.download = fname;
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        setTimeout(function(){ URL.revokeObjectURL(url); }, 1000);
-      });
-  };
-  document.getElementById('code-input').addEventListener('keydown', function(e){
-    if(e.key === 'Enter') confirmCode();
-  });
-
-  /* ── Attach clicks nos slots ── */
-  function attachFilledClicks(){
-    document.querySelectorAll('.copa-slot-filled').forEach(function(el){
-      if(el.dataset.modalBound) return;
-      el.dataset.modalBound = '1';
-      el.addEventListener('click', function(){
-        var img = el.querySelector('img');
-        if(img) openFigModal(img.src);
-      });
-    });
-  }
-  if(document.readyState === 'loading'){
-    document.addEventListener('DOMContentLoaded', attachFilledClicks);
-  } else {
-    attachFilledClicks();
-  }
-
-  /* ── Pacote de figurinhas ── */
-  var PACK_CODES = {
-    'NALA2026':      'BRA-01',
-    'LUNA2026':      'BRA-02',
-    'BELI2026':      'BRA-03',
-    'FLOQUINHO2026': 'BRA-04',
-    'GIGI2026':      'BRA-05',
-    'KIARA2026':     'BRA-06',
-    'ROMEU2026':     'BRA-07',
-    'TODDY2026':     'BRA-08',
-    'TESTE-01':      'BRA-01',
-    'TESTE-02':      'BRA-02',
-    'TESTE-03':      'BRA-03',
-    'TESTE-04':      'BRA-04',
-    'TESTE-05':      'BRA-05',
-    'TESTE-06':      'BRA-06',
-    'TESTE-07':      'BRA-07',
-    'TESTE-08':      'BRA-08'
-  };
-  var PACK_STICKERS = {
-    'BRA-01':{src:'fotos/copa/BRA-01-nala.jpeg',name:'Nala',num:1},
-    'BRA-02':{src:'fotos/copa/BRA-02-luna.jpeg',name:'Luna',num:2},
-    'BRA-03':{src:'fotos/copa/BRA-03-belinhas.jpeg',name:'Belinha',num:3},
-    'BRA-04':{src:'fotos/copa/BRA-04-floquinho.jpeg',name:'Floquinho',num:4},
-    'BRA-05':{src:'fotos/copa/BRA-05-gigi.jpeg',name:'Gigi',num:5},
-    'BRA-06':{src:'fotos/copa/BRA-06-kiara.jpeg',name:'Kiara',num:6},
-    'BRA-07':{src:'fotos/copa/BRA-07-romeu.jpeg',name:'Romeu',num:7},
-    'BRA-08':{src:'fotos/copa/BRA-08-toddy.jpeg',name:'Toddy',num:8}
-  };
-  function getUnlocked(){try{return JSON.parse(localStorage.getItem('pompom_unlocked')||'[]');}catch(e){return[];}}
-  function saveUnlocked(id){var u=getUnlocked();if(u.indexOf(id)===-1)u.push(id);localStorage.setItem('pompom_unlocked',JSON.stringify(u));}
-  function updateCounter(){
-    var el=document.getElementById('album-counter');if(!el)return;
-    var n=getUnlocked().length;
-    el.textContent=n+'/8 figurinhas';
-  }
-  function fillSlot(id,highlight){
-    var s=PACK_STICKERS[id];if(!s)return;
-    var slot=document.querySelector('[data-slot="'+id+'"]');if(!slot)return;
-    slot.className='copa-slot-filled'+(highlight?' copa-slot-new':'');
-    slot.innerHTML='<img src="'+s.src+'" alt="BRA '+s.num+' – '+s.name+'" loading="lazy" decoding="async"/>';
-    if(highlight)setTimeout(function(){slot.classList.remove('copa-slot-new');},2000);
-    slot.addEventListener('click',function(){openFigModal(s.src);});
-  }
-  function restoreAlbum(){getUnlocked().forEach(function(id){fillSlot(id,false);});updateCounter();}
-  var _pendingSticker='';
-  window.openPackModal=function(){
-    document.getElementById('pack-code-input').value='';
-    document.getElementById('pack-error').textContent='';
-    document.getElementById('pack-step-code').style.display='';
-    document.getElementById('pack-anim-box').style.display='none';
-    document.getElementById('pack-modal').classList.add('open');
-    setTimeout(function(){document.getElementById('pack-code-input').focus();},100);
-  };
-  window.closePackModal=function(){document.getElementById('pack-modal').classList.remove('open');};
-  window.submitPackCode=function(){
-    var inp=document.getElementById('pack-code-input');
-    var err=document.getElementById('pack-error');
-    var typed=inp.value.trim().toUpperCase();
-    if(!typed){err.textContent='Digite o código.';inp.focus();return;}
-    if(!PACK_CODES[typed]){
-      err.textContent='Código inválido. Verifique e tente novamente.';
-      inp.classList.remove('shake');void inp.offsetWidth;inp.classList.add('shake');inp.select();return;
-    }
-    _pendingSticker=PACK_CODES[typed];
-    saveUnlocked(_pendingSticker);
-    startPackAnim(_pendingSticker);
-  };
-  window.finishPackOpen=function(){
-    closePackModal();
-    fillSlot(_pendingSticker,true);
-    updateCounter();
-    var sec=document.getElementById('copa-album');if(sec)sec.scrollIntoView({behavior:'smooth',block:'start'});
-  };
-  function startPackAnim(stickerId){
-    document.getElementById('pack-step-code').style.display='none';
-    var anim=document.getElementById('pack-anim-box');anim.style.display='';
-    var c=document.getElementById('psr-0');c.className='pack-sticker-reveal';c.innerHTML='';
-    document.getElementById('pack-anim-msg').style.display='none';
-    var th=document.querySelector('.pack-top-half');var bh=document.querySelector('.pack-bottom-half');
-    th.classList.remove('open');bh.classList.remove('open');
-    var pw=anim.querySelector('.pack-visual-wrap');
-    pw.style.animation='none';void pw.offsetWidth;pw.style.animation='packShake 0.6s ease 0.3s';
-    setTimeout(function(){th.classList.add('open');bh.classList.add('open');},1000);
-    setTimeout(function(){
-      var s=PACK_STICKERS[stickerId];if(!s)return;
-      c.innerHTML='<img src="'+s.src+'" alt="'+s.name+'"/><div class="psrn">'+s.name+'</div>';
-      void c.offsetWidth;c.classList.add('show');
-    },1700);
-    setTimeout(function(){document.getElementById('pack-anim-msg').style.display='';},2600);
-  }
-  document.getElementById('pack-code-input').addEventListener('keydown',function(e){if(e.key==='Enter')submitPackCode();});
-  restoreAlbum();
-})();
-</script>
-
+<script src="halloween-components.js?v=20261002-2" defer></script>
+<script src="halloween-showcase.js?v=20261020-4" defer></script>
 </body>
 </html>

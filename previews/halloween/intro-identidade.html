@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <base href="../../">
+  <title>PomPom — Abertura com identidade</title>
+  <link rel="stylesheet" href="halloween-intro.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Baloo+2:wght@700;800&family=Lilita+One&family=Playfair+Display:wght@600;700&family=Inter:wght@400;600&display=swap">
+  <style>
+    *{box-sizing:border-box}body{margin:0;background:#17101f;color:#fff3df;font:14px/1.6 Inter,system-ui,sans-serif}
+    .finished{min-height:100vh;display:grid;place-content:center;text-align:center;padding:24px}.finished img{width:110px;margin:auto;border-radius:50%}.finished h1{font:700 34px Fredoka,system-ui,sans-serif;margin:14px 0 0}.finished p{color:#c7b7ce;margin-top:5px}
+    html.halloween-intro-active .finished{visibility:hidden}
+    .halloween-intro .intro-message{padding:28px 20px 96px}
+    .halloween-intro .intro-emblem{width:106px;height:106px;margin-bottom:16px}
+    .halloween-intro .intro-identity{margin:0 0 24px}
+    .intro-identity strong{display:block;font:700 clamp(32px,10vw,42px)/1.15 Fredoka,system-ui,sans-serif;color:#fff3df;letter-spacing:-.025em}
+    .intro-identity .pet{color:#ffad66}
+    .intro-identity small{display:block;font:600 12px/1.7 Inter,system-ui,sans-serif;text-transform:uppercase;letter-spacing:.14em;color:#d0a5ea;margin-top:8px}
+    .intro-identity .services{display:block;font:400 11px/1.6 Inter,system-ui,sans-serif;color:#c7b7ce;margin-top:5px}
+    .halloween-intro .intro-title{font-size:clamp(27px,8.3vw,34px);letter-spacing:-.035em}
+    .halloween-intro .intro-caption{font-size:12px;margin-top:18px}
+    .intro-option-2 .intro-identity strong{font-family:'Baloo 2',system-ui,sans-serif;font-weight:800}
+    .intro-option-2 .intro-identity{margin-bottom:18px}
+    .intro-option-3 .intro-identity{padding:14px 20px;border:1px solid #b88bc477;border-radius:22px;background:#30213daa;box-shadow:0 0 35px #ffad6612}
+    .intro-option-3 .intro-identity strong{font:400 36px/1.15 'Lilita One',system-ui,sans-serif;text-shadow:2px 3px 0 #52315f}
+    @media(max-height:650px){.halloween-intro .intro-message{padding-bottom:74px}.halloween-intro .intro-emblem{width:84px;height:84px}.halloween-intro .intro-identity{margin-bottom:16px}.intro-identity strong{font-size:32px}.halloween-intro .intro-caption{margin-top:12px}}
+  </style>
+</head>
+<body data-theme="halloween">
+  <div class="finished"><img src="fotos/halloween/logo-halloween.webp" alt="Logo de Halloween PomPom Pet"><h1>PomPom Pet</h1><p>Estética Animal</p><p>Fim da abertura de teste.<br/>Use “Repetir abertura” acima para assistir novamente.</p></div>
+  <script>
+    const variant=Math.max(1,Math.min(3,Number(new URLSearchParams(location.search).get('opcao'))||1));
+    const watch=new MutationObserver(()=>{
+      const dialog=document.querySelector('.halloween-intro');if(!dialog||dialog.dataset.identityReady)return;
+      dialog.dataset.identityReady='true';dialog.classList.add('intro-option-'+variant);
+      dialog.querySelector('.intro-eyebrow')?.parentElement.remove();
+      dialog.querySelector('.intro-identity')?.parentElement.remove();
+      const identity=document.createElement('div');identity.className='intro-reveal';
+      identity.innerHTML='<div class="intro-identity intro-evaporate"><strong>PomPom <span class="pet">Pet</span></strong><small>Estética Animal</small><span class="services">Banho, tosa e carinho para seu pet.</span></div>';
+      const message=dialog.querySelector('.intro-message'),logo=message.firstElementChild;
+      if(variant===2)message.insertBefore(identity,logo);else logo.after(identity);
+      watch.disconnect();
+    });watch.observe(document.body,{childList:true,subtree:true});
+  </script>
+  <script src="halloween-intro.js"></script>
+</body></html>

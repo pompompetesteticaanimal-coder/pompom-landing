@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Quem Cuida do Seu Pet — PomPom Pet</title>
+<!-- Tailwind CSS CDN with forms and container queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            aubergine: {
+              DEFAULT: '#17101f',
+              dark: '#110b17',
+              card: '#24192e',
+              cardLight: '#2e203b',
+              border: '#3d2b4e',
+            },
+            accent: {
+              orange: '#ffad66',
+              orangeHover: '#f59b4c',
+              cream: '#fff3df',
+              lavender: '#baa5ce',
+            }
+          },
+          fontFamily: {
+            serif: ['Georgia', 'Cambria', 'serif'],
+            sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+          },
+          boxShadow: {
+            'glow-sm': '0 0 15px rgba(255, 173, 102, 0.18)',
+            'glow-card': '0 8px 30px rgba(0, 0, 0, 0.35), 0 0 20px rgba(186, 165, 206, 0.08)',
+            'btn-glow': '0 4px 20px rgba(255, 173, 102, 0.35)'
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-decorations">
+    /* Timeline connecting line */
+    .timeline-track::before {
+      content: '';
+      position: absolute;
+      top: 18px;
+      bottom: 22px;
+      left: 17px;
+      width: 2px;
+      background: linear-gradient(180deg, #ffad66 0%, rgba(255, 173, 102, 0.25) 85%, transparent 100%);
+    }
+  </style>
+</head>
+<body class="bg-aubergine text-accent-cream font-sans antialiased min-h-screen flex justify-center selection:bg-accent-orange selection:text-aubergine-dark">
+<!-- BEGIN: MainContainer -->
+<!-- Constrained precisely to mobile width 390px, edge-to-edge flow without physical phone shell -->
+<main class="w-full max-w-[390px] min-h-screen bg-aubergine flex flex-col justify-between relative px-5 pt-8 pb-28">
+<!-- Ambient background ambient lighting -->
+<div aria-hidden="true" class="pointer-events-none absolute -top-16 -right-16 w-64 h-64 bg-accent-orange/10 rounded-full blur-3xl"></div>
+<div aria-hidden="true" class="pointer-events-none absolute top-1/2 -left-20 w-64 h-64 bg-purple-900/15 rounded-full blur-3xl"></div>
+<div class="relative z-10 space-y-6">
+<!-- BEGIN: SectionHeader -->
+<header class="text-left space-y-3" data-purpose="section-header">
+<!-- Badge Pill with gentle luminescence -->
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-aubergine-card/90 border border-aubergine-border/80 text-xs font-medium text-accent-orange tracking-wide shadow-glow-sm backdrop-blur-md">
+<svg aria-hidden="true" class="w-3.5 h-3.5 text-accent-orange fill-current" viewbox="0 0 20 20">
+<path clip-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" fill-rule="evenodd"></path>
+</svg>
+<span class="tracking-wider uppercase text-[11px] font-semibold">Nossa História &amp; Bio</span>
+</div>
+<h1 class="font-serif text-3xl sm:text-[32px] font-normal tracking-tight text-accent-cream leading-[1.18]">
+          Quem cuida do <br/>
+<span class="italic font-serif text-accent-orange font-medium">seu melhor amigo</span>
+</h1>
+</header>
+<!-- END: SectionHeader -->
+<!-- BEGIN: ProfileHeroCard -->
+<section class="bg-gradient-to-b from-aubergine-card to-[#1e1427] border border-aubergine-border rounded-3xl p-5 shadow-glow-card relative overflow-hidden" data-purpose="groomer-profile-card">
+<!-- Subtle corner aura -->
+<div class="absolute -right-12 -top-12 w-32 h-32 bg-accent-orange/10 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-center gap-4 relative z-10">
+<!-- Stylized Avatar with double gradient ring -->
+<div class="relative shrink-0">
+<div class="w-20 h-20 rounded-full p-[2px] bg-gradient-to-tr from-accent-orange via-accent-lavender to-accent-orange/40 shadow-glow-sm">
+<div class="w-full h-full rounded-full overflow-hidden bg-aubergine-dark">
+<!-- Cropped real image of Deisiane França from input -->
+<img alt="Deisiane França, Fundadora e Groomer Profissional" class="w-full h-full object-cover object-top scale-110 translate-y-1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUJNdLLFvEVJnvC1C61hTcmrfHX8nK5ze3e1L7zuX0Sj_MoWH18avGp3R_eDZCiEZMmRaTZhL5zZx8xP0CxY2Bn65S49J04MzbaMrGR2lGl0r6D-xSn3CdRf3HMVdAB9viVwsY7hlD51wB-aGMWxN3zMcQExyo4z5ar1PX_8tpc5NBRKNkJEQwsrmcDBj825nEMp8Bz7BhjyVcyGaul6p72Qxf2KgXd_dH2eH_iRcfBrdSHEiuaibH5KEIovw1FRwLmDu-nMvmjOg"/>
+</div>
+</div>
+<!-- Status Badge on avatar -->
+<span class="absolute bottom-0 right-0 w-5 h-5 rounded-full bg-emerald-500 border-2 border-aubergine flex items-center justify-center text-aubergine text-[10px]" title="Atendendo">
+<span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
+</span>
+</div>
+<!-- Name & Verification Badge -->
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1.5 mb-1">
+<h2 class="text-xl font-serif text-accent-cream font-bold truncate">Deisiane França</h2>
+<!-- Verified badge -->
+<span class="inline-flex shrink-0 items-center justify-center w-4 h-4 bg-accent-orange/20 text-accent-orange rounded-full" title="Groomer Certificada">
+<svg class="w-2.5 h-2.5 fill-current" viewbox="0 0 20 20">
+<path clip-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" fill-rule="evenodd"></path>
+</svg>
+</span>
+</div>
+<p class="text-xs font-medium text-accent-orange leading-snug">
+              Fundadora &amp; Especialista em Estética Animal
+            </p>
+<p class="text-[11px] text-accent-lavender/80 mt-1 flex items-center gap-1">
+<svg class="w-3 h-3 text-accent-orange/70 shrink-0" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+              Portal dos Ipês, Cajamar — SP
+            </p>
+</div>
+</div>
+</section>
+<!-- END: ProfileHeroCard -->
+<!-- BEGIN: TimelineTrajectory -->
+<section class="bg-aubergine-card/75 border border-aubergine-border/80 rounded-3xl p-5 shadow-lg relative backdrop-blur-sm" data-purpose="timeline-career">
+<h3 class="text-xs font-semibold uppercase tracking-wider text-accent-lavender/90 mb-4 flex items-center justify-between">
+<span>Trajetória &amp; Dedicação</span>
+<span class="text-[10px] text-accent-orange bg-accent-orange/10 px-2 py-0.5 rounded-full font-normal">Linha do tempo</span>
+</h3>
+<!-- Structured Timeline items list -->
+<ol class="timeline-track relative space-y-4">
+<!-- Timeline Point 1 -->
+<li class="relative pl-9 text-left">
+<div class="absolute left-2.5 top-1 -translate-x-1/2 w-4 h-4 rounded-full bg-aubergine-card border-2 border-accent-orange flex items-center justify-center">
+<div class="w-1.5 h-1.5 rounded-full bg-accent-orange"></div>
+</div>
+<div>
+<h4 class="text-sm font-semibold text-accent-cream">Origem &amp; Vocação</h4>
+<p class="text-xs text-accent-lavender/85 leading-relaxed mt-0.5">
+                Amor incondicional por animais refinado com cursos de alto padrão em tosa higiênica e bem-estar canino.
+              </p>
+</div>
+</li>
+<!-- Timeline Point 2 -->
+<li class="relative pl-9 text-left">
+<div class="absolute left-2.5 top-1 -translate-x-1/2 w-4 h-4 rounded-full bg-aubergine-card border-2 border-accent-orange flex items-center justify-center">
+<div class="w-1.5 h-1.5 rounded-full bg-accent-orange"></div>
+</div>
+<div>
+<h4 class="text-sm font-semibold text-accent-cream">6 Anos de Excelência</h4>
+<p class="text-xs text-accent-lavender/85 leading-relaxed mt-0.5">
+                Bagagem sólida nos melhores pet shops, priorizando respeito ao tempo e temperamento de cada filhote.
+              </p>
+</div>
+</li>
+<!-- Timeline Point 3 -->
+<li class="relative pl-9 text-left">
+<div class="absolute left-2.5 top-1 -translate-x-1/2 w-4 h-4 rounded-full bg-aubergine-card border-2 border-accent-orange flex items-center justify-center">
+<div class="w-1.5 h-1.5 rounded-full bg-accent-orange"></div>
+</div>
+<div>
+<h4 class="text-sm font-semibold text-accent-cream">Espaço PomPom Pet</h4>
+<p class="text-xs text-accent-lavender/85 leading-relaxed mt-0.5">
+                Criação de um ambiente calmo, livre de gaiolas estressantes, no coração de Cajamar.
+              </p>
+</div>
+</li>
+</ol>
+</section>
+<!-- END: TimelineTrajectory -->
+<!-- BEGIN: MetricsGrid -->
+<section class="grid grid-cols-2 gap-3" data-purpose="metrics-summary">
+<!-- Metric Card 1 -->
+<article class="bg-aubergine-card/90 border border-aubergine-border/80 rounded-2xl p-4 flex flex-col justify-between text-left hover:border-accent-orange/40 transition-colors">
+<div>
+<span class="block font-serif text-2xl font-bold text-accent-orange tracking-tight">6+ Anos</span>
+<p class="text-xs text-accent-cream font-medium mt-1 leading-snug">Experiência comprovada</p>
+</div>
+<p class="text-[11px] text-accent-lavender/70 mt-2">Manejo calmo, sem traumas e com amor</p>
+</article>
+<!-- Metric Card 2 -->
+<article class="bg-aubergine-card/90 border border-aubergine-border/80 rounded-2xl p-4 flex flex-col justify-between text-left hover:border-accent-orange/40 transition-colors">
+<div>
+<span class="block font-serif text-2xl font-bold text-accent-orange tracking-tight">100+ Pets</span>
+<p class="text-xs text-accent-cream font-medium mt-1 leading-snug">Cuidados todo mês</p>
+</div>
+<p class="text-[11px] text-accent-lavender/70 mt-2">Famílias atendidas em Cajamar e região</p>
+</article>
+</section>
+<!-- END: MetricsGrid -->
+</div>
+<!-- BEGIN: FixedBottomCTA -->
+<!-- Floating Bottom Navigation Bar for iOS Mobile viewport -->
+<div class="fixed bottom-0 left-0 right-0 z-30 max-w-[390px] mx-auto p-4 bg-gradient-to-t from-aubergine via-aubergine/95 to-transparent backdrop-blur-md" data-purpose="sticky-conversion-action">
+<div class="flex items-center gap-2">
+<!-- Primary WhatsApp CTA Button -->
+<a class="flex-1 flex items-center justify-center gap-2.5 bg-accent-orange hover:bg-accent-orangeHover active:scale-[0.98] transition-all duration-200 text-aubergine font-bold py-3.5 px-5 rounded-2xl shadow-btn-glow text-sm tracking-wide" href="https://wa.me/5511999999999?text=Ol%C3%A1%20Deisiane!%20Gostaria%20de%20conversar%20sobre%20o%20cuidado%20do%20meu%20pet." rel="noopener noreferrer" target="_blank">
+<!-- WhatsApp Icon -->
+<svg aria-hidden="true" class="w-5 h-5 fill-current shrink-0" viewbox="0 0 24 24">
+<path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.976.532 1.943.924 3.15.924h.001c3.182 0 5.767-2.587 5.767-5.766.001-3.187-2.575-5.766-5.769-5.766zm3.376 8.212c-.144.405-.837.774-1.17.824-.312.045-.694.074-2.008-.471-1.613-.67-2.645-2.316-2.726-2.424-.08-.108-.65-0.865-.65-1.651 0-.786.411-1.173.557-1.332.146-.16.321-.2.428-.2.107 0 .214 0 .308.005.101.005.236-.038.369.28.144.343.491 1.196.534 1.283.043.088.072.19.014.305-.058.115-.087.186-.173.287-.086.1-.182.224-.26.3-.087.086-.177.179-.076.353.101.174.45 0.743.966 1.202.664.591 1.224.774 1.398.86.174.087.275.073.377-.044.102-.116.438-.51.554-.685.117-.174.233-.146.393-.087.16.058 1.012.477 1.187.564.175.088.291.131.334.204.044.073.044.423-.1 0.828zM12 2C6.477 2 2 6.477 2 12c0 1.826.49 3.538 1.346 5.013L2 22l5.127-1.314A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.156c-1.583 0-3.058-.456-4.306-1.243l-.309-.196-3.046.782.815-2.977-.215-.327A8.113 8.113 0 013.844 12c0-4.497 3.659-8.156 8.156-8.156 4.498 0 8.156 3.659 8.156 8.156 0 4.497-3.658 8.156-8.156 8.156z"></path>
+</svg>
+<span>Conversar com a Deisiane</span>
+</a>
+</div>
+</div>
+<!-- END: FixedBottomCTA -->
+</main>
+<!-- END: MainContainer -->
+</body></html>

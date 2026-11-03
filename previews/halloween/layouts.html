@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>PomPom — Laboratório mobile</title>
+  <style>
+    :root{color-scheme:dark;--bg:#17101f;--surface:#24192e;--cream:#fff3df;--accent:#ffad66;--muted:#c9b9d4}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--cream);font:15px/1.6 system-ui,sans-serif}a{color:var(--accent)}button{font:inherit;cursor:pointer}button:focus-visible,a:focus-visible{outline:3px solid #d6a7ef;outline-offset:4px}
+    header{max-width:1500px;margin:auto;padding:30px 24px 20px}header small{text-transform:uppercase;letter-spacing:.17em;color:var(--accent)}h1{font:clamp(28px,4vw,46px)/1.15 Georgia,serif;margin:12px 0}p{margin:8px 0;color:var(--muted)}.links{display:flex;gap:20px;flex-wrap:wrap;margin:18px 0}.notice{background:var(--surface);border-left:3px solid var(--accent);padding:12px 16px;border-radius:8px;max-width:1000px}
+    nav{position:sticky;top:0;z-index:4;display:flex;gap:8px;overflow:auto;padding:12px 24px;background:#17101fed;border-block:1px solid #ffffff14}nav button{flex-shrink:0;border:1px solid #ffffff22;color:var(--cream);background:var(--surface);border-radius:100px;min-height:44px;padding:8px 18px}nav button[aria-pressed=true]{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+    main{max-width:1500px;margin:auto;padding:24px}.section-title{display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap}h2{font:30px/1.2 Georgia,serif;margin:0}.selection{font-size:13px;border:1px solid #ffad6655;padding:9px 14px;border-radius:12px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:24px}.card{background:var(--surface);border:1px solid #ffffff18;border-radius:22px;overflow:hidden}.card.selected{border:2px solid var(--accent)}.card-header{padding:18px 18px 14px;min-height:112px}.card h3{font-size:18px;line-height:1.3;margin:4px 0}.card small{color:var(--accent)}.preview{display:block;width:100%;padding:0;border:0;background:#120d18;max-height:680px;overflow:auto}.preview img{display:block;width:100%;height:auto}.actions{display:flex;gap:10px;padding:16px;align-items:center;flex-wrap:wrap}.choose,.primary{border:0;background:var(--accent);color:var(--bg);border-radius:12px;padding:10px 15px;min-height:44px;font-weight:650}.actions a{font-size:13px}.current{margin-top:26px;border-top:1px solid #ffffff18;padding-top:16px}.current summary{cursor:pointer;min-height:44px;padding:8px}.current img{max-width:390px;width:100%;display:block;border-radius:18px;margin:14px 0}.footer{margin-top:24px;display:flex;gap:16px;flex-wrap:wrap;align-items:center}.toast{min-height:28px;color:var(--accent);font-size:14px}.loading{padding:40px;font-size:18px}
+    dialog{background:#17101f;color:var(--cream);border:1px solid #ffffff33;border-radius:18px;padding:0;max-width:min(95vw,650px);max-height:94vh}dialog::backdrop{background:#000b}dialog .bar{position:sticky;top:0;display:flex;justify-content:space-between;gap:12px;align-items:center;padding:12px 16px;background:var(--surface)}dialog button{background:var(--accent);border:0;border-radius:8px;padding:8px 14px;min-height:44px}dialog img{display:block;width:100%;height:auto}dialog .body{padding:0}
+    @media(max-width:800px){header{padding:24px 16px 16px}nav{padding:10px 16px}main{padding:20px 16px}.grid{grid-template-columns:1fr;gap:20px}.card-header{min-height:0}.preview{max-height:660px}.section-title{gap:12px}.selection{width:100%}}
+  </style>
+</head>
+<body>
+  <header>
+    <small>PomPom Pet · Halloween · Estudos mobile</small>
+    <h1>Qual layout combina com a PomPom?</h1>
+    <div class="links"><a href="../index.html">Abrir celular de teste e trocar temas ↗</a><a href="../guia.html">Guia de campanhas e tema normal</a></div>
+    <p>A aquarela 3 está escolhida. Novos testes: identificação na abertura, letras da marca e fotos maiores na loja.</p>
+    <div class="links"><a href="../../mobile.html?intro=off" target="_blank" rel="noopener">Ver site com a aquarela</a><a href="identidade.html?parte=abertura&amp;opcao=1">Testar nova abertura</a><a href="identidade.html?parte=marca&amp;opcao=1">Testar letras da marca</a><a href="identidade.html?parte=catalogo&amp;opcao=2">Testar fotos maiores da loja</a><a href="https://stitch.google.com/projects/3957235714949665270" target="_blank" rel="noopener">Abrir projeto no Stitch</a><a href="artes.html">Rever artes</a></div>
+    <div class="notice">Abertura 1, letras da marca 2 (Baloo 2) e catálogo 2 estão aplicados ao site local, junto de menu 2, contato 2, vitrine 2 e avaliações 1. Mobile e desktop alinhados. As fotos abrem ampliadas com zoom; WhatsApp somente no botão de consulta. Os demais estudos continuam preservados; seus números são demonstrativos. Sem novo deploy e sem atualização automática das avaliações pelo Google.</div>
+  </header>
+  <nav id="parts" aria-label="Partes do site"></nav>
+  <main id="main"><p class="loading">Carregando estudos…</p></main>
+  <dialog id="zoom" aria-label="Visualização ampliada"><div class="bar"><strong id="zoom-title"></strong><button id="close-zoom" type="button">Fechar</button></div><div class="body"><img id="zoom-image" alt=""></div></dialog>
+  <script>
+    const storageKey='pompom:layout-studies:2026:v1';
+    let data,active,choices={};
+    try{choices=JSON.parse(localStorage.getItem(storageKey)||'{}')}catch{}
+    const parts=document.querySelector('#parts'),main=document.querySelector('#main'),zoom=document.querySelector('#zoom');
+    function el(tag,text,className){const n=document.createElement(tag);if(text)n.textContent=text;if(className)n.className=className;return n}
+    function selectPart(slug){active=slug;history.replaceState(null,'','#'+slug);render()}
+    function persist(){try{localStorage.setItem(storageKey,JSON.stringify(choices))}catch{}}
+    function render(){
+      const part=data.parts.find(p=>p.slug===active)||data.parts[0];active=part.slug;
+      parts.replaceChildren(...data.parts.map(p=>{const b=el('button',p.title);b.type='button';b.dataset.part=p.slug;b.setAttribute('aria-pressed',String(p.slug===active));b.onclick=()=>selectPart(p.slug);return b}));
+      main.replaceChildren();const heading=el('div',null,'section-title');heading.append(el('h2',part.title));const selected=choices[active]||part.approvedOption;heading.append(el('div',selected?`Sua escolha: ${active} ${selected}`:'Escolha uma alternativa para esta parte','selection'));main.append(heading,el('p',part.description));
+      const grid=el('div',null,'grid');
+      part.options.forEach((o,i)=>{
+        const number=i+1,card=el('article',null,'card'+(selected===number?' selected':''));card.dataset.option=number;
+        const head=el('div',null,'card-header');head.append(el('small',`OPÇÃO ${number}`),el('h3',o.title));card.append(head);
+        const preview=el('button',null,'preview');preview.type='button';preview.setAttribute('aria-label',`Ampliar ${part.title}, opção ${number}`);const img=el('img');img.src=o.image;img.alt=`Estudo mobile de ${part.title}: ${o.title}`;img.loading='lazy';preview.append(img);preview.onclick=()=>{document.querySelector('#zoom-title').textContent=`${part.title} ${number} — ${o.title}`;const z=document.querySelector('#zoom-image');z.src=o.image;z.alt=img.alt;zoom.showModal()};card.append(preview);
+        const actions=el('div',null,'actions'),choose=el('button',selected===number?'Escolhida ✓':'Escolher '+number,'choose');choose.type='button';choose.setAttribute('aria-pressed',String(selected===number));choose.onclick=()=>{choices[active]=number;persist();render()};const link=el('a','Abrir protótipo');link.href=o.html;link.target='_blank';link.rel='noopener';actions.append(choose,link);card.append(actions);grid.append(card)
+      });main.append(grid);
+      const current=el('details',null,'current'),summary=el('summary','Comparar com o layout atual');const original=el('img');original.src=part.reference;original.alt=`Layout atual de ${part.title}`;original.loading='lazy';current.append(summary,original);main.append(current);
+      const footer=el('div',null,'footer'),copy=el('button','Copiar minhas escolhas','primary');copy.type='button';const toast=el('span',null,'toast');toast.setAttribute('role','status');copy.onclick=async()=>{const lines=data.parts.filter(p=>choices[p.slug]).map(p=>`${p.title}: opção ${choices[p.slug]} — ${p.options[choices[p.slug]-1].title}`);const text='Arte: opção 3 — Aquarela\n'+lines.join('\n');try{await navigator.clipboard.writeText(text);toast.textContent='Escolhas copiadas. Pode colar na conversa.'}catch{toast.textContent=text}};footer.append(copy,toast);main.append(footer)
+    }
+    document.querySelector('#close-zoom').onclick=()=>zoom.close();zoom.addEventListener('click',e=>{if(e.target===zoom)zoom.close()});
+    fetch('layouts/estudos.json').then(r=>{if(!r.ok)throw Error('Arquivo indisponível');return r.json()}).then(result=>{data=result;active=location.hash.slice(1);render()}).catch(()=>{main.replaceChildren(el('p','Não foi possível carregar os estudos. Atualize a página ou abra o projeto no Stitch.'))});
+  </script>
+</body>
+</html>
