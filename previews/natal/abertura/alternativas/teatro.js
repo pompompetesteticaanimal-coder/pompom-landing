@@ -1,5 +1,5 @@
-import {mountHarness} from './arreios.mjs?v=27';
-import {flightPose} from './trajetoria.mjs?v=27';
+import {mountHarness} from './arreios.mjs?v=28';
+import {flightPose} from './trajetoria.mjs?v=28';
 // An original cut-paper theatre, drawn as articulated vector pieces.
 export function createTheatre(host,options={}){
  const leg=j=>`<g data-leg="${j}"><g data-upper><path d="M-8-4Q0-9 8-2L5 29H-5Z" fill="#d8b77e"/><g data-lower><path d="M-5-2H5L4 26H-4Z" fill="#f2dfb6"/><path d="M-5 23H5L9 31H-6Z" fill="#72253b"/></g></g></g>`;

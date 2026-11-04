@@ -12,7 +12,7 @@ cd pompom-landing
 python3 -m http.server 8011 --bind 0.0.0.0
 ```
 
-Abra **http://localhost:8011/previews/natal/?parte=abertura&abertura=teatro-ilustrado&renas=6&v=27**. Para outra pessoa na mesma rede, substitua `localhost` pelo IP do computador que iniciou o servidor. No Mac, consulte o IP com `ipconfig getifaddr en0`. O endereço IP do Mac anterior não é transferido com o projeto.
+Abra **http://localhost:8011/previews/natal/?parte=abertura&abertura=teatro-ilustrado&renas=6&v=28**. Para outra pessoa na mesma rede, substitua `localhost` pelo IP do computador que iniciou o servidor. No Mac, consulte o IP com `ipconfig getifaddr en0`. O endereço IP do Mac anterior não é transferido com o projeto.
 
 Se essa branch já estiver clonada e sem alterações locais, atualize com `git pull --ff-only`. O ZIP da branch também funciona: extraia, abra o terminal na pasta extraída e execute o comando do servidor acima. Não é necessário instalar Node, Blender ou dependências npm para visualizar o laboratório.
 

@@ -67,3 +67,7 @@ Entrada atual: `/previews/natal/?parte=abertura&abertura=teatro-ilustrado&renas=
 ## Escolha aprovada — revisão 27
 
 O usuário escolheu seis renas, a paleta vermelho e dourado (`classico`) e os mascotes em aquarela (`aquarela`). Mantém o teatro ilustrado e os 16,5 s. A seleção é aplicada uma vez nos navegadores com estado antigo (`selectionRevision=27`); depois as opções 4/6/9 continuam disponíveis para testar, sem apagar a escolha aprovada. Nova entrada: `/previews/natal/?parte=abertura&abertura=teatro-ilustrado&renas=6&v=27`.
+
+## Sentido do galope — revisão 28
+
+O usuário relatou impressão de marcha à ré e pediu inverter a ordem das patas. `galope.mjs` inverte o sentido temporal do ciclo de pernas, mantendo as articulações dianteiras/traseiras e a defasagem entre animais. Na parte baixa da passada, os cascos agora se deslocam para trás em relação ao corpo, impulsionando visualmente a rena para a frente. O grupo inteiro continua espelhado no retorno à lua, portanto a passada acompanha a direção de voo. A posição do corpo, os arreios, a trajetória, o aceno e a duração não mudam. Aplica-se às equipes 4/6/9 dos teatros; a animação original e o estudo 3D permanecem preservados. Entrada atual: `/previews/natal/?parte=abertura&abertura=teatro-ilustrado&renas=6&v=28`.
