@@ -89,3 +89,11 @@ O renderizador usa o índice explícito `data-leg` para mapear cada articulaçã
 Mantidos seis animais, 11 segundos, paleta vermelho/dourado, mascotes aquarela, lua com ocultação progressiva, neve e contador. Efeito da Kiara permanece aprovado e sem alteração. `natal-aceno.mjs` verifica ausência de imagens bitmap nas renas e a correspondência exata dos ângulos das patas com o último rig; galope, aceno, lua e controles passaram. Contador/cartão conferidos em três tamanhos de celular. Miniatura atualizada por captura real.
 
 Entrada atual: `/previews/natal/?parte=abertura&abertura=teatro-ilustrado&renas=6&v=32`.
+
+## Direção das articulações e tempo de leitura — revisão 33
+
+O usuário relatou pernas dobradas para o lado errado e pouco tempo para ver nome/logo/contador. A solução IK de `galope.mjs` agora escolhe a outra orientação da articulação: dianteiras com dobra positiva e traseiras negativa nas coordenadas locais. A trajetória dos cascos e o sentido do galope permanecem iguais; muda o lado para onde o ponto intermediário dobra. Teste de cinemática direta verifica o lado da articulação em todos os animais e quatro patas, além do impulso para a frente. Referência técnica sobre controle da dobra IK: [documentação Blender](https://archive.blender.org/wiki/2015/index.php/Doc%3A2.4/Manual/Rigging/Posing/Inverse_Kinematics/).
+
+Nos teatros, o voo continua igual até 7 s. Marca aparece de 7 a 7,7 s e fica totalmente visível, sem nevasca, até 12 s: 4,3 s de leitura limpa. Só então começa a nevasca. Duração total passa para 14,5 s, com 3,5 s extras apenas no cartão final; o botão Entrar permanece disponível. O modo reduzido mostra a marca/contador por 5 s. O estudo 3D mantém seus tempos. `reviewTime` ajusta os saltos Nevasca/Revelar sem deslocar os pontos anteriores do voo.
+
+Aceno, galope, lado da dobra, marca visível aos 8/10/11,9 s, botões de revisão, contador em três celulares e fechamento automático foram verificados. Miniatura atualizada por captura real. Efeito de magia da Kiara e seleção de seis renas/vermelho-dourado/aquarela preservados. Entrada: `/previews/natal/?parte=abertura&abertura=teatro-ilustrado&renas=6&v=33`.
