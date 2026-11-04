@@ -12,7 +12,7 @@ cd pompom-landing
 python3 -m http.server 8011 --bind 0.0.0.0
 ```
 
-Abra **http://localhost:8011/previews/natal/?parte=abertura&abertura=teatro-ilustrado&renas=6&v=33**. Para outra pessoa na mesma rede, substitua `localhost` pelo IP do computador que iniciou o servidor. No Mac, consulte o IP com `ipconfig getifaddr en0`. O endereço IP do Mac anterior não é transferido com o projeto.
+Abra **http://localhost:8011/previews/natal/?comparar=lado-a-lado&v=37**. Para outra pessoa na mesma rede, substitua `localhost` pelo IP do computador que iniciou o servidor. No Mac, consulte o IP com `ipconfig getifaddr en0`. O endereço IP do Mac anterior não é transferido com o projeto.
 
 Se essa branch já estiver clonada e sem alterações locais, atualize com `git pull --ff-only`. O ZIP da branch também funciona: extraia, abra o terminal na pasta extraída e execute o comando do servidor acima. Não é necessário instalar Node, Blender ou dependências npm para visualizar o laboratório.
 
@@ -40,3 +40,5 @@ A referência anterior está em `notes/natal-laboratorio-abertura-v15.md`. O aco
 As instruções operacionais estão em `CLAUDE.md`. O laboratório não entra na imagem Docker e esta branch não realiza deploy automático. Publicar no GitHub não altera o Cloud Run.
 
 No laboratório de Natal, os botões **Natal · atual** e **Halloween · referência** ficam sempre acima do celular de teste. A referência abre a página Halloween original; o botão Natal retorna à seleção de Natal. Acesso direto à comparação: `http://localhost:8011/previews/natal/?parte=capa&comparar=halloween&v=34`.
+
+Planejamento de Natal: [três propostas para cada parte](previews/natal/planejamento.html), com 16 partes e 48 capturas nomeadas. Laboratório atual: `http://localhost:8011/previews/natal/?comparar=lado-a-lado&v=37`. Use Natal, Halloween ou Lado a lado acima dos celulares. A entrada sem seção abre sempre a capa no topo. Fotos de Nosso espaço são as padrão; estoque, álbuns e bolinhas permanecem reais. Detalhes e referências em [NATAL-PLANO-TELAS-2026-11-04.md](docs/NATAL-PLANO-TELAS-2026-11-04.md).
