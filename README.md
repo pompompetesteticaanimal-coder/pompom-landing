@@ -38,3 +38,5 @@ A referência anterior está em `notes/natal-laboratorio-abertura-v15.md`. O aco
 ## Produção
 
 As instruções operacionais estão em `CLAUDE.md`. O laboratório não entra na imagem Docker e esta branch não realiza deploy automático. Publicar no GitHub não altera o Cloud Run.
+
+No laboratório de Natal, os botões **Natal · atual** e **Halloween · referência** ficam sempre acima do celular de teste. A referência abre a página Halloween original; o botão Natal retorna à seleção de Natal. Acesso direto à comparação: `http://localhost:8011/previews/natal/?parte=capa&comparar=halloween&v=34`.
