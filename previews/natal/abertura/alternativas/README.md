@@ -79,3 +79,13 @@ O usuário considerou a entrada longa: os teatros passam de 16,5 para 11 segundo
 `contador.mjs` compara datas de calendário do aparelho, sem erro de horário de verão. No dia 25 mostra Hoje é Natal; após 25 de dezembro aponta para o próximo ano. Não depende de API ou chamada externa. O modo reduzido continua curto (2,5 s) e inclui o contador. Novos estilos compactam o cartão em telas baixas para preservar logo, contador e botão de entrada.
 
 A magia das fotos permanece aprovada e com duração de 3,4 s. Entrada atual: `/previews/natal/?parte=abertura&abertura=teatro-ilustrado&renas=6&v=31`.
+
+## Renas de papel com o último galope — revisão 32
+
+O usuário gostou das renas do teatro de papel, mas pediu o estilo de movimento e das pernas da última versão. A opção selecionada mantém a chave `teatro-ilustrado`, agora rotulada Teatro · renas de papel: renas SVG originais de papel, Papai Noel/trenó ilustrados dando tchau e o mesmo `galope.mjs` mais recente, com quatro patas articuladas por rena.
+
+O renderizador usa o índice explícito `data-leg` para mapear cada articulação, preservando a anatomia dianteira/traseira e evitando confundir a ordem das camadas de pintura com a ordem das patas. Corpo, cabeça, cauda, sino, arreios e tirantes acompanham os dados atuais. O Papai Noel conserva o filtro de limpeza alpha do atlas; o filtro é aplicado somente nele, preservando os vetores das renas. Não é mais necessário carregar o atlas das renas ilustradas para esta opção. As primeiras aberturas continuam com seu renderizador original.
+
+Mantidos seis animais, 11 segundos, paleta vermelho/dourado, mascotes aquarela, lua com ocultação progressiva, neve e contador. Efeito da Kiara permanece aprovado e sem alteração. `natal-aceno.mjs` verifica ausência de imagens bitmap nas renas e a correspondência exata dos ângulos das patas com o último rig; galope, aceno, lua e controles passaram. Contador/cartão conferidos em três tamanhos de celular. Miniatura atualizada por captura real.
+
+Entrada atual: `/previews/natal/?parte=abertura&abertura=teatro-ilustrado&renas=6&v=32`.

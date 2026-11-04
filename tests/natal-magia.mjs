@@ -12,7 +12,7 @@ try{
  await call('Emulation.setDeviceMetricsOverride',{width:1400,height:1000,deviceScaleFactor:1,mobile:false});
  for(const page of ['mobile','desktop']){
   const w=page==='mobile'?"document.querySelector('#site').contentWindow":'window',evalPage=code=>run(`${w}.eval(${JSON.stringify(code)})`);
-  await call('Page.navigate',{url:base+(page==='mobile'?'/previews/natal/?parte=magia&v=31':'/previews/natal/base-desktop.html?previewThemes=1&theme=halloween&opening=none&previewEmbedded=1&parte=magia&v=31')});await wait(2300);
+  await call('Page.navigate',{url:base+(page==='mobile'?'/previews/natal/?parte=magia&v=32':'/previews/natal/base-desktop.html?previewThemes=1&theme=halloween&opening=none&previewEmbedded=1&parte=magia&v=32')});await wait(2300);
   assert.equal(await evalPage(`!!window.PomPomChristmasMagic`),true);
   assert.equal(await evalPage(`document.querySelectorAll('[data-magic-pet]').length`),1);
   assert.equal(await evalPage(`window.PomPomChristmasMagic.state.pet`),'kiara');
@@ -34,7 +34,7 @@ try{
   await evalPage(`window.PomPomNatalReset.setPaper('vermelho');true`);assert.equal(await evalPage(`document.querySelectorAll('.christmas-magic .christmas-wrapped-photo').length`),0);
   console.log('PASS',page,': confirmed Kiara pair; no bow/wrapping; opaque smoke swap; untouched image sources; reset, slider, reduced motion and local image validation.');
  }
- await call('Page.bringToFront');await call('Page.navigate',{url:base+'/previews/natal/?parte=magia&v=31'});await wait(2300);
+ await call('Page.bringToFront');await call('Page.navigate',{url:base+'/previews/natal/?parte=magia&v=32'});await wait(2300);
  const w="document.querySelector('#site').contentWindow",evalPage=code=>run(`${w}.eval(${JSON.stringify(code)})`);
  await evalPage(`window.PomPomChristmasMagic.reset();document.querySelector('.magic-stage').scrollIntoView({block:'center'});true`);
  const c=await run(`(()=>{const f=document.querySelector('#site'),r=f.getBoundingClientRect(),b=f.contentWindow.document.querySelector('.magic-stage').getBoundingClientRect(),s=r.width/f.contentWindow.innerWidth;return {x:r.left+(b.left+b.width*.4)*s,y:r.top+(b.top+b.height*.5)*s}})()`);
