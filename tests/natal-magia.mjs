@@ -12,7 +12,7 @@ try{
  await call('Emulation.setDeviceMetricsOverride',{width:1400,height:1000,deviceScaleFactor:1,mobile:false});
  for(const page of ['mobile','desktop']){
   const w=page==='mobile'?"document.querySelector('#site').contentWindow":'window',evalPage=code=>run(`${w}.eval(${JSON.stringify(code)})`);
-  await call('Page.navigate',{url:base+(page==='mobile'?'/previews/natal/?parte=magia&v=29':'/previews/natal/base-desktop.html?previewThemes=1&theme=halloween&opening=none&previewEmbedded=1&parte=magia&v=29')});await wait(2300);
+  await call('Page.navigate',{url:base+(page==='mobile'?'/previews/natal/?parte=magia&v=30':'/previews/natal/base-desktop.html?previewThemes=1&theme=halloween&opening=none&previewEmbedded=1&parte=magia&v=30')});await wait(2300);
   assert.equal(await evalPage(`!!window.PomPomChristmasMagic`),true);
   assert.equal(await evalPage(`document.querySelectorAll('[data-magic-pet]').length`),1);
   assert.equal(await evalPage(`window.PomPomChristmasMagic.state.pet`),'kiara');
@@ -34,12 +34,15 @@ try{
   await evalPage(`window.PomPomNatalReset.setPaper('vermelho');true`);assert.equal(await evalPage(`document.querySelectorAll('.christmas-magic .christmas-wrapped-photo').length`),0);
   console.log('PASS',page,': confirmed Kiara pair; no bow/wrapping; opaque smoke swap; untouched image sources; reset, slider, reduced motion and local image validation.');
  }
- await call('Page.navigate',{url:base+'/previews/natal/?parte=magia&v=29'});await wait(2300);
+ await call('Page.bringToFront');await call('Page.navigate',{url:base+'/previews/natal/?parte=magia&v=30'});await wait(2300);
  const w="document.querySelector('#site').contentWindow",evalPage=code=>run(`${w}.eval(${JSON.stringify(code)})`);
  await evalPage(`window.PomPomChristmasMagic.reset();document.querySelector('.magic-stage').scrollIntoView({block:'center'});true`);
  const c=await run(`(()=>{const f=document.querySelector('#site'),r=f.getBoundingClientRect(),b=f.contentWindow.document.querySelector('.magic-stage').getBoundingClientRect(),s=r.width/f.contentWindow.innerWidth;return {x:r.left+(b.left+b.width*.4)*s,y:r.top+(b.top+b.height*.5)*s}})()`);
- await call('Input.dispatchMouseEvent',{type:'mousePressed',button:'left',buttons:1,clickCount:1,...c});await call('Input.dispatchMouseEvent',{type:'mouseReleased',button:'left',clickCount:1,...c});await wait(1600);assert.equal(await evalPage(`window.PomPomChristmasMagic.state.phase`),'open');
- await evalPage(`window.PomPomChristmasMagic.reset();document.querySelector('.magic-touch').focus();true`);await call('Input.dispatchKeyEvent',{type:'keyDown',key:'Enter',code:'Enter',windowsVirtualKeyCode:13});await call('Input.dispatchKeyEvent',{type:'keyUp',key:'Enter',code:'Enter',windowsVirtualKeyCode:13});await wait(1600);assert.equal(await evalPage(`window.PomPomChristmasMagic.state.phase`),'open');
+ await evalPage(`window.__magicFrames=[];document.querySelector('.magic-touch').addEventListener('click',()=>{const sample=()=>{window.__magicFrames.push(window.PomPomChristmasMagic.state.progress);if(window.__magicFrames.length<10)requestAnimationFrame(sample)};requestAnimationFrame(sample)},{once:true});true`);
+ await call('Input.dispatchMouseEvent',{type:'mousePressed',button:'left',buttons:1,clickCount:1,...c});await call('Input.dispatchMouseEvent',{type:'mouseReleased',button:'left',clickCount:1,...c});await wait(3800);assert.equal(await evalPage(`window.PomPomChristmasMagic.state.phase`),'open');
+ const samples=await evalPage(`window.__magicFrames`);assert.equal(samples[0],0,'first animation frame must not skip ahead');assert.ok(samples.at(-1)>0&&samples.at(-1)<.3,'opening frames must visibly animate over time');console.log('PASS: first ten real animation frames',samples.map(n=>+n.toFixed(3)));
+
+ await evalPage(`window.PomPomChristmasMagic.reset();document.querySelector('.magic-touch').focus();true`);await call('Input.dispatchKeyEvent',{type:'keyDown',key:'Enter',code:'Enter',windowsVirtualKeyCode:13});await call('Input.dispatchKeyEvent',{type:'keyUp',key:'Enter',code:'Enter',windowsVirtualKeyCode:13});await wait(3800);assert.equal(await evalPage(`window.PomPomChristmasMagic.state.phase`),'open');
  for(const width of [320,390,430]){await call('Emulation.setDeviceMetricsOverride',{width,height:844,deviceScaleFactor:1,mobile:true});await wait(100);assert.equal(await run(`document.documentElement.scrollWidth>innerWidth`),false)}
  await evalPage(`window.dispatchEvent(new PageTransitionEvent('pagehide',{persisted:true}));window.dispatchEvent(new PageTransitionEvent('pageshow',{persisted:true}));true`);assert.equal(await evalPage(`window.PomPomChristmasMagic.state.progress`),0);
  console.log('PASS: real photo click, keyboard, 320/390/430 layouts and history restore.');
