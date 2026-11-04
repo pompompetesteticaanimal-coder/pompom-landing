@@ -63,3 +63,7 @@ O laboratório tem botões para comparar 4 (dois pares), 6 (três pares) e 9 (qu
 Os teatros duram 16,5 s (antes 11 s), com voo e aceno a dois terços da velocidade anterior. A neve continua caindo em tempo real. `reviewTimeScale=1.5` mantém os botões de aceno/lua/marca/nevasca corretos. Movimento reduzido mantém a entrada curta de 2,5 s; os estudos originais e o 3D mantêm suas durações.
 
 Entrada atual: `/previews/natal/?parte=abertura&abertura=teatro-ilustrado&renas=9&v=26`.
+
+## Escolha aprovada — revisão 27
+
+O usuário escolheu seis renas, a paleta vermelho e dourado (`classico`) e os mascotes em aquarela (`aquarela`). Mantém o teatro ilustrado e os 16,5 s. A seleção é aplicada uma vez nos navegadores com estado antigo (`selectionRevision=27`); depois as opções 4/6/9 continuam disponíveis para testar, sem apagar a escolha aprovada. Nova entrada: `/previews/natal/?parte=abertura&abertura=teatro-ilustrado&renas=6&v=27`.

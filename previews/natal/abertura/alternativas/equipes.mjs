@@ -1,7 +1,7 @@
 // Layout experiments reuse the two baked articulated motion sources with staggered phases.
-import {attachment} from './arreios.mjs?v=26';
+import {attachment} from './arreios.mjs?v=27';
 export const teamCounts=[4,6,9];
-export const validTeam=value=>teamCounts.includes(Number(value))?Number(value):9;
+export const validTeam=value=>teamCounts.includes(Number(value))?Number(value):6;
 export function makeTeam(source,value){
  const count=validTeam(value),means=source.frames[0].d.map((_,i)=>source.frames.reduce((p,f)=>({x:p.x+f.d[i].x/source.frames.length,y:p.y+f.d[i].y/source.frames.length}),{x:0,y:0}));
  const frames=source.frames.map((f,n)=>{
