@@ -2,7 +2,7 @@
 import fs from 'node:fs/promises';import assert from 'node:assert/strict';
 const server=process.env.POMPOM_CDP_URL||'http://127.0.0.1:9237';const appBase=process.env.POMPOM_TEST_URL||'http://127.0.0.1:8011';const t=await(await fetch(server+'/json/new?about:blank',{method:'PUT'})).json();const ws=new WebSocket(t.webSocketDebuggerUrl);await new Promise(r=>ws.onopen=r);let id=0;const p=new Map();ws.onmessage=e=>{const m=JSON.parse(e.data);if(m.id){p.get(m.id)?.(m.result);p.delete(m.id)}};const call=(method,params={})=>new Promise(r=>{p.set(++id,r);ws.send(JSON.stringify({id,method,params}))});const run=async expression=>{const r=await call('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true});if(r.exceptionDetails)throw Error(JSON.stringify(r.exceptionDetails));return r.result.value};const wait=ms=>new Promise(r=>setTimeout(r,ms));
 
-await call('Emulation.setDeviceMetricsOverride',{width:1400,height:1000,deviceScaleFactor:1,mobile:false});await call('Page.navigate',{url:appBase+'/previews/natal/?parte=abertura&abertura=teatro-ilustrado&v=28'});
+await call('Emulation.setDeviceMetricsOverride',{width:1400,height:1000,deviceScaleFactor:1,mobile:false});await call('Page.navigate',{url:appBase+'/previews/natal/?parte=abertura&abertura=teatro-ilustrado&v=29'});
 const w="document.querySelector('#site').contentWindow";for(let i=0;i<100;i++){if(await run(`!!${w}.PomPomChristmasOpening?.active?.timeline`))break;await wait(100)}
 assert.equal(await run(`${w}.PomPomChristmasOpening.active.timeline.duration()`),16.5);
 const info=await run(`${w}.PomPomChristmasOpening.active.rig.info.santa`);assert.equal(info.bones,6);assert.equal(info.frames,661);
