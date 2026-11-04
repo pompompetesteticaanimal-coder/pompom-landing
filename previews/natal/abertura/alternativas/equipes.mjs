@@ -1,6 +1,6 @@
-import {legCycle} from './galope.mjs?v=30';
+import {legCycle} from './galope.mjs?v=31';
 // Layout experiments reuse the two baked articulated motion sources with staggered phases.
-import {attachment} from './arreios.mjs?v=30';
+import {attachment} from './arreios.mjs?v=31';
 export const teamCounts=[4,6,9];
 export const validTeam=value=>teamCounts.includes(Number(value))?Number(value):6;
 export function makeTeam(source,value){

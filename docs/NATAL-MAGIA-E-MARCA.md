@@ -45,3 +45,7 @@ Pesquisa em documentação primária:
 - [MDN — movimento reduzido](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/%40media/prefers-reduced-motion): preferência preservada, com revelação direta.
 
 O efeito é código local, sem CDN, rastreamento, upload, eval ou novas permissões na aplicação. DPR máximo 1,5; nuvens pré-desenhadas em três sprites 192 × 192; trabalho limitado à interação e resize. Testes confirmam progressão dos primeiros dez quadros reais, sem salto inicial, além das verificações do par, cobertura, entrada, teclado e responsividade. Isso valida no Chrome local, sem prometer o mesmo FPS em todo aparelho.
+
+## Aprovação do efeito
+
+O usuário aprovou por enquanto a sequência v30 e pediu mantê-la como está, acrescentando os próximos pares de antes/depois conforme forem enviados. Kiara é o primeiro par. Não redesenhar o efeito ao cadastrar novas fotos. Os pares devem pertencer ao mesmo pet e ter a identidade confirmada. Cadastro persistente no objeto `pets` de `previews/natal/magia/magia.js`; a API `setPair` serve apenas para teste em memória.

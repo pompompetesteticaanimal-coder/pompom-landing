@@ -71,3 +71,11 @@ O usuário escolheu seis renas, a paleta vermelho e dourado (`classico`) e os ma
 ## Sentido do galope — revisão 28
 
 O usuário relatou impressão de marcha à ré e pediu inverter a ordem das patas. `galope.mjs` inverte o sentido temporal do ciclo de pernas, mantendo as articulações dianteiras/traseiras e a defasagem entre animais. Na parte baixa da passada, os cascos agora se deslocam para trás em relação ao corpo, impulsionando visualmente a rena para a frente. O grupo inteiro continua espelhado no retorno à lua, portanto a passada acompanha a direção de voo. A posição do corpo, os arreios, a trajetória, o aceno e a duração não mudam. Aplica-se às equipes 4/6/9 dos teatros; a animação original e o estudo 3D permanecem preservados. Entrada atual: `/previews/natal/?parte=abertura&abertura=teatro-ilustrado&renas=6&v=28`.
+
+## Abertura mais curta e contador — revisão 31
+
+O usuário considerou a entrada longa: os teatros passam de 16,5 para 11 segundos (`pace=1`). Mantêm seis renas, aceno, galope corrigido, arreios e a passagem completa atrás da lua. Logo e mascotes surgem a partir de 7 s, quando a equipe já está totalmente oculta; junto deles aparece a contagem de dias para o Natal.
+
+`contador.mjs` compara datas de calendário do aparelho, sem erro de horário de verão. No dia 25 mostra Hoje é Natal; após 25 de dezembro aponta para o próximo ano. Não depende de API ou chamada externa. O modo reduzido continua curto (2,5 s) e inclui o contador. Novos estilos compactam o cartão em telas baixas para preservar logo, contador e botão de entrada.
+
+A magia das fotos permanece aprovada e com duração de 3,4 s. Entrada atual: `/previews/natal/?parte=abertura&abertura=teatro-ilustrado&renas=6&v=31`.
