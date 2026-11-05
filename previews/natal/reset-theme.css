@@ -49,3 +49,11 @@ html body.halloween-theme #halloween-destaques .christmas-photo-tile{display:blo
 html body.halloween-theme #halloween-destaques .christmas-photo-tile img{display:block;width:100%!important;height:100%!important;aspect-ratio:auto!important;object-fit:cover;object-position:center 38%;border:0!important;border-radius:0;box-shadow:none!important;transform:none!important}
 html body.halloween-theme #halloween-destaques [data-photo-grid=loja]>.christmas-photo-tile:first-child{grid-column:1/-1}
 html body.halloween-theme #halloween-destaques .halloween-showcase-slide{align-content:start;align-items:start}
+/* Keep only the active campaign panel in grid sizing, so hidden panels do not
+   leave an empty tail beneath shorter cards. Leaving panels still animate above it. */
+html body.halloween-theme #halloween-destaques .halloween-showcase-track{position:relative;align-items:start}
+html body.halloween-theme #halloween-destaques .halloween-showcase-slide:not(.is-active){position:absolute;inset:0;width:100%;height:auto}
+@media(max-width:760px){
+ html body.halloween-theme.halloween-mobile #halloween-destaques .christmas-photo-grid{width:min(100%,280px)}
+ html body.halloween-theme.halloween-mobile #halloween-destaques .halloween-showcase-slide{gap:12px;padding:20px 18px 26px}
+}

@@ -68,12 +68,12 @@ Fotos abrem em dialog nativo com tamanho completo, legenda e fechamento por bot�
 O teste das fotos usa cliques reais por coordenadas nas setas para verificar a sobreposição, além de ampliação, fontes, teclado, troca automática, pausa em diálogo/fora de tela, fotos preservadas e mobile/desktop. As três capturas do conjunto Natal foram atualizadas para mostrar o primeiro card agora preenchido. Cache45; sem deploy de produção.
 
 
-## Mosaicos e galeria completa · v46 (substitui as pilhas v44/v45)
+## Mosaicos e galeria de Natal · v47 (substitui as pilhas v44/v45)
 
 Pedido final do usuário: como antes, sem fotos empilhadas. Pets mostram exatamente2,4,6,11 em grade2×2, ordem aleatória. Loja mostra fachada grande, entrada/árvore em dois quadrados menores abaixo. Não há troca automática de fotos: todas ficam visíveis. Setas do carrossel mantêm z-index acima das imagens e trocam somente os cards principais. Clique em qualquer foto abre a ampliação.
 
-Fonte dos pets: /Users/paulohenrique/Pictures/Pompompet/natal/fotos.40 registros importados, agrupando54 versões por nome base para não repetir JPEG/PNG e WebP. Manifesto acervo.js e mapeamento acervo/ORIGEM.json. A galeria substitui a magia em #transformacoes: quatro quadrados por página, Anteriores/Próximas, contador e ampliação. Conserva o ID interno magia para compatibilidade com links e escolhas, mas se chama Fotos de Natal na navegação.
+Fonte dos pets: /Users/paulohenrique/Pictures/Pompompet/natal/fotos.40 registros importados, agrupando54 versões por nome base para não repetir JPEG/PNG e WebP. Manifesto acervo.js e mapeamento acervo/ORIGEM.json. A galeria substitui a magia em #transformacoes: agora mostra 27 fotos únicas, quatro quadrados por página, Anteriores/Próximas, contador e ampliação. As 13 duplicatas visuais (inclusive sob nomes diferentes) saíram da lista de exibição; os arquivos importados foram preservados. O card ativo define a altura do carrossel, evitando o espaço vazio deixado pelos outros cards, e a grade de pets fica mais compacta em telas móveis. Conserva o ID interno magia para compatibilidade com links e escolhas, mas se chama Fotos de Natal na navegação.
 
 Efeito original preservado sem editar magia.js/css e acessível no Arquivo (dez entradas), chave natal-magia-guardada. Só carrega se magia=efeito; por padrão nenhum script/canvas de magia é criado. Arquivos fotos.js/galeria.js/css coordenam os mosaicos, ampliação e paginação sem animação permanente ou bibliotecas novas. Dono, fotos padrão de Nosso espaço, estoque e álbuns existentes ficam preservados. Seis capturas Natal/Fotos de Natal atualizadas.
 
-Links atuais: ?parte=natal&v=46, ?parte=natal&destaque=loja&v=46 e ?parte=magia&v=46. Todas as mudanças permanecem no laboratório; sem deploy.
+Links atuais: ?parte=natal&v=47, ?parte=natal&destaque=loja&v=47 e ?parte=magia&v=47. Todas as mudanças permanecem no laboratório; sem deploy.
