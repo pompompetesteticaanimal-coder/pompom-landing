@@ -35,3 +35,7 @@ O arquivo reúne nove referências: laboratório de Natal v10, Natal mobile/desk
 `node tests/natal-navegacao.mjs` verifica rotas, escolhas preservadas, nove fontes históricas, iframe sem barra duplicada, chaves inválidas, menu/Escape, aliases, navegação contextual sem recarregar o iframe, entrada real e espaço de trabalho em 320/390/768/1100/1500 px. `node tests/natal-laboratorio.mjs` cobre controles, propostas globais, fotos, catálogo e comparação. Executar em sequência: os testes usam o mesmo armazenamento do perfil Chrome de teste. Ambos requerem servidor e CDP na porta 9237, configuráveis por POMPOM_TEST_URL/POMPOM_CDP_URL.
 
 Conferidos screenshots desktop e mobile. Alteração restrita ao laboratório e documentação. Fotos, animações, estoque e site público preservados. Sem deploy Cloud Run.
+
+## Acesso à arte dos mascotes · v42
+
+O seletor de cinco artes do cachorro e gato saiu do acordeão e fica aberto na Capa, antes das propostas de layout. O menu principal tem **Arte do cachorro e gato** com acesso direto a `?parte=capa&v=42#art-section`. Paleta e papéis continuam em Identidade e acabamentos.

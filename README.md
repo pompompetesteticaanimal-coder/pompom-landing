@@ -22,7 +22,8 @@ Se já clonou a branch e não tem alterações locais, atualize com `git pull --
 - **Experiência e conteúdo / Loja e produtos**: escolha uma parte na navegação; o painel mostra suas três propostas e a prévia continua disponível ao lado.
 - **Testar opção N em todas as partes**: aplica uma direção às 16 partes e à abertura. Você ainda pode combinar opções individualmente.
 - **Natal / Halloween / Lado a lado**: compare as versões acima dos celulares. O tamanho do aparelho e a ampliação ficam junto da prévia.
-- **Identidade e acabamentos**: artes da marca, paleta e papel das três fotos de campanha, organizados por contexto.
+- **Arte do cachorro e gato**: cinco estilos abertos na Capa, antes das propostas de layout; atalho próprio no menu.
+- **Identidade e acabamentos**: paleta e papel das três fotos de campanha, organizados por contexto.
 - **48 propostas e plano**: capturas nomeadas e links para testar cada proposta.
 - **Arquivo de estudos**: nove referências anteriores de Natal e Halloween; a navegação da Central permanece disponível.
 
