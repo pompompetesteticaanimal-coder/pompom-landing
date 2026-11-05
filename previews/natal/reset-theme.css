@@ -1,13 +1,13 @@
-body.halloween-theme{--night:#941e31;--surface:#ad2a3d;--surface-raised:#bb3948;--line:#d4a368;--cream:#fff6e5;--muted:#f2d6ca;--pumpkin:#efcd84;--lilac:#f0d49e;background:var(--night)!important;color:var(--cream)!important}
+body.halloween-theme{--night:#35131f;--surface:#762036;--surface-raised:#a42c40;--line:#dfbd7b;--cream:#fff6e5;--muted:#f2d6ca;--pumpkin:#efcd84;--lilac:#f0d49e;background:var(--night)!important;color:var(--cream)!important}
 html body.halloween-theme :is(.hero-mobile,#hero-bg){background:radial-gradient(ellipse at 60% 35%,#c83443,#9c2033 65%,#7d192d)!important}
 html body.halloween-theme :is(section,.halloween-showcase-slide,.service-pill,.service-card,.review-card,.testimonial-card,.menu-panel,.compact-menu-heading,#lojinha-sheet,#lojinha-header,#lojinha-footer,.product-detail,.product-detail-bar,.product-detail-tools){background:var(--surface)!important;border-color:var(--line)!important;color:var(--cream)!important}
 html body.halloween-theme :is(.sticky-header,#navbar.scrolled){background:var(--night)!important}
 html body.halloween-theme .section-tag{background:#25583e!important;border-color:#cda569!important;color:#fff5df!important}
 html body.halloween-theme .service-card::after{background:url('/previews/natal/ornamento.svg') top right/contain no-repeat!important}
 html body.halloween-theme :is(.bg-rose-50,.bg-rose-100,.bg-rose-600,.bg-rose-700){background:var(--surface-raised)!important}
-body[data-christmas-palette="claro"]{--night:#a62135;--surface:#b42d40;--surface-raised:#bf4250}
+body[data-christmas-palette="claro"]{--night:#35131f;--surface:#762036;--surface-raised:#a42c40}
 html body[data-christmas-palette="claro"] :is(#servicos,#sobre,#espaco,#galeria,#vitrine,#avaliacoes,#contato){--cream:#652333;--muted:#805453;--pumpkin:#ae2337;--surface:#fff9ee;background:#fff5e5!important;color:#652333!important}
-body[data-christmas-palette="pinheiro"]{--night:#9d2433;--surface:#9f2939;--surface-raised:#c6404d;--pumpkin:#f3d59a}
+body[data-christmas-palette="pinheiro"]{--night:#35131f;--surface:#762036;--surface-raised:#a42c40;--pumpkin:#f3d59a}
 html body[data-christmas-palette="pinheiro"] :is(.section-tag,.marquee-wrap){background:#24563e!important}
 .christmas-wrapped-photo{object-fit:cover!important}
 .christmas-photo-band{position:absolute;display:block;z-index:7;pointer-events:none;text-align:center;box-sizing:border-box;padding:5px 2px;color:#8b1e2e;background:linear-gradient(#fff1ca,#e8c17b);border-block:1px solid #dbb66c;font-weight:850;font-family:system-ui;line-height:1.2;box-shadow:0 3px 7px #3d102844;transform:rotate(-6deg);white-space:nowrap}
@@ -49,6 +49,10 @@ html body.halloween-theme #halloween-destaques .christmas-photo-tile{display:blo
 html body.halloween-theme #halloween-destaques .christmas-photo-tile img{display:block;width:100%!important;height:100%!important;aspect-ratio:auto!important;object-fit:cover;object-position:center 38%;border:0!important;border-radius:0;box-shadow:none!important;transform:none!important}
 html body.halloween-theme #halloween-destaques [data-photo-grid=loja]>.christmas-photo-tile:first-child{grid-column:1/-1}
 html body.halloween-theme #halloween-destaques .halloween-showcase-slide{align-content:start;align-items:start}
+/* Stronger Christmas red layers: dark page, lighter card, warm gold edges. */
+html body.halloween-theme :is(.halloween-showcase-slide,.service-pill,.service-card,.review-card,.testimonial-card,.menu-panel,.compact-menu-heading,#lojinha-sheet,#lojinha-header,#lojinha-footer,.product-detail,.product-detail-bar,.product-detail-tools){box-shadow:0 12px 28px #17081144,inset 0 1px #ffe7bd24}
+html body.halloween-theme #halloween-destaques .halloween-showcase-slide{padding-bottom:48px;border-color:#dfbd7b}
+html body.halloween-theme #halloween-destaques{margin-bottom:32px}
 /* Bring back Halloween's floating Polaroid treatment for the four pet photos. */
 html body.halloween-theme #halloween-destaques [data-photo-grid=pets]{gap:14px}
 html body.halloween-theme #halloween-destaques [data-photo-grid=pets]>.christmas-photo-tile{aspect-ratio:4/3;border:3px solid #fff3df;border-bottom-width:11px;border-radius:4px;box-shadow:0 9px 17px #260c184d;transform:rotate(-4deg) translateY(2px)}
@@ -61,5 +65,6 @@ html body.halloween-theme #halloween-destaques .halloween-showcase-track{positio
 html body.halloween-theme #halloween-destaques .halloween-showcase-slide:not(.is-active){position:absolute;inset:0;width:100%;height:auto}
 @media(max-width:760px){
  html body.halloween-theme.halloween-mobile #halloween-destaques .christmas-photo-grid{width:min(100%,280px)}
- html body.halloween-theme.halloween-mobile #halloween-destaques .halloween-showcase-slide{gap:12px;padding:20px 18px 26px}
+ html body.halloween-theme.halloween-mobile #halloween-destaques .halloween-showcase-slide{gap:14px;padding:20px 18px 42px}
+ html body.halloween-theme.halloween-mobile #halloween-destaques{margin-bottom:30px}
 }

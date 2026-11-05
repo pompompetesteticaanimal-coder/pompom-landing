@@ -1,6 +1,6 @@
 (()=>{'use strict';
 const root='/previews/natal/',archives={
- 'natal-magia-guardada':{title:'Natal · efeito de magia guardado',description:'Varinha e fumaça aprovadas anteriormente, preservadas para retomar depois.',src:root+'base-mobile.html?previewThemes=1&theme=halloween&opening=none&parte=magia&magia=efeito&previewEmbedded=1&v=48',phone:true},
+ 'natal-magia-guardada':{title:'Natal · efeito de magia guardado',description:'Varinha e fumaça aprovadas anteriormente, preservadas para retomar depois.',src:root+'base-mobile.html?previewThemes=1&theme=halloween&opening=none&parte=magia&magia=efeito&previewEmbedded=1&v=49',phone:true},
  'natal-v10':{title:'Laboratório de Natal · versão 10',description:'Primeiro laboratório consolidado e escolhas daquela etapa.',src:root+'historico-v10/index.html'},
  'natal-mobile-antigo':{title:'Natal mobile · estudo anterior',description:'Página mobile usada nos primeiros estudos, preservada para consulta.',src:root+'site-mobile.html',phone:true},
  'natal-desktop-antigo':{title:'Natal desktop · estudo anterior',description:'Versão desktop dos estudos anteriores.',src:root+'site-desktop.html'},
