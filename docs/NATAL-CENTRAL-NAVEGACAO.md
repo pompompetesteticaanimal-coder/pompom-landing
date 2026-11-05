@@ -39,3 +39,13 @@ Conferidos screenshots desktop e mobile. Alteração restrita ao laboratório e 
 ## Acesso à arte dos mascotes · v42
 
 O seletor de cinco artes do cachorro e gato saiu do acordeão e fica aberto na Capa, antes das propostas de layout. O menu principal tem **Arte do cachorro e gato** com acesso direto a `?parte=capa&v=42#art-section`. Paleta e papéis continuam em Identidade e acabamentos.
+
+## Paleta aplicada integralmente · v43
+
+Corrigidos fundos roxos/escuros herdados do Halloween nos cartões de fotos, vitrine, avaliações, contato, loja e rodapé. As regras anteriores de temas com seletores de ID tinham prioridade sobre a apresentação escolhida. Os alvos reais das seções agora dão prioridade aos estilos da proposta; superfícies internas usam as variáveis da própria seção, incluindo combinações de opções. A opção 1 usa vermelho natalino e dourado; a opção 2 mantém creme/vermelho e a 3 mantém seu cenário noturno intencional.
+
+Rodapé passa a acompanhar a opção de Contato. Fotos, inventário, estrutura, magia e animação não foram alterados. As 48 capturas foram atualizadas. O teste do laboratório verifica cores computadas reais de elementos internos e do rodapé, além dos atributos de escolha.
+
+Link `?conjunto=1&v=43` aplica a opção 1 às 16 partes e à abertura. Aceita conjuntos 1/2/3. O parâmetro é consumido e retirado da URL após aplicar, para que recarregar depois não apague eventuais ajustes individuais; a combinação fica no localStorage. A arte da marca e a abertura aprovada continuam independentes das opções em teste.
+
+Verificação visual feita em Chrome temporário, sem SwiftShader. Encerrar o navegador de QA ao terminar, além das abas temporárias, para evitar consumo residual de animações em segundo plano.
