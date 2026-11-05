@@ -55,3 +55,11 @@ Durante a revisão foi corrigida uma corrida da prévia ao fechar/reabrir o cat�
 Sem deploy Cloud Run, sem modificação de arquivos de fotos, eventos públicos, CSP, Nginx ou Dockerfile. Tudo na branch codex/natal-laboratorio.
 
 Planejamento: http://192.168.3.120:8011/previews/natal/planejamento.html . Comparação: http://192.168.3.120:8011/previews/natal/?comparar=lado-a-lado&v=37 .
+
+## Testar a mesma opção em todo o site — v38
+
+Abaixo das três sugestões há o botão **Testar opção N em todas as partes**. Ele usa a opção atualmente selecionada (1, 2 ou 3) e aplica a proposta correspondente às 16 partes, incluindo a abertura: 1 → Teatro encantado, 2 → Recortes de Natal, 3 → Noite cinematográfica. A atualização visual é imediata; a abertura muda para a próxima reprodução e só é executada imediatamente se essa for a parte em teste.
+
+A combinação é salva no navegador e acompanha o link direto. Seleções individuais continuam disponíveis para misturar propostas depois. O botão não muda as escolhas aprovadas, a marca escolhida, o estoque, fotos ou a referência de Halloween; serve para testar o conjunto de Natal.
+
+Teste natal-laboratorio.mjs verifica aplicação global das opções 1/2/3 em todas as partes renderizadas, abertura correspondente, persistência ao recarregar e posterior ajuste individual. Link atual: http://192.168.3.120:8011/previews/natal/?v=38 .

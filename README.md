@@ -42,3 +42,5 @@ As instruções operacionais estão em `CLAUDE.md`. O laboratório não entra na
 No laboratório de Natal, os botões **Natal · atual** e **Halloween · referência** ficam sempre acima do celular de teste. A referência abre a página Halloween original; o botão Natal retorna à seleção de Natal. Acesso direto à comparação: `http://localhost:8011/previews/natal/?parte=capa&comparar=halloween&v=34`.
 
 Planejamento de Natal: [três propostas para cada parte](previews/natal/planejamento.html), com 16 partes e 48 capturas nomeadas. Laboratório atual: `http://localhost:8011/previews/natal/?comparar=lado-a-lado&v=37`. Use Natal, Halloween ou Lado a lado acima dos celulares. A entrada sem seção abre sempre a capa no topo. Fotos de Nosso espaço são as padrão; estoque, álbuns e bolinhas permanecem reais. Detalhes e referências em [NATAL-PLANO-TELAS-2026-11-04.md](docs/NATAL-PLANO-TELAS-2026-11-04.md).
+
+Para testar uma direção em todo o site, selecione uma das três propostas e clique em **Testar opção N em todas as partes**. Atualiza as 16 partes, incluindo a abertura, e guarda a combinação no navegador. Laboratório: `http://localhost:8011/previews/natal/?v=38`.
