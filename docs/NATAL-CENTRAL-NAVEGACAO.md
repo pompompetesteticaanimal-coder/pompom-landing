@@ -68,7 +68,7 @@ Fotos abrem em dialog nativo com tamanho completo, legenda e fechamento por bot�
 O teste das fotos usa cliques reais por coordenadas nas setas para verificar a sobreposição, além de ampliação, fontes, teclado, troca automática, pausa em diálogo/fora de tela, fotos preservadas e mobile/desktop. As três capturas do conjunto Natal foram atualizadas para mostrar o primeiro card agora preenchido. Cache45; sem deploy de produção.
 
 
-## Mosaicos e galeria de Natal · v47 (substitui as pilhas v44/v45)
+## Mosaicos e galeria de Natal · v48 (substitui as pilhas v44/v45)
 
 Pedido final do usuário: como antes, sem fotos empilhadas. Pets mostram exatamente2,4,6,11 em grade2×2, ordem aleatória. Loja mostra fachada grande, entrada/árvore em dois quadrados menores abaixo. Não há troca automática de fotos: todas ficam visíveis. Setas do carrossel mantêm z-index acima das imagens e trocam somente os cards principais. Clique em qualquer foto abre a ampliação.
 
@@ -76,4 +76,4 @@ Fonte dos pets: /Users/paulohenrique/Pictures/Pompompet/natal/fotos.40 registros
 
 Efeito original preservado sem editar magia.js/css e acessível no Arquivo (dez entradas), chave natal-magia-guardada. Só carrega se magia=efeito; por padrão nenhum script/canvas de magia é criado. Arquivos fotos.js/galeria.js/css coordenam os mosaicos, ampliação e paginação sem animação permanente ou bibliotecas novas. Dono, fotos padrão de Nosso espaço, estoque e álbuns existentes ficam preservados. Seis capturas Natal/Fotos de Natal atualizadas.
 
-Links atuais: ?parte=natal&v=47, ?parte=natal&destaque=loja&v=47 e ?parte=magia&v=47. Todas as mudanças permanecem no laboratório; sem deploy.
+Links atuais: ?parte=natal&v=48, ?parte=natal&destaque=loja&v=48 e ?parte=magia&v=48. Todas as mudanças permanecem no laboratório; sem deploy.

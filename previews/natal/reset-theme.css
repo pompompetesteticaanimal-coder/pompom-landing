@@ -49,6 +49,12 @@ html body.halloween-theme #halloween-destaques .christmas-photo-tile{display:blo
 html body.halloween-theme #halloween-destaques .christmas-photo-tile img{display:block;width:100%!important;height:100%!important;aspect-ratio:auto!important;object-fit:cover;object-position:center 38%;border:0!important;border-radius:0;box-shadow:none!important;transform:none!important}
 html body.halloween-theme #halloween-destaques [data-photo-grid=loja]>.christmas-photo-tile:first-child{grid-column:1/-1}
 html body.halloween-theme #halloween-destaques .halloween-showcase-slide{align-content:start;align-items:start}
+/* Bring back Halloween's floating Polaroid treatment for the four pet photos. */
+html body.halloween-theme #halloween-destaques [data-photo-grid=pets]{gap:14px}
+html body.halloween-theme #halloween-destaques [data-photo-grid=pets]>.christmas-photo-tile{aspect-ratio:4/3;border:3px solid #fff3df;border-bottom-width:11px;border-radius:4px;box-shadow:0 9px 17px #260c184d;transform:rotate(-4deg) translateY(2px)}
+html body.halloween-theme #halloween-destaques [data-photo-grid=pets]>.christmas-photo-tile:nth-child(2){transform:rotate(4deg) translateY(-5px)}
+html body.halloween-theme #halloween-destaques [data-photo-grid=pets]>.christmas-photo-tile:nth-child(3){transform:rotate(-3deg) translateY(4px)}
+html body.halloween-theme #halloween-destaques [data-photo-grid=pets]>.christmas-photo-tile:nth-child(4){transform:rotate(4deg) translateY(-4px)}
 /* Keep only the active campaign panel in grid sizing, so hidden panels do not
    leave an empty tail beneath shorter cards. Leaving panels still animate above it. */
 html body.halloween-theme #halloween-destaques .halloween-showcase-track{position:relative;align-items:start}
