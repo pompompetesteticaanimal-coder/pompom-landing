@@ -12,7 +12,7 @@ cd pompom-landing
 python3 -m http.server 8011 --bind 0.0.0.0
 ```
 
-Abra **http://localhost:8011/previews/natal/?v=44**. Em outro dispositivo na mesma rede, substitua localhost pelo IP do computador servidor. No Mac, consulte com `ipconfig getifaddr en0`. O IP não acompanha o projeto ao mudar de máquina ou rede.
+Abra **http://localhost:8011/previews/natal/?v=46**. Em outro dispositivo na mesma rede, substitua localhost pelo IP do computador servidor. No Mac, consulte com `ipconfig getifaddr en0`. O IP não acompanha o projeto ao mudar de máquina ou rede.
 
 Se já clonou a branch e não tem alterações locais, atualize com `git pull --ff-only`. Também pode baixar o ZIP da branch, extrair e executar o servidor dentro da pasta. Node e Blender não são necessários para visualizar.
 
@@ -25,7 +25,7 @@ Se já clonou a branch e não tem alterações locais, atualize com `git pull --
 - **Arte do cachorro e gato**: cinco estilos abertos na Capa, antes das propostas de layout; atalho próprio no menu.
 - **Identidade e acabamentos**: paleta e papel das três fotos de campanha, organizados por contexto.
 - **48 propostas e plano**: capturas nomeadas e links para testar cada proposta.
-- **Arquivo de estudos**: nove referências anteriores de Natal e Halloween; a navegação da Central permanece disponível.
+- **Arquivo de estudos**: dez referências anteriores de Natal e Halloween; a navegação da Central permanece disponível.
 
 No computador há uma barra lateral independente dos ajustes. No tablet e celular, use **Páginas do projeto**; no celular, a prévia fica acima dos controles. Escolhas são salvas neste navegador. A entrada sem parte explícita começa na capa e no topo. Organização e implementação em [Central de Natal](docs/NATAL-CENTRAL-NAVEGACAO.md).
 
@@ -34,10 +34,10 @@ No computador há uma barra lateral independente dos ajustes. No tablet e celula
 - `previews/natal/index.html`: laboratório e telefone interativo.
 - `previews/natal/planejamento.html`: três propostas para cada uma das 16 partes.
 - `previews/natal/arquivo.html`: visor de estudos históricos.
-- `previews/natal/magia/`: toque de varinha com fumaça entre fotos originais de antes e depois; Kiara é o par confirmado atual.
+- `previews/natal/magia/`: efeito de varinha preservado no Arquivo de estudos; a seção atual usa galeria de fotos com setas.
 - `previews/natal/abertura/`: fontes das animações, incluindo teatro com Papai Noel ilustrado, seis renas, logo e contador para o Natal. Outras opções continuam acessíveis.
 - `previews/natal/artes/`: cinco estilos dos mascotes da marca.
-- [Fotos reais de Natal 2026](previews/natal/fotos-2026/README.md): três fotos empilhadas da loja no segundo card e novo retrato da Deisiane.
+- [Fotos reais de Natal 2026](previews/natal/fotos-2026/README.md): pets 2/4/6/11 em quatro quadrados, loja em mosaico, retrato da Deisiane e galeria completa de 40 fotos.
 - [Plano das telas](docs/NATAL-PLANO-TELAS-2026-11-04.md): direção visual e referências.
 - [Galeria por tema](docs/NATAL-GALERIA-POR-TEMA.md) e [álbuns](docs/NATAL-ALBUNS-FOTOS-REAIS.md): fotos reais mantidas, organizadas por momentos do ano.
 - [Lojinha](docs/NATAL-LOJINHA-FOTOS-REAIS.md): fotos reais do estoque preservadas. Nosso espaço também usa suas fotos padrão.

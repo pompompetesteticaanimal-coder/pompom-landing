@@ -57,3 +57,23 @@ As quatro imagens fornecidas em natal 2026 foram incorporadas à prévia mobile 
 Arquivos, origem e destinos em `previews/natal/fotos-2026/README.md`. Novas fotos são protegidas por data-christmas-photo contra o papel. Teste `node tests/natal-fotos-reais.mjs` verifica quatro fontes, carregamento, pilha, papel, retrato, fotos padrão e larguras320/390/430/1440. Seis capturas afetadas foram atualizadas. O capturador aceita `POMPOM_CAPTURE_PARTS=natal,sobre` para atualizar só partes alteradas. O link `?parte=natal&destaque=loja&v=44` abre diretamente a loja no laboratório. Sem deploy Cloud Run.
 
 A inicialização da apresentação de Natal ocorre quando o DOM está pronto, sem esperar o carregamento de todas as fotos, fontes e mapa para habilitar os controles do laboratório.
+
+
+## Cards e pilhas independentes · v45
+
+Após aprovação do formato empilhado, o usuário pediu que as fotos passassem sozinhas, abrissem ao clicar e que o card dos pets recebesse fotos do Natal anterior. Implementado em `fotos-2026/pilhas.js`, compartilhado pelas pilhas da loja e dos pets. Setas laterais ficam acima das fotos e trocam exclusivamente os cards principais. O carrossel principal fica manual, por setas ou gesto fora das fotos; cada pilha alterna a foto frontal a cada3,6s quando ativa/visível. Há pausa própria das fotos; aba oculta, card inativo, foco de teclado e ampliação interrompem o temporizador. Movimento reduzido começa pausado.
+
+Fotos abrem em dialog nativo com tamanho completo, legenda e fechamento por botão, Escape ou clique fora. Foco e rolagem são restaurados; a imagem ampliada também é excluída do embrulho. Nenhuma dependência externa ou animação de renderização contínua foi acrescentada. Pets usam principal1.jpg.webp, principal.jpg.webp e principal3.jpg.webp do acervo natalino existente. Apenas lembranças continuam Em breve.
+
+O teste das fotos usa cliques reais por coordenadas nas setas para verificar a sobreposição, além de ampliação, fontes, teclado, troca automática, pausa em diálogo/fora de tela, fotos preservadas e mobile/desktop. As três capturas do conjunto Natal foram atualizadas para mostrar o primeiro card agora preenchido. Cache45; sem deploy de produção.
+
+
+## Mosaicos e galeria completa · v46 (substitui as pilhas v44/v45)
+
+Pedido final do usuário: como antes, sem fotos empilhadas. Pets mostram exatamente2,4,6,11 em grade2×2, ordem aleatória. Loja mostra fachada grande, entrada/árvore em dois quadrados menores abaixo. Não há troca automática de fotos: todas ficam visíveis. Setas do carrossel mantêm z-index acima das imagens e trocam somente os cards principais. Clique em qualquer foto abre a ampliação.
+
+Fonte dos pets: /Users/paulohenrique/Pictures/Pompompet/natal/fotos.40 registros importados, agrupando54 versões por nome base para não repetir JPEG/PNG e WebP. Manifesto acervo.js e mapeamento acervo/ORIGEM.json. A galeria substitui a magia em #transformacoes: quatro quadrados por página, Anteriores/Próximas, contador e ampliação. Conserva o ID interno magia para compatibilidade com links e escolhas, mas se chama Fotos de Natal na navegação.
+
+Efeito original preservado sem editar magia.js/css e acessível no Arquivo (dez entradas), chave natal-magia-guardada. Só carrega se magia=efeito; por padrão nenhum script/canvas de magia é criado. Arquivos fotos.js/galeria.js/css coordenam os mosaicos, ampliação e paginação sem animação permanente ou bibliotecas novas. Dono, fotos padrão de Nosso espaço, estoque e álbuns existentes ficam preservados. Seis capturas Natal/Fotos de Natal atualizadas.
+
+Links atuais: ?parte=natal&v=46, ?parte=natal&destaque=loja&v=46 e ?parte=magia&v=46. Todas as mudanças permanecem no laboratório; sem deploy.

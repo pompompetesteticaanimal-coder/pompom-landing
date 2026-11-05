@@ -1,16 +1,26 @@
-# Fotos reais de Natal · 2026
+# Fotos reais de Natal · estado v46
 
-Fornecidas pelo usuário em 05/11/2026, na pasta Pictures/Pompompet/natal 2026. Os originais continuam nessa pasta. Os arquivos daqui são cópias WebP com qualidade 88, sem retoque, recorte ou imagem gerada; o enquadramento completo é preservado na apresentação. Metadados dos JPEGs não foram copiados pelo conversor.
+## Fotos de 2026 fornecidas pelo usuário
 
-| Original fornecido | Arquivo do site | Destino |
+Origem: Pictures/Pompompet/natal 2026. Os originais continuam nessa pasta. As quatro cópias WebP usam qualidade 88, sem retoque, recorte ou geração de imagens.
+
+| Original | Arquivo | Destino |
 | --- | --- | --- |
-| frente loja.jpeg | fachada.webp | Segundo card de Natal na PomPom, pilha da loja |
-| arvore.jpeg | arvore.webp | Mesma pilha, árvore da recepção |
-| porta aberta arovere.jpeg | entrada.webp | Mesma pilha, foto inicialmente na frente |
-| Deisiane Dona.jpeg | deisiane.webp | Apresentação de Deisiane França em Sobre |
+| frente loja.jpeg | fachada.webp | Foto grande do card da loja |
+| porta aberta arovere.jpeg | entrada.webp | Primeiro quadrado menor, abaixo |
+| arvore.jpeg | arvore.webp | Segundo quadrado menor, abaixo |
+| Deisiane Dona.jpeg | deisiane.webp | Apresentação da fundadora, com retrato inteiro |
 
-A pilha tem três botões com imagem e legenda; tocar em uma foto a traz para a frente e pausa a troca automática do carrossel. Há foco de teclado, aria-pressed e suporte a movimento reduzido. Não há animação contínua na pilha.
+## Pets do Natal anterior
 
-`data-christmas-photo` exclui essas quatro imagens do embrulho de Em breve, inclusive depois de trocar papel ou proposta. Fotos pendentes dos pets e lembranças continuam embrulhadas. As fotos padrão de Nosso espaço, estoque, galeria e comparação Halloween permanecem como estavam.
+Origem indicada pelo usuário: Pictures/Pompompet/natal/fotos. Importadas 40 imagens, agrupando versões com o mesmo nome base (JPEG/PNG e WebP contam uma vez). As 54 versões existentes na origem resultam nesses 40 registros. Os arquivos WebP existentes foram copiados sem alteração; JPEGs/PNGs sem WebP receberam uma cópia WebP qualidade 88. Originais permanecem na pasta do usuário. O mapeamento está em acervo/ORIGEM.json e o manifesto de execução em acervo.js.
 
-Aplicado somente nas bases locais de Natal mobile/desktop. Para revisar o segundo card diretamente no laboratório: `/previews/natal/?parte=natal&destaque=loja&v=44`. Para a Deisiane: `/previews/natal/?parte=sobre&v=44`.
+O card superior mostra exatamente as fotos **2, 4, 6 e 11**, em quatro quadrados (duas linhas de duas), com ordem embaralhada a cada abertura. As quatro ficam visíveis juntas. A loja usa uma foto quadrada grande e duas menores abaixo. Não há fotos empilhadas nem troca automática nesses mosaicos.
+
+A seção inferior Fotos de Natal, no lugar do efeito, permite percorrer todas as 40 imagens, quatro por página, com Anteriores/Próximas e contador. Qualquer foto dos mosaicos ou da galeria abre inteira no diálogo de ampliação. Fechar pelo botão, Escape ou fundo externo; foco e rolagem retornam ao contexto anterior.
+
+O efeito da Kiara não foi apagado nem alterado: fica em Arquivo de estudos → Natal · efeito de magia guardado, ativado somente com magia=efeito. A galeria padrão não carrega seu script nem o canvas de magia. Fonte original permanece em ../magia/.
+
+Fotos reais recebem data-christmas-photo e nunca são embrulhadas. Somente o terceiro card, lembranças, continua Em breve. Nosso espaço, estoque, bolinhas e álbuns anteriores permanecem intactos. Mudanças só nas bases locais de Natal, sem deploy Cloud Run.
+
+Revisão: `/previews/natal/?parte=natal&v=46` (pets/loja) e `/previews/natal/?parte=magia&v=46` (galeria completa).

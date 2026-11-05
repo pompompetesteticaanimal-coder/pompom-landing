@@ -23,13 +23,13 @@ try{
     appearances.push(await page(`(()=>{const e=document.querySelector('[data-natal-section="${part.id}"]'),s=getComputedStyle(e);return s.backgroundColor+'|'+s.backgroundImage})()`));
    }
    if(part.id==='capa'){await page(`(async()=>{await document.querySelector('.halloween-mobile-art img').decode();return true})()`);assert.ok(await page(`document.querySelector('.halloween-mobile-art img').getAttribute('src').includes('capa-${option.id}.webp')`));assert.ok(await page(`[...document.querySelectorAll('.christmas-brand-image')].every(i=>i.getAttribute('src').startsWith('/previews/natal/artes/'))`),'brand must remain separate from proposal scene')}
-   if(part.id==='natal'){await page(`(()=>{const slides=[...document.querySelectorAll('.halloween-showcase-slide')];const pause=document.querySelector('[data-showcase-action="pause"]');if(pause?.getAttribute('aria-label')==='Pausar troca automática')pause.click();for(let n=0;n<3&&!slides[1].classList.contains('is-active');n++)document.querySelector('[data-showcase-action="next"]').click();return true})()`);await wait(800)}
+   if(part.id==='natal'){await page(`(()=>{const slides=[...document.querySelectorAll('.halloween-showcase-slide')];const pause=document.querySelector('[data-showcase-action="pause"]');if(pause?.getAttribute('aria-label')==='Pausar troca automática')pause.click();for(let n=0;n<3&&!slides[0].classList.contains('is-active');n++)document.querySelector('[data-showcase-action="next"]').click();return true})()`);await wait(800)}
    await wait(470);
    const clip=await run(`(()=>{const b=document.querySelector('#site').getBoundingClientRect();return {x:b.x,y:b.y,width:b.width,height:b.height,scale:1}})()`),shot=await call('Page.captureScreenshot',{format:'png',clip});
    if(part.id==='catalogo')assert.ok(await page(`document.querySelector('#lojinha-sheet').getBoundingClientRect().top<innerHeight*.5`),'catalog must remain on screen at capture');
    const filename=path.join('previews/natal/sugestoes/previas',part.id+'-'+option.id+'.png');await fs.writeFile(filename,Buffer.from(shot.data,'base64'));total++;
   }
-  if(part.id!=='abertura')assert.equal(new Set(appearances).size,3,'distinct presentation required: '+part.id);
+  if(part.id!=='abertura')assert.equal(new Set(appearances).size,3,'distinct presentation required: '+part.id+' '+JSON.stringify(appearances));
   assert.deepEqual(await page(`[...document.querySelectorAll('#espaco img,[data-gallery-theme] img,#gallery-secondary img,#vitrine img,[data-christmas-photo]')].map(i=>i.getAttribute('src'))`),protectedSources,'photos must remain unchanged');
   console.log(part.id+': 3 propostas capturadas e fotos preservadas');
  }
