@@ -49,3 +49,11 @@ Rodapé passa a acompanhar a opção de Contato. Fotos, inventário, estrutura, 
 Link `?conjunto=1&v=43` aplica a opção 1 às 16 partes e à abertura. Aceita conjuntos 1/2/3. O parâmetro é consumido e retirado da URL após aplicar, para que recarregar depois não apague eventuais ajustes individuais; a combinação fica no localStorage. A arte da marca e a abertura aprovada continuam independentes das opções em teste.
 
 Verificação visual feita em Chrome temporário, sem SwiftShader. Encerrar o navegador de QA ao terminar, além das abas temporárias, para evitar consumo residual de animações em segundo plano.
+
+## Fotos reais recebidas · v44
+
+As quatro imagens fornecidas em natal 2026 foram incorporadas à prévia mobile e desktop: fachada, árvore e entrada empilhadas no segundo card de Natal na PomPom; Deisiane com o cachorro na apresentação dela. A pilha permite trazer cada foto à frente e pausa o carrossel ao interagir. A foto da Deisiane mostra o retrato inteiro, sem embrulho. O segundo card passa a se chamar Nossa loja · Pronta para o Natal; os cards de pets e lembranças continuam Em breve. Nosso espaço conserva as fotos padrão, conforme decisão anterior.
+
+Arquivos, origem e destinos em `previews/natal/fotos-2026/README.md`. Novas fotos são protegidas por data-christmas-photo contra o papel. Teste `node tests/natal-fotos-reais.mjs` verifica quatro fontes, carregamento, pilha, papel, retrato, fotos padrão e larguras320/390/430/1440. Seis capturas afetadas foram atualizadas. O capturador aceita `POMPOM_CAPTURE_PARTS=natal,sobre` para atualizar só partes alteradas. O link `?parte=natal&destaque=loja&v=44` abre diretamente a loja no laboratório. Sem deploy Cloud Run.
+
+A inicialização da apresentação de Natal ocorre quando o DOM está pronto, sem esperar o carregamento de todas as fotos, fontes e mapa para habilitar os controles do laboratório.

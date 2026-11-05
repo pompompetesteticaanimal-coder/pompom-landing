@@ -12,7 +12,7 @@ cd pompom-landing
 python3 -m http.server 8011 --bind 0.0.0.0
 ```
 
-Abra **http://localhost:8011/previews/natal/?v=41**. Em outro dispositivo na mesma rede, substitua localhost pelo IP do computador servidor. No Mac, consulte com `ipconfig getifaddr en0`. O IP não acompanha o projeto ao mudar de máquina ou rede.
+Abra **http://localhost:8011/previews/natal/?v=44**. Em outro dispositivo na mesma rede, substitua localhost pelo IP do computador servidor. No Mac, consulte com `ipconfig getifaddr en0`. O IP não acompanha o projeto ao mudar de máquina ou rede.
 
 Se já clonou a branch e não tem alterações locais, atualize com `git pull --ff-only`. Também pode baixar o ZIP da branch, extrair e executar o servidor dentro da pasta. Node e Blender não são necessários para visualizar.
 
@@ -37,6 +37,7 @@ No computador há uma barra lateral independente dos ajustes. No tablet e celula
 - `previews/natal/magia/`: toque de varinha com fumaça entre fotos originais de antes e depois; Kiara é o par confirmado atual.
 - `previews/natal/abertura/`: fontes das animações, incluindo teatro com Papai Noel ilustrado, seis renas, logo e contador para o Natal. Outras opções continuam acessíveis.
 - `previews/natal/artes/`: cinco estilos dos mascotes da marca.
+- [Fotos reais de Natal 2026](previews/natal/fotos-2026/README.md): três fotos empilhadas da loja no segundo card e novo retrato da Deisiane.
 - [Plano das telas](docs/NATAL-PLANO-TELAS-2026-11-04.md): direção visual e referências.
 - [Galeria por tema](docs/NATAL-GALERIA-POR-TEMA.md) e [álbuns](docs/NATAL-ALBUNS-FOTOS-REAIS.md): fotos reais mantidas, organizadas por momentos do ano.
 - [Lojinha](docs/NATAL-LOJINHA-FOTOS-REAIS.md): fotos reais do estoque preservadas. Nosso espaço também usa suas fotos padrão.
