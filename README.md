@@ -12,14 +12,14 @@ cd pompom-landing
 python3 -m http.server 8011 --bind 0.0.0.0
 ```
 
-Abra **http://localhost:8011/previews/natal/?comparar=lado-a-lado&v=37**. Para outra pessoa na mesma rede, substitua `localhost` pelo IP do computador que iniciou o servidor. No Mac, consulte o IP com `ipconfig getifaddr en0`. O endereço IP do Mac anterior não é transferido com o projeto.
+Abra **http://localhost:8011/previews/natal/?v=39**. Para outra pessoa na mesma rede, substitua `localhost` pelo IP do computador que iniciou o servidor. No Mac, consulte o IP com `ipconfig getifaddr en0`. O endereço IP do Mac anterior não é transferido com o projeto.
 
 Se essa branch já estiver clonada e sem alterações locais, atualize com `git pull --ff-only`. O ZIP da branch também funciona: extraia, abra o terminal na pasta extraída e execute o comando do servidor acima. Não é necessário instalar Node, Blender ou dependências npm para visualizar o laboratório.
 
 ## Conteúdo
 
 - `previews/natal/index.html`: laboratório consolidado com telefone interativo e seleção de partes do site.
-- `previews/natal/magia/`: laço que vira varinha e caixa surpresa; transição com fumaça entre fotos de antes e depois fornecidas pela equipe.
+- `previews/natal/magia/`: toque de varinha com fumaça e partículas entre fotos originais de antes e depois fornecidas pela equipe.
 - `previews/natal/abertura/`: abertura ilustrada anterior, preservada com três ambientes.
 - `previews/natal/abertura/alternativas/`: novos estudos Voo 3D, Teatro de papel e Teatro com personagens ilustrados, com simulação de tração nas rédeas. São sugestões para avaliação, não design aprovado.
 - `previews/natal/abertura/rig/pompom-treno-renas.blend`: fonte editável do rig 2.5D anterior. Requer Blender para editar, não para visualizar o site.
@@ -41,6 +41,9 @@ As instruções operacionais estão em `CLAUDE.md`. O laboratório não entra na
 
 No laboratório de Natal, os botões **Natal · atual** e **Halloween · referência** ficam sempre acima do celular de teste. A referência abre a página Halloween original; o botão Natal retorna à seleção de Natal. Acesso direto à comparação: `http://localhost:8011/previews/natal/?parte=capa&comparar=halloween&v=34`.
 
-Planejamento de Natal: [três propostas para cada parte](previews/natal/planejamento.html), com 16 partes e 48 capturas nomeadas. Laboratório atual: `http://localhost:8011/previews/natal/?comparar=lado-a-lado&v=37`. Use Natal, Halloween ou Lado a lado acima dos celulares. A entrada sem seção abre sempre a capa no topo. Fotos de Nosso espaço são as padrão; estoque, álbuns e bolinhas permanecem reais. Detalhes e referências em [NATAL-PLANO-TELAS-2026-11-04.md](docs/NATAL-PLANO-TELAS-2026-11-04.md).
+Planejamento de Natal: [três propostas para cada parte](previews/natal/planejamento.html), com 16 partes e 48 capturas nomeadas. Laboratório atual: `http://localhost:8011/previews/natal/?v=39`. Use Natal, Halloween ou Lado a lado acima dos celulares. A entrada sem seção abre sempre a capa no topo. Fotos de Nosso espaço são as padrão; estoque, álbuns e bolinhas permanecem reais. Detalhes e referências em [NATAL-PLANO-TELAS-2026-11-04.md](docs/NATAL-PLANO-TELAS-2026-11-04.md).
 
-Para testar uma direção em todo o site, selecione uma das três propostas e clique em **Testar opção N em todas as partes**. Atualiza as 16 partes, incluindo a abertura, e guarda a combinação no navegador. Laboratório: `http://localhost:8011/previews/natal/?v=38`.
+Para testar uma direção em todo o site, selecione uma das três propostas e clique em **Testar opção N em todas as partes**. Atualiza as 16 partes, incluindo a abertura, e guarda a combinação no navegador. Laboratório: `http://localhost:8011/previews/natal/?v=39`.
+
+
+A **Central PomPom** reúne o laboratório, as 48 propostas, Natal × Halloween, referências e arquivo de estudos em uma navegação comum. No computador, use a barra lateral; no celular, o botão **Páginas do projeto** nas páginas de planejamento e arquivo. No laboratório os atalhos ficam junto dos controles para preservar o espaço dos celulares de teste. As escolhas permanecem salvas neste navegador. Organização: [Central de Natal](docs/NATAL-CENTRAL-NAVEGACAO.md).
