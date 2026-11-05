@@ -1,6 +1,6 @@
-# PomPom — site e laboratório de Natal
+# PomPom — site e Central de Natal
 
-Site estático da PomPom Pet Estética Animal. O site público usa Cloud Run; o laboratório é uma prévia local. Esta branch registra o estado local e os estudos, sem publicar o site.
+Site estático da PomPom Pet Estética Animal. O site público usa Cloud Run. Esta branch reúne o laboratório local e os estudos de Natal; publicar nela não altera a produção.
 
 ## Abrir em outro Mac ou PC
 
@@ -12,38 +12,43 @@ cd pompom-landing
 python3 -m http.server 8011 --bind 0.0.0.0
 ```
 
-Abra **http://localhost:8011/previews/natal/?v=39**. Para outra pessoa na mesma rede, substitua `localhost` pelo IP do computador que iniciou o servidor. No Mac, consulte o IP com `ipconfig getifaddr en0`. O endereço IP do Mac anterior não é transferido com o projeto.
+Abra **http://localhost:8011/previews/natal/?v=41**. Em outro dispositivo na mesma rede, substitua localhost pelo IP do computador servidor. No Mac, consulte com `ipconfig getifaddr en0`. O IP não acompanha o projeto ao mudar de máquina ou rede.
 
-Se essa branch já estiver clonada e sem alterações locais, atualize com `git pull --ff-only`. O ZIP da branch também funciona: extraia, abra o terminal na pasta extraída e execute o comando do servidor acima. Não é necessário instalar Node, Blender ou dependências npm para visualizar o laboratório.
+Se já clonou a branch e não tem alterações locais, atualize com `git pull --ff-only`. Também pode baixar o ZIP da branch, extrair e executar o servidor dentro da pasta. Node e Blender não são necessários para visualizar.
 
-## Conteúdo
+## Usar a Central
 
-- `previews/natal/index.html`: laboratório consolidado com telefone interativo e seleção de partes do site.
-- `previews/natal/magia/`: toque de varinha com fumaça e partículas entre fotos originais de antes e depois fornecidas pela equipe.
-- `previews/natal/abertura/`: abertura ilustrada anterior, preservada com três ambientes.
-- `previews/natal/abertura/alternativas/`: novos estudos Voo 3D, Teatro de papel e Teatro com personagens ilustrados, com simulação de tração nas rédeas. São sugestões para avaliação, não design aprovado.
-- `previews/natal/abertura/rig/pompom-treno-renas.blend`: fonte editável do rig 2.5D anterior. Requer Blender para editar, não para visualizar o site.
-- `docs/NATAL-ESTADO-V15.md`: decisões anteriores; `previews/natal/abertura/alternativas/README.md`: estado da revisão v16.
-- `docs/NATAL-GALERIA-POR-TEMA.md`: fotos originais da galeria circular organizadas em quatro temas.
-- `docs/TEMAS-E-LABORATORIO.md`: estrutura de temas e referências do Halloween.
+- **Entrada · Papai Noel**: animação de entrada e controles de renas, pausa, repetição e versões anteriores. Há também um botão de entrada sempre acima do celular.
+- **Experiência e conteúdo / Loja e produtos**: escolha uma parte na navegação; o painel mostra suas três propostas e a prévia continua disponível ao lado.
+- **Testar opção N em todas as partes**: aplica uma direção às 16 partes e à abertura. Você ainda pode combinar opções individualmente.
+- **Natal / Halloween / Lado a lado**: compare as versões acima dos celulares. O tamanho do aparelho e a ampliação ficam junto da prévia.
+- **Identidade e acabamentos**: artes da marca, paleta e papel das três fotos de campanha, organizados por contexto.
+- **48 propostas e plano**: capturas nomeadas e links para testar cada proposta.
+- **Arquivo de estudos**: nove referências anteriores de Natal e Halloween; a navegação da Central permanece disponível.
 
-As fotos e bibliotecas necessárias estão no repositório. Backups locais antigos, caches, dependências npm instaladas e credenciais não fazem parte desta transferência. O preview usa bibliotecas locais; não depende de CDN de terceiros para as animações.
+No computador há uma barra lateral independente dos ajustes. No tablet e celular, use **Páginas do projeto**; no celular, a prévia fica acima dos controles. Escolhas são salvas neste navegador. A entrada sem parte explícita começa na capa e no topo. Organização e implementação em [Central de Natal](docs/NATAL-CENTRAL-NAVEGACAO.md).
+
+## Arquivos e decisões
+
+- `previews/natal/index.html`: laboratório e telefone interativo.
+- `previews/natal/planejamento.html`: três propostas para cada uma das 16 partes.
+- `previews/natal/arquivo.html`: visor de estudos históricos.
+- `previews/natal/magia/`: toque de varinha com fumaça entre fotos originais de antes e depois; Kiara é o par confirmado atual.
+- `previews/natal/abertura/`: fontes das animações, incluindo teatro com Papai Noel ilustrado, seis renas, logo e contador para o Natal. Outras opções continuam acessíveis.
+- `previews/natal/artes/`: cinco estilos dos mascotes da marca.
+- [Plano das telas](docs/NATAL-PLANO-TELAS-2026-11-04.md): direção visual e referências.
+- [Galeria por tema](docs/NATAL-GALERIA-POR-TEMA.md) e [álbuns](docs/NATAL-ALBUNS-FOTOS-REAIS.md): fotos reais mantidas, organizadas por momentos do ano.
+- [Lojinha](docs/NATAL-LOJINHA-FOTOS-REAIS.md): fotos reais do estoque preservadas. Nosso espaço também usa suas fotos padrão.
+- [Temas e laboratório](docs/TEMAS-E-LABORATORIO.md): estrutura e referências do Halloween.
+
+As fotos e bibliotecas necessárias estão no repositório. As animações usam bibliotecas locais, sem depender de CDN. Fontes Blender são editáveis, mas os arquivos exportados já permitem visualizar sem Blender. Backups locais antigos, dependências instaladas, caches e credenciais não são necessários nem fazem parte da transferência.
 
 ## AI Memory compartilhado
 
-O marcador `.ai-memory.toml` identifica **workspace `pompom` / project `pompom-site`**. No outro computador, peça ao agente para abrir este diretório e consultar esse escopo. AI Memory guarda contexto; os arquivos vêm deste repositório.
+`.ai-memory.toml` identifica **workspace pompom / project pompom-site**. No outro computador, abra este diretório e consulte esse escopo. A memória guarda contexto; os arquivos vêm do GitHub.
 
-A referência anterior está em `notes/natal-laboratorio-abertura-v15.md`. O acompanhamento da revisão está em `notes/natal-alternativas-v16-em-construcao.md`; consulte a versão mais recente dessa nota. O registro automático local apresentou erro de autenticação; resumos explícitos foram salvos pela conexão disponível. Não se pressupõe que a transcrição completa esteja sincronizada.
+Referências atuais: `decisions/natal-central-navegacao.md`, `decisions/natal-planejamento-48-telas.md` e `decisions/natal-testar-proposta-site-inteiro.md`. Notas v15/v16 registram etapas históricas. Os registros são resumos explícitos e observações limitadas; não se pressupõe sincronização da transcrição completa.
 
 ## Produção
 
-As instruções operacionais estão em `CLAUDE.md`. O laboratório não entra na imagem Docker e esta branch não realiza deploy automático. Publicar no GitHub não altera o Cloud Run.
-
-No laboratório de Natal, os botões **Natal · atual** e **Halloween · referência** ficam sempre acima do celular de teste. A referência abre a página Halloween original; o botão Natal retorna à seleção de Natal. Acesso direto à comparação: `http://localhost:8011/previews/natal/?parte=capa&comparar=halloween&v=34`.
-
-Planejamento de Natal: [três propostas para cada parte](previews/natal/planejamento.html), com 16 partes e 48 capturas nomeadas. Laboratório atual: `http://localhost:8011/previews/natal/?v=39`. Use Natal, Halloween ou Lado a lado acima dos celulares. A entrada sem seção abre sempre a capa no topo. Fotos de Nosso espaço são as padrão; estoque, álbuns e bolinhas permanecem reais. Detalhes e referências em [NATAL-PLANO-TELAS-2026-11-04.md](docs/NATAL-PLANO-TELAS-2026-11-04.md).
-
-Para testar uma direção em todo o site, selecione uma das três propostas e clique em **Testar opção N em todas as partes**. Atualiza as 16 partes, incluindo a abertura, e guarda a combinação no navegador. Laboratório: `http://localhost:8011/previews/natal/?v=39`.
-
-
-A **Central PomPom** reúne o laboratório, as 48 propostas, Natal × Halloween, referências e arquivo de estudos em uma navegação comum. No computador, use a barra lateral; no celular, o botão **Páginas do projeto** nas páginas de planejamento e arquivo. No laboratório os atalhos ficam junto dos controles para preservar o espaço dos celulares de teste. As escolhas permanecem salvas neste navegador. Organização: [Central de Natal](docs/NATAL-CENTRAL-NAVEGACAO.md).
+Instruções operacionais em `CLAUDE.md`. O laboratório não entra na imagem Docker. Esta branch não realiza deploy automático. Não usar Vercel; a produção permanece no Google Cloud Run.

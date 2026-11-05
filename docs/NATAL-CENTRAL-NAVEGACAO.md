@@ -1,24 +1,37 @@
-# Central de Natal · navegação v39
+# Central de Natal · organização v41
 
-Entrada única: `http://localhost:8011/previews/natal/?v=39`. Na rede, substituir localhost pelo IP do computador servidor. Servidor com bind em 0.0.0.0, porta 8011.
+Entrada única: `http://localhost:8011/previews/natal/?v=41`. Na rede, substituir localhost pelo IP do computador servidor. Servidor em 0.0.0.0:8011.
 
-## Caminhos
+## Fluxo de trabalho
 
-- Laboratório ao vivo: seleção de partes, arte, paleta e telefone interativo.
-- 48 propostas e plano: três opções nomeadas para cada uma das 16 partes; cada proposta leva ao teste correspondente.
-- Natal × Halloween: abre a comparação lado a lado.
-- Testar conjunto completo: leva ao painel existente de aplicação de opção 1, 2 ou 3 em todas as partes.
-- Referências de arte: seção do planejamento.
-- Arquivo de estudos: seis referências anteriores, incluindo laboratório v10, mobile/desktop antigos e layouts, identidade e abertura do Halloween.
+1. Use a navegação fixa para abrir **Entrada · Papai Noel** ou escolher uma das partes em **Experiência e conteúdo** e **Loja e produtos**.
+2. O painel contextual mostra três propostas da parte selecionada. O celular ao lado mostra o resultado; mudar de parte pela navegação mantém o mesmo iframe vivo.
+3. Teste uma proposta só nessa parte, ou use **Testar opção N em todas as partes** para aplicar às 16 partes e à abertura.
+4. Compare com **Halloween · referência** ou **Lado a lado**, sempre acima dos celulares.
+5. Use **Identidade e acabamentos** para as cinco artes dos mascotes, paletas e papéis das três fotos de campanha. O papel só aparece no contexto dos três cards; a arte da marca aparece na capa. O efeito da Kiara continua sendo magia sem presente.
+6. **48 propostas e plano** reúne todas as capturas nomeadas e suas referências, com links para testar cada uma no laboratório.
 
-A navegação é compartilhada por laboratório, planejamento, arquivo e seis páginas históricas. No laboratório usa a lateral de controles existente; nas outras páginas é uma barra fixa à esquerda. Em telas pequenas vira menu superior recolhível, com aria-expanded e fechamento por Escape. A lista de partes permite saltar para uma seção. Referências históricas abrem dentro do arquivo com a navegação externa disponível. Dentro dos iframes não se injeta outra barra.
+A entrada tem link principal próprio e botão **Testar entrada / Repetir entrada** sempre acima do celular. Abrir `?parte=abertura&v=41` inicia a animação e mostra os controles de renas, repetição, pausa, momentos, escolha e outras aberturas. Não confundir entrada animada com capa do site.
 
-`ideias.html` encaminha ao laboratório; `layouts.html` encaminha ao planejamento. Parâmetros e âncora são mantidos, exceto o parâmetro antigo mode que não era usado. Nenhuma escolha é regravada por navegar entre páginas. O botão global de propostas e as escolhas individuais mantêm o comportamento v38.
+## Organização visual
+
+No computador, três áreas independentes: navegação de 212 px, painel contextual de 300 px e prévia flexível. Cada lateral tem rolagem própria. A prévia começa no topo e permite Natal/Halloween lado a lado, ampliar e escolher o tamanho do aparelho.
+
+Até 1100 px, a navegação vira menu superior recolhível. Até 760 px, o celular fica acima dos controles com ambas as áreas disponíveis na tela. O menu tem aria-expanded e fechamento por Escape; links reais continuam funcionando por URL. Os grupos da navegação e o painel refletem a parte em teste. Um seletor compacto de partes também fica disponível no painel.
+
+## Histórico
+
+O arquivo reúne nove referências: laboratório de Natal v10, Natal mobile/desktop antigos, Halloween layouts, identidade, abertura, estilos dos mascotes, vitrine/avaliações e apresentação da identidade. As páginas históricas abrem dentro do arquivo, com a navegação externa disponível. Não se injeta outra barra em iframes. Links internos continuam dentro do visor, mantendo a central ao redor. Experimentos de layout e arte individuais continuam acessíveis pelos respectivos estudos de Halloween.
+
+`ideias.html` encaminha ao laboratório; `layouts.html` ao planejamento. Parâmetros e âncora são mantidos, exceto mode antigo que não era usado. Navegar entre ferramentas preserva as escolhas; mudar uma proposta individual não apaga a combinação das outras partes. Estados ficam neste navegador e não são enviados a um servidor.
 
 ## Implementação e verificação
 
-`previews/natal/central/navegacao.js` centraliza rotas e catálogo do arquivo; `navegacao.css` cuida da barra compartilhada. `arquivo.html` e `central/arquivo.js` mostram estudos anteriores. O parâmetro pagina aceita apenas seis chaves locais conhecidas; não é convertido em URL arbitrária de iframe.
+- `central/navegacao.js` e `.css`: navegação compartilhada, rotas e catálogo histórico.
+- `central/laboratorio.js`: composição do painel contextual, ajustes recolhíveis e controles da prévia.
+- `reset-lab.js`: estado existente e API local de seleção de partes, vistas e abertura. Emite `pompom:labstate` para sincronizar navegação e painel.
+- `arquivo.html` e `central/arquivo.js`: visor histórico. O parâmetro pagina aceita apenas nove chaves conhecidas; não vira uma URL arbitrária de iframe.
 
-`node tests/natal-navegacao.mjs` verifica navegação, escolhas preservadas, seis rotas válidas, ausência de barra duplicada em iframe, rejeição de rotas desconhecidas, menu em 320/390 px e redirecionamentos antigos. `node tests/natal-laboratorio.mjs` cobre os controles, propostas globais, fotos e comparação existentes. Requer servidor local e Chrome de teste com CDP na porta 9237, ou variáveis POMPOM_TEST_URL/POMPOM_CDP_URL.
+`node tests/natal-navegacao.mjs` verifica rotas, escolhas preservadas, nove fontes históricas, iframe sem barra duplicada, chaves inválidas, menu/Escape, aliases, navegação contextual sem recarregar o iframe, entrada real e espaço de trabalho em 320/390/768/1100/1500 px. `node tests/natal-laboratorio.mjs` cobre controles, propostas globais, fotos, catálogo e comparação. Executar em sequência: os testes usam o mesmo armazenamento do perfil Chrome de teste. Ambos requerem servidor e CDP na porta 9237, configuráveis por POMPOM_TEST_URL/POMPOM_CDP_URL.
 
-Alteração restrita ao laboratório e documentação. Não há deploy de produção nem alteração de fotos, estoque ou layout do site público.
+Conferidos screenshots desktop e mobile. Alteração restrita ao laboratório e documentação. Fotos, animações, estoque e site público preservados. Sem deploy Cloud Run.
