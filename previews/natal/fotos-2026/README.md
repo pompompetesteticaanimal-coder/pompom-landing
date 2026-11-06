@@ -1,4 +1,4 @@
-# Fotos reais de Natal · estado v50
+# Fotos reais de Natal · estado v52
 
 ## Fotos de 2026 fornecidas pelo usuário
 
@@ -23,6 +23,6 @@ O efeito da Kiara não foi apagado nem alterado: fica em Arquivo de estudos → 
 
 Fotos reais recebem data-christmas-photo e nunca são embrulhadas. Somente o terceiro card, lembranças, continua Em breve. Nosso espaço, estoque, bolinhas e álbuns anteriores permanecem intactos. Mudanças só nas bases locais de Natal, sem deploy Cloud Run.
 
-Revisão: `/previews/natal/?parte=natal&v=50` (pets/loja) e `/previews/natal/?parte=magia&v=50` (galeria completa).
+Revisão: `/previews/natal/?parte=natal&v=52` (pets/loja) e `/previews/natal/?parte=magia&v=52` (galeria completa).
 
 A paleta da prévia usa fundo bordô escuro, painéis em vermelho natalino mais claro e contornos dourados para separar as camadas; os cards internos recebem sombra.
